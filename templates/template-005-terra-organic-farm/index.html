@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Terra 有機農場 — 從土地到餐桌的真實滋味</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--white:#ffffff;--earth:#5c7a3a;--earth-dark:#3d5a22;--earth-light:#8fb065;--brown:#8b6914;--sand:#f0e8d8;--text:#2d2a26;--muted:#7a7264;--border:#e4ddd0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3{font-family:'Playfair Display','Noto Sans TC',serif;font-weight:700;line-height:1.3}
+a{color:var(--earth);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,244,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--earth-dark);font-weight:700}
+.logo span{color:var(--brown)}
+.nav-desktop{display:flex;gap:1.5rem}
+.nav-desktop a{color:var(--text);font-size:.9rem;font-weight:400;transition:color .3s}
+.nav-desktop a:hover{color:var(--earth)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--text);transition:.3s}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:3rem 2rem;transition:left .4s ease;box-shadow:2px 0 20px rgba(0,0,0,.1)}
+.mobile-nav.active{left:0}
+.mobile-nav .close{position:absolute;top:1rem;right:1rem;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.mobile-nav a{display:block;padding:.8rem 0;color:var(--text);font-size:1rem;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1500;display:none}
+.overlay.active{display:block}
+
+/* Hero */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);margin-top:0}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80') center/cover no-repeat;z-index:-2}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45));z-index:-1}
+.hero-content{max-width:700px;padding:2rem}
+.hero h1{font-size:3.5rem;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero p{font-size:1.2rem;font-weight:300;opacity:.95;margin-bottom:2rem}
+.btn{display:inline-block;padding:.9rem 2.2rem;border-radius:8px;font-weight:400;transition:all .3s}
+.btn-primary{background:var(--earth);color:var(--white)}
+.btn-primary:hover{background:var(--earth-dark)}
+.btn-outline{border:1.5px solid var(--white);color:var(--white)}
+.btn-outline:hover{background:var(--white);color:var(--earth-dark)}
+
+/* Sections */
+.section{padding:6rem 2rem}
+.section-sand{background:var(--sand)}
+.container{max-width:1100px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:3rem}
+.section-title h2{font-size:2.2rem;color:var(--earth-dark);margin-bottom:.5rem}
+.section-title p{color:var(--muted);font-size:1rem}
+
+/* Seasonal Highlight */
+.seasonal{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.seasonal img{border-radius:8px;width:100%;height:400px;object-fit:cover}
+.seasonal-text h3{font-size:1.6rem;color:var(--brown);margin-bottom:1rem}
+.seasonal-text p{color:var(--muted);margin-bottom:1.5rem}
+
+/* Story Snippet */
+.story-banner{position:relative;padding:8rem 2rem;text-align:center;color:var(--white);background:url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1920&q=80') center/cover fixed}
+.story-banner::after{content:'';position:absolute;inset:0;background:rgba(61,90,34,.6)}
+.story-banner *{position:relative;z-index:1}
+.story-banner h2{font-size:2.5rem;margin-bottom:1rem}
+.story-banner p{max-width:600px;margin:0 auto 2rem;font-size:1.1rem;opacity:.9}
+
+/* Products Grid */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2rem}
+.product-card{background:var(--white);border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.product-card img{width:100%;height:200px;object-fit:cover}
+.product-card .info{padding:1.2rem}
+.product-card h4{font-family:'Noto Sans TC',sans-serif;font-weight:500;margin-bottom:.3rem}
+.product-card .price{color:var(--earth);font-weight:500;font-size:1.1rem}
+.product-card .season{color:var(--muted);font-size:.85rem}
+
+/* Philosophy */
+.philosophy-row{display:flex;gap:3rem;align-items:center;margin-bottom:4rem}
+.philosophy-row:nth-child(even){flex-direction:row-reverse}
+.philosophy-row img{width:50%;border-radius:8px;height:300px;object-fit:cover}
+.philosophy-row .text{flex:1}
+.philosophy-row h3{color:var(--earth-dark);font-size:1.4rem;margin-bottom:.8rem}
+
+/* Footer */
+.footer{background:var(--earth-dark);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+.footer h4{color:var(--white);font-family:'Playfair Display',serif;margin-bottom:1rem}
+.footer a{color:rgba(255,255,255,.7);display:block;margin-bottom:.5rem;font-size:.9rem}
+.footer a:hover{color:var(--white)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
+
+@media(max-width:768px){
+.nav-desktop{display:none}
+.hamburger{display:flex}
+.hero h1{font-size:2.2rem}
+.seasonal{grid-template-columns:1fr}
+.philosophy-row,.philosophy-row:nth-child(even){flex-direction:column}
+.philosophy-row img{width:100%}
+.footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="logo">Terra <span>有機農場</span></div>
+<nav class="nav-desktop">
+<a href="index.html">首頁</a>
+<a href="about.html">農場故事</a>
+<a href="philosophy.html">有機理念</a>
+<a href="products.html">當季農產</a>
+<a href="experiences.html">農場體驗</a>
+<a href="recipes.html">食譜分享</a>
+<a href="products.html">線上訂購</a>
+<a href="contact.html">聯絡我們</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="mobile-nav">
+<div class="close" onclick="toggleMenu()">&times;</div>
+<a href="index.html">首頁</a>
+<a href="about.html">農場故事</a>
+<a href="philosophy.html">有機理念</a>
+<a href="products.html">當季農產</a>
+<a href="experiences.html">農場體驗</a>
+<a href="recipes.html">食譜分享</a>
+<a href="products.html">線上訂購</a>
+<a href="contact.html">聯絡我們</a>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>從土地到餐桌的真實滋味</h1>
+<p>宜蘭三星，一對夫妻放下都市生活，用雙手耕耘一片有機淨土。每一口蔬果，都是大地最誠實的回饋。</p>
+<a href="about.html" class="btn btn-primary">認識我們的故事</a>
+</div>
+</section>
+
+<section class="section section-sand">
+<div class="container">
+<div class="section-title">
+<h2>當季推薦</h2>
+<p>順應節氣，品嚐最鮮甜的時令蔬果</p>
+</div>
+<div class="seasonal">
+<img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80" alt="當季蔬菜">
+<div class="seasonal-text">
+<h3>春季限定 — 有機綠竹筍</h3>
+<p>清晨五點，趁著朝露未散，我們彎腰在竹林間尋找剛冒出土的嫩筍。不施化肥、不用農藥，讓竹筍在最自然的環境中成長，保留最清甜的原味。</p>
+<p>產季：三月至五月｜每斤 NT$180</p>
+<a href="products.html" class="btn btn-primary">查看所有農產</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="story-banner">
+<h2>「離開台北那天，我們終於學會呼吸。」</h2>
+<p>2018年，我們帶著兩歲的女兒搬到宜蘭三星鄉。從零開始，向土地學習謙卑，向老農學習智慧。這不只是務農，是一種生活的選擇。</p>
+<a href="about.html" class="btn btn-outline">閱讀完整故事</a>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-title">
+<h2>本週農產</h2>
+<p>新鮮現採，產地直送到您的餐桌</p>
+</div>
+<div class="products-grid">
+<a href="product-detail.html" class="product-card">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80" alt="有機稻米">
+<div class="info"><h4>有機稻米</h4><p class="season">全年供應</p><p class="price">NT$280 / 2kg</p></div>
+</a>
+<a href="products.html" class="product-card">
+<img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80" alt="有機小番茄">
+<div class="info"><h4>有機小番茄</h4><p class="season">冬季至春季</p><p class="price">NT$120 / 盒</p></div>
+</a>
+<a href="products.html" class="product-card">
+<img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=600&q=80" alt="有機地瓜葉">
+<div class="info"><h4>有機地瓜葉</h4><p class="season">全年供應</p><p class="price">NT$80 / 把</p></div>
+</a>
+<a href="products.html" class="product-card">
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82ber40a?w=600&q=80" alt="有機絲瓜">
+<div class="info"><h4>有機絲瓜</h4><p class="season">夏季</p><p class="price">NT$95 / 條</p></div>
+</a>
+</div>
+</div>
+</section>
+
+<section class="section section-sand">
+<div class="container">
+<div class="philosophy-row">
+<img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="土壤">
+<div class="text">
+<h3>從土壤開始的承諾</h3>
+<p>健康的土壤是一切的根本。我們用落葉堆肥、綠肥作物輪作、蚯蚓養殖來維護土壤的生命力。六年來，我們的土地從貧瘠的休耕田，變成富含有機質的黑土。每一寸土地，都是我們對下一代的承諾。</p>
+<a href="philosophy.html" class="btn btn-primary">了解有機理念</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-grid">
+<div>
+<h4>Terra 有機農場</h4>
+<p>宜蘭縣三星鄉大隱路 128 號</p>
+<p style="margin-top:.5rem">電話：03-989-5678</p>
+<p>信箱：hello@terra-farm.tw</p>
+</div>
+<div>
+<h4>導覽</h4>
+<a href="about.html">農場故事</a>
+<a href="products.html">當季農產</a>
+<a href="experiences.html">農場體驗</a>
+<a href="recipes.html">食譜分享</a>
+</div>
+<div>
+<h4>營業資訊</h4>
+<p>週二至週日 09:00-17:00</p>
+<p style="margin-top:.5rem">週一公休</p>
+<p style="margin-top:.5rem">農場體驗需預約</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Terra 有機農場 版權所有 ｜ 有機認證字號：1-009-005678</div>
+</footer>
+
+<script>
+function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}
+</script>
+</body>
+</html>

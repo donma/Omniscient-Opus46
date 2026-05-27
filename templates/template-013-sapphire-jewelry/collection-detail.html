@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鑽石系列 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+.page-hero{height:50vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1920&q=80') center/cover;opacity:0.35}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,26,0.4),rgba(10,13,26,0.95))}
+.page-hero-content{position:relative;z-index:1;text-align:center}
+.page-hero-content h1{font-size:2.5rem;margin-bottom:12px}.page-hero-content p{color:var(--muted);letter-spacing:0.2em;font-size:0.9rem}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+.intro{max-width:700px;margin:0 auto 80px;text-align:center;color:var(--muted);font-size:0.95rem}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.product-card{border:1px solid var(--border);background:var(--card);overflow:hidden;transition:border-color 0.3s}
+.product-card:hover{border-color:var(--gold)}
+.product-card img{width:100%;height:300px;object-fit:cover}
+.product-info{padding:32px}
+.product-info h3{font-size:1.1rem;margin-bottom:8px;color:var(--text)}
+.product-info .specs{color:var(--muted);font-size:0.8rem;margin-bottom:16px;display:flex;gap:16px}
+.product-info .price{color:var(--gold);font-family:'Cinzel',serif;font-size:1.1rem}
+.btn{display:inline-block;padding:16px 48px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;transition:all 0.4s}.btn:hover{background:var(--gold);color:var(--bg)}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.products-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+  <div class="page-hero-content"><h1>鑽石系列</h1><div class="divider"></div><p>DIAMOND COLLECTION</p></div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="intro">每一顆鑽石都經過嚴格篩選，僅採用D-F色、VVS1以上淨度的頂級鑽石，搭配完美的3EX車工，讓每一件作品都綻放極致光芒。</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" alt="星河項鍊">
+        <div class="product-info">
+          <h3>星河項鍊</h3>
+          <div class="specs"><span>3.02 克拉</span><span>D色 / VVS1</span></div>
+          <div class="price">NT$ 2,880,000</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="永恆戒指">
+        <div class="product-info">
+          <h3>永恆訂婚戒指</h3>
+          <div class="specs"><span>2.15 克拉</span><span>E色 / VVS1</span></div>
+          <div class="price">NT$ 1,680,000</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1515562141589-67f0d97f6d5b?w=600&q=80" alt="月光耳環">
+        <div class="product-info">
+          <h3>月光耳環</h3>
+          <div class="specs"><span>1.50 克拉（對）</span><span>D色 / VVS2</span></div>
+          <div class="price">NT$ 960,000</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="璀璨手鐲">
+        <div class="product-info">
+          <h3>璀璨手鐲</h3>
+          <div class="specs"><span>5.80 克拉（總重）</span><span>E-F色 / VS1</span></div>
+          <div class="price">NT$ 3,280,000</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80" alt="晨曦胸針">
+        <div class="product-info">
+          <h3>晨曦胸針</h3>
+          <div class="specs"><span>2.88 克拉（主石）</span><span>D色 / IF</span></div>
+          <div class="price">NT$ 4,580,000</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80" alt="經典單鑽戒指">
+        <div class="product-info">
+          <h3>經典單鑽戒指</h3>
+          <div class="specs"><span>1.01 克拉</span><span>D色 / VVS1</span></div>
+          <div class="price">NT$ 780,000</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:80px">
+      <a href="contact.html" class="btn">預約鑑賞</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}</script>
+</body>
+</html>

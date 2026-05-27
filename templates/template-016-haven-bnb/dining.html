@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>餐飲服務 — Haven 山居民宿</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--white:#ffffff;--wood:#8b5e3c;--wood-dark:#6b3f1f;--cream:#f5ece0;--text:#2c231c;--muted:#7a6b5a;--border:#e8ddd0;--green:#7a9a6a;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.4}
+a{color:var(--wood);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--wood-dark);font-weight:700}
+nav .logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--text);font-size:.9rem;transition:color .3s}
+nav ul a:hover{color:var(--wood)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+@media(max-width:768px){nav ul{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;gap:16px;border:1px solid var(--border);border-radius:0 0 0 var(--radius);min-width:200px}nav ul.open{display:flex}.menu-btn{display:block}}
+section{padding:80px 0}
+section.alt{background:var(--cream)}
+.page-header{background:var(--cream);padding:60px 0;text-align:center}
+.page-header h1{font-size:2.2rem;color:var(--wood-dark);margin-bottom:8px}
+.page-header p{color:var(--muted)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}}
+.two-col img{border-radius:var(--radius)}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:768px){.menu-grid{grid-template-columns:1fr}}
+.menu-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.menu-item h4{color:var(--wood-dark);margin-bottom:8px}
+.menu-item p{font-size:.9rem;color:var(--muted)}
+footer{background:var(--wood-dark);color:var(--cream);padding:48px 0 24px}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+footer h4{font-family:'Libre Baskerville',serif;margin-bottom:16px;font-size:1rem}
+footer p,footer a{color:rgba(245,236,224,.8);font-size:.85rem}
+footer .copy{text-align:center;padding-top:24px;border-top:1px solid rgba(245,236,224,.2);font-size:.8rem;color:rgba(245,236,224,.5)}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Haven<span>山居民宿</span></a>
+<button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於民宿</a></li>
+<li><a href="rooms.html">客房介紹</a></li>
+<li><a href="dining.html">餐飲服務</a></li>
+<li><a href="attractions.html">周邊景點</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="booking.html">訂房資訊</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="page-header">
+<h1>餐飲服務</h1>
+<p>用在地食材，烹出山中的美好滋味</p>
+</div>
+
+<section>
+<div class="container">
+<div class="two-col">
+<div>
+<h2 style="color:var(--wood-dark);margin-bottom:16px">山居手作早餐</h2>
+<p>每日早晨 7:30–9:30，小惠為您準備的手作早餐是 Haven 最受歡迎的體驗之一。我們使用清境周邊小農的新鮮蔬果、放牧雞蛋、手工麵包，搭配自家烘焙的咖啡，讓您以最美好的方式開啟山中的一天。</p>
+<p style="margin-top:16px">菜單每日更換，中西式交替呈現。若有飲食禁忌或過敏需求，請於訂房時告知，我們會貼心調整。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&q=80" alt="早餐">
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="container">
+<h2 style="color:var(--wood-dark);text-align:center;margin-bottom:32px">早餐菜單範例</h2>
+<div class="menu-grid">
+<div class="menu-item">
+<h4>🥐 西式早餐日</h4>
+<p>手工可頌、煙燻鮭魚、酪梨蛋、季節沙拉、鮮榨果汁、手沖咖啡</p>
+</div>
+<div class="menu-item">
+<h4>🍜 中式早餐日</h4>
+<p>清粥小菜、手工蛋餅、地瓜粥、醬菜拼盤、豆漿、在地高山茶</p>
+</div>
+<div class="menu-item">
+<h4>🥞 美式早餐日</h4>
+<p>鬆餅佐楓糖、培根炒蛋、薯餅、新鮮水果、美式咖啡</p>
+</div>
+<div class="menu-item">
+<h4>🥗 輕食早餐日</h4>
+<p>優格穀物碗、燻雞三明治、季節水果、蜂蜜檸檬水、拿鐵</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="two-col">
+<img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="下午茶">
+<div>
+<h2 style="color:var(--wood-dark);margin-bottom:16px">午後茶敘</h2>
+<p>每日下午 14:30–16:30，我們在一樓交誼廳提供免費的下午茶服務。</p>
+<p style="margin-top:16px">內容包含小惠手作的甜點（如磅蛋糕、司康、季節水果塔），搭配高山烏龍茶或手沖咖啡。這是旅人們最愛的社交時光，常常在壁爐旁聊著聊著就結交了新朋友。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="container" style="max-width:800px;text-align:center">
+<h2 style="color:var(--wood-dark);margin-bottom:24px">食材來源</h2>
+<p>我們堅持使用在地、當季的食材，與清境周邊的小農建立長期合作關係。</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px">
+<div>
+<h4 style="color:var(--green);margin-bottom:8px">高山蔬菜</h4>
+<p style="font-size:.85rem;color:var(--muted)">仁愛鄉有機農場直送</p>
+</div>
+<div>
+<h4 style="color:var(--green);margin-bottom:8px">放牧雞蛋</h4>
+<p style="font-size:.85rem;color:var(--muted)">埔里在地牧場每日新鮮配送</p>
+</div>
+<div>
+<h4 style="color:var(--green);margin-bottom:8px">手工麵包</h4>
+<p style="font-size:.85rem;color:var(--muted)">小惠每日凌晨手揉烘焙</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Haven 山居民宿</h4><p>南投縣仁愛鄉大同村信義巷32號</p></div>
+<div><h4>聯絡方式</h4><p>電話：049-280-1234</p><p>信箱：stay@haven-bnb.tw</p></div>
+<div><h4>入住資訊</h4><p>入住：15:00 後 ｜ 退房：11:00 前</p></div>
+</div>
+<div class="copy">© 2026 Haven 山居民宿 — All Rights Reserved</div>
+</div>
+</footer>
+</body>
+</html>

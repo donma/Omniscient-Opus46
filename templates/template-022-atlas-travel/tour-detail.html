@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>冰島極光10日深度之旅 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:50vh;min-height:350px;display:flex;align-items:end;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.7))}
+.hero-info{position:relative;z-index:2;padding:40px;width:100%}
+.hero-info h1{font-size:2.2rem;margin-bottom:8px}
+.hero-info .meta{display:flex;gap:20px;font-size:.9rem;opacity:.9}
+section{padding:60px 0}
+.detail-layout{display:grid;grid-template-columns:2fr 1fr;gap:40px}
+.itinerary h2{font-size:1.5rem;color:var(--sky-dark);margin-bottom:24px}
+.day{background:var(--white);border-radius:var(--radius);padding:24px;margin-bottom:16px;border-left:4px solid var(--sky)}
+.day h3{font-size:1rem;color:var(--sky-dark);margin-bottom:8px}
+.day p{font-size:.9rem;color:var(--muted)}
+.sidebar{position:sticky;top:96px}
+.price-box{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:24px;text-align:center}
+.price-box .price{font-size:2rem;color:var(--sunset);font-family:'Montserrat',sans-serif;font-weight:800}
+.price-box .note{font-size:.8rem;color:var(--muted);margin-top:4px}
+.price-box .btn{display:block;background:var(--sky);color:white;padding:14px;border-radius:var(--radius);margin-top:20px;font-weight:600;text-align:center;transition:background .3s}
+.price-box .btn:hover{background:var(--sky-dark)}
+.include-box{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.include-box h3{font-size:1rem;color:var(--sky-dark);margin-bottom:12px}
+.include-box ul{list-style:none;font-size:.85rem;color:var(--muted)}
+.include-box ul li{padding:6px 0;border-bottom:1px solid var(--border)}
+.include-box ul li:last-child{border:none}
+.include-box ul li::before{content:'✓ ';color:#16a34a;font-weight:600}
+.exclude-box ul li::before{content:'✗ ';color:#dc2626;font-weight:600}
+.exclude-box{margin-top:24px}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.detail-layout{grid-template-columns:1fr}
+.sidebar{position:static}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80" alt="冰島極光">
+<div class="hero-info">
+<h1>冰島極光10日深度之旅</h1>
+<div class="meta"><span>10天8夜</span><span>難度：挑戰</span><span>每團上限8人</span></div>
+</div>
+</div>
+
+<section>
+<div class="container">
+<div class="detail-layout">
+<div class="itinerary">
+<h2>逐日行程</h2>
+<div class="day"><h3>Day 1 — 抵達雷克雅維克</h3><p>接機後入住市區設計旅店，晚間漫步彩色街道，享用冰島風味晚餐。</p></div>
+<div class="day"><h3>Day 2 — 黃金圈經典路線</h3><p>辛格維利爾國家公園、間歇泉、黃金瀑布，感受地球板塊的裂縫。</p></div>
+<div class="day"><h3>Day 3 — 南岸瀑布巡禮</h3><p>塞里雅蘭瀑布、斯科加瀑布、黑沙灘，壯麗的大西洋海岸線。</p></div>
+<div class="day"><h3>Day 4 — 冰河湖與鑽石海灘</h3><p>傑古沙龍冰河湖搭船巡遊，鑽石海灘拍攝閃耀冰塊。</p></div>
+<div class="day"><h3>Day 5 — 冰川健行</h3><p>專業嚮導帶領，穿上冰爪踏上千年冰川，近距離觀察冰洞。</p></div>
+<div class="day"><h3>Day 6 — 東部峽灣</h3><p>穿越東部峽灣小鎮，品嚐在地漁港料理，欣賞壯觀地形。</p></div>
+<div class="day"><h3>Day 7 — 米湖地熱區</h3><p>探索超現實地熱景觀、偽火山口、熔岩迷宮，浸泡米湖溫泉。</p></div>
+<div class="day"><h3>Day 8 — 眾神瀑布與阿克雷里</h3><p>北部之都阿克雷里、眾神瀑布、賞鯨之旅。</p></div>
+<div class="day"><h3>Day 9 — 斯奈山半島</h3><p>教堂山、黑教堂、海蝕洞穴，冰島縮影的一日遊歷。</p></div>
+<div class="day"><h3>Day 10 — 藍湖溫泉與歸程</h3><p>藍湖溫泉放鬆，享用告別午餐，前往機場。</p></div>
+</div>
+<div class="sidebar">
+<div class="price-box">
+<div class="price">NT$ 168,000</div>
+<div class="note">每人費用 / 雙人房</div>
+<a href="contact.html" class="btn">立即諮詢報名</a>
+</div>
+<div class="include-box">
+<h3>費用包含</h3>
+<ul>
+<li>國際來回機票（經濟艙）</li>
+<li>全程住宿（設計旅店/特色民宿）</li>
+<li>每日早餐 + 5頓特色晚餐</li>
+<li>專業中文領隊全程陪同</li>
+<li>冰川健行裝備與嚮導</li>
+<li>冰河湖船票、賞鯨船票</li>
+<li>全程交通（4WD越野車）</li>
+<li>旅遊平安險 + 不便險</li>
+</ul>
+</div>
+<div class="include-box exclude-box">
+<h3>費用不含</h3>
+<ul>
+<li>個人護照辦理費用</li>
+<li>行程外個人消費</li>
+<li>單人房差 NT$ 28,000</li>
+<li>小費（建議每日 NT$ 300）</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

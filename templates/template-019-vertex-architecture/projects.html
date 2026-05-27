@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>建築作品 — Vertex 建築事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f4f4f2;--white:#ffffff;--concrete:#888888;--dark:#1a1a1a;--accent:#1a1a1a;--text:#1a1a1a;--muted:#666666;--border:#d0d0d0;--light:#ebebeb}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+nav{position:fixed;top:0;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);z-index:1000;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem}
+nav .logo span{font-family:'Noto Sans TC',sans-serif;font-weight:400;font-size:.85rem;margin-left:8px;color:var(--muted)}
+nav ul{list-style:none;display:flex;gap:24px}
+nav ul a{font-size:.85rem;font-weight:400}
+nav ul a:hover{color:var(--concrete)}
+.menu-btn{display:none;flex-direction:column;gap:4px;cursor:pointer;z-index:1001}
+.menu-btn span{width:24px;height:2px;background:var(--dark)}
+.mobile-menu{position:fixed;top:0;right:-100%;width:70%;height:100vh;background:var(--white);padding:80px 32px;transition:right .3s;z-index:999;display:flex;flex-direction:column;gap:24px}
+.mobile-menu.active{right:0}
+.mobile-menu a{font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:12px}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:flex}}
+
+.page-header{margin-top:80px;padding:80px 24px 40px;max-width:1200px;margin-left:auto;margin-right:auto}
+.page-header h1{font-size:2.5rem;letter-spacing:-1px}
+
+.filters{max-width:1200px;margin:0 auto;padding:0 24px 40px;display:flex;gap:16px;flex-wrap:wrap}
+.filters button{background:none;border:1px solid var(--border);padding:8px 20px;font-size:.85rem;font-family:'Noto Sans TC',sans-serif;cursor:pointer;transition:all .2s}
+.filters button:hover,.filters button.active{background:var(--dark);color:var(--white);border-color:var(--dark)}
+
+.projects-grid{max-width:1200px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
+.project-card{position:relative;overflow:hidden}
+.project-card img{width:100%;height:380px;object-fit:cover;transition:transform .5s}
+.project-card:hover img{transform:scale(1.03)}
+.project-card .info{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:var(--white)}
+.project-card .info h3{font-size:1.1rem;margin-bottom:4px}
+.project-card .info p{font-size:.75rem;opacity:.8}
+
+@media(max-width:768px){.projects-grid{grid-template-columns:1fr}}
+
+footer{background:var(--dark);color:var(--white);padding:60px 24px}
+footer .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+footer h4{font-size:.85rem;margin-bottom:16px;opacity:.6}
+footer p,footer a{font-size:.85rem;line-height:2;opacity:.8}
+footer .copy{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;opacity:.5}
+@media(max-width:768px){footer .footer-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">VERTEX<span>建築事務所</span></div>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">事務所簡介</a></li>
+<li><a href="projects.html">建築作品</a></li>
+<li><a href="philosophy.html">設計理念</a></li>
+<li><a href="services.html">服務項目</a></li>
+<li><a href="team.html">團隊成員</a></li>
+<li><a href="press.html">媒體報導</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<div class="menu-btn" onclick="document.querySelector('.mobile-menu').classList.toggle('active')"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu">
+<a href="index.html">首頁</a><a href="about.html">事務所簡介</a><a href="projects.html">建築作品</a><a href="philosophy.html">設計理念</a><a href="services.html">服務項目</a><a href="team.html">團隊成員</a><a href="press.html">媒體報導</a><a href="contact.html">聯絡我們</a>
+</div>
+
+<div class="page-header">
+<h1>建築作品</h1>
+</div>
+
+<div class="filters">
+<button class="active" onclick="filterProjects('all')">全部</button>
+<button onclick="filterProjects('住宅')">住宅</button>
+<button onclick="filterProjects('商業')">商業</button>
+<button onclick="filterProjects('公共')">公共</button>
+<button onclick="filterProjects('室內')">室內</button>
+</div>
+
+<div class="projects-grid">
+<a href="project-detail.html" class="project-card" data-cat="住宅">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=500&fit=crop" alt="雲居">
+<div class="info"><h3>雲居</h3><p>住宅 / 2023 / 台北</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="住宅">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&h=500&fit=crop" alt="光合之家">
+<div class="info"><h3>光合之家</h3><p>住宅 / 2022 / 新竹</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="商業">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&h=500&fit=crop" alt="方圓商辦">
+<div class="info"><h3>方圓商辦</h3><p>商業 / 2022 / 台北</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="公共">
+<img src="https://images.unsplash.com/photo-1570616969692-54d6ba3d0397?w=700&h=500&fit=crop" alt="境山圖書館">
+<div class="info"><h3>境山圖書館</h3><p>公共 / 2021 / 台中</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="室內">
+<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&h=500&fit=crop" alt="靜觀茶室">
+<div class="info"><h3>靜觀茶室</h3><p>室內 / 2021 / 台北</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="住宅">
+<img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&h=500&fit=crop" alt="浮光居">
+<div class="info"><h3>浮光居</h3><p>住宅 / 2020 / 宜蘭</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="商業">
+<img src="https://images.unsplash.com/photo-1554435493-93422e8220c8?w=700&h=500&fit=crop" alt="晶方大樓">
+<div class="info"><h3>晶方大樓</h3><p>商業 / 2019 / 新北</p></div>
+</a>
+<a href="project-detail.html" class="project-card" data-cat="公共">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=700&h=500&fit=crop" alt="水岸藝術中心">
+<div class="info"><h3>水岸藝術中心</h3><p>公共 / 2018 / 高雄</p></div>
+</a>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div><h4>VERTEX 建築事務所</h4><p>台北市大安區仁愛路三段152號8樓<br>TEL: 02-2755-0019<br>EMAIL: info@vertex-arch.tw</p></div>
+<div><h4>快速連結</h4><p><a href="projects.html">建築作品</a><br><a href="services.html">服務項目</a><br><a href="careers.html">加入我們</a></p></div>
+<div><h4>社群</h4><p>Instagram<br>Facebook<br>LinkedIn</p></div>
+</div>
+<div class="copy">© 2026 Vertex Architects. All rights reserved.</div>
+</footer>
+
+<script>
+function filterProjects(cat){
+document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+document.querySelectorAll('.project-card').forEach(c=>{
+c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
+});
+}
+</script>
+</body>
+</html>

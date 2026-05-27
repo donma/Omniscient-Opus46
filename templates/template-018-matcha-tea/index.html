@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Matcha 茶道空間 — 首頁</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s;box-shadow:2px 0 20px rgba(0,0,0,.1)}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+/* Hero */
+.hero{position:relative;height:85vh;min-height:500px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=1400&q=80') center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(245,247,242,.92) 0%,rgba(245,247,242,.6) 60%,transparent 100%)}
+.hero-content{position:relative;max-width:520px}
+.hero-content h1{font-size:2.8rem;margin-bottom:16px;color:var(--text)}
+.hero-content p{font-size:1.05rem;color:var(--muted);margin-bottom:32px}
+.btn{display:inline-block;padding:12px 32px;background:var(--matcha);color:var(--white);border-radius:var(--radius);font-size:.9rem;transition:background .3s}
+.btn:hover{background:#4a6a3a;color:var(--white)}
+.btn-outline{background:transparent;border:1px solid var(--matcha);color:var(--matcha)}
+.btn-outline:hover{background:var(--matcha);color:var(--white)}
+
+/* Vertical text decoration */
+.vertical-text{writing-mode:vertical-rl;position:absolute;right:40px;top:50%;transform:translateY(-50%);font-family:'Noto Serif TC',serif;font-size:.85rem;color:var(--matcha-light);letter-spacing:8px}
+
+/* Sections */
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:2rem;margin-bottom:8px}
+.section-title p{color:var(--muted);font-size:.95rem}
+
+/* Seasonal */
+.seasonal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.seasonal-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.seasonal-card img{width:100%;height:200px;object-fit:cover}
+.seasonal-card-body{padding:24px}
+.seasonal-card-body h3{font-size:1.1rem;margin-bottom:8px}
+.seasonal-card-body p{color:var(--muted);font-size:.88rem}
+.tag{display:inline-block;background:var(--matcha-light);color:var(--matcha);font-size:.75rem;padding:3px 10px;border-radius:20px;margin-bottom:8px}
+
+/* Philosophy */
+.philosophy{background:var(--cream);padding:80px 0;text-align:center}
+.philosophy blockquote{font-family:'Noto Serif TC',serif;font-size:1.6rem;color:var(--text);max-width:600px;margin:0 auto 16px}
+.philosophy cite{color:var(--muted);font-size:.9rem;font-style:normal}
+
+/* Space preview */
+.space-preview{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-top:40px}
+.space-preview img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius)}
+.space-preview .main-img{grid-row:span 2}
+
+/* Footer */
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+footer a:hover{color:var(--matcha-light)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  .mobile-menu{display:block}
+  .hero-content h1{font-size:2rem}
+  .seasonal-grid{grid-template-columns:1fr}
+  .space-preview{grid-template-columns:1fr}
+  .space-preview .main-img{grid-row:auto}
+  footer .container{grid-template-columns:1fr}
+  .vertical-text{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="container">
+<div class="hero-content">
+<h1>一碗茶湯<br>一期一會</h1>
+<p>在台北永康街的靜謐角落，以正統日本茶道精神，為您奉上一碗用心點出的抹茶。感受當下，品味寧靜。</p>
+<a href="menu.html" class="btn">探索茶品</a>
+<a href="experience.html" class="btn btn-outline" style="margin-left:12px">預約體驗</a>
+</div>
+</div>
+<div class="vertical-text">和敬清寂</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>當季限定</h2>
+<p>隨四季流轉的茶品與甜點</p>
+</div>
+<div class="seasonal-grid">
+<div class="seasonal-card">
+<img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=600&q=80" alt="新茶">
+<div class="seasonal-card-body">
+<span class="tag">春季限定</span>
+<h3>宇治新茶 薄茶</h3>
+<p>每年五月初摘的第一批新茶，清新鮮綠的滋味是春天的贈禮。</p>
+</div>
+</div>
+<div class="seasonal-card">
+<img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=600&q=80" alt="冷茶">
+<div class="seasonal-card-body">
+<span class="tag">夏季限定</span>
+<h3>氷出し玉露</h3>
+<p>以冰塊慢慢融化萃取的玉露，甘甜濃郁，消暑沁涼。</p>
+</div>
+</div>
+<div class="seasonal-card">
+<img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80" alt="焙茶">
+<div class="seasonal-card-body">
+<span class="tag">秋季限定</span>
+<h3>深焙焙茶拿鐵</h3>
+<p>以高溫焙煎的茶葉搭配溫潤牛乳，秋日的溫暖慰藉。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="philosophy">
+<div class="container">
+<blockquote>「茶道不只是飲茶，而是透過一碗茶湯，找回與自己對話的時間。」</blockquote>
+<cite>— 茶道空間主理人 林靜雅</cite>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>空間一隅</h2>
+<p>以京都町家為靈感打造的寧靜茶室</p>
+</div>
+<div class="space-preview">
+<img class="main-img" src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=800&q=80" alt="茶室">
+<img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=80" alt="榻榻米">
+<img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=80" alt="庭園">
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

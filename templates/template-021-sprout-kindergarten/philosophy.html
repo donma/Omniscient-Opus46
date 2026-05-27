@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教學理念 — Sprout 小芽幼兒園</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:0.95rem;font-weight:500;transition:color 0.3s}.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--text)}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:2px solid var(--border)}
+.page-hero h1{font-size:2.5rem;margin-bottom:12px}.page-hero p{color:var(--muted);font-size:1.1rem}
+.section{padding:60px 0}
+.section h2{font-size:2rem;margin-bottom:24px}
+.philosophy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:40px}
+.phil-card{background:var(--white);border-radius:var(--radius);padding:40px;border:2px solid var(--border);position:relative;overflow:hidden}
+.phil-card::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%}
+.phil-card:nth-child(1)::before{background:var(--yellow)}
+.phil-card:nth-child(2)::before{background:var(--pink)}
+.phil-card:nth-child(3)::before{background:var(--blue)}
+.phil-card:nth-child(4)::before{background:var(--purple)}
+.phil-card .icon{font-size:2.5rem;margin-bottom:16px}
+.phil-card h3{font-size:1.3rem;margin-bottom:12px}
+.phil-card p{color:var(--muted)}
+.phil-card ul{color:var(--muted);margin-top:12px;padding-left:20px}
+.phil-card li{margin-bottom:4px}
+.quote-section{background:var(--blue);color:var(--white);padding:60px 0;text-align:center;border-radius:var(--radius);margin:40px 0}
+.quote-section blockquote{font-size:1.4rem;font-style:italic;max-width:700px;margin:0 auto}
+.quote-section cite{display:block;margin-top:16px;font-size:0.95rem;opacity:0.8}
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}footer a{color:rgba(255,255,255,0.8)}footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s;box-shadow:-4px 0 20px rgba(0,0,0,0.1)}
+.mobile-menu.active{right:0}.mobile-menu ul{list-style:none}.mobile-menu li{margin-bottom:20px}.mobile-menu a{font-size:1.1rem;font-weight:500}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:block}.philosophy-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-toggle" onclick="openMenu()">☰</button></div></nav>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+<div class="container">
+<h1>教學理念 🌈</h1>
+<p>我們相信，每個孩子都是獨一無二的種子，需要適合的土壤與陽光</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<p style="font-size:1.1rem;max-width:800px">在小芽，我們不急著讓孩子「學會」什麼，而是創造一個充滿愛、安全與探索機會的環境，讓孩子在自然的步調中發展出對世界的好奇心與學習的熱情。我們的教學融合了瑞吉歐、華德福與蒙特梭利的精華，發展出專屬於小芽的教育哲學。</p>
+
+<div class="philosophy-grid">
+<div class="phil-card">
+<div class="icon">🌿</div>
+<h3>自然本位教育</h3>
+<p>大自然是最好的教室。我們相信孩子需要泥土、陽光和風，而不只是教科書。</p>
+<ul>
+<li>每週兩天戶外探索課程</li>
+<li>校園有機菜園由孩子照顧</li>
+<li>四季主題融入日常教學</li>
+<li>自然素材成為創作媒介</li>
+</ul>
+</div>
+<div class="phil-card">
+<div class="icon">🎮</div>
+<h3>遊戲式學習</h3>
+<p>遊戲是孩子的語言，也是最有效的學習方式。在玩耍中，孩子發展認知、社交與身體能力。</p>
+<ul>
+<li>自由遊戲時間充足</li>
+<li>教師引導而非指導</li>
+<li>開放式教具與素材</li>
+<li>跨齡互動遊戲時光</li>
+</ul>
+</div>
+<div class="phil-card">
+<div class="icon">💗</div>
+<h3>情緒智能培養</h3>
+<p>我們重視孩子的內在世界，幫助他們認識、表達和管理情緒，建立健康的人際關係。</p>
+<ul>
+<li>每日情緒check-in時間</li>
+<li>衝突解決引導練習</li>
+<li>同理心故事與角色扮演</li>
+<li>正向紀律取代獎懲制度</li>
+</ul>
+</div>
+<div class="phil-card">
+<div class="icon">🌍</div>
+<h3>雙語沉浸環境</h3>
+<p>語言不是科目，而是生活。中英文自然交織在每天的互動中，讓雙語成為孩子的日常。</p>
+<ul>
+<li>外籍教師全日制陪伴</li>
+<li>情境式語言習得</li>
+<li>多元文化節慶體驗</li>
+<li>繪本共讀與故事時間</li>
+</ul>
+</div>
+</div>
+
+<div class="quote-section">
+<div class="container">
+<blockquote>「教育不是注滿一桶水，而是點燃一把火。」</blockquote>
+<cite>— W.B. Yeats</cite>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Sprout 小芽幼兒園</h4><p>台北市士林區天母西路50號</p><p>電話：(02) 2871-5678</p><p>信箱：hello@sprout-kindergarten.tw</p></div>
+<div><h4>快速連結</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>入學資訊</h4><ul><li><a href="faq.html">常見問題</a></li><li><a href="parents.html">家長手冊</a></li><li><a href="events.html">活動行事曆</a></li><li><a href="contact.html">預約參觀</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

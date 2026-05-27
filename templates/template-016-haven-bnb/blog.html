@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>山居日誌 — Haven 山居民宿</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--white:#ffffff;--wood:#8b5e3c;--wood-dark:#6b3f1f;--cream:#f5ece0;--text:#2c231c;--muted:#7a6b5a;--border:#e8ddd0;--green:#7a9a6a;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.4}
+a{color:var(--wood);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--wood-dark);font-weight:700}
+nav .logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--text);font-size:.9rem;transition:color .3s}
+nav ul a:hover{color:var(--wood)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+@media(max-width:768px){nav ul{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;gap:16px;border:1px solid var(--border);border-radius:0 0 0 var(--radius);min-width:200px}nav ul.open{display:flex}.menu-btn{display:block}}
+section{padding:80px 0}
+.page-header{background:var(--cream);padding:60px 0;text-align:center}
+.page-header h1{font-size:2.2rem;color:var(--wood-dark);margin-bottom:8px}
+.page-header p{color:var(--muted)}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.blog-card:hover{transform:translateY(-4px)}
+.blog-card img{width:100%;height:220px;object-fit:cover}
+.blog-card .body{padding:24px}
+.blog-card .date{font-size:.8rem;color:var(--muted);margin-bottom:8px}
+.blog-card h3{font-size:1.1rem;color:var(--wood-dark);margin-bottom:8px}
+.blog-card p{font-size:.9rem;color:var(--muted)}
+.blog-card .read-more{display:inline-block;margin-top:12px;color:var(--wood);font-size:.85rem}
+footer{background:var(--wood-dark);color:var(--cream);padding:48px 0 24px}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+footer h4{font-family:'Libre Baskerville',serif;margin-bottom:16px;font-size:1rem}
+footer p,footer a{color:rgba(245,236,224,.8);font-size:.85rem}
+footer .copy{text-align:center;padding-top:24px;border-top:1px solid rgba(245,236,224,.2);font-size:.8rem;color:rgba(245,236,224,.5)}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Haven<span>山居民宿</span></a>
+<button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於民宿</a></li>
+<li><a href="rooms.html">客房介紹</a></li>
+<li><a href="dining.html">餐飲服務</a></li>
+<li><a href="attractions.html">周邊景點</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="booking.html">訂房資訊</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="page-header">
+<h1>山居日誌</h1>
+<p>分享清境的生活點滴與旅行靈感</p>
+</div>
+
+<section>
+<div class="container">
+<div class="blog-grid">
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="四季風景">
+<div class="body">
+<div class="date">2026年5月15日</div>
+<h3>清境四季 — 什麼季節來最美？</h3>
+<p>每個季節的清境都有不同的樣貌，春天櫻花盛開、夏天涼爽避暑、秋天楓紅層疊、冬天偶見白雪。來看看各季節的獨特魅力...</p>
+<a href="blog-detail.html" class="read-more">繼續閱讀 →</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80" alt="合歡山日出">
+<div class="body">
+<div class="date">2026年4月22日</div>
+<h3>合歡山日出攻略：新手必讀指南</h3>
+<p>想在合歡山看日出卻不知道從何準備？從最佳觀賞地點、出發時間、穿著建議到攝影技巧，一次告訴你所有細節...</p>
+<a href="#" class="read-more">繼續閱讀 →</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&q=80" alt="在地美食">
+<div class="body">
+<div class="date">2026年3月8日</div>
+<h3>清境周邊在地美食地圖</h3>
+<p>除了民宿早餐，清境周邊還有許多值得一訪的餐廳與小吃。從雲南料理、原住民風味餐到山中咖啡廳，帶你吃遍清境...</p>
+<a href="#" class="read-more">繼續閱讀 →</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="步道">
+<div class="body">
+<div class="date">2026年2月14日</div>
+<h3>適合全家的清境步道推薦</h3>
+<p>帶著長輩或小朋友也能輕鬆走的步道有哪些？我們精選了五條難度低、風景美的路線，讓全家人都能享受山林之美...</p>
+<a href="#" class="read-more">繼續閱讀 →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Haven 山居民宿</h4><p>南投縣仁愛鄉大同村信義巷32號</p></div>
+<div><h4>聯絡方式</h4><p>電話：049-280-1234</p><p>信箱：stay@haven-bnb.tw</p></div>
+<div><h4>入住資訊</h4><p>入住：15:00 後 ｜ 退房：11:00 前</p></div>
+</div>
+<div class="copy">© 2026 Haven 山居民宿 — All Rights Reserved</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於藝廊 — Canvas 當代藝廊</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--offwhite:#f9f9f7;--text:#111111;--muted:#777777;--accent:#111111;--border:#e5e5e5;--hover:#333333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.02em}
+a{color:var(--text);text-decoration:none}
+img{display:block;width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-0.03em}
+.logo span{font-weight:400;margin-left:4px;font-size:14px}
+nav.desktop{display:flex;gap:28px}
+nav.desktop a{font-size:13px;color:var(--muted);transition:color .2s}
+nav.desktop a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:20px;height:1.5px;background:var(--text);margin:5px 0}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--bg);z-index:200;padding:80px 32px;transition:left .3s ease;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}
+.mobile-nav a{display:block;font-size:16px;padding:12px 0;border-bottom:1px solid var(--border);color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;display:none}
+.overlay.active{display:block}
+.close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:24px;cursor:pointer}
+.meta{font-family:'Space Grotesk',monospace;font-size:12px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.page-header{margin-top:60px;padding:80px 0 40px;border-bottom:1px solid var(--border)}
+.page-header h1{font-size:clamp(28px,4vw,42px)}
+section{padding:80px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.two-col img{aspect-ratio:4/5;object-fit:cover}
+.two-col p{margin-bottom:20px;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:64px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+.stats h3{font-size:36px;margin-bottom:4px}
+.stats p{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:48px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}footer a:hover{color:var(--text)}
+@media(max-width:768px){
+  nav.desktop{display:none}.menu-btn{display:block}
+  .two-col{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">CANVAS<span>當代藝廊</span></a>
+  <nav class="desktop">
+    <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+  </nav>
+  <button class="menu-btn" onclick="document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')"><span></span><span></span><span></span></button>
+</header>
+<div class="overlay" onclick="document.querySelector('.mobile-nav').classList.remove('active');this.classList.remove('active')"></div>
+<nav class="mobile-nav">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button>
+  <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <p class="meta">About the Gallery</p>
+    <h1>關於藝廊</h1>
+  </div>
+
+  <section>
+    <div class="two-col">
+      <div>
+        <img src="https://images.unsplash.com/photo-1577720643272-265f09367456?w=800&q=80" alt="藝廊空間">
+      </div>
+      <div>
+        <h2 style="margin-bottom:24px;font-size:22px">亞洲與西方當代藝術的橋樑</h2>
+        <p>Canvas 當代藝廊創立於2016年，坐落在台北市大直區的靜謐巷弄之間。藝廊擁有三百坪的展覽空間，以極簡的白盒子設計為基底，為當代藝術作品提供最純粹的展示環境。</p>
+        <p>我們的使命是搭建亞洲與西方當代藝術之間的對話橋樑，透過精心策劃的展覽計畫，引介國際藝術家至亞洲，同時將亞洲當代藝術推向國際舞台。每年策劃六至八檔展覽，涵蓋繪畫、雕塑、裝置、新媒體等多元創作形式。</p>
+        <p>藝廊同時致力於藝術教育推廣，定期舉辦講座、工作坊與藝術家座談，期望讓當代藝術走入更多人的日常生活之中。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div><h3>300</h3><p>坪展覽空間</p></div>
+    <div><h3>60+</h3><p>已舉辦展覽</p></div>
+    <div><h3>25</h3><p>代理藝術家</p></div>
+  </div>
+
+  <section>
+    <div class="two-col">
+      <div>
+        <h2 style="margin-bottom:24px;font-size:22px">創辦人暨策展人</h2>
+        <h3 style="font-size:18px;margin-bottom:16px">王思涵 Sihan Wang</h3>
+        <p>王思涵畢業於倫敦大學金匠學院策展研究所，曾任職於倫敦白教堂藝廊及香港巴塞爾藝術展。2016年返回台灣後創立Canvas當代藝廊，致力於推動台灣當代藝術的國際化發展。</p>
+        <p>她的策展實踐關注身份認同、跨文化對話與科技如何重塑我們對藝術的感知。曾受邀於威尼斯雙年展平行展、光州雙年展及橫濱三年展擔任客座策展人。</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="創辦人">
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div><p><strong>CANVAS 當代藝廊</strong></p><p>台北市中山區大直街32號</p></div>
+  <div><p>© 2026 Canvas 當代藝廊. All Rights Reserved</p></div>
+</footer>
+</body>
+</html>

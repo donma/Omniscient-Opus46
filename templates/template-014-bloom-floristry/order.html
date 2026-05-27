@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花束訂購 — Bloom 花藝工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fdf8f5;--white:#ffffff;--rose:#e89bae;--rose-light:#fce8ee;--sage:#a8c5a0;--text:#3a2d2d;--muted:#8a7070;--border:#f0dede;--lavender:#d4c5e8;--radius:30px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,155,174,0.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+.nav-links{display:flex;gap:24px;font-size:0.9rem}
+.nav-links a:hover{color:var(--rose)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{text-align:center;padding:60px 0;background:var(--rose-light);border-radius:0 0 60px 60px;margin-bottom:60px}
+.page-hero h1{font-size:2.8rem;margin-bottom:8px}
+.page-hero p{color:var(--muted)}
+section{padding:0 0 80px}
+.btn{display:inline-block;padding:12px 28px;background:var(--rose);color:var(--white);border-radius:var(--radius);font-size:0.9rem;transition:all 0.3s}
+.btn:hover{background:var(--sage)}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.product-card{background:var(--white);border-radius:var(--radius);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;border:1px solid var(--border)}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(232,155,174,0.12)}
+.product-card img{height:280px;width:100%;object-fit:cover}
+.product-card .info{padding:24px}
+.product-card h3{font-size:1.2rem;margin-bottom:8px}
+.product-card .desc{color:var(--muted);font-size:0.85rem;margin-bottom:12px}
+.product-card .price-row{display:flex;align-items:center;justify-content:space-between}
+.product-card .price{font-size:1.2rem;color:var(--rose);font-weight:500}
+.product-card .sizes{font-size:0.8rem;color:var(--muted)}
+.order-note{background:var(--white);border-radius:var(--radius);padding:40px;border:1px solid var(--border);margin-top:48px;text-align:center}
+.order-note h2{margin-bottom:12px;font-size:1.5rem}
+.order-note p{color:var(--muted);max-width:600px;margin:0 auto}
+footer{background:var(--white);padding:48px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:1rem;margin-bottom:12px;color:var(--rose)}
+.footer-col p,.footer-col a{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:24px}
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;border-radius:0 0 var(--radius) var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.nav-links.active{display:flex}
+.menu-toggle{display:block}
+.products{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Bloom 花藝</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="weddings.html">婚禮花藝</a><a href="courses.html">花藝課程</a><a href="blog.html">花語日記</a><a href="contact.html">聯絡我們</a>
+</div>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>花束訂購</h1>
+<p>為每個心意，挑選最適合的花語</p>
+</div>
+
+<section>
+<div class="container">
+<div class="products">
+<a href="order-detail.html" class="product-card">
+<img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600" alt="春日花語">
+<div class="info">
+<h3>春日花語</h3>
+<p class="desc">粉玫瑰、白桔梗、尤加利葉，清新浪漫</p>
+<div class="price-row"><span class="price">NT$1,800</span><span class="sizes">S / M / L</span></div>
+</div>
+</a>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600" alt="粉黛佳人">
+<div class="info">
+<h3>粉黛佳人</h3>
+<p class="desc">芍藥、大理花、滿天星，甜美典雅</p>
+<div class="price-row"><span class="price">NT$2,200</span><span class="sizes">S / M / L</span></div>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=600" alt="森林幻夢">
+<div class="info">
+<h3>森林幻夢</h3>
+<p class="desc">白玫瑰、綠繡球、蕨類，自然清新</p>
+<div class="price-row"><span class="price">NT$2,800</span><span class="sizes">M / L</span></div>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1471696035578-3d8c78d99571?w=600" alt="經典永恆">
+<div class="info">
+<h3>經典永恆</h3>
+<p class="desc">紅玫瑰 50 朵、滿天星環繞，熱烈深情</p>
+<div class="price-row"><span class="price">NT$3,500</span><span class="sizes">單一尺寸</span></div>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=600" alt="陽光早安">
+<div class="info">
+<h3>陽光早安</h3>
+<p class="desc">向日葵、雛菊、洋甘菊，元氣滿滿</p>
+<div class="price-row"><span class="price">NT$1,200</span><span class="sizes">S / M</span></div>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=600" alt="紫夢迷情">
+<div class="info">
+<h3>紫夢迷情</h3>
+<p class="desc">紫玫瑰、桔梗、薰衣草，神秘優雅</p>
+<div class="price-row"><span class="price">NT$5,800</span><span class="sizes">L / XL</span></div>
+</div>
+</div>
+</div>
+
+<div class="order-note">
+<h2>訂購須知</h2>
+<p>花束請提前 2 天預訂，急件請電洽。提供台北市區外送服務（滿 NT$2,000 免運），亦可至工作室自取。花材依季節調整，我們會以相近色系與風格替換。</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>Bloom 花藝工作室</h4><p>以花為語，傳遞每一份心意與美好。</p></div>
+<div class="footer-col"><h4>快速連結</h4><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="courses.html">花藝課程</a></div>
+<div class="footer-col"><h4>聯絡資訊</h4><p>台北市大安區瑞安街 128 號 1 樓</p><p>02-2700-1234</p><p>hello@bloom-floral.tw</p></div>
+<div class="footer-col"><h4>營業時間</h4><p>週二至週六 10:00–19:00</p><p>週日 11:00–17:00</p><p>週一公休</p></div>
+</div>
+<div class="footer-bottom">© 2026 Bloom 花藝工作室 All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

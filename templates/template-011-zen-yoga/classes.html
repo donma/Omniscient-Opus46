@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>課程介紹 — Zen 瑜伽會館</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+.page-hero{text-align:center;padding:80px 24px;background:var(--white);border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.8rem;margin-bottom:16px}
+.page-hero p{color:var(--muted);max-width:600px;margin:0 auto}
+section{padding:100px 0}
+.class-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px}
+.class-item{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.class-item img{height:220px;width:100%;object-fit:cover}
+.class-item-body{padding:32px}
+.class-item h3{font-size:1.4rem;margin-bottom:8px}
+.class-item .level{display:inline-block;padding:4px 12px;background:var(--bg);border:1px solid var(--border);border-radius:12px;font-size:.75rem;color:var(--sage-dark);margin-bottom:12px}
+.class-item p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.class-item .details{font-size:.85rem;color:var(--muted)}
+.class-item .details span{margin-right:16px}
+.btn-sm{display:inline-block;padding:10px 24px;background:var(--sage);color:var(--white);border-radius:var(--radius);font-size:.85rem;transition:background .3s;margin-top:16px}
+.btn-sm:hover{background:var(--sage-dark)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+.class-list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>課程介紹</h1>
+<p>六種不同風格的課程，滿足從初學者到進階練習者的需求</p>
+</div>
+
+<section>
+<div class="container">
+<div class="class-list">
+<div class="class-item">
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80" alt="哈達瑜伽">
+<div class="class-item-body">
+<span class="level">初學者友善</span>
+<h3>哈達瑜伽 Hatha Yoga</h3>
+<p>經典瑜伽入門課程，著重體位法的正確對位與呼吸法基礎。每個姿勢停留較長時間，幫助建立力量與柔軟度。</p>
+<div class="details"><span>⏱ 75 分鐘</span><span>👥 最多 15 人</span></div>
+<a href="class-detail.html" class="btn-sm">了解更多</a>
+</div>
+</div>
+<div class="class-item">
+<img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=700&q=80" alt="流動瑜伽">
+<div class="class-item-body">
+<span class="level">初階至中階</span>
+<h3>流動瑜伽 Vinyasa Flow</h3>
+<p>以呼吸引導動作的流暢串連，動態中培養專注力與身體覺察。每堂課的序列設計都不同，帶來新鮮感。</p>
+<div class="details"><span>⏱ 60 分鐘</span><span>👥 最多 18 人</span></div>
+<a href="class-detail.html" class="btn-sm">了解更多</a>
+</div>
+</div>
+<div class="class-item">
+<img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=700&q=80" alt="陰瑜伽">
+<div class="class-item-body">
+<span class="level">所有程度</span>
+<h3>陰瑜伽 Yin Yoga</h3>
+<p>長時間停留在被動伸展的姿勢中（3-5分鐘），深層作用於結締組織與筋膜，適合需要放鬆與恢復的練習者。</p>
+<div class="details"><span>⏱ 90 分鐘</span><span>👥 最多 12 人</span></div>
+<a href="class-detail.html" class="btn-sm">了解更多</a>
+</div>
+</div>
+<div class="class-item">
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700&q=80" alt="孕婦瑜伽">
+<div class="class-item-body">
+<span class="level">孕期專屬</span>
+<h3>孕婦瑜伽 Prenatal Yoga</h3>
+<p>專為孕媽咪設計的安全練習，緩解孕期不適、強化骨盆底肌群，並練習生產時實用的呼吸技巧。</p>
+<div class="details"><span>⏱ 60 分鐘</span><span>👥 最多 8 人</span></div>
+<a href="class-detail.html" class="btn-sm">了解更多</a>
+</div>
+</div>
+<div class="class-item">
+<img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=700&q=80" alt="冥想靜心">
+<div class="class-item-body">
+<span class="level">所有程度</span>
+<h3>冥想靜心 Meditation</h3>
+<p>結合正念冥想、身體掃描與呼吸覺察等技巧，培養內在的安定力量。適合壓力大、睡眠不佳的現代人。</p>
+<div class="details"><span>⏱ 45 分鐘</span><span>👥 最多 10 人</span></div>
+<a href="class-detail.html" class="btn-sm">了解更多</a>
+</div>
+</div>
+<div class="class-item">
+<img src="https://images.unsplash.com/photo-1611068661807-8e2b9e632bfc?w=700&q=80" alt="空中瑜伽">
+<div class="class-item-body">
+<span class="level">中階</span>
+<h3>空中瑜伽 Aerial Yoga</h3>
+<p>運用懸掛式吊床輔助完成倒立、後彎等體位，減輕脊椎壓力的同時增強核心力量，趣味與挑戰兼具。</p>
+<div class="details"><span>⏱ 60 分鐘</span><span>👥 最多 10 人</span></div>
+<a href="class-detail.html" class="btn-sm">了解更多</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

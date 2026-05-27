@@ -1,0 +1,37 @@
+{
+  "id": "template-019-vertex-architecture",
+  "name": "Vertex 建築事務所",
+  "description": "Architecture firm website with geometric grid layouts, concrete gray palette, and modern asymmetric design for a Taipei-based sustainable residential architecture practice.",
+  "category": "architecture",
+  "theme": "light",
+  "language": "zh-TW",
+  "fonts": ["Space Grotesk", "Noto Sans TC"],
+  "colors": {
+    "background": "#f4f4f2",
+    "white": "#ffffff",
+    "concrete": "#888888",
+    "dark": "#1a1a1a",
+    "accent": "#1a1a1a",
+    "text": "#1a1a1a",
+    "muted": "#666666",
+    "border": "#d0d0d0",
+    "light": "#ebebeb"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "projects.html",
+    "project-detail.html",
+    "philosophy.html",
+    "services.html",
+    "team.html",
+    "press.html",
+    "blog.html",
+    "blog-detail.html",
+    "careers.html",
+    "contact.html"
+  ],
+  "features": ["responsive", "mobile-menu", "filter", "grid-layout", "asymmetric-layout"],
+  "borderRadius": "0px",
+  "mobileMenuPosition": "right"
+}

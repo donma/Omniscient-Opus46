@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寵物知識 — Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s ease;box-shadow:-4px 0 30px rgba(0,0,0,.1)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+.page-hero{padding:60px 0;text-align:center;background:var(--pink-light)}
+.page-hero h1{font-size:2.2rem;margin-bottom:8px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.tip-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:all .3s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(232,117,143,.12)}
+.tip-card img{width:100%;height:220px;object-fit:cover}
+.tip-card .content{padding:24px}
+.tip-card .category{display:inline-block;background:var(--pink-light);color:var(--pink);padding:3px 12px;border-radius:var(--btn-radius);font-size:.75rem;margin-bottom:10px}
+.tip-card h3{font-size:1.1rem;margin-bottom:8px}
+.tip-card p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.tip-card .read-more{color:var(--pink);font-size:.85rem}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-grid h4{font-size:.95rem;margin-bottom:12px;color:var(--pink)}.footer-grid p,.footer-grid li{font-size:.85rem;color:var(--muted);line-height:2}.footer-grid ul{list-style:none}
+.footer-bottom{text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+@media(max-width:768px){.menu-toggle{display:flex}nav{display:none}.tips-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="container"><a href="index.html" class="logo">Paw<span>some</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>寵物知識</h1><p>分享實用的毛孩照護知識，讓您成為更棒的毛爸毛媽</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="tips-grid">
+<div class="tip-card">
+<img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=500&h=250&fit=crop" alt="梳毛技巧">
+<div class="content">
+<span class="category">居家護理</span>
+<h3>如何在家幫毛孩梳毛：完整指南</h3>
+<p>每天花 5-10 分鐘幫毛孩梳毛，不僅能維持毛髮健康，還能增進彼此感情。本篇教你正確的梳毛方式與工具選擇。</p>
+<a href="tip-detail.html" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+<div class="tip-card">
+<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500&h=250&fit=crop" alt="健康觀察">
+<div class="content">
+<span class="category">健康知識</span>
+<h3>從毛孩行為觀察健康警訊</h3>
+<p>毛孩不會說話，但會用行為告訴你牠不舒服。學會觀察這 8 個常見的健康警訊，及早發現問題及早處理。</p>
+<a href="tip-detail.html" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+<div class="tip-card">
+<img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=500&h=250&fit=crop" alt="夏季護理">
+<div class="content">
+<span class="category">季節護理</span>
+<h3>夏季毛孩散熱與皮膚護理須知</h3>
+<p>台灣夏天又熱又濕，毛孩容易中暑、皮膚出問題。掌握這些夏季護理要點，讓毛孩安全度過炎夏。</p>
+<a href="tip-detail.html" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+<div class="tip-card">
+<img src="https://images.unsplash.com/photo-1583337130417-13104dec14a5?w=500&h=250&fit=crop" alt="洗澡頻率">
+<div class="content">
+<span class="category">美容知識</span>
+<h3>毛孩多久洗一次澡才正確？</h3>
+<p>洗太頻繁會破壞皮膚屏障，洗太少又容易滋生細菌。依品種、活動量和皮膚狀況，找到最適合的洗澡頻率。</p>
+<a href="tip-detail.html" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Pawsome 寵物美容</h4><p>位於台北中山區的專業寵物美容沙龍，以愛心與專業技術，為每一位毛孩帶來最舒適的美容體驗。</p></div><div><h4>服務項目</h4><ul><li><a href="services.html">基礎洗澡</a></li><li><a href="services.html">全套美容</a></li><li><a href="services.html">SPA 護理</a></li><li><a href="services.html">口腔護理</a></li></ul></div><div><h4>快速連結</h4><ul><li><a href="booking.html">線上預約</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="faq.html">常見問題</a></li></ul></div><div><h4>聯絡資訊</h4><p>台北市中山區南京東路二段 88 號 1 樓</p><p>02-2567-8899</p><p>營業時間：10:00 - 19:00</p></div></div><div class="footer-bottom"><p>&copy; 2026 Pawsome 寵物美容. All rights reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

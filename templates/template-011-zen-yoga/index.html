@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zen 瑜伽會館 — 回歸身心的寧靜</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+
+/* HERO */
+.hero{position:relative;height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3}
+.hero-content{position:relative;z-index:1;padding:40px}
+.hero h1{font-size:3.5rem;margin-bottom:16px;color:var(--sage-dark)}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:500px;margin:0 auto 32px}
+.btn{display:inline-block;padding:14px 36px;background:var(--sage);color:var(--white);border-radius:var(--radius);font-size:.95rem;transition:background .3s}
+.btn:hover{background:var(--sage-dark)}
+
+/* SECTIONS */
+section{padding:100px 0}
+.section-title{text-align:center;font-size:2.2rem;margin-bottom:60px}
+
+/* CLASS TYPES */
+.class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.class-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform .3s}
+.class-card:hover{transform:translateY(-4px)}
+.class-card img{height:200px;width:100%;object-fit:cover}
+.class-card-body{padding:24px}
+.class-card h3{font-size:1.3rem;margin-bottom:8px}
+.class-card p{color:var(--muted);font-size:.9rem}
+
+/* TEACHERS */
+.teacher-highlight{display:flex;align-items:center;gap:60px;flex-wrap:wrap;margin-top:40px}
+.teacher-highlight img{width:300px;height:380px;object-fit:cover;border-radius:var(--radius)}
+.teacher-highlight-text h3{font-size:1.8rem;margin-bottom:16px}
+.teacher-highlight-text p{color:var(--muted);margin-bottom:12px}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--white);padding:100px 0}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.testimonial-card{background:var(--bg);padding:32px;border-radius:var(--radius);border:1px solid var(--border)}
+.testimonial-card p{font-style:italic;margin-bottom:16px;color:var(--muted)}
+.testimonial-card .name{font-weight:500;color:var(--sage-dark)}
+
+/* CTA */
+.cta-section{text-align:center;background:var(--sand);padding:80px 24px;border-radius:var(--radius);margin:0 24px}
+.cta-section h2{font-size:2rem;margin-bottom:16px}
+.cta-section p{color:var(--muted);margin-bottom:32px}
+
+/* FOOTER */
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+.hero h1{font-size:2.2rem}
+.teacher-highlight{flex-direction:column}
+.teacher-highlight img{width:100%;height:300px}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<section class="hero">
+<img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&q=80" alt="瑜伽練習">
+<div class="hero-content">
+<h1>在呼吸之間，找回自己</h1>
+<p>位於天母的靜心空間，以專業師資與溫暖氛圍，陪伴您踏上身心平衡的旅程</p>
+<a href="classes.html" class="btn">探索課程</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">我們的課程</h2>
+<div class="class-grid">
+<div class="class-card">
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="哈達瑜伽">
+<div class="class-card-body">
+<h3>哈達瑜伽</h3>
+<p>奠定基礎，透過體位法與呼吸法，找到身體的穩定與平衡</p>
+</div>
+</div>
+<div class="class-card">
+<img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" alt="流動瑜伽">
+<div class="class-card-body">
+<h3>流動瑜伽</h3>
+<p>以呼吸串連動作，如行雲流水般優雅移動身體</p>
+</div>
+</div>
+<div class="class-card">
+<img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=80" alt="陰瑜伽">
+<div class="class-card-body">
+<h3>陰瑜伽</h3>
+<p>深層伸展與放鬆，釋放筋膜張力，讓身心回歸寧靜</p>
+</div>
+</div>
+<div class="class-card">
+<img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80" alt="冥想靜心">
+<div class="class-card-body">
+<h3>冥想靜心</h3>
+<p>培養專注與覺察力，在靜默中找到內心的平靜力量</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--white);padding:100px 0">
+<div class="container">
+<h2 class="section-title">資深師資</h2>
+<div class="teacher-highlight">
+<img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80" alt="林芷瑜老師">
+<div class="teacher-highlight-text">
+<h3>林芷瑜 老師</h3>
+<p>E-RYT 500 認證瑜伽導師，擁有超過 15 年教學經驗。曾赴印度瑞詩凱詩深造，專精於流動瑜伽與呼吸法教學。</p>
+<p>「瑜伽不是觸碰腳趾，而是在彎腰的過程中學習到什麼。」</p>
+<a href="teachers.html" class="btn">認識所有老師</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<h2 class="section-title">學員分享</h2>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<p>「加入 Zen 瑜伽會館三個月，我的睡眠品質明顯改善，也學會了在壓力中保持平靜。」</p>
+<span class="name">— 陳小姐，上班族</span>
+</div>
+<div class="testimonial-card">
+<p>「老師們非常有耐心，即使是初學者也能感受到被接納與支持的溫暖。」</p>
+<span class="name">— 王先生，工程師</span>
+</div>
+<div class="testimonial-card">
+<p>「這裡的環境讓人一走進來就能放鬆，像是城市中的一片淨土。」</p>
+<span class="name">— 李小姐，自由工作者</span>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="cta-section">
+<h2>開始您的瑜伽旅程</h2>
+<p>首次體驗課程只需 $300，感受身心合一的美好</p>
+<a href="contact.html" class="btn">預約體驗課</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

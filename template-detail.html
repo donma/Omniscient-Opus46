@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模板詳情 — 全職設計視角</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;
+  --surface:#12121a;
+  --card:#1a1a24;
+  --border:#2a2a3a;
+  --text:#e8e8f0;
+  --muted:#888899;
+  --accent:#6366f1;
+  --accent-light:#818cf8;
+  --success:#10b981;
+  --radius:16px;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1400px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.3rem;font-weight:700}.logo span{color:var(--accent)}
+.back-link{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem;transition:.3s}
+.back-link:hover{color:var(--accent)}
+
+.detail-container{max-width:1200px;margin:0 auto;padding:48px 32px}
+
+.template-header{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;margin-bottom:48px;align-items:start}
+@media(max-width:900px){.template-header{grid-template-columns:1fr}}
+.preview-frame{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;position:relative}
+.preview-frame iframe{width:100%;height:500px;border:none}
+.preview-actions{position:absolute;top:12px;right:12px;display:flex;gap:8px}
+.preview-actions a{padding:8px 16px;background:rgba(0,0,0,.7);border-radius:8px;font-size:.8rem;color:#fff;transition:.3s}
+.preview-actions a:hover{background:var(--accent)}
+.download-prompt-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;border-radius:12px;font-size:.9rem;font-weight:600;transition:all .3s;margin-top:16px;width:100%;justify-content:center}
+.download-prompt-btn:hover{opacity:.85;transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,.4)}
+
+.template-info h1{font-size:2rem;font-weight:700;margin-bottom:8px}
+.template-meta{display:flex;gap:16px;margin-bottom:20px;font-size:.9rem;color:var(--muted)}
+.template-desc{color:var(--muted);margin-bottom:24px;line-height:1.9}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.info-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.info-item label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.info-item span{font-weight:500}
+.color-swatches{display:flex;gap:8px;margin-top:8px}
+.swatch{width:24px;height:24px;border-radius:6px;border:1px solid var(--border)}
+.tags-list{display:flex;flex-wrap:wrap;gap:8px}
+.tag{padding:6px 14px;background:var(--surface);border:1px solid var(--border);border-radius:99px;font-size:.8rem}
+
+.pages-section{margin-top:48px}
+.pages-section h2{font-size:1.4rem;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.pages-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.page-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s}
+.page-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.page-thumb{height:160px;background:var(--surface);overflow:hidden}
+.page-thumb iframe{width:200%;height:200%;transform:scale(.5);transform-origin:top left;pointer-events:none}
+.page-info{padding:16px;display:flex;justify-content:space-between;align-items:center}
+.page-info h4{font-size:.95rem;font-weight:500}
+.page-info .view-btn{padding:6px 14px;background:var(--accent);color:#fff;border-radius:8px;font-size:.78rem}
+
+.site-footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--muted);font-size:.85rem;margin-top:60px}
+
+@media(max-width:768px){
+  .detail-container{padding:24px 16px}
+  .info-grid{grid-template-columns:1fr}
+  .pages-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="header-inner">
+  <a href="index.html" class="logo">全職設計<span>視角</span></a>
+  <a href="index.html" class="back-link">← 返回模板列表</a>
+</div>
+</header>
+
+<div class="detail-container">
+  <div class="template-header">
+    <div class="preview-frame">
+      <iframe id="previewFrame" src=""></iframe>
+      <div class="preview-actions">
+        <a href="#" id="newTabLink" target="_blank">新分頁開啟</a>
+      </div>
+    </div>
+    <div class="template-info">
+      <h1 id="templateName">模板名稱</h1>
+      <div class="template-meta">
+        <span id="templateIndustry">產業</span>
+        <span id="templatePages">12 頁</span>
+        <span id="templateTheme">Light</span>
+      </div>
+      <p class="template-desc" id="templateDesc">模板描述</p>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <label>佈局類型</label>
+          <span id="templateLayout">Split Hero</span>
+        </div>
+        <div class="info-item">
+          <label>手機選單</label>
+          <span id="templateMenu">右側</span>
+        </div>
+        <div class="info-item">
+          <label>字體</label>
+          <span id="templateFonts">Noto Sans TC</span>
+        </div>
+        <div class="info-item">
+          <label>配色</label>
+          <div class="color-swatches" id="colorSwatches"></div>
+        </div>
+      </div>
+      
+      <div class="tags-list" id="tagsList"></div>
+      <a href="#" id="downloadPromptBtn" class="download-prompt-btn" download="prompt.md">
+        ⬇ 下載 AI 生成提示詞 (prompt.md)
+      </a>
+    </div>
+  </div>
+
+  <section class="pages-section">
+    <h2>所有頁面 (<span id="pageCount">12</span>)</h2>
+    <div class="pages-grid" id="pagesGrid"></div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 全職設計視角</p>
+</footer>
+
+<script>
+const templates = {
+  'template-001-aurora-beauty': {
+    name: 'Aurora 美學沙龍',
+    industry: '美容 / SPA',
+    theme: 'Light',
+    description: '優雅奶油色系美容沙龍網站，以溫潤的金色點綴搭配大量留白，傳達高質感與專業美學。適合美容院、SPA、美甲美睫、皮膚管理等美容產業。',
+    layout: 'Split Hero',
+    menu: '右側',
+    fonts: 'Noto Serif TC, Noto Sans TC',
+    colors: ['#faf6f1', '#c9a574', '#a67c4a', '#2c2825', '#ffffff'],
+    tags: ['美容', 'SPA', '沙龍', '奶油色', '金色', '優雅', '預約制'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'services.html', name: '服務項目'},
+      {file: 'service-detail.html', name: '服務細節'},
+      {file: 'portfolio.html', name: '作品案例'},
+      {file: 'reviews.html', name: '顧客好評'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'booking.html', name: '預約諮詢'},
+      {file: 'process.html', name: '服務流程'},
+      {file: 'blog.html', name: '美容知識'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-002-kuroshio-ramen': {
+    name: '黑潮拉麵 KUROSHIO',
+    industry: '餐飲 / 日式料理',
+    theme: 'Dark',
+    description: '暗黑金色系日式拉麵店網站，以沉浸式全屏 Hero 與日本職人美學為核心，呈現專注與堅持的品牌精神。適合日式餐廳、拉麵店、居酒屋等餐飲業。',
+    layout: 'Immersive Hero',
+    menu: '左側',
+    fonts: 'Noto Serif TC, Noto Sans TC',
+    colors: ['#0a0a0a', '#141414', '#d4a853', '#f5f5f0', '#1a1a1a'],
+    tags: ['拉麵', '日式', '餐飲', '暗色', '金色', '職人', '沉浸式'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '職人精神'},
+      {file: 'menu.html', name: '菜單'},
+      {file: 'menu-detail.html', name: '招牌推薦'},
+      {file: 'atmosphere.html', name: '店內風景'},
+      {file: 'reviews.html', name: '食客評價'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'process.html', name: '製麵工序'},
+      {file: 'blog.html', name: '拉麵誌'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'specials.html', name: '季節限定'},
+      {file: 'events.html', name: '活動企劃'},
+      {file: 'contact.html', name: '店舖資訊'}
+    ]
+  },
+  'template-003-maison-noir-fashion': {
+    name: 'Maison Noir 當代時裝',
+    industry: '時尚 / 精品',
+    theme: 'Light',
+    description: '極簡編輯風格時裝品牌網站，大量留白搭配襯線字體營造高端雜誌感。適合時裝品牌、設計師品牌、精品選物店、生活風格品牌。',
+    layout: 'Editorial Magazine',
+    menu: '右側',
+    fonts: 'Cormorant Garamond, Noto Sans TC',
+    colors: ['#ffffff', '#f8f7f5', '#1a1a1a', '#6b6b6b', '#e0ddd8'],
+    tags: ['時裝', '精品', '極簡', '白色', '編輯風', '雜誌感', '高端'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '品牌故事'},
+      {file: 'collection.html', name: '當季系列'},
+      {file: 'collection-detail.html', name: '商品細節'},
+      {file: 'lookbook.html', name: 'Lookbook'},
+      {file: 'sustainability.html', name: '永續理念'},
+      {file: 'stores.html', name: '門市據點'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'blog.html', name: '風格誌'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'process.html', name: '設計工序'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-004-nexus-saas': {
+    name: 'Nexus 智能協作平台',
+    industry: '科技 / SaaS',
+    theme: 'Dark',
+    description: '深色科技感 SaaS 產品網站，以紫藍漸層搭配玻璃擬態卡片與 Bento Grid 佈局，呈現現代化軟體產品形象。適合 SaaS、AI 工具、專案管理等科技公司。',
+    layout: 'Bento Grid',
+    menu: '右側',
+    fonts: 'Inter, Noto Sans TC',
+    colors: ['#0b0b1a', '#7c5cff', '#06d6a0', '#e8e8f0', '#1a1a3a'],
+    tags: ['SaaS', '科技', 'AI', '紫色', '漸層', '玻璃擬態', 'Bento'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'features.html', name: '產品功能'},
+      {file: 'pricing.html', name: '定價方案'},
+      {file: 'case-studies.html', name: '客戶案例'},
+      {file: 'case-study-detail.html', name: '案例詳情'},
+      {file: 'integrations.html', name: '整合生態系'},
+      {file: 'docs.html', name: '開發者文件'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'blog.html', name: '部落格'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'careers.html', name: '加入我們'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-005-terra-organic-farm': {
+    name: 'Terra 有機農場',
+    industry: '農業 / 有機食品',
+    theme: 'Light',
+    description: '溫暖大地色系有機農場網站，以自然攝影與故事敘述捲軸呈現農場的人文精神。適合有機農場、小農品牌、農產直售、食農教育等農業相關產業。',
+    layout: 'Storytelling Scroll',
+    menu: '左側',
+    fonts: 'Playfair Display, Noto Sans TC',
+    colors: ['#faf8f4', '#5c7a3a', '#8b6914', '#2d2a26', '#f0e8d8'],
+    tags: ['有機', '農場', '小農', '大地色', '自然', '故事敘述', '永續'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '農場故事'},
+      {file: 'philosophy.html', name: '有機理念'},
+      {file: 'products.html', name: '當季農產'},
+      {file: 'product-detail.html', name: '農產細節'},
+      {file: 'experiences.html', name: '農場體驗'},
+      {file: 'experience-detail.html', name: '體驗細節'},
+      {file: 'recipes.html', name: '食譜分享'},
+      {file: 'recipe-detail.html', name: '食譜內頁'},
+      {file: 'blog.html', name: '農場日誌'},
+      {file: 'blog-detail.html', name: '日誌內頁'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-006-zenith-law': {
+    name: 'Zenith 法律事務所',
+    industry: '法律 / 專業服務',
+    theme: 'Dark',
+    description: '深邃海軍藍搭配金色點綴的法律事務所網站，以文字為主的設計傳達專業與權威。適合律師事務所、會計師事務所、顧問公司等專業服務業。',
+    layout: 'Text-First',
+    menu: '右側',
+    fonts: 'EB Garamond, Noto Sans TC',
+    colors: ['#0d1b2a', '#142338', '#c8a45c', '#e8e4dc', '#243548'],
+    tags: ['法律', '事務所', '專業', '海軍藍', '金色', '權威', '文字導向'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '事務所簡介'},
+      {file: 'services.html', name: '服務領域'},
+      {file: 'service-detail.html', name: '服務詳情'},
+      {file: 'team.html', name: '律師團隊'},
+      {file: 'team-detail.html', name: '律師簡介'},
+      {file: 'cases.html', name: '成功案例'},
+      {file: 'blog.html', name: '法律專欄'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'resources.html', name: '法律資源'},
+      {file: 'contact.html', name: '聯絡諮詢'}
+    ]
+  },
+  'template-007-canvas-gallery': {
+    name: 'Canvas 當代藝廊',
+    industry: '藝術 / 藝廊',
+    theme: 'Light',
+    description: '極簡純白的當代藝廊網站，以 Masonry 瀑布流展示作品，讓藝術品成為視覺焦點。適合藝廊、美術館、藝術家個人網站、藝術經紀。',
+    layout: 'Masonry Grid',
+    menu: '左側',
+    fonts: 'Space Grotesk, Noto Sans TC',
+    colors: ['#ffffff', '#f9f9f7', '#111111', '#777777', '#e5e5e5'],
+    tags: ['藝術', '藝廊', '展覽', '純白', '極簡', 'Masonry', '當代藝術'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於藝廊'},
+      {file: 'exhibitions.html', name: '當期展覽'},
+      {file: 'exhibition-detail.html', name: '展覽詳情'},
+      {file: 'artists.html', name: '藝術家'},
+      {file: 'artist-detail.html', name: '藝術家簡介'},
+      {file: 'collection.html', name: '典藏作品'},
+      {file: 'shop.html', name: '藝術商店'},
+      {file: 'events.html', name: '活動講座'},
+      {file: 'blog.html', name: '藝術誌'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-008-pawsome-pets': {
+    name: 'Pawsome 寵物美容',
+    industry: '寵物 / 美容',
+    theme: 'Light',
+    description: '活潑粉紅色系寵物美容網站，以圓角設計與可愛動物攝影營造友善氛圍。適合寵物美容、寵物店、動物醫院、寵物旅館等寵物相關產業。',
+    layout: 'Split Hero',
+    menu: '右側',
+    fonts: 'Quicksand, Noto Sans TC',
+    colors: ['#fef9f6', '#e8758f', '#9c6aba', '#2d2525', '#fce4ec'],
+    tags: ['寵物', '美容', '粉紅', '可愛', '活潑', '圓角', '友善'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'services.html', name: '美容服務'},
+      {file: 'service-detail.html', name: '服務細節'},
+      {file: 'pricing.html', name: '服務價目'},
+      {file: 'portfolio.html', name: '毛孩作品'},
+      {file: 'tips.html', name: '寵物知識'},
+      {file: 'tip-detail.html', name: '知識內頁'},
+      {file: 'booking.html', name: '線上預約'},
+      {file: 'reviews.html', name: '顧客好評'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-009-altitude-outdoor': {
+    name: 'Altitude 戶外探索',
+    industry: '戶外 / 運動用品',
+    theme: 'Dark',
+    description: '深色森林綠系戶外探索品牌網站，以沉浸式全屏大自然攝影傳遞冒險精神。適合戶外用品、登山裝備、探索旅遊、極限運動等品牌。',
+    layout: 'Immersive Hero',
+    menu: '右側',
+    fonts: 'Oswald, Noto Sans TC',
+    colors: ['#0a1210', '#1a2e28', '#3d8b5e', '#e8f0ec', '#2a4a3e'],
+    tags: ['戶外', '探索', '冒險', '森林綠', '沉浸式', '登山', '運動'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '品牌故事'},
+      {file: 'products.html', name: '裝備系列'},
+      {file: 'product-detail.html', name: '裝備細節'},
+      {file: 'adventures.html', name: '探索路線'},
+      {file: 'adventure-detail.html', name: '路線詳情'},
+      {file: 'guides.html', name: '戶外知識'},
+      {file: 'guide-detail.html', name: '知識內頁'},
+      {file: 'community.html', name: '探索社群'},
+      {file: 'events.html', name: '活動報名'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-010-lumiere-photography': {
+    name: 'Lumière 攝影工作室',
+    industry: '攝影 / 創作',
+    theme: 'Light',
+    description: '黑白基調攝影工作室網站，以 Masonry 瀑布流展示作品集，底片感色調傳達藝術氣息。適合攝影師、影像工作室、攝影教學、婚攝團隊。',
+    layout: 'Masonry Grid',
+    menu: '左側',
+    fonts: 'Cormorant, Noto Sans TC',
+    colors: ['#ffffff', '#f5f5f5', '#1a1a1a', '#666666', '#e0e0e0'],
+    tags: ['攝影', '黑白', '底片', '藝術', 'Masonry', '工作室', '婚攝'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'portfolio.html', name: '作品集'},
+      {file: 'portfolio-detail.html', name: '作品詳情'},
+      {file: 'services.html', name: '拍攝服務'},
+      {file: 'service-detail.html', name: '服務細節'},
+      {file: 'pricing.html', name: '方案價目'},
+      {file: 'blog.html', name: '攝影日誌'},
+      {file: 'blog-detail.html', name: '日誌內頁'},
+      {file: 'process.html', name: '合作流程'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-011-zen-yoga': {
+    name: 'Zen 瑜伽會館',
+    industry: '瑜伽 / 身心靈',
+    theme: 'Light',
+    description: '寧靜鼠尾草綠瑜伽會館網站，以大量留白與柔和自然光營造平靜氛圍。適合瑜伽教室、冥想中心、身心靈工作坊、健康養生空間。',
+    layout: 'Calm Flow',
+    menu: '右側',
+    fonts: 'Cormorant Garamond, Noto Sans TC',
+    colors: ['#f8faf6', '#8aaa7a', '#5a7a4a', '#2a2e26', '#e8f0e4'],
+    tags: ['瑜伽', '身心靈', '平靜', '鼠尾草綠', '自然', '冥想', '呼吸'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於會館'},
+      {file: 'classes.html', name: '課程總覽'},
+      {file: 'class-detail.html', name: '課程詳情'},
+      {file: 'schedule.html', name: '課表時間'},
+      {file: 'teachers.html', name: '師資介紹'},
+      {file: 'pricing.html', name: '費用方案'},
+      {file: 'space.html', name: '空間介紹'},
+      {file: 'blog.html', name: '身心日記'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-012-forge-gym': {
+    name: 'Forge 健身工廠',
+    industry: '健身 / 運動',
+    theme: 'Dark',
+    description: '粗獷紅黑色系健身工廠網站，以大膽字體與力量感攝影傳達訓練精神。適合健身房、格鬥訓練館、CrossFit、私人教練工作室。',
+    layout: 'Bold Hero',
+    menu: '左側',
+    fonts: 'Anton, Noto Sans TC',
+    colors: ['#0d0d0d', '#1a1111', '#e63946', '#f5f5f0', '#2a1a1a'],
+    tags: ['健身', '運動', '重訓', '紅黑', '粗獷', '力量', '格鬥'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'programs.html', name: '訓練課程'},
+      {file: 'program-detail.html', name: '課程詳情'},
+      {file: 'trainers.html', name: '教練團隊'},
+      {file: 'facilities.html', name: '設備空間'},
+      {file: 'pricing.html', name: '會員方案'},
+      {file: 'schedule.html', name: '課表時間'},
+      {file: 'blog.html', name: '訓練誌'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-013-sapphire-jewelry': {
+    name: 'Sapphire 珠寶',
+    industry: '珠寶 / 奢華精品',
+    theme: 'Dark',
+    description: '深邃藍銀色系珠寶品牌網站，以極致奢華感與大量留白搭配精緻產品攝影。適合珠寶品牌、鑽石商、高級腕錶、精品訂製。',
+    layout: 'Luxury Cinematic',
+    menu: '右側',
+    fonts: 'Cinzel, Noto Sans TC',
+    colors: ['#0a0d1a', '#151a3a', '#c0c8d8', '#d4af37', '#1e3a8a'],
+    tags: ['珠寶', '奢華', '鑽石', '深藍', '銀色', '精品', '訂製'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '品牌故事'},
+      {file: 'collections.html', name: '珠寶系列'},
+      {file: 'collection-detail.html', name: '系列詳情'},
+      {file: 'bespoke.html', name: '訂製服務'},
+      {file: 'craftsmanship.html', name: '工藝傳承'},
+      {file: 'stores.html', name: '門市資訊'},
+      {file: 'news.html', name: '最新消息'},
+      {file: 'news-detail.html', name: '消息內頁'},
+      {file: 'care.html', name: '珠寶保養'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-014-bloom-floristry': {
+    name: 'Bloom 花藝工作室',
+    industry: '花藝 / 婚禮',
+    theme: 'Light',
+    description: '浪漫粉彩色系花藝工作室網站，以有機圓弧形狀與柔美花卉攝影營造浪漫氛圍。適合花店、花藝教室、婚禮花藝、園藝設計。',
+    layout: 'Organic Soft',
+    menu: '右側',
+    fonts: 'Playfair Display, Noto Sans TC',
+    colors: ['#fdf8f5', '#e89bae', '#a8c5a0', '#3a2d2d', '#fce8ee'],
+    tags: ['花藝', '浪漫', '粉彩', '婚禮', '有機形狀', '花束', '課程'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'portfolio.html', name: '花藝作品'},
+      {file: 'order.html', name: '花束訂購'},
+      {file: 'order-detail.html', name: '花束詳情'},
+      {file: 'weddings.html', name: '婚禮花藝'},
+      {file: 'courses.html', name: '花藝課程'},
+      {file: 'course-detail.html', name: '課程詳情'},
+      {file: 'blog.html', name: '花語日記'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-015-circuit-repair': {
+    name: 'Circuit 電子維修',
+    industry: '科技 / 維修服務',
+    theme: 'Dark',
+    description: '終端機風格電子維修網站，以霓虹綠搭配黑底營造駭客美學。適合手機維修、電腦維修、3C 維修、資料救援等維修服務業。',
+    layout: 'Terminal Grid',
+    menu: '左側',
+    fonts: 'JetBrains Mono, Noto Sans TC',
+    colors: ['#0a0f0a', '#1a241a', '#39ff14', '#e0f0e0', '#1e3a1e'],
+    tags: ['電子', '維修', '科技', '霓虹綠', '終端機', '駭客', '3C'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'services.html', name: '維修服務'},
+      {file: 'service-detail.html', name: '服務詳情'},
+      {file: 'process.html', name: '維修流程'},
+      {file: 'pricing.html', name: '價目表'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'cases.html', name: '維修案例'},
+      {file: 'blog.html', name: '科技新知'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'parts.html', name: '零件品質'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-016-haven-bnb': {
+    name: 'Haven 山居民宿',
+    industry: '民宿 / 旅遊',
+    theme: 'Light',
+    description: '溫暖木質色系山居民宿網站，以大量自然光攝影與溫馨文案營造歸屬感。適合民宿、旅館、渡假村、露營地等住宿產業。',
+    layout: 'Photography Hero',
+    menu: '右側',
+    fonts: 'Libre Baskerville, Noto Sans TC',
+    colors: ['#faf7f2', '#8b5e3c', '#6b3f1f', '#2c231c', '#e8ddd0'],
+    tags: ['民宿', '山居', '旅遊', '木質', '溫馨', '自然', '清境'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於民宿'},
+      {file: 'rooms.html', name: '客房介紹'},
+      {file: 'room-detail.html', name: '客房詳情'},
+      {file: 'dining.html', name: '餐飲服務'},
+      {file: 'attractions.html', name: '周邊景點'},
+      {file: 'reviews.html', name: '旅客評價'},
+      {file: 'booking.html', name: '訂房資訊'},
+      {file: 'gallery.html', name: '相片集'},
+      {file: 'blog.html', name: '旅誌'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-017-pulse-music': {
+    name: 'Pulse 音樂工作室',
+    industry: '音樂 / 錄音製作',
+    theme: 'Dark',
+    description: '動感紫橘漸層音樂工作室網站，以音波視覺效果與活力配色傳遞音樂能量。適合錄音室、音樂製作、Podcast 錄製、音樂教學。',
+    layout: 'Dynamic Gradient',
+    menu: '右側',
+    fonts: 'Poppins, Noto Sans TC',
+    colors: ['#0d0d14', '#1a1a28', '#8b5cf6', '#f97316', '#ec4899'],
+    tags: ['音樂', '錄音', '製作', '紫橘', '漸層', '動感', '音波'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'services.html', name: '錄音服務'},
+      {file: 'service-detail.html', name: '服務詳情'},
+      {file: 'portfolio.html', name: '作品試聽'},
+      {file: 'equipment.html', name: '設備介紹'},
+      {file: 'pricing.html', name: '收費方案'},
+      {file: 'blog.html', name: '音樂專欄'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'artists.html', name: '合作藝人'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡預約'}
+    ]
+  },
+  'template-018-matcha-tea': {
+    name: 'Matcha 茶道空間',
+    industry: '茶道 / 日式餐飲',
+    theme: 'Light',
+    description: '禪風抹茶綠茶道空間網站，以日式美學與大量留白營造寧靜氛圍。適合日式茶屋、茶道教室、日本料理、禪意空間。',
+    layout: 'Zen Minimal',
+    menu: '左側',
+    fonts: 'Noto Serif TC, Noto Sans TC',
+    colors: ['#f5f7f2', '#5a7a48', '#d4e5c8', '#2a2e26', '#d8e0d0'],
+    tags: ['茶道', '抹茶', '日式', '禪風', '侘寂', '極簡', '靜謐'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '茶道文化'},
+      {file: 'menu.html', name: '茶品菜單'},
+      {file: 'menu-detail.html', name: '茶品詳情'},
+      {file: 'sweets.html', name: '抹茶甜點'},
+      {file: 'experience.html', name: '茶道體驗'},
+      {file: 'experience-detail.html', name: '體驗詳情'},
+      {file: 'space.html', name: '空間介紹'},
+      {file: 'blog.html', name: '茶人日記'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-019-vertex-architecture': {
+    name: 'Vertex 建築事務所',
+    industry: '建築 / 設計',
+    theme: 'Light',
+    description: '幾何精準混凝土灰建築事務所網站，以不對稱版面與大量建築攝影展現設計力。適合建築師、室內設計、都市規劃、景觀設計事務所。',
+    layout: 'Asymmetric Grid',
+    menu: '右側',
+    fonts: 'Space Grotesk, Noto Sans TC',
+    colors: ['#f4f4f2', '#888888', '#1a1a1a', '#666666', '#ebebeb'],
+    tags: ['建築', '設計', '幾何', '混凝土', '精準', '永續', '事務所'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '事務所簡介'},
+      {file: 'projects.html', name: '建築作品'},
+      {file: 'project-detail.html', name: '作品詳情'},
+      {file: 'philosophy.html', name: '設計理念'},
+      {file: 'services.html', name: '服務項目'},
+      {file: 'team.html', name: '團隊成員'},
+      {file: 'press.html', name: '媒體報導'},
+      {file: 'blog.html', name: '建築誌'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'careers.html', name: '加入我們'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-020-noir-bar': {
+    name: 'Noir 酒吧',
+    industry: '餐飲 / 酒吧',
+    theme: 'Dark',
+    description: '慵懶酒紅金色系雞尾酒吧網站，以 Speakeasy 風格與暗色調營造神秘氛圍。適合雞尾酒吧、威士忌酒吧、夜店、私人會所。',
+    layout: 'Moody Cinematic',
+    menu: '左側',
+    fonts: 'Bodoni Moda, Noto Sans TC',
+    colors: ['#0d0808', '#241515', '#8b1a2a', '#c8a45c', '#3a2020'],
+    tags: ['酒吧', '調酒', '夜生活', '酒紅', '金色', 'Speakeasy', '神秘'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '酒吧故事'},
+      {file: 'menu.html', name: '調酒菜單'},
+      {file: 'menu-detail.html', name: '調酒詳情'},
+      {file: 'specials.html', name: '本月特調'},
+      {file: 'bartenders.html', name: '調酒師'},
+      {file: 'events.html', name: '活動之夜'},
+      {file: 'private.html', name: '包場資訊'},
+      {file: 'gallery.html', name: '氛圍相簿'},
+      {file: 'blog.html', name: '酒知識'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-021-sprout-kindergarten': {
+    name: 'Sprout 小芽幼兒園',
+    industry: '教育 / 幼兒園',
+    theme: 'Light',
+    description: '多彩活潑幼兒園網站，以圓潤設計與繽紛色彩營造安全溫暖氛圍。適合幼兒園、托兒所、兒童才藝班、親子空間。',
+    layout: 'Playful Rounded',
+    menu: '右側',
+    fonts: 'Fredoka One, Noto Sans TC',
+    colors: ['#fffef8', '#ffd43b', '#ff6b9d', '#4ecdc4', '#a78bfa'],
+    tags: ['幼兒園', '教育', '兒童', '多彩', '活潑', '安全', '雙語'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'philosophy.html', name: '教學理念'},
+      {file: 'programs.html', name: '課程介紹'},
+      {file: 'program-detail.html', name: '課程詳情'},
+      {file: 'facilities.html', name: '校園環境'},
+      {file: 'teachers.html', name: '師資團隊'},
+      {file: 'parents.html', name: '家長專區'},
+      {file: 'events.html', name: '活動花絮'},
+      {file: 'gallery.html', name: '相片集'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-022-atlas-travel': {
+    name: 'Atlas 旅行社',
+    industry: '旅遊 / 旅行社',
+    theme: 'Light',
+    description: '開闊天空藍旅行社網站，以壯闊目的地攝影與冒險氣息吸引旅人。適合旅行社、訂房平台、導遊服務、主題旅遊公司。',
+    layout: 'Adventure Hero',
+    menu: '右側',
+    fonts: 'Montserrat, Noto Sans TC',
+    colors: ['#f8fbff', '#0ea5e9', '#0369a1', '#1a2a3a', '#f5e6d3'],
+    tags: ['旅遊', '旅行', '冒險', '天空藍', '開闊', '探索', '行程'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於我們'},
+      {file: 'tours.html', name: '熱門行程'},
+      {file: 'tour-detail.html', name: '行程詳情'},
+      {file: 'themes.html', name: '主題旅遊'},
+      {file: 'custom.html', name: '自由行規劃'},
+      {file: 'guides.html', name: '旅遊攻略'},
+      {file: 'guide-detail.html', name: '攻略內頁'},
+      {file: 'reviews.html', name: '旅客評價'},
+      {file: 'gallery.html', name: '目的地相簿'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'contact.html', name: '聯絡我們'}
+    ]
+  },
+  'template-023-ember-yakiniku': {
+    name: 'Ember 炭火燒肉',
+    industry: '餐飲 / 燒肉',
+    theme: 'Dark',
+    description: '戲劇性火焰紅燒肉店網站，以大膽排版與食慾攝影營造炙烤氛圍。適合燒肉店、牛排館、炭烤料理、高級日式餐廳。',
+    layout: 'Bold Dramatic',
+    menu: '左側',
+    fonts: 'Oswald, Noto Sans TC',
+    colors: ['#0d0505', '#241010', '#e63946', '#ff6b35', '#c8a430'],
+    tags: ['燒肉', '餐飲', '日式', '火焰', '炭烤', '和牛', '高級'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '品牌故事'},
+      {file: 'menu.html', name: '菜單介紹'},
+      {file: 'menu-detail.html', name: '菜單詳情'},
+      {file: 'ingredients.html', name: '嚴選食材'},
+      {file: 'dining.html', name: '用餐方式'},
+      {file: 'stores.html', name: '門市資訊'},
+      {file: 'news.html', name: '最新消息'},
+      {file: 'news-detail.html', name: '消息內頁'},
+      {file: 'gallery.html', name: '美食相簿'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'reservation.html', name: '線上訂位'}
+    ]
+  },
+  'template-024-ivory-dental': {
+    name: 'Ivory 牙醫診所',
+    industry: '醫療 / 牙醫',
+    theme: 'Light',
+    description: '清新薄荷白牙醫診所網站，以專業乾淨的醫療介面傳達信任感。適合牙醫診所、醫美診所、眼科、家庭醫學診所等醫療產業。',
+    layout: 'Clean Medical',
+    menu: '右側',
+    fonts: 'Inter, Noto Sans TC',
+    colors: ['#f8fffe', '#2dd4bf', '#0d9488', '#1e293b', '#e0f2f1'],
+    tags: ['牙醫', '醫療', '診所', '薄荷', '專業', '乾淨', '信任'],
+    pages: [
+      {file: 'index.html', name: '首頁'},
+      {file: 'about.html', name: '關於診所'},
+      {file: 'team.html', name: '醫療團隊'},
+      {file: 'services.html', name: '診療項目'},
+      {file: 'service-detail.html', name: '項目詳情'},
+      {file: 'cases.html', name: '案例分享'},
+      {file: 'info.html', name: '就診資訊'},
+      {file: 'blog.html', name: '衛教專欄'},
+      {file: 'blog-detail.html', name: '文章內頁'},
+      {file: 'technology.html', name: '設備介紹'},
+      {file: 'faq.html', name: '常見問題'},
+      {file: 'appointment.html', name: '線上預約'}
+    ]
+  }
+};
+
+function loadTemplate() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || 'template-001-aurora-beauty';
+  const template = templates[id];
+  
+  if (!template) {
+    document.querySelector('.detail-container').innerHTML = '<p style="text-align:center;padding:100px">模板不存在</p>';
+    return;
+  }
+
+  const basePath = `templates/${id}/`;
+
+  document.title = `${template.name} — 全職設計視角`;
+  document.getElementById('templateName').textContent = template.name;
+  document.getElementById('templateIndustry').textContent = template.industry;
+  document.getElementById('templatePages').textContent = `${template.pages.length} 頁`;
+  document.getElementById('templateTheme').textContent = template.theme;
+  document.getElementById('templateDesc').textContent = template.description;
+  document.getElementById('templateLayout').textContent = template.layout;
+  document.getElementById('templateMenu').textContent = template.menu;
+  document.getElementById('templateFonts').textContent = template.fonts;
+  document.getElementById('pageCount').textContent = template.pages.length;
+
+  // Colors
+  const swatches = document.getElementById('colorSwatches');
+  swatches.innerHTML = template.colors.map(c => `<div class="swatch" style="background:${c}" title="${c}"></div>`).join('');
+
+  // Tags
+  const tagsList = document.getElementById('tagsList');
+  tagsList.innerHTML = template.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+  // Preview iframe
+  const previewFrame = document.getElementById('previewFrame');
+  const firstPage = basePath + template.pages[0].file;
+  previewFrame.src = firstPage;
+  document.getElementById('newTabLink').href = firstPage;
+
+  // Download prompt button
+  const promptBtn = document.getElementById('downloadPromptBtn');
+  promptBtn.href = basePath + 'prompt.md';
+
+  // Pages grid
+  const pagesGrid = document.getElementById('pagesGrid');
+  pagesGrid.innerHTML = template.pages.map(page => `
+    <a href="${basePath + page.file}" target="_blank" class="page-card">
+      <div class="page-thumb">
+        <iframe src="${basePath + page.file}" loading="lazy"></iframe>
+      </div>
+      <div class="page-info">
+        <h4>${page.name}</h4>
+        <span class="view-btn">開啟</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+loadTemplate();
+</script>
+</body>
+</html>

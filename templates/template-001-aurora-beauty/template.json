@@ -1,0 +1,27 @@
+{
+  "id": "template-001-aurora-beauty",
+  "name": "Aurora 美學沙龍",
+  "description": "優雅奶油色系美容沙龍網站，以溫潤的金色點綴搭配大量留白，傳達高質感與專業美學。適合美容院、SPA、美甲美睫、皮膚管理等美容產業。",
+  "industry": "美容 / SPA",
+  "theme": "light",
+  "colorScheme": ["#faf6f1", "#c9a574", "#a67c4a", "#2c2825", "#ffffff"],
+  "fonts": ["Noto Serif TC", "Noto Sans TC"],
+  "layout": "split-hero",
+  "mobileMenu": "right",
+  "pages": [
+    {"file": "index.html", "name": "首頁"},
+    {"file": "about.html", "name": "關於我們"},
+    {"file": "services.html", "name": "服務項目"},
+    {"file": "service-detail.html", "name": "服務細節"},
+    {"file": "portfolio.html", "name": "作品案例"},
+    {"file": "reviews.html", "name": "顧客好評"},
+    {"file": "faq.html", "name": "常見問題"},
+    {"file": "booking.html", "name": "預約諮詢"},
+    {"file": "process.html", "name": "服務流程"},
+    {"file": "blog.html", "name": "美容知識"},
+    {"file": "blog-detail.html", "name": "文章內頁"},
+    {"file": "contact.html", "name": "聯絡我們"}
+  ],
+  "features": ["sticky-header", "hamburger-menu", "accordion-faq", "booking-form", "timeline", "image-gallery", "responsive"],
+  "preview": "preview.jpg"
+}

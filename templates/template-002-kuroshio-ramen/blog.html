@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拉麵誌｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="黑潮拉麵的拉麵文化專欄 — 分享職人知識、食材故事與拉麵文化。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}.page-hero h1{font-size:2rem;letter-spacing:2px}
+section{padding:80px 0}
+.blog-list{display:flex;flex-direction:column;gap:32px}
+.blog-card{display:grid;grid-template-columns:280px 1fr;gap:28px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.3s}
+.blog-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+@media(max-width:768px){.blog-card{grid-template-columns:1fr}}
+.blog-card img{width:100%;height:100%;min-height:200px;object-fit:cover}
+.blog-card .body{padding:28px 28px 28px 0;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:768px){.blog-card .body{padding:20px}}
+.blog-card .meta{display:flex;gap:12px;margin-bottom:8px;font-size:.78rem;color:var(--muted)}
+.blog-card .meta .cat{color:var(--gold)}
+.blog-card h3{font-size:1.1rem;margin-bottom:8px}
+.blog-card p{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+.blog-card .read{color:var(--gold);font-size:.82rem}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<div class="page-hero"><p class="jp">ラーメン誌</p><h1>拉麵誌</h1></div>
+
+<section>
+<div class="container">
+<div class="blog-list">
+  <a href="blog-detail.html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80" alt="豚骨湯底">
+    <div class="body">
+      <div class="meta"><span class="cat">職人知識</span><span>2026.03.08</span></div>
+      <h3>為什麼我們堅持熬 18 小時？— 豚骨湯底的科學</h3>
+      <p>很多人問：「湯底真的需要熬這麼久嗎？」答案是肯定的。本文從食品科學角度解釋為什麼時間是豚骨湯底的關鍵。</p>
+      <span class="read">閱讀全文 →</span>
+    </div>
+  </a>
+  <a href="blog-detail.html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=600&q=80" alt="麵條">
+    <div class="body">
+      <div class="meta"><span class="cat">食材故事</span><span>2026.02.20</span></div>
+      <h3>含水率 28% 的秘密 — 為什麼我們的麵條不一樣</h3>
+      <p>拉麵的靈魂不只在湯底，麵條的口感同樣重要。每一個百分比的含水率差異，都會帶來截然不同的咀嚼體驗。</p>
+      <span class="read">閱讀全文 →</span>
+    </div>
+  </a>
+  <a href="blog-detail.html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=600&q=80" alt="修行">
+    <div class="body">
+      <div class="meta"><span class="cat">職人日常</span><span>2026.02.05</span></div>
+      <h3>凌晨四點的日常 — 一位拉麵師傅的一天</h3>
+      <p>在客人享用那碗拉麵之前，師傅早已工作了七個小時。帶你走進黑潮廚房的真實日常。</p>
+      <span class="read">閱讀全文 →</span>
+    </div>
+  </a>
+  <a href="blog-detail.html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=600&q=80" alt="拉麵文化">
+    <div class="body">
+      <div class="meta"><span class="cat">拉麵文化</span><span>2026.01.15</span></div>
+      <h3>東京四大拉麵流派 — 你是哪一派？</h3>
+      <p>豚骨、醬油、味噌、鹽味 — 日本四大拉麵流派各有其歷史與哲學，你最喜歡哪一碗？</p>
+      <span class="read">閱讀全文 →</span>
+    </div>
+  </a>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

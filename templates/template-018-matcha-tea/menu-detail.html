@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>濃茶 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.breadcrumb{padding:16px 0;font-size:.85rem;color:var(--muted)}
+.breadcrumb a{color:var(--matcha)}
+
+.detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:40px 0 80px;align-items:start}
+.detail-hero img{width:100%;border-radius:var(--radius);height:450px;object-fit:cover}
+.detail-info h1{font-size:2rem;margin-bottom:8px}
+.detail-info .jp{color:var(--muted);font-size:1rem;margin-bottom:20px}
+.detail-info .price{font-family:'Noto Serif TC',serif;font-size:1.5rem;color:var(--brown);margin-bottom:24px}
+.detail-info p{color:var(--muted);margin-bottom:16px;font-size:.95rem}
+
+.process{margin-top:40px}
+.process h2{font-size:1.3rem;margin-bottom:24px}
+.step{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+.step-num{width:32px;height:32px;background:var(--matcha-light);color:var(--matcha);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.step-content h3{font-size:1rem;margin-bottom:4px}
+.step-content p{color:var(--muted);font-size:.88rem}
+
+.pairing{background:var(--cream);padding:40px;border-radius:var(--radius);margin-top:40px}
+.pairing h2{font-size:1.3rem;margin-bottom:16px}
+.pairing-items{display:flex;gap:24px;flex-wrap:wrap}
+.pairing-item{background:var(--white);padding:16px 20px;border-radius:var(--radius);font-size:.9rem}
+
+.origin{margin-top:40px;padding:32px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius)}
+.origin h2{font-size:1.3rem;margin-bottom:16px}
+.origin-details{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.origin-item{font-size:.9rem}
+.origin-item dt{color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.origin-item dd{font-weight:400}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+.detail-hero{grid-template-columns:1fr}
+.origin-details{grid-template-columns:1fr}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<div class="container">
+<div class="breadcrumb"><a href="index.html">首頁</a> / <a href="menu.html">茶品菜單</a> / 濃茶</div>
+</div>
+
+<section>
+<div class="container">
+<div class="detail-hero">
+<img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=700&q=80" alt="濃茶">
+<div class="detail-info">
+<h1>濃茶</h1>
+<div class="jp">こいちゃ — Koicha</div>
+<div class="price">$280</div>
+<p>濃茶是茶道中最為正式的一碗茶。使用約薄茶三倍的抹茶粉量，以較少的熱水，用茶筅緩慢地「練り」（揉捏）而非「点てる」（點打），形成如濃稠絲綢般的質地。</p>
+<p>我們使用來自京都宇治的一番摘有機抹茶「翠雲」，由百年茶園丸久小山園特別為茶道空間調配。入口後先是溫潤的苦韻，隨後轉為持久的回甘。</p>
+
+<div class="origin">
+<h2>茶葉資訊</h2>
+<div class="origin-details">
+<div class="origin-item"><dt>產地</dt><dd>京都府宇治市</dd></div>
+<div class="origin-item"><dt>茶園</dt><dd>丸久小山園</dd></div>
+<div class="origin-item"><dt>品種</dt><dd>さみどり・あさひ 拼配</dd></div>
+<div class="origin-item"><dt>覆蓋期</dt><dd>約 30 日遮光栽培</dd></div>
+<div class="origin-item"><dt>石臼研磨</dt><dd>傳統花崗岩石臼低溫研磨</dd></div>
+<div class="origin-item"><dt>適飲溫度</dt><dd>80°C</dd></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="process">
+<h2>點茶過程</h2>
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><h3>溫碗</h3><p>以熱水溫潤茶碗，確保抹茶能均勻溶解。</p></div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><h3>篩粉</h3><p>將約 4g 抹茶粉過篩入碗，去除結塊。</p></div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><h3>注水</h3><p>注入約 30ml 的 80°C 熱水。</p></div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><h3>練茶</h3><p>以茶筅緩慢畫圓揉捏，直到形成均勻濃稠的茶膏。</p></div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><h3>奉茶</h3><p>將茶碗正面朝向客人奉上，搭配主菓子。</p></div>
+</div>
+</div>
+
+<div class="pairing">
+<h2>推薦搭配</h2>
+<p style="color:var(--muted);margin-bottom:16px;font-size:.9rem">濃茶的濃醇適合搭配甜度較高的主菓子，甜與苦的對比令人回味。</p>
+<div class="pairing-items">
+<div class="pairing-item">季節練切 +$120</div>
+<div class="pairing-item">栗羊羹 +$100</div>
+<div class="pairing-item">黑糖蕨餅 +$90</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

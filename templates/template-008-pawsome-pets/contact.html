@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯絡我們｜Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s;box-shadow:-4px 0 30px rgba(0,0,0,.1)}
+.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+@media(max-width:768px){nav{display:none}.menu-toggle{display:flex}}
+.page-header{padding:60px 0;text-align:center;background:var(--pink-light)}.page-header h1{font-size:2.2rem;margin-bottom:8px}.page-header p{color:var(--muted)}
+section{padding:60px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.info-section h2{font-size:1.5rem;margin-bottom:24px;color:var(--pink)}
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.info-card .icon{width:48px;height:48px;background:var(--pink-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.info-card h4{font-size:1rem;margin-bottom:4px}.info-card p{font-size:.88rem;color:var(--muted)}
+.map-wrap{border-radius:var(--radius);overflow:hidden;margin-top:24px;height:200px}
+.map-wrap iframe{width:100%;height:100%;border:0}
+.form-section h2{font-size:1.5rem;margin-bottom:24px;color:var(--pink)}
+.contact-form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.9rem;margin-bottom:6px}
+.form-group input,.form-group textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:12px;font-size:.92rem;font-family:inherit}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--pink)}
+.btn{display:inline-block;padding:14px 36px;border-radius:var(--btn-radius);font-weight:500;font-size:.95rem;border:none;cursor:pointer;transition:all .3s}
+.btn-primary{background:var(--pink);color:#fff;width:100%}.btn-primary:hover{background:#d4627a}
+.social-links{display:flex;gap:12px;margin-top:24px}
+.social-links a{width:44px;height:44px;background:var(--pink-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s}
+.social-links a:hover{background:var(--pink);color:#fff}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:60px}
+.footer-bottom{text-align:center;font-size:.82rem;color:var(--muted);padding-top:20px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<header><div class="container">
+<a href="index.html" class="logo">Paw<span>some</span></a>
+<nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<div class="menu-toggle" onclick="openNav()"><span></span><span></span><span></span></div>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav" id="mobileNav"><span class="close-btn" onclick="closeNav()">&times;</span><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<div class="page-header"><h1>聯絡我們</h1><p>有任何問題歡迎與我們聯繫</p></div>
+
+<section><div class="container">
+<div class="contact-grid">
+<div class="info-section">
+<h2>店舖資訊</h2>
+<div class="info-card"><div class="icon">📍</div><div><h4>地址</h4><p>台北市中山區南京東路二段 88 號 1 樓<br>（近捷運松江南京站 7 號出口）</p></div></div>
+<div class="info-card"><div class="icon">📞</div><div><h4>電話</h4><p>02-2567-8899</p></div></div>
+<div class="info-card"><div class="icon">💬</div><div><h4>LINE 官方帳號</h4><p>@pawsome<br>線上預約、諮詢最方便</p></div></div>
+<div class="info-card"><div class="icon">⏰</div><div><h4>營業時間</h4><p>週二至週日 10:00 – 19:00<br>週一公休</p></div></div>
+<div class="info-card"><div class="icon">🚗</div><div><h4>停車資訊</h4><p>南京東路特約停車場（步行 2 分鐘）<br>消費滿額可折抵停車費</p></div></div>
+<div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5!2d121.53!3d25.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAzJzAwLjAiTiAxMjHCsDMxJzQ4LjAiRQ!5e0!3m2!1szh-TW!2stw!4v1" allowfullscreen loading="lazy"></iframe></div>
+<div class="social-links">
+<a href="#" title="Facebook">FB</a>
+<a href="#" title="Instagram">IG</a>
+<a href="#" title="LINE">LINE</a>
+</div>
+</div>
+<div class="form-section">
+<h2>留言給我們</h2>
+<form class="contact-form" onsubmit="handleContact(event)">
+<div class="form-group"><label>您的姓名 *</label><input type="text" required placeholder="請輸入姓名"></div>
+<div class="form-group"><label>聯絡電話 *</label><input type="tel" required placeholder="0912-345-678"></div>
+<div class="form-group"><label>電子信箱</label><input type="email" placeholder="example@email.com"></div>
+<div class="form-group"><label>詢問內容 *</label><textarea rows="5" required placeholder="請輸入您想詢問的問題或建議"></textarea></div>
+<button type="submit" class="btn btn-primary">送出留言</button>
+</form>
+</div>
+</div>
+</div></section>
+
+<footer><div class="container"><div class="footer-bottom">© 2026 Pawsome 寵物美容. All rights reserved.</div></div></footer>
+<script>function openNav(){document.getElementById('mobileNav').classList.add('active');document.getElementById('overlay').classList.add('active')}function closeNav(){document.getElementById('mobileNav').classList.remove('active');document.getElementById('overlay').classList.remove('active')}function handleContact(e){e.preventDefault();alert('感謝您的留言！我們會盡快回覆您。');e.target.reset()}</script>
+</body>
+</html>

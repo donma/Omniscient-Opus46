@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>職人精神｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="黑潮拉麵的品牌故事與職人精神 — 從湯底、麵條到叉燒的堅持。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{position:relative;height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=1400&q=80') center/cover;filter:brightness(.3)}
+.page-hero .content{position:relative;z-index:2}.page-hero .jp{font-size:.8rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}
+.page-hero h1{font-size:2.2rem;letter-spacing:3px}
+section{padding:80px 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:768px){.story{grid-template-columns:1fr}}
+.story img{border-radius:var(--radius);width:100%;height:400px;object-fit:cover}
+.story .text h2{font-size:1.5rem;color:var(--gold);margin-bottom:16px}
+.story .text p{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+.timeline{margin-top:80px;position:relative;padding-left:48px}
+.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:var(--border)}
+.timeline-item{margin-bottom:48px;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-40px;top:8px;width:12px;height:12px;background:var(--gold);border-radius:50%}
+.timeline-item h4{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-bottom:4px}
+.timeline-item h3{font-size:1.1rem;margin-bottom:6px}
+.timeline-item p{color:var(--muted);font-size:.88rem}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
+@media(max-width:768px){.values{grid-template-columns:repeat(2,1fr)}}
+.value-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center}
+.value-card .num{font-size:2rem;font-weight:900;color:var(--gold);font-family:'Noto Serif TC',serif}
+.value-card p{color:var(--muted);font-size:.82rem;margin-top:4px}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<section class="page-hero"><div class="content"><p class="jp">こだわり</p><h1>職人精神</h1></div></section>
+
+<section>
+<div class="container">
+<div class="story">
+  <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=800&q=80" alt="店主">
+  <div class="text">
+    <h2>從東京到台北的拉麵之路</h2>
+    <p>2015 年，創辦人陳師傅遠赴東京，在池袋的名店「無敵家」拜師學藝三年。從洗碗開始，到獨立製湯，每天面對的是一碗湯的成敗。</p>
+    <p>「在日本學到最重要的不是配方，而是對一碗拉麵的態度。」陳師傅說：「每一碗送出去的麵，都是你的名片。」</p>
+    <p>2019 年帶著這份信念回到台北，在大安區的巷弄裡開了這間只有 18 個座位的小店。不求擴張，只求每一碗都是自己滿意的作品。</p>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="timeline-item"><h4>2015</h4><h3>赴日修行</h3><p>東京池袋「無敵家」拜師學藝，從基礎開始扎實訓練</p></div>
+  <div class="timeline-item"><h4>2017</h4><h3>獨立製湯</h3><p>經過兩年磨練，獲得師傅認可開始獨立熬煮湯底</p></div>
+  <div class="timeline-item"><h4>2018</h4><h3>研發配方</h3><p>開始研發適合台灣人口味的湯底配方，歷經 200 次以上調整</p></div>
+  <div class="timeline-item"><h4>2019</h4><h3>黑潮開業</h3><p>台北大安區正式開業，18 個座位的小店很快一位難求</p></div>
+  <div class="timeline-item"><h4>2022</h4><h3>入選必比登</h3><p>連續兩年入選米其林必比登推介，成為巷弄拉麵代表</p></div>
+</div>
+
+<div class="values">
+  <div class="value-card"><div class="num">18hr</div><p>湯底熬煮時間</p></div>
+  <div class="value-card"><div class="num">200+</div><p>配方調整次數</p></div>
+  <div class="value-card"><div class="num">80碗</div><p>每日限量供應</p></div>
+  <div class="value-card"><div class="num">5年</div><p>職人修行歷程</p></div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

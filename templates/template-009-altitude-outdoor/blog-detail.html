@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>第一次百岳就上手 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.9}
+h1,h2,h3{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:800px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.article-hero{padding:160px 0 60px;background:linear-gradient(to bottom,rgba(13,26,15,.4),var(--bg)),url('https://images.unsplash.com/photo-1551632811-561732d1e306?w=1920&q=80') center/cover}
+.article-hero .date{color:var(--earth);font-size:.9rem}
+.article-hero h1{font-size:2.5rem;margin:12px 0}
+.article-hero .author{color:var(--muted)}
+
+.article{padding:60px 0}
+.article p{color:var(--muted);margin-bottom:20px}
+.article h2{color:var(--green);font-size:1.5rem;margin:40px 0 16px}
+.article h3{color:var(--earth);font-size:1.2rem;margin:28px 0 12px}
+.article ul,.article ol{padding-left:24px;margin-bottom:20px}
+.article li{color:var(--muted);margin-bottom:8px}
+.article img{width:100%;border-radius:var(--radius);margin:24px 0}
+.article blockquote{border-left:4px solid var(--green);padding:16px 24px;background:var(--card);border-radius:0 var(--radius) var(--radius) 0;margin:24px 0}
+.article blockquote p{color:var(--text);margin:0;font-style:italic}
+
+.back-link{display:inline-block;margin-top:40px;padding:12px 24px;border:1px solid var(--border);border-radius:var(--radius);color:var(--muted)}
+.back-link:hover{border-color:var(--green);color:var(--green)}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center;margin-top:60px}
+footer .logo{margin-bottom:16px;display:inline-block}footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}footer .foot-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}}
+</style>
+</head>
+<body>
+<nav><div class="nav-container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="trips.html">探索行程</a></li><li><a href="gear.html">裝備推薦</a></li><li><a href="gallery.html">活動相簿</a></li><li><a href="guides.html">嚮導團隊</a></li><li><a href="safety.html">安全須知</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="openNav()">&#9776;</button></div></nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeNav()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="article-hero">
+<div class="container">
+<div class="date">2026.01.15</div>
+<h1>第一次百岳就上手：新手登山完全指南</h1>
+<div class="author">文 / 張凱文（阿凱）</div>
+</div>
+</section>
+
+<article class="article">
+<div class="container">
+
+<p>台灣擁有超過 200 座海拔 3,000 公尺以上的高山，其中「百岳」是由登山前輩精選出的 100 座代表性山峰。對於許多人來說，完成人生第一座百岳是一個重要的里程碑。這篇文章將從零開始，帶你做好一切準備。</p>
+
+<h2>一、選擇適合的入門百岳</h2>
+<p>並非所有百岳都需要高超的技術或體能。以下是我們推薦的新手友善路線：</p>
+<ul>
+<li><strong>合歡山主峰（3,417m）</strong>：步道平緩，來回約 2 小時，是最容易達成的百岳。</li>
+<li><strong>石門山（3,237m）</strong>：號稱「最親民百岳」，步道僅 750 公尺，30 分鐘可登頂。</li>
+<li><strong>合歡山東峰（3,421m）</strong>：稍具挑戰性，來回約 3-4 小時，展望極佳。</li>
+<li><strong>玉山前峰（3,239m）</strong>：較陡峭但距離短，適合想挑戰自我的新手。</li>
+</ul>
+
+<blockquote><p>「不要一開始就挑最難的，循序漸進地累積經驗和信心，才是長久走在山裡的秘訣。」</p></blockquote>
+
+<h2>二、體能準備</h2>
+<p>登百岳需要一定的基礎體能。建議在出發前至少 4-6 週開始訓練：</p>
+<ol>
+<li><strong>心肺訓練</strong>：每週 3 次，每次 30-45 分鐘的慢跑或游泳</li>
+<li><strong>腿部肌力</strong>：深蹲、弓步蹲、爬樓梯是最實用的訓練</li>
+<li><strong>負重行走</strong>：背著 8-10 公斤的背包爬郊山，模擬實際登山負重</li>
+<li><strong>高度適應</strong>：出發前一週可先到 2,000m 左右的地方過夜適應</li>
+</ol>
+
+<h2>三、必備裝備清單</h2>
+<h3>穿著類</h3>
+<ul>
+<li>排汗底層衣（避免棉質）</li>
+<li>保暖中層（刷毛衣或羽絨衣）</li>
+<li>防風防水外層</li>
+<li>登山褲（彈性、快乾材質）</li>
+<li>中筒登山鞋（務必提前磨合）</li>
+<li>排汗襪（建議攜帶備用）</li>
+</ul>
+
+<h3>裝備類</h3>
+<ul>
+<li>40L 登山背包</li>
+<li>頭燈（含備用電池）</li>
+<li>登山杖</li>
+<li>水壺或水袋（至少 1.5L）</li>
+<li>個人藥品、健保卡</li>
+<li>防曬乳、太陽眼鏡、遮陽帽</li>
+</ul>
+
+<img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80" alt="合歡山步道">
+
+<h2>四、高山症預防</h2>
+<p>海拔超過 2,500 公尺後，氣壓降低導致身體可能出現高山症反應。常見症狀包括頭痛、噁心、失眠、食慾不振。</p>
+<ul>
+<li>緩慢上升，讓身體有時間適應</li>
+<li>大量補充水分（每天至少 2-3 公升）</li>
+<li>避免飲酒與服用安眠藥</li>
+<li>若症狀加劇，最有效的治療就是下降高度</li>
+<li>嚴重者可事先諮詢醫師開立預防藥物（如 Diamox）</li>
+</ul>
+
+<h2>五、跟團 vs 自組</h2>
+<p>對於完全沒有登山經驗的新手，我們強烈建議第一次跟隨專業嚮導團隊出行。好處包括：</p>
+<ul>
+<li>嚮導熟悉路線，不用擔心迷路</li>
+<li>行程節奏經過專業規劃，降低高山症風險</li>
+<li>遇到突發狀況有專業人員處理</li>
+<li>可以從嚮導身上學到寶貴的登山知識</li>
+</ul>
+
+<p>當你累積了 3-5 次跟團經驗，對裝備使用、路線判讀和野外生存有了基本概念後，再嘗試自組隊伍也不遲。</p>
+
+<blockquote><p>「山永遠在那裡，不急。做好準備再出發，才能安全地一座接一座走下去。」</p></blockquote>
+
+<a href="blog.html" class="back-link">← 返回冒險日誌</a>
+</div>
+</article>
+
+<footer><div class="container" style="max-width:1200px"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><div class="foot-links"><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a></div><p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p></div></footer>
+<script>function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

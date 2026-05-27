@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>活動相簿 — Sprout 小芽幼兒園</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:0.95rem;font-weight:500}.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:2px solid var(--border)}
+.page-hero h1{font-size:2.5rem;margin-bottom:12px}.page-hero p{color:var(--muted);font-size:1.1rem}
+.section{padding:60px 0}
+.filter-tabs{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+.filter-tab{padding:8px 20px;border-radius:50px;border:2px solid var(--border);background:var(--white);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.3s}
+.filter-tab.active,.filter-tab:hover{background:var(--pink);color:var(--white);border-color:var(--pink)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s}
+.gallery-item:hover{transform:scale(1.03)}
+.gallery-item img{width:100%;height:200px;object-fit:cover}
+.gallery-item .caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:var(--white);padding:12px;font-size:0.8rem}
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}footer a{color:rgba(255,255,255,0.8)}footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s}
+.mobile-menu.active{right:0}.mobile-menu ul{list-style:none}.mobile-menu li{margin-bottom:20px}.mobile-menu a{font-size:1.1rem}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:block}.gallery-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-toggle" onclick="openMenu()">☰</button></div></nav>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+<div class="container">
+<h1>活動相簿 📸</h1>
+<p>記錄孩子們每一個珍貴的成長瞬間</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="filter-tabs">
+<span class="filter-tab active">全部</span>
+<span class="filter-tab">戶外活動</span>
+<span class="filter-tab">藝術創作</span>
+<span class="filter-tab">節慶活動</span>
+<span class="filter-tab">日常學習</span>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=400&h=200&fit=crop" alt="戶外遊戲">
+<div class="caption">戶外自由遊戲時光</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=200&fit=crop" alt="美術創作">
+<div class="caption">水彩畫創作課程</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=200&fit=crop" alt="英文課">
+<div class="caption">英文故事時間</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=200&fit=crop" alt="菜園">
+<div class="caption">有機菜園收穫日</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=200&fit=crop" alt="遊樂場">
+<div class="caption">新遊具探索</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=400&h=200&fit=crop" alt="積木">
+<div class="caption">積木建構挑戰</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=400&h=200&fit=crop" alt="音樂課">
+<div class="caption">音樂律動課程</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=200&fit=crop" alt="閱讀">
+<div class="caption">繪本共讀時光</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=200&fit=crop" alt="烘焙">
+<div class="caption">小小烘焙師活動</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=200&fit=crop" alt="畢業">
+<div class="caption">大班畢業典禮</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=200&fit=crop" alt="教室">
+<div class="caption">主題教室探索</div>
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=200&fit=crop" alt="圖書室">
+<div class="caption">圖書室閱讀角</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Sprout 小芽幼兒園</h4><p>台北市士林區天母西路50號</p><p>電話：(02) 2871-5678</p><p>信箱：hello@sprout-kindergarten.tw</p></div>
+<div><h4>快速連結</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>入學資訊</h4><ul><li><a href="faq.html">常見問題</a></li><li><a href="parents.html">家長手冊</a></li><li><a href="events.html">活動行事曆</a></li><li><a href="contact.html">預約參觀</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

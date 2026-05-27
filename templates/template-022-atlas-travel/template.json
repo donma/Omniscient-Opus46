@@ -1,0 +1,35 @@
+{
+  "id": "template-022-atlas-travel",
+  "name": "Atlas 旅行社",
+  "description": "精品旅行社網站模板，主打小團深度旅遊，藍天冒險風格",
+  "category": "travel",
+  "theme": "light",
+  "version": "1.0.0",
+  "author": "Omniscient",
+  "pages": [
+    "index.html",
+    "about.html",
+    "tours.html",
+    "tour-detail.html",
+    "themes.html",
+    "custom.html",
+    "guides.html",
+    "guide-detail.html",
+    "reviews.html",
+    "gallery.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "fonts": ["Montserrat:wght@600;800", "Noto Sans TC:wght@300;400"],
+  "colors": {
+    "background": "#f8fbff",
+    "white": "#ffffff",
+    "primary": "#0ea5e9",
+    "primaryDark": "#0369a1",
+    "sand": "#f5e6d3",
+    "text": "#1a2a3a",
+    "muted": "#5a6a7a",
+    "border": "#d8e8f8",
+    "accent": "#f97316"
+  }
+}

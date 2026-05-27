@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永續理念 — Maison Noir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+section{padding:100px 0}.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+.page-hero{margin-top:70px;padding:120px 0 80px;text-align:center}
+.page-hero .label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.page-hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-style:italic;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:.9rem;max-width:600px;margin:0 auto}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+@media(max-width:768px){.stats-row{grid-template-columns:1fr 1fr}}
+.stat .number{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;margin-bottom:4px}
+.stat .desc{font-size:.78rem;color:var(--muted);letter-spacing:1px}
+
+.commitment-section{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:500px}
+@media(max-width:768px){.commitment-section{grid-template-columns:1fr}}
+.commitment-image{overflow:hidden}.commitment-image img{width:100%;height:100%;object-fit:cover}
+.commitment-text{display:flex;flex-direction:column;justify-content:center;padding:80px}
+@media(max-width:768px){.commitment-text{padding:48px 24px}}
+.commitment-text .label{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.commitment-text h2{font-size:1.8rem;margin-bottom:16px;font-style:italic}
+.commitment-text p{color:var(--muted);font-size:.88rem;margin-bottom:12px}
+
+.materials{background:var(--offwhite);padding:100px 0}
+.materials h2{text-align:center;font-size:2rem;font-style:italic;margin-bottom:60px}
+.materials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+@media(max-width:768px){.materials-grid{grid-template-columns:1fr}}
+.material-card{text-align:center}
+.material-card img{width:100%;height:240px;object-fit:cover;margin-bottom:20px}
+.material-card h3{font-size:1.2rem;margin-bottom:8px}
+.material-card p{color:var(--muted);font-size:.84rem}
+
+.carbon{padding:100px 0}
+.carbon h2{text-align:center;font-size:2rem;font-style:italic;margin-bottom:16px}
+.carbon>p{text-align:center;color:var(--muted);font-size:.88rem;max-width:600px;margin:0 auto 48px}
+.carbon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:0 auto}
+@media(max-width:768px){.carbon-grid{grid-template-columns:1fr}}
+.carbon-item{border:1px solid var(--border);padding:32px;text-align:center}
+.carbon-item h3{font-size:1rem;margin-bottom:8px}
+.carbon-item p{color:var(--muted);font-size:.82rem}
+
+.recycle{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:450px}
+@media(max-width:768px){.recycle{grid-template-columns:1fr}}
+.recycle-text{display:flex;flex-direction:column;justify-content:center;padding:80px;background:var(--text);color:var(--offwhite)}
+@media(max-width:768px){.recycle-text{padding:48px 24px}}
+.recycle-text .label{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+.recycle-text h2{font-size:1.8rem;margin-bottom:16px;font-style:italic;color:var(--white)}
+.recycle-text p{color:#aaa;font-size:.88rem;margin-bottom:12px}
+.recycle-image{overflow:hidden}.recycle-image img{width:100%;height:100%;object-fit:cover}
+
+.certs{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
+.certs h2{font-size:1.6rem;font-style:italic;margin-bottom:32px}
+.certs-list{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.cert{text-align:center}
+.cert h4{font-size:.9rem;font-family:'Noto Sans TC',sans-serif;font-weight:400;margin-bottom:4px}
+.cert p{font-size:.76rem;color:var(--muted)}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="page-hero">
+<div class="container">
+<p class="label">Sustainability</p>
+<h1>永續理念</h1>
+<p>時尚不該以地球為代價。我們致力於在美學與環境責任之間取得平衡，讓每一件作品都對得起未來。</p>
+</div>
+</div>
+
+<section style="padding-top:0">
+<div class="container">
+<div class="stats-row">
+<div class="stat"><p class="number">100%</p><p class="desc">永續認證面料</p></div>
+<div class="stat"><p class="number">62%</p><p class="desc">碳排放減量（vs 2020）</p></div>
+<div class="stat"><p class="number">0</p><p class="desc">廢棄物掩埋</p></div>
+<div class="stat"><p class="number">12</p><p class="desc">在地合作工坊</p></div>
+</div>
+</div>
+</section>
+
+<div class="commitment-section">
+<div class="commitment-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&q=80" alt="永續面料"></div>
+<div class="commitment-text">
+<p class="label">Our Commitment</p>
+<h2>對地球的承諾</h2>
+<p>自 2020 年起，Maison Noir 所有產品線已全面採用永續認證面料。我們與全球 8 間通過 GOTS、OEKO-TEX 及 GRS 認證的紡織供應商合作，確保從原料到成品的每一步都符合環境標準。</p>
+<p>我們拒絕過度生產。每季僅推出 15-20 件單品，採預購制減少庫存浪費，退回的商品經重新整理後進入二手販售平台，絕不銷毀。</p>
+</div>
+</div>
+
+<section class="materials">
+<div class="container">
+<h2>永續材質</h2>
+<div class="materials-grid">
+<div class="material-card">
+<img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=500&q=80" alt="有機棉">
+<h3>有機棉</h3>
+<p>來自印度與土耳其的 GOTS 認證有機棉田，不使用化學農藥與殺蟲劑，用水量較傳統棉花減少 71%。</p>
+</div>
+<div class="material-card">
+<img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=500&q=80" alt="再生纖維">
+<h3>再生纖維 TENCEL</h3>
+<p>以永續管理的桉樹木漿製成，生產過程中 99% 溶劑可回收再利用，觸感絲滑且具良好透氣性。</p>
+</div>
+<div class="material-card">
+<img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&q=80" alt="回收羊毛">
+<h3>回收羊毛</h3>
+<p>與義大利 Prato 地區的百年紡織廠合作，將舊衣回收分解後重新紡紗織造，賦予廢棄纖維第二次生命。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="carbon">
+<div class="container">
+<h2>碳足跡透明化</h2>
+<p>我們相信透明是負責任的第一步。以下是 Maison Noir 2023 年度環境報告摘要。</p>
+<div class="carbon-grid">
+<div class="carbon-item">
+<h3>生產階段</h3>
+<p>每件單品平均碳排 3.2 kg CO2e，較產業平均值低 58%。透過在地製造縮短運輸距離。</p>
+</div>
+<div class="carbon-item">
+<h3>包裝物流</h3>
+<p>100% 使用再生紙包裝材料，取消塑膠吊牌。台灣本島出貨採電動車配送。</p>
+</div>
+<div class="carbon-item">
+<h3>碳抵銷</h3>
+<p>剩餘無法削減的碳排放，透過投資台灣本土造林計畫進行抵銷，2025 年前達成碳中和。</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="recycle">
+<div class="recycle-text">
+<p class="label">Circular Program</p>
+<h2>舊衣循環計畫</h2>
+<p>將不再穿著的 Maison Noir 單品帶回任一門市，我們將協助整理後轉入品牌二手平台「Encore」販售。</p>
+<p>每件回收單品可獲得面額 NT$500 的品牌折抵券，適用於下次購物。衣物若已無法再穿著，將送至合作工坊拆解回收再利用。</p>
+</div>
+<div class="recycle-image"><img src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?w=900&q=80" alt="回收計畫"></div>
+</div>
+
+<section class="certs">
+<div class="container">
+<h2>認證與夥伴</h2>
+<div class="certs-list">
+<div class="cert"><h4>B Corp</h4><p>自 2018 年起</p></div>
+<div class="cert"><h4>GOTS</h4><p>有機紡織品認證</p></div>
+<div class="cert"><h4>OEKO-TEX</h4><p>無害物質標準</p></div>
+<div class="cert"><h4>GRS</h4><p>全球回收標準</p></div>
+<div class="cert"><h4>Fashion Revolution</h4><p>供應鏈透明夥伴</p></div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

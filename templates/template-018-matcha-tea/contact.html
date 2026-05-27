@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>聯絡我們 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.page-header{padding:60px 0;text-align:center;background:var(--cream);border-bottom:1px solid var(--border)}
+.page-header h1{font-size:2.2rem;margin-bottom:8px}
+.page-header p{color:var(--muted)}
+
+section{padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-form h2{font-size:1.4rem;margin-bottom:24px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.88rem;margin-bottom:6px;color:var(--text)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-family:'Noto Sans TC',sans-serif;font-size:.9rem;background:var(--white);transition:border-color .3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--matcha)}
+.form-group textarea{height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.btn{display:inline-block;padding:14px 32px;background:var(--matcha);color:var(--white);border:none;border-radius:var(--radius);font-size:.9rem;cursor:pointer;font-family:'Noto Sans TC',sans-serif;transition:background .3s}
+.btn:hover{background:#4a6a3a}
+
+.contact-info h2{font-size:1.4rem;margin-bottom:24px}
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.info-card h3{font-size:1rem;margin-bottom:8px}
+.info-card p{color:var(--muted);font-size:.9rem}
+.map{width:100%;height:220px;background:var(--cream);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--muted);margin-top:20px;border:1px solid var(--border)}
+
+.private-events{background:var(--cream);padding:40px;border-radius:var(--radius);margin-top:48px}
+.private-events h2{font-size:1.4rem;margin-bottom:12px}
+.private-events p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+.contact-grid{grid-template-columns:1fr}
+.form-row{grid-template-columns:1fr}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<header class="page-header">
+<div class="container">
+<h1>聯絡我們</h1>
+<p>預約體驗、包場洽詢，或只是想說聲你好</p>
+</div>
+</header>
+
+<section>
+<div class="container">
+<div class="contact-grid">
+<div class="contact-form">
+<h2>預約 / 聯絡表單</h2>
+<form>
+<div class="form-row">
+<div class="form-group">
+<label>姓名 *</label>
+<input type="text" placeholder="您的姓名" required>
+</div>
+<div class="form-group">
+<label>電話 *</label>
+<input type="tel" placeholder="09xx-xxx-xxx" required>
+</div>
+</div>
+<div class="form-group">
+<label>電子郵件</label>
+<input type="email" placeholder="your@email.com">
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>預約類型</label>
+<select>
+<option>一般用餐</option>
+<option>入門茶道體驗</option>
+<option>正式茶道體驗</option>
+<option>團體包場</option>
+<option>私人活動</option>
+<option>其他洽詢</option>
+</select>
+</div>
+<div class="form-group">
+<label>希望日期</label>
+<input type="date">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>人數</label>
+<select>
+<option>1 人</option>
+<option>2 人</option>
+<option>3-4 人</option>
+<option>5-6 人</option>
+<option>7-12 人</option>
+<option>12 人以上</option>
+</select>
+</div>
+<div class="form-group">
+<label>希望時段</label>
+<select>
+<option>上午 (11:00-13:00)</option>
+<option>下午 (13:00-17:00)</option>
+<option>傍晚 (17:00-20:00)</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>備註</label>
+<textarea placeholder="特殊需求、過敏資訊、或其他想告訴我們的事..."></textarea>
+</div>
+<button type="submit" class="btn">送出預約</button>
+</form>
+</div>
+
+<div class="contact-info">
+<h2>店舖資訊</h2>
+<div class="info-card">
+<h3>地址</h3>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站 5 號出口步行約 5 分鐘</p>
+</div>
+<div class="info-card">
+<h3>營業時間</h3>
+<p>週二至週日 11:00 – 20:00<br>最後點餐 19:30<br>每週一公休</p>
+</div>
+<div class="info-card">
+<h3>聯絡方式</h3>
+<p>電話：02-2358-7742<br>信箱：info@matcha-space.tw<br>Instagram：@matcha.space<br>LINE：@matchaspace</p>
+</div>
+<div class="map">📍 地圖顯示區域（永康街 42 巷 7 號）</div>
+</div>
+</div>
+
+<div class="private-events">
+<h2>私人活動 / 企業包場</h2>
+<p>茶道空間提供私人包場服務，適合企業團建、生日慶祝、求婚、小型工作坊等各類活動。我們可依需求客製化體驗內容、茶菓子與空間佈置。</p>
+<p><strong>包場時段：</strong>平日 11:00-14:00 或 17:00-20:00 ／ 週日全日可<br><strong>容納人數：</strong>最多 12 人（正式茶室 6 人 + 和室 12 人）<br><strong>費用：</strong>$12,000 起（含茶道體驗、茶品與甜點）</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

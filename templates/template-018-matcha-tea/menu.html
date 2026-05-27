@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>茶品菜單 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s;box-shadow:2px 0 20px rgba(0,0,0,.1)}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.page-header{padding:60px 0;text-align:center;background:var(--cream);border-bottom:1px solid var(--border)}
+.page-header h1{font-size:2.2rem;margin-bottom:8px}
+.page-header p{color:var(--muted)}
+
+section{padding:80px 0}
+.menu-category{margin-bottom:60px}
+.menu-category h2{font-size:1.5rem;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.menu-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;justify-content:space-between;align-items:flex-start;transition:box-shadow .3s}
+.menu-item:hover{box-shadow:0 4px 16px rgba(90,122,72,.08)}
+.menu-item h3{font-size:1.05rem;margin-bottom:4px}
+.menu-item .desc{color:var(--muted);font-size:.85rem}
+.menu-item .temp{font-size:.75rem;color:var(--matcha);margin-top:4px}
+.menu-item .price{font-family:'Noto Serif TC',serif;font-size:1.1rem;color:var(--brown);white-space:nowrap;margin-left:16px}
+.menu-note{background:var(--matcha-light);padding:20px 24px;border-radius:var(--radius);margin-top:40px;font-size:.9rem;color:var(--matcha)}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+.menu-grid{grid-template-columns:1fr}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<header class="page-header">
+<div class="container">
+<h1>茶品菜單</h1>
+<p>嚴選日本各產地茶葉，以正統手法為您呈現</p>
+</div>
+</header>
+
+<section>
+<div class="container">
+<div class="menu-category">
+<h2>抹茶 Matcha</h2>
+<div class="menu-grid">
+<a href="menu-detail.html" class="menu-item">
+<div>
+<h3>濃茶（こいちゃ）</h3>
+<div class="desc">宇治產一番摘有機抹茶，濃醇甘甜</div>
+<div class="temp">熱</div>
+</div>
+<div class="price">$280</div>
+</a>
+<div class="menu-item">
+<div>
+<h3>薄茶（うすちゃ）</h3>
+<div class="desc">以茶筅點出細膩泡沫的經典抹茶</div>
+<div class="temp">熱</div>
+</div>
+<div class="price">$220</div>
+</div>
+<div class="menu-item">
+<div>
+<h3>抹茶拿鐵</h3>
+<div class="desc">抹茶搭配北海道牛乳，溫潤順口</div>
+<div class="temp">熱 / 冰</div>
+</div>
+<div class="price">$200</div>
+</div>
+<div class="menu-item">
+<div>
+<h3>冰抹茶</h3>
+<div class="desc">以冷水點出的清爽夏日抹茶</div>
+<div class="temp">冰</div>
+</div>
+<div class="price">$200</div>
+</div>
+</div>
+</div>
+
+<div class="menu-category">
+<h2>煎茶 · 玄米茶 · 焙茶</h2>
+<div class="menu-grid">
+<div class="menu-item">
+<div>
+<h3>特上煎茶</h3>
+<div class="desc">靜岡產深蒸煎茶，鮮綠甘美</div>
+<div class="temp">熱</div>
+</div>
+<div class="price">$200</div>
+</div>
+<div class="menu-item">
+<div>
+<h3>玄米茶</h3>
+<div class="desc">炒香玄米與綠茶的完美結合，溫暖香氣</div>
+<div class="temp">熱 / 冰</div>
+</div>
+<div class="price">$180</div>
+</div>
+<div class="menu-item">
+<div>
+<h3>焙茶（ほうじちゃ）</h3>
+<div class="desc">高溫焙煎帶來的焦香與甘甜</div>
+<div class="temp">熱 / 冰</div>
+</div>
+<div class="price">$180</div>
+</div>
+<div class="menu-item">
+<div>
+<h3>焙茶拿鐵</h3>
+<div class="desc">焙茶與牛乳的秋冬限定溫暖組合</div>
+<div class="temp">熱 / 冰</div>
+</div>
+<div class="price">$200</div>
+</div>
+</div>
+</div>
+
+<div class="menu-note">
+💡 所有茶品皆可搭配當季和菓子（+$80），推薦品嚐茶與甜點的美好平衡。
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

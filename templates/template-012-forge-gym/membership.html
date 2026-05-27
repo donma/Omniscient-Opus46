@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>會員方案 — Forge 健身工廠</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0a0a;--surface:#141414;--card:#1c1c1c;--red:#e63946;--red-dark:#c1121f;--text:#f0f0f0;--muted:#888888;--border:#2a2a2a;--radius:4px;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Anton',sans-serif;letter-spacing:1px;}
+a{color:var(--text);text-decoration:none;transition:.3s;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,.95);border-bottom:1px solid var(--border);padding:15px 0;}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--red);}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a:hover{color:var(--red);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.menu-toggle span{width:25px;height:2px;background:var(--text);}
+.page-hero{padding:160px 0 80px;background:var(--surface);position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:var(--bg);clip-path:polygon(0 60%,100% 0,100% 100%,0 100%);}
+.page-hero h1{font-size:4rem;color:var(--red);}
+.page-hero p{color:var(--muted);font-size:1.1rem;margin-top:10px;}
+.section{padding:80px 0;}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:35px 25px;text-align:center;transition:.3s;position:relative;}
+.plan-card:hover{border-color:var(--red);transform:translateY(-5px);}
+.plan-card.featured{border-color:var(--red);transform:scale(1.03);}
+.plan-card.featured::before{content:'最熱門';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;padding:4px 16px;border-radius:var(--radius);font-size:.8rem;font-weight:700;}
+.plan-card h3{font-size:1.5rem;color:var(--red);margin-bottom:5px;}
+.plan-card .price{font-size:3rem;font-family:'Anton',sans-serif;margin:20px 0 5px;}
+.plan-card .price span{font-size:1rem;color:var(--muted);}
+.plan-card .period{color:var(--muted);font-size:.9rem;margin-bottom:20px;}
+.plan-card ul{list-style:none;text-align:left;margin-bottom:25px;}
+.plan-card ul li{padding:8px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:.9rem;}
+.plan-card ul li:last-child{border:none;}
+.btn{display:inline-block;padding:14px 36px;background:var(--red);color:#fff;font-weight:700;border-radius:var(--radius);transition:.3s;width:100%;text-align:center;}
+.btn:hover{background:var(--red-dark);}
+.btn-outline{background:transparent;border:2px solid var(--red);color:var(--red);}
+.btn-outline:hover{background:var(--red);color:#fff;}
+/* Comparison */
+.comparison{margin-top:80px;overflow-x:auto;}
+.comparison table{width:100%;border-collapse:collapse;min-width:700px;}
+.comparison th,.comparison td{padding:14px 20px;border-bottom:1px solid var(--border);text-align:center;font-size:.9rem;}
+.comparison th{background:var(--card);color:var(--red);font-family:'Anton',sans-serif;font-size:1rem;}
+.comparison td:first-child{text-align:left;color:var(--muted);}
+.comparison tr:hover{background:var(--card);}
+.check{color:var(--red);font-weight:700;}
+.cross{color:var(--border);}
+/* Trial CTA */
+.trial-cta{background:var(--card);border:2px solid var(--red);border-radius:var(--radius);padding:50px;text-align:center;margin-top:60px;}
+.trial-cta h2{font-size:2.5rem;color:var(--red);margin-bottom:15px;}
+.trial-cta p{color:var(--muted);margin-bottom:25px;max-width:600px;margin-left:auto;margin-right:auto;}
+.trial-cta .btn{width:auto;padding:16px 50px;}
+.footer{background:var(--surface);padding:60px 0 30px;border-top:1px solid var(--border);}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;}
+.footer h4{font-family:'Anton',sans-serif;color:var(--red);margin-bottom:15px;}
+.footer p,.footer a{color:var(--muted);font-size:.9rem;}
+.footer a:hover{color:var(--red);}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+@media(max-width:768px){
+.nav-links{position:fixed;top:0;left:-100%;width:70%;height:100vh;background:var(--surface);flex-direction:column;padding:80px 30px;transition:.3s;border-right:1px solid var(--border);}
+.nav-links.active{left:0;}
+.menu-toggle{display:flex;}
+.page-hero h1{font-size:2.5rem;}
+.plan-card.featured{transform:none;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="index.html" class="logo">FORGE 健身工廠</a>
+<button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')"><span></span><span></span><span></span></button>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="programs.html">訓練課程</a></li>
+<li><a href="coaches.html">教練團隊</a></li>
+<li><a href="facilities.html">設備環境</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="transformations.html">成果見證</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div></nav>
+
+<section class="page-hero"><div class="container">
+<h1>會員方案</h1>
+<p>選擇最適合你的方案，開始鍛造之旅</p>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="plans-grid">
+
+<div class="plan-card">
+<h3>基礎會員</h3>
+<div class="price">$1,500<span>/月</span></div>
+<p class="period">12個月約</p>
+<ul>
+<li>自由使用所有器材</li>
+<li>營業時間內無限進出</li>
+<li>免費置物櫃</li>
+<li>體態評估（每季一次）</li>
+<li>—</li>
+<li>—</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">選擇方案</a>
+</div>
+
+<div class="plan-card featured">
+<h3>全方位會員</h3>
+<div class="price">$2,800<span>/月</span></div>
+<p class="period">12個月約</p>
+<ul>
+<li>基礎會員所有權益</li>
+<li>無限參加團體課程</li>
+<li>每月1堂私人教練課</li>
+<li>營養諮詢（每月一次）</li>
+<li>恢復區使用權</li>
+<li>專屬APP訓練紀錄</li>
+</ul>
+<a href="contact.html" class="btn">選擇方案</a>
+</div>
+
+<div class="plan-card">
+<h3>菁英會員</h3>
+<div class="price">$4,500<span>/月</span></div>
+<p class="period">6個月約</p>
+<ul>
+<li>全方位會員所有權益</li>
+<li>每週2堂私人教練課</li>
+<li>客製化訓練計畫</li>
+<li>客製化飲食計畫</li>
+<li>優先預約權</li>
+<li>VIP更衣室</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">選擇方案</a>
+</div>
+
+<div class="plan-card">
+<h3>單次入場</h3>
+<div class="price">$500<span>/次</span></div>
+<p class="period">無需綁約</p>
+<ul>
+<li>單次使用所有器材</li>
+<li>可加購團體課 $200</li>
+<li>含淋浴設施</li>
+<li>適合旅客/體驗者</li>
+<li>—</li>
+<li>—</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">立即購買</a>
+</div>
+
+</div>
+
+<div class="comparison">
+<table>
+<thead><tr><th>比較項目</th><th>基礎</th><th>全方位</th><th>菁英</th><th>單次</th></tr></thead>
+<tbody>
+<tr><td>器材自由使用</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+<tr><td>團體課程</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td><td class="cross">+$200</td></tr>
+<tr><td>私人教練課</td><td class="cross">✗</td><td class="check">1堂/月</td><td class="check">8堂/月</td><td class="cross">✗</td></tr>
+<tr><td>恢復區</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>營養諮詢</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>客製化計畫</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td><td class="cross">✗</td></tr>
+<tr><td>體態評估</td><td class="check">季度</td><td class="check">月度</td><td class="check">雙週</td><td class="cross">✗</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="trial-cta">
+<h2>免費體驗一堂課</h2>
+<p>還在猶豫嗎？我們提供一堂免費體驗課程，讓你親身感受Forge的訓練氛圍與專業度。沒有任何壓力，只需帶著一顆準備好的心。</p>
+<a href="contact.html" class="btn">預約免費體驗</a>
+</div>
+</div></section>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><h4>FORGE 健身工廠</h4><p>台北市信義區松仁路100號B1<br>鍛造你的極限，突破自我</p></div>
+<div><h4>快速連結</h4><p><a href="programs.html">訓練課程</a><br><a href="membership.html">會員方案</a><br><a href="schedule.html">課表查詢</a><br><a href="blog.html">健身知識</a></p></div>
+<div><h4>營業時間</h4><p>週一至週五 06:00 - 23:00<br>週六日 08:00 - 21:00<br>國定假日 09:00 - 18:00</p></div>
+<div><h4>聯絡我們</h4><p>電話：02-2765-1234<br>信箱：info@forge-gym.tw<br>LINE：@forge-gym</p></div>
+</div>
+<div class="footer-bottom">© 2026 Forge 健身工廠. All Rights Reserved.</div>
+</div></footer>
+</body>
+</html>

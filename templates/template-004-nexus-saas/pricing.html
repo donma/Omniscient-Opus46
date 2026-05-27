@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定價方案 — Nexus SaaS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0b1a;--surface:#12122a;--card:#1a1a3a;--primary:#7c5cff;--primary-light:#a78bfa;--accent:#06d6a0;--text:#e8e8f0;--muted:#8888aa;--border:#2a2a4a;--radius:16px;--btn-radius:99px}
+body{font-family:'Inter','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,11,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}.nav-links a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 32px;transition:right .3s;display:flex;flex-direction:column;gap:24px}.mobile-menu.active{right:0}.mobile-menu a{font-size:1.1rem;color:var(--muted)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}}
+.page-hero{padding:140px 0 40px;text-align:center}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+.toggle-wrap{display:flex;justify-content:center;align-items:center;gap:16px;margin:40px 0}
+.toggle-wrap span{font-size:.9rem;color:var(--muted)}
+.toggle-wrap span.active{color:var(--text)}
+.toggle{width:48px;height:26px;background:var(--border);border-radius:99px;position:relative;cursor:pointer}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:var(--primary);border-radius:50%;transition:transform .2s}
+.toggle.annual::after{transform:translateX(22px)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:20px 0 80px}
+.price-card{background:rgba(26,26,58,.6);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;display:flex;flex-direction:column}
+.price-card.featured{border-color:var(--primary);box-shadow:0 0 40px rgba(124,92,255,.2)}
+.price-card .badge{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-size:.75rem;padding:4px 12px;border-radius:99px;display:inline-block;margin-bottom:16px;width:fit-content}
+.price-card h3{font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.price-card .price{font-size:2.5rem;font-weight:800;margin-bottom:4px}
+.price-card .price span{font-size:1rem;font-weight:400;color:var(--muted)}
+.price-card .desc{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+.price-card ul{list-style:none;margin-bottom:32px;flex:1}
+.price-card ul li{padding:8px 0;font-size:.9rem;color:var(--muted);border-bottom:1px solid var(--border)}
+.price-card ul li::before{content:'✓ ';color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--btn-radius);font-size:1rem;font-weight:600;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;width:100%;text-align:center}
+.btn-primary{background:linear-gradient(135deg,var(--primary),#5a3de6);color:#fff;box-shadow:0 4px 24px rgba(124,92,255,.3)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text)}
+@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
+.faq{padding:40px 0 100px}
+.faq h2{font-size:1.8rem;font-weight:700;text-align:center;margin-bottom:40px}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;background:rgba(26,26,58,.4)}
+.faq-item h4{font-size:1rem;font-weight:600;margin-bottom:8px}
+.faq-item p{color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--border);padding:60px 0 32px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{color:var(--muted);margin-top:12px;font-size:.9rem}
+.footer-col h4{font-size:.85rem;text-transform:uppercase;color:var(--muted);margin-bottom:16px;letter-spacing:1px}
+.footer-col a{display:block;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.footer-newsletter input{width:100%;padding:10px 16px;border-radius:var(--btn-radius);border:1px solid var(--border);background:var(--card);color:var(--text);margin-bottom:12px;font-size:.9rem}
+.footer-newsletter button{width:100%;padding:10px;border-radius:var(--btn-radius);background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:.9rem}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;padding-top:24px;border-top:1px solid var(--border)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><nav><a href="index.html" class="logo">Nexus</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">產品功能</a></li><li><a href="pricing.html">定價方案</a></li><li><a href="case-studies.html">客戶案例</a></li><li><a href="integrations.html">整合生態系</a></li><li><a href="docs.html">開發者文件</a></li><li><a href="about.html">關於我們</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')">&#9776;</button></nav></header>
+<div class="overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu"><button class="mobile-close" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button><a href="index.html">首頁</a><a href="features.html">產品功能</a><a href="pricing.html">定價方案</a><a href="case-studies.html">客戶案例</a><a href="integrations.html">整合生態系</a><a href="docs.html">開發者文件</a><a href="about.html">關於我們</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero"><div class="container"><h1>定價方案</h1><p>透明定價，無隱藏費用。選擇最適合您團隊的方案。</p></div></section>
+
+<div class="container">
+<div class="toggle-wrap">
+<span class="active">月付</span>
+<div class="toggle" onclick="this.classList.toggle('annual')"></div>
+<span>年付（省 20%）</span>
+</div>
+
+<div class="pricing-grid">
+<div class="price-card">
+<h3>Free</h3>
+<div class="price">$0<span>/月</span></div>
+<p class="desc">適合小型團隊或個人專案</p>
+<ul>
+<li>最多 5 位成員</li>
+<li>3 個專案</li>
+<li>基礎看板與列表檢視</li>
+<li>1 GB 儲存空間</li>
+<li>社群支援</li>
+</ul>
+<a href="contact.html" class="btn btn-secondary">免費開始</a>
+</div>
+<div class="price-card featured">
+<div class="badge">最受歡迎</div>
+<h3>Pro</h3>
+<div class="price">$29<span>/成員/月</span></div>
+<p class="desc">適合成長中的團隊</p>
+<ul>
+<li>無限成員</li>
+<li>無限專案</li>
+<li>AI 智能排程</li>
+<li>自動化工作流</li>
+<li>時間軸與報表</li>
+<li>100 GB 儲存空間</li>
+<li>優先客服支援</li>
+<li>50+ 整合</li>
+</ul>
+<a href="contact.html" class="btn btn-primary">開始免費試用</a>
+</div>
+<div class="price-card">
+<h3>Enterprise</h3>
+<div class="price">客製<span>報價</span></div>
+<p class="desc">適合大型組織與進階需求</p>
+<ul>
+<li>Pro 全部功能</li>
+<li>SSO/SAML 驗證</li>
+<li>進階安全與合規</li>
+<li>無限儲存空間</li>
+<li>專屬客戶經理</li>
+<li>SLA 保證 99.99%</li>
+<li>自訂整合開發</li>
+<li>教育訓練服務</li>
+</ul>
+<a href="contact.html" class="btn btn-secondary">聯繫銷售團隊</a>
+</div>
+</div>
+</div>
+
+<section class="faq">
+<div class="container">
+<h2>常見問題</h2>
+<div class="faq-item"><h4>免費試用期間需要輸入信用卡嗎？</h4><p>不需要。Pro 方案提供 14 天免費試用，無需綁定任何付款方式。試用期結束後可選擇升級或自動轉為 Free 方案。</p></div>
+<div class="faq-item"><h4>可以隨時更換方案嗎？</h4><p>是的，您可以隨時升級或降級方案。升級時系統會按比例計算費用差額；降級則在當前計費週期結束後生效。</p></div>
+<div class="faq-item"><h4>年付方案如何計費？</h4><p>選擇年付方案可享有 20% 折扣，一次性支付全年費用。我們提供發票與統一編號開立服務。</p></div>
+<div class="faq-item"><h4>Enterprise 方案包含哪些額外服務？</h4><p>Enterprise 方案包含專屬客戶經理、優先技術支援、客製化教育訓練、進階安全設定（IP 白名單、稽核日誌）以及 SLA 服務等級保證。</p></div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo" style="font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Nexus</div><p>AI 驅動的智能協作平台，助力全球團隊高效運作。</p></div><div class="footer-col"><h4>產品</h4><a href="features.html">功能</a><a href="pricing.html">定價</a><a href="integrations.html">整合</a><a href="docs.html">文件</a></div><div class="footer-col"><h4>公司</h4><a href="about.html">關於我們</a><a href="blog.html">部落格</a><a href="careers.html">加入我們</a><a href="contact.html">聯絡</a></div><div class="footer-col"><h4>訂閱電子報</h4><div class="footer-newsletter"><input type="email" placeholder="輸入您的 Email"><button>訂閱</button></div></div></div><div class="footer-bottom">© 2026 Nexus SaaS. All rights reserved. 台北市信義區信義路五段7號</div></div></footer>
+</body>
+</html>

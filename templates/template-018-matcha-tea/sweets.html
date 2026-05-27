@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>抹茶甜點 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.page-header{padding:60px 0;text-align:center;background:var(--cream);border-bottom:1px solid var(--border)}
+.page-header h1{font-size:2.2rem;margin-bottom:8px}
+.page-header p{color:var(--muted)}
+
+section{padding:80px 0}
+.sweets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.sweet-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.sweet-card:hover{transform:translateY(-4px)}
+.sweet-card img{width:100%;height:220px;object-fit:cover}
+.sweet-card-body{padding:24px}
+.sweet-card-body h3{font-size:1.1rem;margin-bottom:8px}
+.sweet-card-body p{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+.sweet-meta{display:flex;justify-content:space-between;align-items:center}
+.sweet-price{font-family:'Noto Serif TC',serif;color:var(--brown)}
+.sweet-tag{font-size:.75rem;background:var(--matcha-light);color:var(--matcha);padding:3px 10px;border-radius:20px}
+.pairing-note{font-size:.8rem;color:var(--matcha);margin-top:8px;font-style:italic}
+
+.seasonal-note{text-align:center;margin-top:48px;padding:32px;background:var(--cream);border-radius:var(--radius)}
+.seasonal-note h3{margin-bottom:8px}
+.seasonal-note p{color:var(--muted);font-size:.9rem}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+.sweets-grid{grid-template-columns:1fr}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<header class="page-header">
+<div class="container">
+<h1>抹茶甜點</h1>
+<p>以茶為主角的日式菓子，隨季節更迭的手作甜點</p>
+</div>
+</header>
+
+<section>
+<div class="container">
+<div class="sweets-grid">
+<div class="sweet-card">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" alt="練切">
+<div class="sweet-card-body">
+<h3>季節練切</h3>
+<p>以白豆沙為基底，手工捏製成當季花卉造型的上生菓子。每月更換主題。</p>
+<div class="sweet-meta"><span class="sweet-price">$150</span><span class="sweet-tag">主菓子</span></div>
+<div class="pairing-note">推薦搭配：濃茶</div>
+</div>
+</div>
+<div class="sweet-card">
+<img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&q=80" alt="蕨餅">
+<div class="sweet-card-body">
+<h3>黑糖蕨餅</h3>
+<p>使用本蕨粉製作的傳統蕨餅，裹上京都產黑豆粉，入口即化的柔軟口感。</p>
+<div class="sweet-meta"><span class="sweet-price">$130</span><span class="sweet-tag">定番</span></div>
+<div class="pairing-note">推薦搭配：薄茶</div>
+</div>
+</div>
+<div class="sweet-card">
+<img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&q=80" alt="抹茶提拉米蘇">
+<div class="sweet-card-body">
+<h3>抹茶提拉米蘇</h3>
+<p>以濃厚抹茶取代咖啡，搭配馬斯卡彭乳酪，東西融合的經典甜品。</p>
+<div class="sweet-meta"><span class="sweet-price">$180</span><span class="sweet-tag">人氣</span></div>
+<div class="pairing-note">推薦搭配：焙茶</div>
+</div>
+</div>
+<div class="sweet-card">
+<img src="https://images.unsplash.com/photo-1582176604856-e824b4736522?w=500&q=80" alt="羊羹">
+<div class="sweet-card-body">
+<h3>栗羊羹</h3>
+<p>以丹波大納言紅豆熬煮的傳統羊羹，嵌入整顆蜜漬栗子。</p>
+<div class="sweet-meta"><span class="sweet-price">$120</span><span class="sweet-tag">秋季限定</span></div>
+<div class="pairing-note">推薦搭配：濃茶</div>
+</div>
+</div>
+<div class="sweet-card">
+<img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=500&q=80" alt="最中">
+<div class="sweet-card-body">
+<h3>抹茶最中</h3>
+<p>酥脆最中餅皮夾入自家製抹茶餡與紅豆泥，一口咬下層次分明。</p>
+<div class="sweet-meta"><span class="sweet-price">$100</span><span class="sweet-tag">干菓子</span></div>
+<div class="pairing-note">推薦搭配：煎茶</div>
+</div>
+</div>
+<div class="sweet-card">
+<img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80" alt="銅鑼燒">
+<div class="sweet-card-body">
+<h3>抹茶銅鑼燒</h3>
+<p>鬆軟的抹茶餅皮包裹北海道紅豆與鮮奶油，現做現賣的溫暖味道。</p>
+<div class="sweet-meta"><span class="sweet-price">$110</span><span class="sweet-tag">定番</span></div>
+<div class="pairing-note">推薦搭配：玄米茶</div>
+</div>
+</div>
+</div>
+
+<div class="seasonal-note">
+<h3>季節更迭</h3>
+<p>我們的甜點隨著二十四節氣輪替，每月至少推出兩款新品。<br>如有特殊需求或大量訂購，歡迎提前三天預約。</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

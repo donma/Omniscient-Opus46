@@ -1,0 +1,35 @@
+{
+  "id": "template-017-pulse-music",
+  "name": "Pulse 音樂工作室",
+  "description": "Dark theme music production studio website with vibrant purple-to-orange gradient accents, dynamic waveform decorations, and energetic design for a Taipei-based recording studio.",
+  "category": "music-production",
+  "version": "1.0.0",
+  "author": "Omniscient",
+  "pages": [
+    "index.html",
+    "about.html",
+    "services.html",
+    "service-detail.html",
+    "portfolio.html",
+    "equipment.html",
+    "pricing.html",
+    "blog.html",
+    "blog-detail.html",
+    "artists.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "fonts": ["Poppins:wght@600;800", "Noto Sans TC:wght@300;400"],
+  "colors": {
+    "background": "#0d0d14",
+    "surface": "#14141f",
+    "card": "#1a1a28",
+    "purple": "#8b5cf6",
+    "orange": "#f97316",
+    "pink": "#ec4899",
+    "text": "#f0f0f8",
+    "muted": "#8888aa",
+    "border": "#2a2a3e"
+  },
+  "features": ["dark-theme", "gradient-accents", "responsive", "mobile-menu-right", "traditional-chinese"]
+}

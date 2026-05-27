@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>聯絡我們 — Forge 健身工廠</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0a0a;--surface:#141414;--card:#1c1c1c;--red:#e63946;--red-dark:#c1121f;--text:#f0f0f0;--muted:#888888;--border:#2a2a2a;--radius:4px;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Anton',sans-serif;letter-spacing:1px;}
+a{color:var(--text);text-decoration:none;transition:.3s;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,.95);border-bottom:1px solid var(--border);padding:15px 0;}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--red);}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a:hover{color:var(--red);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.menu-toggle span{width:25px;height:2px;background:var(--text);}
+.page-hero{padding:160px 0 80px;background:var(--surface);position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:var(--bg);clip-path:polygon(0 60%,100% 0,100% 100%,0 100%);}
+.page-hero h1{font-size:4rem;color:var(--red);}
+.page-hero p{color:var(--muted);font-size:1.1rem;margin-top:10px;}
+.section{padding:80px 0;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.contact-info h2{font-size:2rem;color:var(--red);margin-bottom:25px;}
+.info-item{margin-bottom:25px;}
+.info-item h4{color:var(--text);margin-bottom:5px;font-size:1rem;}
+.info-item p{color:var(--muted);font-size:.9rem;}
+.map{width:100%;height:250px;border-radius:var(--radius);border:1px solid var(--border);margin-top:25px;background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--muted);}
+.contact-form h2{font-size:2rem;color:var(--red);margin-bottom:25px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;margin-bottom:6px;color:var(--muted);font-size:.9rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:1rem;font-family:inherit;transition:.3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--red);}
+.form-group textarea{height:120px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.btn{display:inline-block;padding:14px 36px;background:var(--red);color:#fff;font-weight:700;border-radius:var(--radius);transition:.3s;border:none;cursor:pointer;font-size:1rem;width:100%;}
+.btn:hover{background:var(--red-dark);}
+.parking{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:25px;margin-top:40px;}
+.parking h3{color:var(--red);margin-bottom:10px;font-size:1.2rem;}
+.parking p{color:var(--muted);font-size:.9rem;}
+.footer{background:var(--surface);padding:60px 0 30px;border-top:1px solid var(--border);}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;}
+.footer h4{font-family:'Anton',sans-serif;color:var(--red);margin-bottom:15px;}
+.footer p,.footer a{color:var(--muted);font-size:.9rem;}
+.footer a:hover{color:var(--red);}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+@media(max-width:768px){
+.nav-links{position:fixed;top:0;left:-100%;width:70%;height:100vh;background:var(--surface);flex-direction:column;padding:80px 30px;transition:.3s;border-right:1px solid var(--border);}
+.nav-links.active{left:0;}
+.menu-toggle{display:flex;}
+.page-hero h1{font-size:2.5rem;}
+.contact-grid{grid-template-columns:1fr;}
+.form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="index.html" class="logo">FORGE 健身工廠</a>
+<button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')"><span></span><span></span><span></span></button>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="programs.html">訓練課程</a></li>
+<li><a href="coaches.html">教練團隊</a></li>
+<li><a href="facilities.html">設備環境</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="transformations.html">成果見證</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div></nav>
+
+<section class="page-hero"><div class="container">
+<h1>聯絡我們</h1>
+<p>預約體驗、諮詢方案，或單純來聊聊你的訓練目標</p>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="contact-grid">
+<div class="contact-info">
+<h2>來找我們</h2>
+<div class="info-item"><h4>地址</h4><p>台北市信義區松仁路100號B1<br>（近捷運象山站2號出口，步行5分鐘）</p></div>
+<div class="info-item"><h4>電話</h4><p>02-2765-1234</p></div>
+<div class="info-item"><h4>信箱</h4><p>info@forge-gym.tw</p></div>
+<div class="info-item"><h4>LINE官方帳號</h4><p>@forge-gym</p></div>
+<div class="info-item"><h4>營業時間</h4><p>週一至週五 06:00 - 23:00<br>週六日 08:00 - 21:00<br>國定假日 09:00 - 18:00</p></div>
+<div class="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0!2d121.567!3d25.033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAyJzAuMCJOIDEyMcKwMzQnMC4wIkU!5e0!3m2!1szh-TW!2stw!4v1" width="100%" height="250" style="border:0;border-radius:4px;" allowfullscreen loading="lazy"></iframe>
+</div>
+</div>
+
+<div class="contact-form">
+<h2>預約免費體驗</h2>
+<form>
+<div class="form-row">
+<div class="form-group"><label>姓名 *</label><input type="text" placeholder="請輸入您的姓名" required></div>
+<div class="form-group"><label>電話 *</label><input type="tel" placeholder="0912-345-678" required></div>
+</div>
+<div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+<div class="form-group"><label>感興趣的課程</label>
+<select>
+<option value="">請選擇</option>
+<option>CrossFit</option>
+<option>重量訓練</option>
+<option>拳擊訓練</option>
+<option>TRX 懸吊訓練</option>
+<option>HIIT 間歇訓練</option>
+<option>伸展恢復</option>
+<option>尚未確定，想先了解</option>
+</select></div>
+<div class="form-row">
+<div class="form-group"><label>希望體驗日期</label><input type="date"></div>
+<div class="form-group"><label>希望時段</label>
+<select><option>早上 (06:00-12:00)</option><option>下午 (12:00-18:00)</option><option>晚上 (18:00-22:00)</option></select></div>
+</div>
+<div class="form-group"><label>其他想說的</label><textarea placeholder="告訴我們你的訓練目標、過往經驗或任何問題..."></textarea></div>
+<button type="submit" class="btn">送出預約</button>
+</form>
+</div>
+</div>
+
+<div class="parking">
+<h3>交通與停車資訊</h3>
+<p><strong>捷運：</strong>象山站2號出口，沿松仁路步行約5分鐘即達。<br>
+<strong>公車：</strong>松仁路口站（20、46、207、612路）<br>
+<strong>開車：</strong>大樓地下停車場（B2-B4），會員享每次前2小時免費停車優惠。假日建議搭乘大眾運輸。<br>
+<strong>機車：</strong>大樓旁設有機車停車格，免費。</p>
+</div>
+</div></section>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><h4>FORGE 健身工廠</h4><p>台北市信義區松仁路100號B1<br>鍛造你的極限，突破自我</p></div>
+<div><h4>快速連結</h4><p><a href="programs.html">訓練課程</a><br><a href="membership.html">會員方案</a><br><a href="schedule.html">課表查詢</a><br><a href="blog.html">健身知識</a></p></div>
+<div><h4>營業時間</h4><p>週一至週五 06:00 - 23:00<br>週六日 08:00 - 21:00<br>國定假日 09:00 - 18:00</p></div>
+<div><h4>聯絡我們</h4><p>電話：02-2765-1234<br>信箱：info@forge-gym.tw<br>LINE：@forge-gym</p></div>
+</div>
+<div class="footer-bottom">© 2026 Forge 健身工廠. All Rights Reserved.</div>
+</div></footer>
+</body>
+</html>

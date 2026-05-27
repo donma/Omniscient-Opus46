@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Noir — 當代時裝</title>
+<meta name="description" content="Maison Noir 當代時裝品牌 — 以極簡主義與永續理念打造的都會女性衣櫥。">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+
+/* Header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+/* Hero - Editorial Style */
+.hero{margin-top:70px;height:calc(100vh - 70px);display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:900px){.hero{grid-template-columns:1fr;height:auto}}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:60px 60px 60px 80px}
+@media(max-width:900px){.hero-text{padding:48px 24px}}
+.hero-text .season{font-size:.72rem;letter-spacing:6px;text-transform:uppercase;color:var(--light-muted);margin-bottom:16px}
+.hero-text h1{font-size:clamp(2.5rem,5vw,4.5rem);margin-bottom:20px;font-style:italic}
+.hero-text p{color:var(--muted);font-size:.9rem;max-width:400px;margin-bottom:32px}
+.hero-btn{display:inline-block;border-bottom:1px solid var(--text);padding-bottom:4px;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;transition:.3s}
+.hero-btn:hover{border-color:var(--muted);color:var(--muted)}
+.hero-image{overflow:hidden}.hero-image img{width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.hero-image{height:60vh}}
+
+/* Sections */
+section{padding:100px 0}.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 24px}}
+.section-header{text-align:center;margin-bottom:60px}
+.section-header .label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--light-muted);margin-bottom:8px}
+.section-header h2{font-size:2.2rem;font-style:italic}
+
+/* Collection Grid */
+.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:768px){.collection-grid{grid-template-columns:1fr}}
+.collection-item{position:relative;overflow:hidden}
+.collection-item img{width:100%;height:480px;object-fit:cover;transition:.6s}
+.collection-item:hover img{transform:scale(1.03)}
+.collection-item .info{padding:16px 0}
+.collection-item .info h3{font-size:1rem;font-family:'Cormorant Garamond',serif;font-weight:400;margin-bottom:4px}
+.collection-item .info .price{color:var(--muted);font-size:.82rem}
+
+/* Editorial Block */
+.editorial{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:600px}
+@media(max-width:768px){.editorial{grid-template-columns:1fr}}
+.editorial-image{overflow:hidden}.editorial-image img{width:100%;height:100%;object-fit:cover}
+.editorial-text{display:flex;flex-direction:column;justify-content:center;padding:80px;background:var(--offwhite)}
+@media(max-width:768px){.editorial-text{padding:48px 24px}}
+.editorial-text .label{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.editorial-text h2{font-size:2rem;margin-bottom:16px;font-style:italic}
+.editorial-text p{color:var(--muted);font-size:.88rem;margin-bottom:24px}
+
+/* Values */
+.values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:center;padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+@media(max-width:768px){.values-row{grid-template-columns:1fr;gap:32px}}
+.value h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;margin-bottom:8px}
+.value p{color:var(--muted);font-size:.82rem}
+
+/* Footer */
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<section class="hero">
+<div class="hero-text">
+  <p class="season">Spring / Summer 2026</p>
+  <h1>Quiet Luxury</h1>
+  <p>以極簡剪裁與天然面料，重新定義都會女性的日常衣櫥。少即是多，靜謐即是奢華。</p>
+  <a href="collection.html" class="hero-btn">探索系列</a>
+</div>
+<div class="hero-image"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&q=80" alt="SS24 Campaign"></div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-header"><p class="label">New Arrivals</p><h2>新品上架</h2></div>
+<div class="collection-grid">
+  <div class="collection-item"><img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" alt="亞麻西裝外套"><div class="info"><h3>亞麻寬肩西裝外套</h3><span class="price">NT$12,800</span></div></div>
+  <div class="collection-item"><img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=600&q=80" alt="絲質襯衫裙"><div class="info"><h3>真絲落肩襯衫裙</h3><span class="price">NT$9,600</span></div></div>
+  <div class="collection-item"><img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80" alt="針織長褲"><div class="info"><h3>高腰喀什米爾針織長褲</h3><span class="price">NT$8,200</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="editorial" style="padding:0">
+<div class="editorial-image"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80" alt="Editorial"></div>
+<div class="editorial-text">
+  <p class="label">Philosophy</p>
+  <h2>Less, but better.</h2>
+  <p>我們相信衣櫥不需要太多件，但每一件都值得被珍惜。Maison Noir 的設計哲學源自「膠囊衣櫥」概念 — 以 20 件單品打造無限組合的可能。</p>
+  <a href="about.html" class="hero-btn">了解更多</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="values-row">
+  <div class="value"><h3>永續面料</h3><p>80% 以上使用有機棉、再生纖維與天然面料，減少對地球的負擔。</p></div>
+  <div class="value"><h3>在地製造</h3><p>與台灣在地工廠合作，縮短供應鏈距離，支持本土紡織產業。</p></div>
+  <div class="value"><h3>無季限設計</h3><p>拒絕快時尚的季節更迭，每件單品設計為可跨季穿著的經典款式。</p></div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+  <div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+  <div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+  <div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+  <div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

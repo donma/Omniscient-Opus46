@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>春日花語 — Bloom 花藝工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fdf8f5;--white:#ffffff;--rose:#e89bae;--rose-light:#fce8ee;--sage:#a8c5a0;--text:#3a2d2d;--muted:#8a7070;--border:#f0dede;--lavender:#d4c5e8;--radius:30px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,155,174,0.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+.nav-links{display:flex;gap:24px;font-size:0.9rem}
+.nav-links a:hover{color:var(--rose)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+section{padding:60px 0 80px}
+.breadcrumb{font-size:0.85rem;color:var(--muted);margin-bottom:32px}
+.breadcrumb a:hover{color:var(--rose)}
+.product-detail{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.product-detail img{border-radius:var(--radius);width:100%;height:500px;object-fit:cover}
+.product-detail h1{font-size:2.2rem;margin-bottom:12px}
+.product-detail .price{font-size:1.8rem;color:var(--rose);font-weight:500;margin-bottom:24px}
+.product-detail .desc{color:var(--muted);margin-bottom:24px}
+.detail-section{margin-bottom:24px}
+.detail-section h3{font-size:1rem;margin-bottom:8px;font-style:normal;font-family:'Noto Sans TC',sans-serif;font-weight:500}
+.detail-section ul{list-style:none;padding:0}
+.detail-section li{padding:4px 0;color:var(--muted);font-size:0.9rem}
+.detail-section li::before{content:"✿ ";color:var(--rose)}
+.size-options{display:flex;gap:12px;margin-bottom:24px}
+.size-btn{padding:10px 24px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all 0.3s;font-size:0.9rem}
+.size-btn.active,.size-btn:hover{border-color:var(--rose);background:var(--rose-light);color:var(--rose)}
+.btn{display:inline-block;padding:14px 36px;background:var(--rose);color:var(--white);border-radius:var(--radius);font-size:0.95rem;transition:all 0.3s;border:none;cursor:pointer}
+.btn:hover{background:var(--sage)}
+.care-tips{background:var(--white);border-radius:var(--radius);padding:32px;border:1px solid var(--border);margin-top:48px}
+.care-tips h2{font-size:1.5rem;margin-bottom:16px}
+.care-tips ol{padding-left:20px;color:var(--muted)}
+.care-tips li{margin-bottom:8px}
+footer{background:var(--white);padding:48px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:1rem;margin-bottom:12px;color:var(--rose)}
+.footer-col p,.footer-col a{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:24px}
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;border-radius:0 0 var(--radius) var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.nav-links.active{display:flex}
+.menu-toggle{display:block}
+.product-detail{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Bloom 花藝</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="weddings.html">婚禮花藝</a><a href="courses.html">花藝課程</a><a href="blog.html">花語日記</a><a href="contact.html">聯絡我們</a>
+</div>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<section>
+<div class="container">
+<div class="breadcrumb"><a href="index.html">首頁</a> / <a href="order.html">花束訂購</a> / 春日花語</div>
+<div class="product-detail">
+<img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800" alt="春日花語">
+<div>
+<h1>春日花語</h1>
+<div class="price">NT$1,800 起</div>
+<p class="desc">以粉色為主調的浪漫花束，適合告白、生日、紀念日等甜蜜時刻。柔和的色彩搭配自然的線條，傳遞春天般溫暖的祝福。</p>
+
+<div class="detail-section">
+<h3>花材內容</h3>
+<ul>
+<li>粉玫瑰 5-7 枝</li>
+<li>白桔梗 3-5 枝</li>
+<li>尤加利葉</li>
+<li>滿天星點綴</li>
+<li>進口霧面包裝紙</li>
+<li>絲緞蝴蝶結</li>
+</ul>
+</div>
+
+<div class="detail-section">
+<h3>選擇尺寸</h3>
+<div class="size-options">
+<span class="size-btn active">S 小束 NT$1,800</span>
+<span class="size-btn">M 中束 NT$2,500</span>
+<span class="size-btn">L 大束 NT$3,200</span>
+</div>
+</div>
+
+<div class="detail-section">
+<h3>適合場合</h3>
+<ul>
+<li>告白、求婚</li>
+<li>生日祝福</li>
+<li>結婚紀念日</li>
+<li>母親節</li>
+<li>畢業祝福</li>
+</ul>
+</div>
+
+<button class="btn">立即訂購</button>
+</div>
+</div>
+
+<div class="care-tips">
+<h2>鮮花養護小貼士</h2>
+<ol>
+<li>收到花束後，請立即斜切花莖約 2-3 公分，放入乾淨清水中。</li>
+<li>每日換水一次，並重新修剪花莖底部。</li>
+<li>避免陽光直射與靠近水果（水果釋放乙烯會加速花朵凋謝）。</li>
+<li>可加入隨花附贈的保鮮劑延長觀賞期。</li>
+<li>室內溫度建議維持 20-25°C，避免放置冷氣出風口。</li>
+</ol>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>Bloom 花藝工作室</h4><p>以花為語，傳遞每一份心意與美好。</p></div>
+<div class="footer-col"><h4>快速連結</h4><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="courses.html">花藝課程</a></div>
+<div class="footer-col"><h4>聯絡資訊</h4><p>台北市大安區瑞安街 128 號 1 樓</p><p>02-2700-1234</p><p>hello@bloom-floral.tw</p></div>
+<div class="footer-col"><h4>營業時間</h4><p>週二至週六 10:00–19:00</p><p>週日 11:00–17:00</p><p>週一公休</p></div>
+</div>
+<div class="footer-bottom">© 2026 Bloom 花藝工作室 All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

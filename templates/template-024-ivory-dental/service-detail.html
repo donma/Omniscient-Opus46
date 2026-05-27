@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隱形矯正 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;margin-bottom:12px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.breadcrumb{padding:16px 0;font-size:.85rem;color:var(--muted)}.breadcrumb a{color:var(--mint-dark)}
+.detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:60px}
+.detail-hero img{width:100%;border-radius:var(--radius);height:400px;object-fit:cover}
+.detail-hero h1{font-size:2rem;margin-bottom:16px}
+.detail-hero p{color:var(--muted);margin-bottom:24px}
+.btn{display:inline-block;padding:14px 36px;background:var(--mint-dark);color:var(--white);border-radius:var(--radius);font-weight:600;font-family:'Inter',sans-serif}.btn:hover{background:var(--navy)}
+@media(max-width:768px){.detail-hero{grid-template-columns:1fr}}
+.process-section h2{text-align:center;margin-bottom:40px;font-size:1.6rem}
+.timeline{position:relative;max-width:700px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;padding-left:64px;margin-bottom:36px}
+.timeline-item::before{content:attr(data-step);position:absolute;left:8px;top:0;width:34px;height:34px;background:var(--mint-dark);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;font-family:'Inter',sans-serif}
+.timeline-item h4{margin-bottom:4px;font-size:1rem}
+.timeline-item p{color:var(--muted);font-size:.9rem}
+.pricing-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px;text-align:center;margin-top:48px}
+.pricing-box h3{margin-bottom:12px}
+.pricing-box .price{font-size:2rem;color:var(--mint-dark);font-weight:700;font-family:'Inter',sans-serif;margin-bottom:8px}
+.pricing-box p{color:var(--muted);font-size:.9rem}
+.ba-section{margin-top:60px}
+.ba-section h2{text-align:center;margin-bottom:32px}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;margin:0 auto}
+.ba-grid img{width:100%;border-radius:var(--radius);height:250px;object-fit:cover}
+.ba-label{text-align:center;font-weight:600;color:var(--muted);margin-top:8px;font-size:.9rem}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<div class="container"><div class="breadcrumb"><a href="index.html">首頁</a> / <a href="services.html">診療項目</a> / 隱形矯正</div></div>
+
+<section class="section">
+<div class="container">
+<div class="detail-hero">
+<img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=700&h=500&fit=crop" alt="隱形矯正">
+<div>
+<h1>隱形矯正</h1>
+<p>採用隱適美（Invisalign）透明牙套系統，利用數位3D模擬技術精確規劃牙齒移動路徑，讓您在不知不覺中完成矯正。牙套幾乎隱形，配戴舒適，不影響日常飲食與社交。</p>
+<p style="color:var(--muted);margin-bottom:24px"><strong>治療時間：</strong>6 個月至 2 年（依個案而異）<br><strong>適合對象：</strong>輕度至中度齒列不整、牙縫、咬合問題</p>
+<a href="appointment.html" class="btn">預約諮詢</a>
+</div>
+</div>
+
+<div class="process-section">
+<h2>治療流程</h2>
+<div class="timeline">
+<div class="timeline-item" data-step="1"><h4>初診評估與數位口掃</h4><p>進行口腔全面檢查，使用iTero數位口掃機建立3D齒列模型，評估矯正可行性。</p></div>
+<div class="timeline-item" data-step="2"><h4>客製化治療計畫</h4><p>利用ClinCheck軟體模擬矯正過程，您可預覽每個階段的牙齒移動與最終成果。</p></div>
+<div class="timeline-item" data-step="3"><h4>牙套製作與配戴</h4><p>依照計畫製作一系列客製化透明牙套，每1-2週更換一副，逐步移動牙齒。</p></div>
+<div class="timeline-item" data-step="4"><h4>定期回診追蹤</h4><p>每6-8週回診一次，醫師確認進度並提供下階段牙套。</p></div>
+<div class="timeline-item" data-step="5"><h4>完成矯正＆維持器</h4><p>達到理想位置後，配戴維持器固定成果，定期追蹤確保效果穩定。</p></div>
+</div>
+</div>
+
+<div class="ba-section">
+<h2>矯正前後對比</h2>
+<div class="ba-grid">
+<div><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=350&fit=crop" alt="矯正前"><div class="ba-label">矯正前</div></div>
+<div><img src="https://images.unsplash.com/photo-1581585829498-92e40e0bca19?w=500&h=350&fit=crop" alt="矯正後"><div class="ba-label">矯正後</div></div>
+</div>
+</div>
+
+<div class="pricing-box">
+<h3>費用範圍</h3>
+<div class="price">NT$ 150,000 - 280,000</div>
+<p>實際費用依矯正複雜度而定，初診諮詢免費，可分期付款。歡迎預約諮詢獲取詳細報價。</p>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

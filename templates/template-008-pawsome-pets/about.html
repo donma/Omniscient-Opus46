@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們 — Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}
+.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{font-size:.9rem;font-weight:400;transition:color .3s}
+nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s ease;box-shadow:-4px 0 30px rgba(0,0,0,.1)}
+.mobile-nav.active{right:0}
+.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-nav a{font-size:1.1rem}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}
+.overlay.active{display:block}
+.page-hero{padding:60px 0;text-align:center;background:var(--pink-light);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:var(--pink);opacity:.08;border-radius:50%}
+.page-hero h1{font-size:2.2rem;margin-bottom:8px}
+.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.about-story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:80px}
+.about-story img{border-radius:var(--radius);height:380px;object-fit:cover;width:100%}
+.about-story h2{font-size:1.6rem;margin-bottom:16px;color:var(--pink)}
+.about-story p{color:var(--muted);margin-bottom:12px}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:48px}
+.team-card{text-align:center}
+.team-card img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 12px;border:3px solid var(--pink-light)}
+.team-card h4{font-size:.95rem;margin-bottom:4px}
+.team-card p{font-size:.8rem;color:var(--muted)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.value-card{background:var(--white);border-radius:var(--radius);padding:32px;text-align:center;border:1px solid var(--border)}
+.value-card .icon{font-size:2rem;margin-bottom:12px}
+.value-card h3{font-size:1rem;margin-bottom:8px}
+.value-card p{font-size:.85rem;color:var(--muted)}
+.certs{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.cert-badge{background:var(--pink-light);padding:8px 20px;border-radius:var(--btn-radius);font-size:.85rem;color:var(--pink)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-grid h4{font-size:.95rem;margin-bottom:12px;color:var(--pink)}
+.footer-grid p,.footer-grid li{font-size:.85rem;color:var(--muted);line-height:2}
+.footer-grid ul{list-style:none}
+.footer-bottom{text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+@media(max-width:768px){
+.menu-toggle{display:flex}
+nav{display:none}
+.about-story{grid-template-columns:1fr}
+.team-grid{grid-template-columns:repeat(2,1fr)}
+.values-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<a href="index.html" class="logo">Paw<span>some</span></a>
+<nav><ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="services.html">美容服務</a></li>
+<li><a href="pricing.html">服務價目</a></li>
+<li><a href="portfolio.html">毛孩作品</a></li>
+<li><a href="tips.html">寵物知識</a></li>
+<li><a href="booking.html">線上預約</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul></nav>
+<div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav">
+<div class="close-btn" onclick="toggleMenu()">&times;</div>
+<ul>
+<li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<section class="page-hero">
+<div class="container">
+<h1>關於我們</h1>
+<p>用愛心與專業，陪伴每位毛孩成為最美的自己</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="about-story">
+<img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop" alt="寵物美容店內部">
+<div>
+<h2>我們的故事</h2>
+<p>Pawsome 寵物美容由創辦人小雅於 2018 年創立。身為一位深愛動物的毛孩媽媽，她希望能打造一個讓寵物感到安心、舒適的美容空間。</p>
+<p>從最初在自家公寓的小角落開始，到現在中山區明亮溫馨的獨立店面，我們始終堅持以寵物的舒適度為第一優先。每一次的梳洗與修剪，都融入了我們對毛孩滿滿的愛。</p>
+<p>六年來，我們已服務超過 3,000 隻毛孩，從膽小怕生的小貓到活潑好動的大狗，都能在 Pawsome 找到屬於牠的美容方案。</p>
+</div>
+</div>
+<div class="about-story">
+<div>
+<h2>我們的空間</h2>
+<p>Pawsome 的店面設計以毛孩的需求為出發點。寬敞明亮的環境、防滑地板、獨立隔間，讓每位毛孩都能在放鬆的狀態下完成美容。</p>
+<p>我們使用專業級寵物美容設備，包含靜音吹風機、可調式美容台、專業洗毛設備，以及通過安全認證的天然洗劑與護膚產品。</p>
+<p>等候區備有飲品與免費 WiFi，毛爸毛媽也能在舒適的環境中等待。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&h=400&fit=crop" alt="美容空間">
+</div>
+
+<h2 style="text-align:center;font-size:1.6rem;margin-top:60px;margin-bottom:8px">專業團隊</h2>
+<p style="text-align:center;color:var(--muted)">每位美容師皆經過嚴格培訓，持有國際寵物美容認證</p>
+<div class="team-grid">
+<div class="team-card">
+<img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face" alt="小雅">
+<h4>小雅</h4>
+<p>創辦人 / 首席美容師</p>
+</div>
+<div class="team-card">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face" alt="阿潔">
+<h4>阿潔</h4>
+<p>資深美容師</p>
+</div>
+<div class="team-card">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face" alt="小凱">
+<h4>小凱</h4>
+<p>美容師 / 貓咪專家</p>
+</div>
+<div class="team-card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face" alt="小芳">
+<h4>小芳</h4>
+<p>美容師</p>
+</div>
+<div class="team-card">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="阿哲">
+<h4>阿哲</h4>
+<p>助理美容師</p>
+</div>
+</div>
+
+<h2 style="text-align:center;font-size:1.6rem;margin-top:60px;margin-bottom:8px">我們的理念</h2>
+<div class="values-grid">
+<div class="value-card">
+<div class="icon">💗</div>
+<h3>以愛為本</h3>
+<p>每隻毛孩都是我們的家人，用愛心與耐心對待每一位客人</p>
+</div>
+<div class="value-card">
+<div class="icon">🌿</div>
+<h3>天然安全</h3>
+<p>堅持使用通過安全認證的天然產品，不傷害毛孩敏感肌膚</p>
+</div>
+<div class="value-card">
+<div class="icon">🎓</div>
+<h3>專業精進</h3>
+<p>定期參加國內外進修課程，掌握最新美容技術與趨勢</p>
+</div>
+</div>
+
+<h2 style="text-align:center;font-size:1.6rem;margin-top:60px;margin-bottom:16px">專業認證</h2>
+<div class="certs" style="justify-content:center">
+<span class="cert-badge">KKF 國際寵物美容師認證</span>
+<span class="cert-badge">台灣寵物美容協會會員</span>
+<span class="cert-badge">寵物急救訓練合格</span>
+<span class="cert-badge">日本 JKC 研修結業</span>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Pawsome 寵物美容</h4><p>位於台北中山區的專業寵物美容沙龍，以愛心與專業技術，為每一位毛孩帶來最舒適的美容體驗。</p></div>
+<div><h4>服務項目</h4><ul><li><a href="services.html">基礎洗澡</a></li><li><a href="services.html">全套美容</a></li><li><a href="services.html">SPA 護理</a></li><li><a href="services.html">口腔護理</a></li></ul></div>
+<div><h4>快速連結</h4><ul><li><a href="booking.html">線上預約</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="faq.html">常見問題</a></li></ul></div>
+<div><h4>聯絡資訊</h4><p>台北市中山區南京東路二段 88 號 1 樓</p><p>02-2567-8899</p><p>營業時間：10:00 - 19:00</p></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 Pawsome 寵物美容. All rights reserved.</p></div>
+</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

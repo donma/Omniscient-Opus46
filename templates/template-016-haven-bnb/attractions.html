@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>周邊景點 — Haven 山居民宿</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--white:#ffffff;--wood:#8b5e3c;--wood-dark:#6b3f1f;--cream:#f5ece0;--text:#2c231c;--muted:#7a6b5a;--border:#e8ddd0;--green:#7a9a6a;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.4}
+a{color:var(--wood);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--wood-dark);font-weight:700}
+nav .logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--text);font-size:.9rem;transition:color .3s}
+nav ul a:hover{color:var(--wood)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+@media(max-width:768px){nav ul{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;gap:16px;border:1px solid var(--border);border-radius:0 0 0 var(--radius);min-width:200px}nav ul.open{display:flex}.menu-btn{display:block}}
+section{padding:80px 0}
+.page-header{background:var(--cream);padding:60px 0;text-align:center}
+.page-header h1{font-size:2.2rem;color:var(--wood-dark);margin-bottom:8px}
+.page-header p{color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
+.attraction-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.attraction-card img{width:100%;height:200px;object-fit:cover}
+.attraction-card .body{padding:24px}
+.attraction-card h3{color:var(--wood-dark);margin-bottom:8px;font-size:1.1rem}
+.attraction-card .dist{display:inline-block;background:var(--cream);color:var(--wood);padding:4px 12px;border-radius:20px;font-size:.8rem;margin-bottom:12px}
+.attraction-card p{font-size:.9rem;color:var(--muted)}
+footer{background:var(--wood-dark);color:var(--cream);padding:48px 0 24px}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+footer h4{font-family:'Libre Baskerville',serif;margin-bottom:16px;font-size:1rem}
+footer p,footer a{color:rgba(245,236,224,.8);font-size:.85rem}
+footer .copy{text-align:center;padding-top:24px;border-top:1px solid rgba(245,236,224,.2);font-size:.8rem;color:rgba(245,236,224,.5)}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Haven<span>山居民宿</span></a>
+<button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於民宿</a></li>
+<li><a href="rooms.html">客房介紹</a></li>
+<li><a href="dining.html">餐飲服務</a></li>
+<li><a href="attractions.html">周邊景點</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="booking.html">訂房資訊</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="page-header">
+<h1>周邊景點</h1>
+<p>清境周邊精選景點，讓您的山中假期更加豐富</p>
+</div>
+
+<section>
+<div class="container">
+<div class="grid-2">
+<div class="attraction-card">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="合歡山">
+<div class="body">
+<span class="dist">車程約 30 分鐘</span>
+<h3>合歡山主峰</h3>
+<p>台灣最容易親近的百岳之一，海拔3,417公尺。日出、雲海、冬季雪景皆是絕美體驗。從民宿出發約30分鐘車程即達登山口。</p>
+</div>
+</div>
+
+<div class="attraction-card">
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="清境農場">
+<div class="body">
+<span class="dist">車程約 5 分鐘</span>
+<h3>清境農場</h3>
+<p>最經典的清境景點，綿羊秀與馬術表演老少咸宜。青青草原上放眼望去盡是綠意，是拍照打卡的最佳地點。</p>
+</div>
+</div>
+
+<div class="attraction-card">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="森林步道">
+<div class="body">
+<span class="dist">步行約 10 分鐘</span>
+<h3>清境天空步道</h3>
+<p>全長1.2公里的高架步道，漫步在樹冠層之間，俯瞰山谷美景。步道平緩好走，適合全家大小。</p>
+</div>
+</div>
+
+<div class="attraction-card">
+<img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80" alt="武嶺">
+<div class="body">
+<span class="dist">車程約 40 分鐘</span>
+<h3>武嶺</h3>
+<p>台灣公路最高點，海拔3,275公尺。銀河星空攝影聖地，夏季凌晨前往可見壯闊銀河橫跨天際。</p>
+</div>
+</div>
+
+<div class="attraction-card">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80" alt="翠峰湖">
+<div class="body">
+<span class="dist">車程約 20 分鐘</span>
+<h3>翠峰茶園</h3>
+<p>海拔1,800公尺的高山茶園，種植烏龍茶與紅茶。可預約茶園導覽與品茶體驗，了解高山茶的種植過程。</p>
+</div>
+</div>
+
+<div class="attraction-card">
+<img src="https://images.unsplash.com/photo-1471513671068-599d5f14f93a?w=600&q=80" alt="原住民部落">
+<div class="body">
+<span class="dist">車程約 15 分鐘</span>
+<h3>賽德克族部落文化園區</h3>
+<p>深入了解在地原住民文化，體驗傳統編織、狩獵文化導覽，品嚐原住民風味餐。週末有傳統歌舞表演。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Haven 山居民宿</h4><p>南投縣仁愛鄉大同村信義巷32號</p></div>
+<div><h4>聯絡方式</h4><p>電話：049-280-1234</p><p>信箱：stay@haven-bnb.tw</p></div>
+<div><h4>入住資訊</h4><p>入住：15:00 後 ｜ 退房：11:00 前</p></div>
+</div>
+<div class="copy">© 2026 Haven 山居民宿 — All Rights Reserved</div>
+</div>
+</footer>
+</body>
+</html>

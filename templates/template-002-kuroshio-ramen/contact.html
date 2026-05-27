@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店舖資訊｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="黑潮拉麵地址、營業時間、交通方式與用餐須知。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}.page-hero h1{font-size:2rem;letter-spacing:2px}
+section{padding:80px 0}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:768px){.info-grid{grid-template-columns:1fr}}
+.info-block{margin-bottom:32px}
+.info-block h3{color:var(--gold);font-size:1rem;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.info-block p,.info-block li{color:var(--muted);font-size:.9rem}
+.info-block ul{list-style:none}.info-block li{padding:6px 0}
+.map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.map-wrap iframe{width:100%;height:100%;min-height:350px;border:0;filter:grayscale(.8) invert(.92) contrast(1.2)}
+.rules{margin-top:60px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.rules h3{color:var(--gold);margin-bottom:16px;font-size:1rem}
+.rules ul{list-style:none}
+.rules li{padding:8px 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--muted)}
+.rules li:last-child{border:none}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<div class="page-hero"><p class="jp">アクセス</p><h1>店舖資訊</h1></div>
+
+<section>
+<div class="container">
+<div class="info-grid">
+  <div>
+    <div class="info-block">
+      <h3>地址</h3>
+      <p>台北市大安區忠孝東路四段 120 巷 8 號<br>（近捷運忠孝敦化站 5 號出口，步行 3 分鐘）</p>
+    </div>
+    <div class="info-block">
+      <h3>營業時間</h3>
+      <ul>
+        <li>午餐：11:30 – 14:00（最後點餐 13:40）</li>
+        <li>晚餐：17:30 – 21:00（最後點餐 20:40）</li>
+        <li>每週一公休</li>
+        <li>每日限量 80 碗，售完提前打烊</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>聯絡方式</h3>
+      <ul>
+        <li>電話：02-2771-0808（不接受電話訂位）</li>
+        <li>Instagram：@kuroshio.ramen</li>
+        <li>Facebook：黑潮拉麵 KUROSHIO</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>交通方式</h3>
+      <ul>
+        <li>捷運：忠孝敦化站 5 號出口步行 3 分鐘</li>
+        <li>公車：忠孝敦化路口站（多路線）</li>
+        <li>開車：明曜百貨地下停車場（步行 2 分鐘）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8!2d121.55!3d25.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAyJzI0LjAiTiAxMjHCsDMzJzAwLjAiRQ!5e0!3m2!1szh-TW!2stw!4v1" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<div class="rules">
+  <h3>用餐須知</h3>
+  <ul>
+    <li>本店不接受預約，採現場候位制</li>
+    <li>一人一碗拉麵，未點餐者恕不入座</li>
+    <li>用餐時間限 40 分鐘（尖峰時段）</li>
+    <li>請勿攜帶外食</li>
+    <li>拍照歡迎，但請勿使用閃光燈影響其他客人</li>
+    <li>12 歲以下兒童提供兒童椅，但無兒童餐</li>
+    <li>如有食物過敏請事先告知工作人員</li>
+  </ul>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

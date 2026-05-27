@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們 | Circuit 電子維修</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f0a;--surface:#111a11;--card:#1a241a;--neon:#39ff14;--neon-dim:#2acd0f;--text:#e0f0e0;--muted:#6a8a6a;--border:#1e3a1e;--dark-accent:#0d1f0d;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);z-index:9999}
+h1,h2,h3,h4{font-family:'JetBrains Mono',monospace;color:var(--neon)}
+a{color:var(--neon);text-decoration:none;transition:color .3s}a:hover{color:var(--neon-dim)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:15px 0;position:sticky;top:0;z-index:1000}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--neon);font-weight:700}.logo span{color:var(--muted)}
+.nav-links{display:flex;gap:25px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--neon)}
+.menu-btn{display:none;background:none;border:1px solid var(--neon);color:var(--neon);padding:8px 12px;cursor:pointer;font-family:'JetBrains Mono',monospace;border-radius:var(--radius)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);border-right:1px solid var(--neon);padding:60px 30px;transition:left .3s;z-index:2000;display:flex;flex-direction:column;gap:20px}
+.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.mobile-menu .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;color:var(--neon);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1999;display:none}.overlay.active{display:block}
+.page-header{padding:60px 0;text-align:center;background:var(--dark-accent)}.page-header h1{font-size:2.5rem;margin-bottom:10px}.page-header p{color:var(--muted)}
+.section{padding:80px 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:60px}
+.story img{width:100%;border-radius:var(--radius);border:1px solid var(--border)}
+.story h2{margin-bottom:20px;font-size:1.5rem}
+.story p{color:var(--muted);margin-bottom:15px}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:25px;text-align:center}
+.team-card img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--neon);margin-bottom:15px}
+.team-card h3{font-size:1rem;margin-bottom:5px}.team-card .role{color:var(--neon-dim);font-size:.85rem;margin-bottom:10px}.team-card p{color:var(--muted);font-size:.85rem}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.cert .icon{font-size:2rem;margin-bottom:10px}.cert h4{font-size:.85rem;margin-bottom:5px}.cert p{color:var(--muted);font-size:.8rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:40px 0;margin-top:60px}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.footer-col h4{margin-bottom:15px;font-size:.9rem}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.story{grid-template-columns:1fr}.page-header h1{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo">Circuit<span>_</span>電子維修</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="services.html">維修服務</a></li>
+      <li><a href="process.html">維修流程</a></li>
+      <li><a href="pricing.html">價目表</a></li>
+      <li><a href="faq.html">常見問題</a></li>
+      <li><a href="cases.html">維修案例</a></li>
+      <li><a href="contact.html">聯絡我們</a></li>
+    </ul>
+    <button class="menu-btn" onclick="toggleMenu()">≡ MENU</button>
+  </div>
+</nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu">
+  <button class="close-btn" onclick="toggleMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="services.html">維修服務</a><a href="process.html">維修流程</a><a href="pricing.html">價目表</a><a href="faq.html">常見問題</a><a href="cases.html">維修案例</a><a href="contact.html">聯絡我們</a>
+</div>
+
+<section class="page-header">
+  <div class="container">
+    <h1>// 關於我們</h1>
+    <p>從一個工程師的熱情，到光華商場最值得信賴的維修團隊</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="story">
+      <div>
+        <h2>> 我們的故事</h2>
+        <p>Circuit 電子維修成立於 2015 年，創辦人陳柏翰曾任職於知名科技公司擔任硬體工程師長達 8 年。在看到市場上維修服務品質參差不齊後，決定創立一個以工程師標準經營的維修品牌。</p>
+        <p>從光華商場旁的一間 5 坪小店開始，憑藉精湛的技術和透明的價格，逐步建立起口碑。如今我們的團隊已有 4 位專業技術人員，累計服務超過 12,000 位客戶。</p>
+        <p>我們堅信：每一台設備都值得被認真對待，每一位客戶都值得透明、公正的服務。</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?w=600&h=400&fit=crop" alt="電子維修工作台">
+    </div>
+
+    <h2 style="text-align:center;margin-bottom:40px;font-size:1.8rem">// 技術團隊</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="陳柏翰">
+        <h3>陳柏翰</h3>
+        <div class="role">創辦人 / 主任工程師</div>
+        <p>前 HTC 硬體工程師，10+ 年維修經驗，專攻主機板微焊接</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="林志偉">
+        <h3>林志偉</h3>
+        <div class="role">資深維修技師</div>
+        <p>Apple 認證維修技師，iPhone / Mac 全系列專家</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="王雅婷">
+        <h3>王雅婷</h3>
+        <div class="role">維修技師</div>
+        <p>Android 裝置與平板電腦專家，資料救援專業認證</p>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face" alt="張家豪">
+        <h3>張家豪</h3>
+        <div class="role">維修技師</div>
+        <p>筆電與遊戲主機維修專家，電競設備改裝愛好者</p>
+      </div>
+    </div>
+
+    <h2 style="text-align:center;margin:60px 0 20px;font-size:1.8rem">// 專業認證</h2>
+    <div class="certs">
+      <div class="cert">
+        <div class="icon">🏆</div>
+        <h4>Apple IRP 認證</h4>
+        <p>Independent Repair Provider</p>
+      </div>
+      <div class="cert">
+        <div class="icon">📋</div>
+        <h4>Samsung 授權維修</h4>
+        <p>Galaxy 系列官方授權</p>
+      </div>
+      <div class="cert">
+        <div class="icon">🔧</div>
+        <h4>CompTIA A+</h4>
+        <p>國際電腦維修認證</p>
+      </div>
+      <div class="cert">
+        <div class="icon">🛡️</div>
+        <h4>ISO 9001</h4>
+        <p>品質管理系統認證</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col"><h4>// Circuit 電子維修</h4><p>台北市中正區市民大道三段8號</p><p>（光華商場正對面）</p><p>營業時間：週一至週六 11:00-21:00</p></div>
+      <div class="footer-col"><h4>// 快速連結</h4><a href="services.html">維修服務</a><a href="pricing.html">價目表</a><a href="process.html">維修流程</a><a href="faq.html">常見問題</a></div>
+      <div class="footer-col"><h4>// 聯絡方式</h4><p>電話：(02) 2396-5500</p><p>LINE ID：@circuit-repair</p><p>Email：service@circuit-repair.tw</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Circuit 電子維修. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>旅遊攻略 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.guide-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .3s}
+.guide-card:hover{transform:translateY(-4px)}
+.guide-card img{width:100%;height:200px;object-fit:cover}
+.guide-card .info{padding:24px}
+.guide-card .tag{font-size:.75rem;color:var(--sky);font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.guide-card h3{font-size:1rem;color:var(--sky-dark);margin-bottom:8px}
+.guide-card p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.guide-card .meta{font-size:.75rem;color:var(--muted)}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.guide-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1600&q=80" alt="旅遊攻略">
+<h1>旅遊攻略</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="guide-grid">
+<a href="guide-detail.html" class="guide-card">
+<img src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=500&q=80" alt="日本">
+<div class="info">
+<div class="tag">自由行攻略</div>
+<h3>第一次去日本自由行完整攻略</h3>
+<p>從簽證、交通、住宿到必備APP，新手也能輕鬆上手</p>
+<div class="meta">2026.03.15 ・ 閱讀 8 分鐘</div>
+</div>
+</a>
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1553531384-cc64ac80f931?w=500&q=80" alt="打包">
+<div class="info">
+<div class="tag">行前準備</div>
+<h3>長途旅行打包術：一個登機箱搞定</h3>
+<p>極簡打包清單與收納技巧，告別超重困擾</p>
+<div class="meta">2026.02.28 ・ 閱讀 5 分鐘</div>
+</div>
+</div>
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=500&q=80" alt="簽證">
+<div class="info">
+<div class="tag">簽證資訊</div>
+<h3>2026年台灣護照免簽國家總整理</h3>
+<p>最新免簽、落地簽、電子簽資訊一次看</p>
+<div class="meta">2026.01.10 ・ 閱讀 6 分鐘</div>
+</div>
+</div>
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1544016768-982d1554f0b9?w=500&q=80" alt="保險">
+<div class="info">
+<div class="tag">旅遊保險</div>
+<h3>海外旅遊險怎麼買？完整比較指南</h3>
+<p>旅平險、不便險、醫療險差在哪？一篇搞懂</p>
+<div class="meta">2026.01.05 ・ 閱讀 7 分鐘</div>
+</div>
+</div>
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=500&q=80" alt="極光">
+<div class="info">
+<div class="tag">目的地攻略</div>
+<h3>追極光必知：最佳時間地點全攻略</h3>
+<p>極光預測APP、拍攝技巧、穿搭建議</p>
+<div class="meta">2023.12.20 ・ 閱讀 9 分鐘</div>
+</div>
+</div>
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=80" alt="背包客">
+<div class="info">
+<div class="tag">省錢秘訣</div>
+<h3>低預算玩歐洲：背包客省錢攻略</h3>
+<p>廉航搶票、青旅推薦、免費景點大公開</p>
+<div class="meta">2023.11.15 ・ 閱讀 10 分鐘</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

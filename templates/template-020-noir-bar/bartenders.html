@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>調酒師 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+section{padding:100px 0}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.25)}
+.page-hero h1{position:relative;z-index:1;font-size:3rem}
+.bartender-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.bartender-card{display:grid;grid-template-columns:250px 1fr;gap:30px;background:var(--card);border:1px solid var(--border);overflow:hidden}
+.bartender-card img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.bartender-card .info{padding:30px}
+.bartender-card h3{font-size:1.5rem;margin-bottom:4px}
+.bartender-card .title{color:var(--copper);font-size:.85rem;margin-bottom:16px}
+.bartender-card p{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+.bartender-card .awards{list-style:none;margin-top:12px}
+.bartender-card .awards li{padding:4px 0;color:var(--muted);font-size:.85rem;border-left:2px solid var(--burgundy);padding-left:12px;margin-bottom:6px}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.page-hero h1{font-size:2rem}.bartender-grid{grid-template-columns:1fr}.bartender-card{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1574006852726-31d39bfba3f5?w=1600" alt="Bartender">
+  <h1>調酒師</h1>
+</div>
+
+<section>
+  <div class="container">
+    <p style="text-align:center;color:var(--muted);margin-bottom:60px;font-size:1.1rem">每一位 Noir 的調酒師都是夜晚的說書人，用液體與香氣訴說故事。</p>
+    <div class="bartender-grid">
+      <div class="bartender-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="陳昱翰">
+        <div class="info">
+          <h3>陳昱翰</h3>
+          <div class="title">首席調酒師 / 創辦人</div>
+          <p>12年資歷，專精煙燻技法與威士忌調酒。曾於東京、倫敦多間知名酒吧修業，將亞洲食材融入經典調酒。</p>
+          <ul class="awards">
+            <li>2022 World Class 台灣區冠軍</li>
+            <li>2021 亞洲50最佳酒吧 調酒師獎</li>
+            <li>2019 Diageo Reserve World Class 亞太區前五</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bartender-card">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="林雅琪">
+        <div class="info">
+          <h3>林雅琪</h3>
+          <div class="title">資深調酒師</div>
+          <p>9年資歷，擅長花卉與茶類調酒。以細膩的味覺平衡著稱，創作風格優雅而富有層次。</p>
+          <ul class="awards">
+            <li>2023 台灣調酒師大賽 亞軍</li>
+            <li>2022 Bacardi Legacy 台灣區決賽</li>
+            <li>2020 Lady Amarena 亞太區代表</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bartender-card">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="張維廷">
+        <div class="info">
+          <h3>張維廷</h3>
+          <div class="title">調酒師</div>
+          <p>7年資歷，熱愛蘭姆酒與Tiki文化，但在 Noir 展現出截然不同的暗黑風格。擅長以熱帶水果創造意想不到的深度。</p>
+          <ul class="awards">
+            <li>2023 Plantation Rum 調酒大賽 季軍</li>
+            <li>2022 台北雞尾酒週 最佳創作獎</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bartender-card">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400" alt="王詩涵">
+        <div class="info">
+          <h3>王詩涵</h3>
+          <div class="title">調酒師</div>
+          <p>5年資歷，背景為甜點師，將法式甜點的精準與美感帶入調酒世界。專精甜點系調酒與分子技法。</p>
+          <ul class="awards">
+            <li>2023 Monkey Shoulder 調酒挑戰賽 冠軍</li>
+            <li>2023 台灣新銳調酒師 TOP 10</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

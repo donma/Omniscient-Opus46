@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 — Bloom 花藝工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fdf8f5;--white:#ffffff;--rose:#e89bae;--rose-light:#fce8ee;--sage:#a8c5a0;--text:#3a2d2d;--muted:#8a7070;--border:#f0dede;--lavender:#d4c5e8;--radius:30px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,155,174,0.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+.nav-links{display:flex;gap:24px;font-size:0.9rem}
+.nav-links a:hover{color:var(--rose)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{text-align:center;padding:60px 0;background:var(--rose-light);border-radius:0 0 60px 60px;margin-bottom:60px}
+.page-hero h1{font-size:2.8rem;margin-bottom:8px}
+.page-hero p{color:var(--muted)}
+section{padding:0 0 80px}
+.faq-section{max-width:800px;margin:0 auto}
+.faq-category{margin-bottom:40px}
+.faq-category h2{font-size:1.5rem;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--rose-light)}
+.faq-item{background:var(--white);border-radius:var(--radius);padding:24px;margin-bottom:12px;border:1px solid var(--border)}
+.faq-item h3{font-size:1rem;font-style:normal;font-family:'Noto Sans TC',sans-serif;font-weight:500;margin-bottom:8px;color:var(--text)}
+.faq-item p{color:var(--muted);font-size:0.9rem}
+footer{background:var(--white);padding:48px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:1rem;margin-bottom:12px;color:var(--rose)}
+.footer-col p,.footer-col a{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:24px}
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;border-radius:0 0 var(--radius) var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.nav-links.active{display:flex}
+.menu-toggle{display:block}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Bloom 花藝</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="weddings.html">婚禮花藝</a><a href="courses.html">花藝課程</a><a href="blog.html">花語日記</a><a href="contact.html">聯絡我們</a>
+</div>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>常見問題</h1>
+<p>關於訂購、外送、婚禮與課程的疑問解答</p>
+</div>
+
+<section>
+<div class="container">
+<div class="faq-section">
+
+<div class="faq-category">
+<h2>花束訂購</h2>
+<div class="faq-item">
+<h3>需要提前多久預訂花束？</h3>
+<p>一般花束建議提前 2 天預訂，以確保我們能為您準備最新鮮的花材。急件（24 小時內）請直接電話聯繫，我們會盡力為您安排。特殊節日（情人節、母親節等）建議提前一週預訂。</p>
+</div>
+<div class="faq-item">
+<h3>可以指定花材或顏色嗎？</h3>
+<p>可以的！您可以在訂購時備註希望的花材或色系偏好，我們會盡量滿足您的需求。但由於鮮花受季節影響，若指定花材缺貨，我們會以相近風格的花材替代，並事先與您確認。</p>
+</div>
+<div class="faq-item">
+<h3>花束可以加購卡片或配件嗎？</h3>
+<p>每束花都附贈一張手寫小卡，您可以在訂購時提供想寫的內容。另外可加購氣球（NT$150 起）、巧克力（NT$200 起）等配件。</p>
+</div>
+</div>
+
+<div class="faq-category">
+<h2>外送服務</h2>
+<div class="faq-item">
+<h3>外送範圍與費用如何計算？</h3>
+<p>台北市區外送費 NT$150，訂單滿 NT$2,000 免運。新北市部分地區（板橋、中和、永和、新店）外送費 NT$250。其他地區請來電詢問。</p>
+</div>
+<div class="faq-item">
+<h3>可以指定送達時間嗎？</h3>
+<p>可以選擇上午（10:00-12:00）、下午（14:00-17:00）或晚間（17:00-19:00）時段。如需指定精確時間，請提前告知，我們會盡力配合。</p>
+</div>
+<div class="faq-item">
+<h3>收件人不在怎麼辦？</h3>
+<p>外送前我們會電話聯繫收件人確認在府。若無人接聽，會嘗試三次聯繫；若仍無法送達，可協助轉送至管理室或改約時間。</p>
+</div>
+</div>
+
+<div class="faq-category">
+<h2>婚禮花藝</h2>
+<div class="faq-item">
+<h3>婚禮花藝需要提前多久諮詢？</h3>
+<p>建議至少提前 3 個月預約諮詢，旺季（10-12 月、3-5 月）建議提前半年。初次諮詢免費，我們會在了解您的需求後提供報價。</p>
+</div>
+<div class="faq-item">
+<h3>可以到婚禮場地看場嗎？</h3>
+<p>台北市區內免費看場一次，其他地區酌收車馬費。看場後我們會根據場地條件提供更精準的設計方案與報價。</p>
+</div>
+<div class="faq-item">
+<h3>婚禮當天會有專人到場佈置嗎？</h3>
+<p>是的，我們的專業團隊會在婚禮前 2-3 小時到場完成所有佈置，並在活動結束後進行撤場。全程不需要新人操心。</p>
+</div>
+</div>
+
+<div class="faq-category">
+<h2>花藝課程</h2>
+<div class="faq-item">
+<h3>完全沒有基礎可以上課嗎？</h3>
+<p>當然可以！我們的課程專為初學者設計，老師會從最基礎的步驟開始教學。小班制教學確保每位學員都能得到充分的指導。</p>
+</div>
+<div class="faq-item">
+<h3>課程需要自備工具嗎？</h3>
+<p>不需要，所有花材、工具、圍裙都由工作室提供。您只需要帶著愉快的心情來上課即可！課後作品可直接帶走。</p>
+</div>
+<div class="faq-item">
+<h3>取消或改期的規定是什麼？</h3>
+<p>課前 3 天（含）以上可免費取消或改期一次。課前 1-2 天取消需扣除 50% 費用（因花材已備妥），當天取消恕不退費。</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>Bloom 花藝工作室</h4><p>以花為語，傳遞每一份心意與美好。</p></div>
+<div class="footer-col"><h4>快速連結</h4><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="courses.html">花藝課程</a></div>
+<div class="footer-col"><h4>聯絡資訊</h4><p>台北市大安區瑞安街 128 號 1 樓</p><p>02-2700-1234</p><p>hello@bloom-floral.tw</p></div>
+<div class="footer-col"><h4>營業時間</h4><p>週二至週六 10:00–19:00</p><p>週日 11:00–17:00</p><p>週一公休</p></div>
+</div>
+<div class="footer-bottom">© 2026 Bloom 花藝工作室 All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

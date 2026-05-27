@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>主題旅遊 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.theme-section{margin-bottom:64px}
+.theme-section h2{font-size:1.6rem;color:var(--sky-dark);margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.theme-section>p{color:var(--muted);margin-bottom:24px;font-size:.9rem}
+.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.theme-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .3s}
+.theme-card:hover{transform:translateY(-4px)}
+.theme-card img{width:100%;height:180px;object-fit:cover}
+.theme-card .info{padding:20px}
+.theme-card h3{font-size:.95rem;color:var(--sky-dark);margin-bottom:6px}
+.theme-card p{font-size:.8rem;color:var(--muted)}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.theme-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80" alt="主題旅遊">
+<h1>主題旅遊</h1>
+</div>
+
+<section>
+<div class="container">
+
+<div class="theme-section">
+<h2>🌌 極光之旅</h2>
+<p>追尋夜空中最神秘的綠色光幕，在極地感受大自然的奇蹟</p>
+<div class="theme-grid">
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=500&q=80" alt="冰島極光"><div class="info"><h3>冰島極光10日</h3><p>冰川・溫泉・極光三重奏</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=500&q=80" alt="挪威極光"><div class="info"><h3>挪威北角極光7日</h3><p>峽灣・漁村・北極光</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?w=500&q=80" alt="芬蘭極光"><div class="info"><h3>芬蘭玻璃屋極光5日</h3><p>躺在玻璃屋看極光</p></div></div>
+</div>
+</div>
+
+<div class="theme-section">
+<h2>🏝️ 海島度假</h2>
+<p>碧藍海水、白色沙灘，遠離塵囂的完美假期</p>
+<div class="theme-grid">
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=500&q=80" alt="馬爾地夫"><div class="info"><h3>馬爾地夫水上屋7日</h3><p>私人泳池・浮潛天堂</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1537956965359-7573183d1f57?w=500&q=80" alt="帛琉"><div class="info"><h3>帛琉水母湖5日</h3><p>世界級潛水聖地</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=500&q=80" alt="希臘"><div class="info"><h3>希臘跳島8日</h3><p>藍白天堂浪漫巡遊</p></div></div>
+</div>
+</div>
+
+<div class="theme-section">
+<h2>🏛️ 文化巡禮</h2>
+<p>走入歷史長河，感受千年文明的智慧與美學</p>
+<div class="theme-grid">
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500&q=80" alt="京都"><div class="info"><h3>京都紅葉季5日</h3><p>千年古都的秋日詩意</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=500&q=80" alt="秘魯"><div class="info"><h3>秘魯印加古道9日</h3><p>失落帝國的壯闊遺跡</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=500&q=80" alt="法國"><div class="info"><h3>南法文藝之旅7日</h3><p>藝術・建築・美酒</p></div></div>
+</div>
+</div>
+
+<div class="theme-section">
+<h2>🥾 健行冒險</h2>
+<p>用雙腳丈量大地，挑戰自我極限，收穫絕世風景</p>
+<div class="theme-grid">
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80" alt="紐西蘭"><div class="info"><h3>紐西蘭南島健行12日</h3><p>米爾福德步道・冰川</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="瑞士"><div class="info"><h3>瑞士阿爾卑斯8日</h3><p>少女峰・冰河列車</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=500&q=80" alt="尼泊爾"><div class="info"><h3>尼泊爾ABC健行14日</h3><p>喜馬拉雅山腳的壯旅</p></div></div>
+</div>
+</div>
+
+<div class="theme-section">
+<h2>🍜 美食之旅</h2>
+<p>跟著味蕾去旅行，品嚐世界各地的美味故事</p>
+<div class="theme-grid">
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=500&q=80" alt="義大利"><div class="info"><h3>義大利美食8日</h3><p>手作義大利麵・酒莊</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=500&q=80" alt="日本"><div class="info"><h3>東京米其林美食5日</h3><p>壽司・拉麵・居酒屋</p></div></div>
+<div class="theme-card"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="泰國"><div class="info"><h3>泰國料理學堂6日</h3><p>市場採買・廚藝教室</p></div></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

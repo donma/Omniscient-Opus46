@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>線上訂位 — Ember 炭火燒肉</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0505;--surface:#1a0a0a;--card:#241010;--fire:#e63946;--ember:#ff6b35;--gold:#c8a430;--text:#f5ece8;--muted:#8a6a6a;--border:#3a1a1a;--gradient:linear-gradient(135deg,#e63946,#ff6b35);--radius:4px;--font-title:'Oswald',sans-serif;--font-body:'Noto Sans TC',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7}
+a{color:var(--fire);text-decoration:none}a:hover{color:var(--ember)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-title);font-size:1.6rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--fire)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;display:flex;flex-direction:column;gap:20px}.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.active{display:block}
+.close-menu{position:absolute;top:20px;right:20px;font-size:1.5rem;color:var(--text);cursor:pointer;background:none;border:none}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:var(--surface)}
+.page-hero h1{font-family:var(--font-title);font-size:3rem;font-weight:700}
+.page-hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.page-hero p{color:var(--muted);margin-top:12px}
+
+section{padding:80px 0}
+.form-wrapper{max-width:700px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:48px}
+.form-group{margin-bottom:24px}
+.form-group label{display:block;margin-bottom:8px;font-size:.9rem;color:var(--text)}
+.form-group label .required{color:var(--fire)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:768px){.form-row{grid-template-columns:1fr}}
+input,select,textarea{width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:var(--font-body);font-size:.95rem;transition:border-color .3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--fire)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a6a6a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+textarea{resize:vertical;min-height:100px}
+.btn-submit{display:block;width:100%;padding:16px;background:var(--gradient);color:#fff;font-family:var(--font-title);font-size:1.1rem;font-weight:600;border:none;border-radius:var(--radius);cursor:pointer;letter-spacing:1px;transition:transform .3s,box-shadow .3s}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(230,57,70,.4)}
+.form-note{text-align:center;color:var(--muted);font-size:.8rem;margin-top:20px}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{font-family:var(--font-title);font-size:1.1rem;margin-bottom:16px;color:var(--fire)}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">EMBER 炭火燒肉</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="menu.html">菜單介紹</a></li><li><a href="ingredients.html">嚴選食材</a></li><li><a href="dining.html">用餐方式</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="reservation.html">線上訂位</a></li></ul><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><button class="close-menu" onclick="toggleMenu()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="menu.html">菜單介紹</a><a href="ingredients.html">嚴選食材</a><a href="dining.html">用餐方式</a><a href="stores.html">門市資訊</a><a href="news.html">最新消息</a><a href="reservation.html">線上訂位</a></div>
+
+<section class="page-hero">
+<h1>線上 <span>訂位</span></h1>
+<p>預約您的炭火燒肉體驗，我們將為您準備最完美的席位</p>
+</section>
+
+<section>
+<div class="container">
+<form class="form-wrapper" onsubmit="event.preventDefault();alert('預約成功！我們將以簡訊確認您的訂位資訊。')">
+<div class="form-row">
+<div class="form-group">
+<label>姓名 <span class="required">*</span></label>
+<input type="text" required placeholder="請輸入姓名">
+</div>
+<div class="form-group">
+<label>手機號碼 <span class="required">*</span></label>
+<input type="tel" required placeholder="0912-345-678">
+</div>
+</div>
+
+<div class="form-group">
+<label>電子信箱</label>
+<input type="email" placeholder="example@email.com">
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<label>用餐門市 <span class="required">*</span></label>
+<select required>
+<option value="">請選擇門市</option>
+<option value="daan">大安本店</option>
+<option value="xinyi">信義旗艦店</option>
+</select>
+</div>
+<div class="form-group">
+<label>用餐人數 <span class="required">*</span></label>
+<select required>
+<option value="">請選擇人數</option>
+<option>1 位</option>
+<option>2 位</option>
+<option>3 位</option>
+<option>4 位</option>
+<option>5 位</option>
+<option>6 位</option>
+<option>7 位以上（請來電洽詢）</option>
+</select>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<label>用餐日期 <span class="required">*</span></label>
+<input type="date" required>
+</div>
+<div class="form-group">
+<label>用餐時段 <span class="required">*</span></label>
+<select required>
+<option value="">請選擇時段</option>
+<option>午餐 11:30</option>
+<option>午餐 12:00</option>
+<option>午餐 12:30</option>
+<option>午餐 13:00</option>
+<option>晚餐 17:30</option>
+<option>晚餐 18:00</option>
+<option>晚餐 18:30</option>
+<option>晚餐 19:00</option>
+<option>晚餐 19:30</option>
+<option>晚餐 20:00</option>
+<option>晚餐 20:30</option>
+<option>晚餐 21:00</option>
+</select>
+</div>
+</div>
+
+<div class="form-group">
+<label>座位偏好</label>
+<select>
+<option value="">無特殊需求</option>
+<option>吧台座位</option>
+<option>包廂（2人）</option>
+<option>包廂（4人）</option>
+<option>包廂（6人）</option>
+<option>職人吧台席（含代烤）</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>特殊需求 / 備註</label>
+<textarea placeholder="如：慶生、過敏原、素食需求、指定套餐等"></textarea>
+</div>
+
+<button type="submit" class="btn-submit">確認預約</button>
+<p class="form-note">送出後我們將於 24 小時內以簡訊確認您的訂位。如需緊急預約請直接來電。<br>用餐前 24 小時內取消將收取取消費 NT$1,000/人。</p>
+</form>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-col"><h4>EMBER 炭火燒肉</h4><p>傳承日本備長炭燒肉技藝</p></div><div class="footer-col"><h4>營業時間</h4><p>午餐 11:30 - 14:30</p><p>晚餐 17:30 - 23:00</p></div><div class="footer-col"><h4>聯絡我們</h4><a href="tel:0227001234">02-2700-1234</a><p>台北市大安區仁愛路四段 88 號</p></div><div class="footer-col"><h4>快速連結</h4><a href="menu.html">菜單介紹</a><a href="faq.html">常見問題</a></div></div><div class="footer-bottom"><p>&copy; 2026 Ember 炭火燒肉 All Rights Reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

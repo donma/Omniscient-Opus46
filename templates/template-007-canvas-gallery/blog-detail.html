@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何謂當代藝術 — Canvas 當代藝廊</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--offwhite:#f9f9f7;--text:#111111;--muted:#777777;--accent:#111111;--border:#e5e5e5;--hover:#333333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.02em}
+a{color:var(--text);text-decoration:none}
+img{display:block;width:100%;height:auto}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-0.03em}
+.logo span{font-weight:400;margin-left:4px;font-size:14px}
+nav.desktop{display:flex;gap:28px}
+nav.desktop a{font-size:13px;color:var(--muted);transition:color .2s}
+nav.desktop a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:20px;height:1.5px;background:var(--text);margin:5px 0}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--bg);z-index:200;padding:80px 32px;transition:left .3s ease;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}
+.mobile-nav a{display:block;font-size:16px;padding:12px 0;border-bottom:1px solid var(--border);color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;display:none}
+.overlay.active{display:block}
+.close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:24px;cursor:pointer}
+.meta{font-family:'Space Grotesk',monospace;font-size:12px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+article{margin-top:60px;padding:80px 0}
+article h1{font-size:clamp(24px,4vw,36px);margin-bottom:16px}
+article .hero-img{margin:32px 0;margin-left:-10%;width:120%}
+article p{margin-bottom:20px;font-size:16px}
+article h2{font-size:20px;margin:40px 0 16px}
+article blockquote{border-left:2px solid var(--text);padding-left:20px;margin:32px 0;font-style:italic;color:var(--muted)}
+.article-footer{border-top:1px solid var(--border);padding-top:32px;margin-top:48px}
+.article-footer a{display:inline-block;padding:10px 20px;border:1px solid var(--text);font-size:12px;font-family:'Space Grotesk',sans-serif}
+.article-footer a:hover{background:var(--text);color:var(--bg)}
+footer{border-top:1px solid var(--border);padding:48px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted);max-width:1200px;margin:0 auto}
+footer a{color:var(--muted)}footer a:hover{color:var(--text)}
+@media(max-width:768px){
+  nav.desktop{display:none}.menu-btn{display:block}
+  article .hero-img{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">CANVAS<span>當代藝廊</span></a>
+  <nav class="desktop">
+    <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+  </nav>
+  <button class="menu-btn" onclick="document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')"><span></span><span></span><span></span></button>
+</header>
+<div class="overlay" onclick="document.querySelector('.mobile-nav').classList.remove('active');this.classList.remove('active')"></div>
+<nav class="mobile-nav">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button>
+  <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+</nav>
+
+<div class="container">
+  <article>
+    <p class="meta">2026.10.05 — 觀點</p>
+    <h1>何謂當代藝術？一個持續演變的定義</h1>
+    <p style="color:var(--muted);font-size:14px">文／王思涵 — 閱讀時間約8分鐘</p>
+
+    <img class="hero-img" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&q=80" alt="當代藝術">
+
+    <p>當我們走進一座當代藝術美術館，面對一件由日常物件組成的裝置作品，或是一段長達數小時的錄像作品時，心中難免浮現一個問題：這是藝術嗎？而更根本的問題或許是：什麼是當代藝術？</p>
+
+    <p>這個問題之所以難以回答，正是因為「當代藝術」本身就是一個不斷流動、持續被重新定義的概念。它不像文藝復興或印象派那樣有著明確的風格特徵與時間邊界，當代藝術的本質恰恰在於它拒絕被任何單一定義所限制。</p>
+
+    <h2>時間的界定：當代從何時開始？</h2>
+
+    <p>從最基本的層面來說，「當代」意味著「此時此刻」。然而在藝術史的脈絡中，當代藝術通常被認為始於1960年代末至1970年代初，也就是現代主義逐漸式微、後現代主義開始興起的轉折時期。這個時期，藝術家開始質疑藝術的本質、挑戰美術館體制，並將日常生活、身體、政治議題帶入創作之中。</p>
+
+    <blockquote>「當代藝術不是一種風格，而是一種態度——一種對世界保持開放與質疑的姿態。」</blockquote>
+
+    <p>也有學者認為，當代藝術的真正起點是1989年——柏林圍牆倒塌的那一年。這一年不僅標誌著冷戰的終結，也象徵著藝術世界從以歐美為中心的敘事，轉向更加全球化、多元化的視野。從此，來自亞洲、非洲、拉丁美洲的藝術家開始在國際舞台上獲得更多關注。</p>
+
+    <h2>特徵而非定義</h2>
+
+    <p>既然無法給出一個嚴格的定義，我們或許可以從幾個特徵來理解當代藝術：</p>
+
+    <p><strong>跨媒材與跨領域：</strong>當代藝術家不再受限於繪畫或雕塑等傳統媒材，他們使用影像、聲音、網路、生物科技、人工智慧等各種可能的媒介進行創作。形式不再是目的，而是服務於概念。</p>
+
+    <p><strong>概念先行：</strong>自杜象以來，藝術的重心逐漸從「物件」轉向「觀念」。當代藝術往往重視作品背後的思考過程，而非最終呈現的視覺效果。這也是為什麼許多當代作品需要文字說明才能被充分理解。</p>
+
+    <p><strong>參與與互動：</strong>當代藝術經常邀請觀眾成為作品的一部分，打破創作者與觀看者之間的界線。從關係美學到社會參與式藝術，觀眾不再只是被動的接收者。</p>
+
+    <p><strong>回應當下：</strong>當代藝術與它所處的時代緊密相連。它回應著全球化、氣候變遷、性別平權、數位監控等當代議題，是我們理解自身處境的一面鏡子。</p>
+
+    <h2>在台灣的語境中</h2>
+
+    <p>在台灣，當代藝術的發展有其獨特的軌跡。從1980年代解嚴前後的前衛運動，到1990年代替代空間的蓬勃發展，再到今日雙年展體制的建立與國際連結的深化，台灣當代藝術始終在本土認同與國際對話之間尋找平衡。</p>
+
+    <p>或許，與其試圖定義當代藝術，不如將它理解為一種持續的提問——關於藝術可以是什麼、藝術應該做什麼、以及藝術如何幫助我們重新看見這個世界。這個問題沒有標準答案，而這正是當代藝術最迷人之處。</p>
+
+    <div class="article-footer">
+      <a href="blog.html">← 返回藝術日誌</a>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div><p><strong>CANVAS 當代藝廊</strong></p><p>台北市中山區大直街32號</p></div>
+  <div><p>© 2026 Canvas 當代藝廊. All Rights Reserved</p></div>
+</footer>
+</body>
+</html>

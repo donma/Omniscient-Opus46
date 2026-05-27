@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprout 小芽幼兒園 — 讓孩子自然成長</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}
+.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:0.95rem;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--text)}
+
+/* HERO */
+.hero{padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:var(--yellow);opacity:0.3}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;background:var(--pink);opacity:0.2}
+.hero h1{font-size:3rem;margin-bottom:16px;color:var(--text)}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:600px;margin:0 auto 32px}
+.hero-img{width:100%;max-width:800px;margin:0 auto;border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.1)}
+.hero-img img{width:100%;height:400px;object-fit:cover}
+.btn{display:inline-block;padding:14px 32px;border-radius:50px;font-weight:700;font-size:1rem;transition:transform 0.3s,box-shadow 0.3s}
+.btn-pink{background:var(--pink);color:var(--white)}
+.btn-blue{background:var(--blue);color:var(--white)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+
+/* FEATURES */
+.features{padding:80px 0}
+.features h2{text-align:center;font-size:2.2rem;margin-bottom:48px}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.feature-card{background:var(--white);border-radius:var(--radius);padding:32px 24px;text-align:center;border:2px solid var(--border);transition:transform 0.3s,box-shadow 0.3s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+.feature-card:nth-child(1) .feature-icon{background:var(--yellow)}
+.feature-card:nth-child(2) .feature-icon{background:var(--pink)}
+.feature-card:nth-child(3) .feature-icon{background:var(--blue)}
+.feature-card:nth-child(4) .feature-icon{background:var(--purple)}
+.feature-icon{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+.feature-card h3{font-size:1.2rem;margin-bottom:8px}
+.feature-card p{color:var(--muted);font-size:0.9rem}
+
+/* AGE GROUPS */
+.age-groups{padding:80px 0;background:var(--white)}
+.age-groups h2{text-align:center;font-size:2.2rem;margin-bottom:48px}
+.age-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.age-card{border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);transition:transform 0.3s}
+.age-card:hover{transform:translateY(-4px)}
+.age-card img{width:100%;height:180px;object-fit:cover}
+.age-card-body{padding:20px}
+.age-card-body h3{font-size:1.1rem;margin-bottom:4px}
+.age-card-body .age-range{color:var(--pink);font-size:0.9rem;font-weight:700}
+.age-card-body p{color:var(--muted);font-size:0.85rem;margin-top:8px}
+
+/* TESTIMONIALS */
+.testimonials{padding:80px 0}
+.testimonials h2{text-align:center;font-size:2.2rem;margin-bottom:48px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.test-card{background:var(--white);border-radius:var(--radius);padding:32px;border:2px solid var(--border)}
+.test-card p{color:var(--muted);font-style:italic;margin-bottom:16px}
+.test-card .parent{font-weight:700;color:var(--text)}
+
+/* FOOTER */
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,0.8);transition:color 0.3s}
+footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+
+/* MOBILE */
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s;box-shadow:-4px 0 20px rgba(0,0,0,0.1)}
+.mobile-menu.active{right:0}
+.mobile-menu ul{list-style:none}
+.mobile-menu li{margin-bottom:20px}
+.mobile-menu a{font-size:1.1rem;font-weight:500}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}
+.overlay.active{display:block}
+
+@media(max-width:768px){
+.nav-links{display:none}
+.menu-toggle{display:block}
+.features-grid,.age-grid{grid-template-columns:repeat(2,1fr)}
+.test-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+.hero h1{font-size:2rem}
+.hero-img img{height:250px}
+}
+@media(max-width:480px){
+.features-grid,.age-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="philosophy.html">教學理念</a></li>
+<li><a href="programs.html">課程介紹</a></li>
+<li><a href="facilities.html">校園環境</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="parents.html">家長專區</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="openMenu()">☰</button>
+</div>
+</nav>
+
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu">
+<button class="close-btn" onclick="closeMenu()">✕</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="philosophy.html">教學理念</a></li>
+<li><a href="programs.html">課程介紹</a></li>
+<li><a href="facilities.html">校園環境</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="parents.html">家長專區</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<section class="hero">
+<div class="container">
+<h1>讓每一顆<span>小芽</span>自然綻放</h1>
+<p>在 Sprout 小芽幼兒園，我們以自然為教室、以遊戲為語言，陪伴孩子在愛與探索中快樂成長。</p>
+<a href="contact.html" class="btn btn-pink">預約參觀</a>
+<a href="programs.html" class="btn btn-blue" style="margin-left:12px">課程介紹</a>
+<div class="hero-img" style="margin-top:40px">
+<img src="https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=800&h=400&fit=crop" alt="孩子們在戶外快樂玩耍">
+</div>
+</div>
+</section>
+
+<section class="features">
+<div class="container">
+<h2>為什麼選擇小芽？</h2>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🌿</div>
+<h3>自然教育</h3>
+<p>每週戶外探索日，讓孩子在大自然中學習與成長</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🌍</div>
+<h3>雙語沉浸</h3>
+<p>中英文自然融入日常，培養國際視野</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎨</div>
+<h3>創意啟發</h3>
+<p>藝術、音樂、戲劇多元課程激發創造力</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">💝</div>
+<h3>情緒教育</h3>
+<p>重視社交情緒學習，建立自信與同理心</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="age-groups">
+<div class="container">
+<h2>依年齡分班</h2>
+<div class="age-grid">
+<div class="age-card">
+<img src="https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=400&h=180&fit=crop" alt="幼幼班">
+<div class="age-card-body">
+<h3>幼幼班 Seedling</h3>
+<span class="age-range">2–3 歲</span>
+<p>安全探索、感官體驗、建立安全感</p>
+</div>
+</div>
+<div class="age-card">
+<img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=180&fit=crop" alt="小班">
+<div class="age-card-body">
+<h3>小班 Sprout</h3>
+<span class="age-range">3–4 歲</span>
+<p>語言發展、社交互動、生活自理</p>
+</div>
+</div>
+<div class="age-card">
+<img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=400&h=180&fit=crop" alt="中班">
+<div class="age-card-body">
+<h3>中班 Bloom</h3>
+<span class="age-range">4–5 歲</span>
+<p>主題探究、團隊合作、創意表達</p>
+</div>
+</div>
+<div class="age-card">
+<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=180&fit=crop" alt="大班">
+<div class="age-card-body">
+<h3>大班 Blossom</h3>
+<span class="age-range">5–6 歲</span>
+<p>小學銜接、獨立思考、領導力培養</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<h2>家長的話</h2>
+<div class="test-grid">
+<div class="test-card">
+<p>「孩子每天都開心地跑進教室，這是我選擇小芽最大的原因。老師們用心陪伴每一個孩子。」</p>
+<span class="parent">— 小宇媽媽</span>
+</div>
+<div class="test-card">
+<p>「雙語環境讓女兒自然而然愛上英文，而且學校的自然課程讓她變得更勇敢、更有自信。」</p>
+<span class="parent">— Mia 爸爸</span>
+</div>
+<div class="test-card">
+<p>「老師會用照片和聯絡簿記錄孩子每天的成長，讓我們不會錯過任何珍貴的瞬間。」</p>
+<span class="parent">— 小芸媽媽</span>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Sprout 小芽幼兒園</h4>
+<p>台北市士林區天母西路50號</p>
+<p>電話：(02) 2871-5678</p>
+<p>信箱：hello@sprout-kindergarten.tw</p>
+</div>
+<div>
+<h4>快速連結</h4>
+<ul>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="programs.html">課程介紹</a></li>
+<li><a href="facilities.html">校園環境</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+<div>
+<h4>入學資訊</h4>
+<ul>
+<li><a href="faq.html">常見問題</a></li>
+<li><a href="parents.html">家長手冊</a></li>
+<li><a href="events.html">活動行事曆</a></li>
+<li><a href="contact.html">預約參觀</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}
+function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}
+</script>
+</body>
+</html>

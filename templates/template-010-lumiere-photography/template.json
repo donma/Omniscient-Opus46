@@ -1,0 +1,35 @@
+{
+  "id": "template-010",
+  "name": "Lumière 攝影工作室",
+  "description": "Award-winning photography studio website template with light B&W monochrome design, masonry portfolio layout, and cinematic feel. Traditional Chinese content.",
+  "version": "1.0.0",
+  "author": "OmniscientTest2",
+  "category": "photography",
+  "theme": "light",
+  "language": "zh-TW",
+  "fonts": ["DM Serif Display", "Noto Sans TC"],
+  "colors": {
+    "background": "#fafafa",
+    "white": "#ffffff",
+    "text": "#111111",
+    "muted": "#666666",
+    "accent": "#111111",
+    "border": "#e0e0e0",
+    "warm": "#f5f0eb"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "portfolio.html",
+    "portfolio-detail.html",
+    "weddings.html",
+    "commercial.html",
+    "booking.html",
+    "pricing.html",
+    "blog.html",
+    "blog-detail.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "features": ["masonry-grid", "filterable-portfolio", "mobile-nav", "booking-form", "responsive"]
+}

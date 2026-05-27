@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>最新消息 — Ember 炭火燒肉</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0505;--surface:#1a0a0a;--card:#241010;--fire:#e63946;--ember:#ff6b35;--gold:#c8a430;--text:#f5ece8;--muted:#8a6a6a;--border:#3a1a1a;--gradient:linear-gradient(135deg,#e63946,#ff6b35);--radius:4px;--font-title:'Oswald',sans-serif;--font-body:'Noto Sans TC',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7}
+a{color:var(--fire);text-decoration:none}a:hover{color:var(--ember)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-title);font-size:1.6rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--fire)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;display:flex;flex-direction:column;gap:20px}.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.active{display:block}
+.close-menu{position:absolute;top:20px;right:20px;font-size:1.5rem;color:var(--text);cursor:pointer;background:none;border:none}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:var(--surface)}
+.page-hero h1{font-family:var(--font-title);font-size:3rem;font-weight:700}
+.page-hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.page-hero p{color:var(--muted);margin-top:12px}
+
+section{padding:80px 0}
+.news-grid{display:grid;gap:30px}
+.news-card{display:grid;grid-template-columns:300px 1fr;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.news-card:hover{transform:translateX(6px)}
+.news-card img{width:100%;height:100%;min-height:200px;object-fit:cover}
+.news-card .body{padding:30px;display:flex;flex-direction:column;justify-content:center}
+.news-card .date{color:var(--ember);font-size:.8rem;margin-bottom:8px}
+.news-card h3{font-family:var(--font-title);font-size:1.3rem;margin-bottom:10px}
+.news-card p{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+.news-card .read-more{color:var(--fire);font-size:.85rem}
+@media(max-width:768px){.news-card{grid-template-columns:1fr}}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{font-family:var(--font-title);font-size:1.1rem;margin-bottom:16px;color:var(--fire)}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">EMBER 炭火燒肉</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="menu.html">菜單介紹</a></li><li><a href="ingredients.html">嚴選食材</a></li><li><a href="dining.html">用餐方式</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="reservation.html">線上訂位</a></li></ul><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><button class="close-menu" onclick="toggleMenu()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="menu.html">菜單介紹</a><a href="ingredients.html">嚴選食材</a><a href="dining.html">用餐方式</a><a href="stores.html">門市資訊</a><a href="news.html">最新消息</a><a href="reservation.html">線上訂位</a></div>
+
+<section class="page-hero">
+<h1>最新 <span>消息</span></h1>
+<p>掌握 Ember 的最新動態與限定活動</p>
+</section>
+
+<section>
+<div class="container">
+<div class="news-grid">
+<a href="news-detail.html" class="news-card" style="color:inherit">
+<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="冬季限定">
+<div class="body">
+<span class="date">2026.12.01</span>
+<h3>冬季限定：北海道毛蟹套餐登場</h3>
+<p>嚴選北海道直送活體毛蟹，搭配日本A5和牛的冬季限定套餐，即日起至2025年2月底。每日限量 10 組，預約從速。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</a>
+
+<div class="news-card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="新菜單">
+<div class="body">
+<span class="date">2026.11.15</span>
+<h3>2026 秋冬新菜單全面更新</h3>
+<p>因應季節更迭，我們更新了多項菜單品項。新增近江牛系列、松葉蟹炭烤、以及主廚特製甜點。歡迎蒞臨品嚐。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</div>
+
+<div class="news-card">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="米其林">
+<div class="body">
+<span class="date">2026.10.20</span>
+<h3>榮獲 2026 米其林餐盤推薦</h3>
+<p>Ember 炭火燒肉大安本店榮獲 2026 年台北米其林指南餐盤推薦，感謝所有支持我們的客人。我們將持續精進，提供更好的用餐體驗。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</div>
+
+<div class="news-card">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="信義店">
+<div class="body">
+<span class="date">2026.09.01</span>
+<h3>信義旗艦店盛大開幕</h3>
+<p>Ember 第二間分店正式進駐信義區！全新旗艦店擁有 72 席座位及大型宴會廳，提供更多元的用餐選擇。開幕期間享套餐 9 折優惠。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-col"><h4>EMBER 炭火燒肉</h4><p>傳承日本備長炭燒肉技藝</p></div><div class="footer-col"><h4>營業時間</h4><p>午餐 11:30 - 14:30</p><p>晚餐 17:30 - 23:00</p></div><div class="footer-col"><h4>聯絡我們</h4><a href="tel:0227001234">02-2700-1234</a><p>台北市大安區仁愛路四段 88 號</p></div><div class="footer-col"><h4>快速連結</h4><a href="reservation.html">線上訂位</a><a href="menu.html">菜單介紹</a></div></div><div class="footer-bottom"><p>&copy; 2026 Ember 炭火燒肉 All Rights Reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>身心專欄 — Zen 瑜伽會館</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+.page-hero{text-align:center;padding:80px 24px;background:var(--white);border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.8rem;margin-bottom:16px}
+.page-hero p{color:var(--muted);max-width:600px;margin:0 auto}
+section{padding:100px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.blog-card:hover{transform:translateY(-4px)}
+.blog-card img{height:200px;width:100%;object-fit:cover}
+.blog-card-body{padding:28px}
+.blog-card .date{font-size:.75rem;color:var(--sage);margin-bottom:8px}
+.blog-card h3{font-size:1.2rem;margin-bottom:12px}
+.blog-card p{color:var(--muted);font-size:.85rem;margin-bottom:16px}
+.blog-card .read-more{color:var(--sage-dark);font-size:.85rem;font-weight:500}
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>身心專欄</h1>
+<p>分享瑜伽知識、身心健康觀念與生活智慧</p>
+</div>
+
+<section>
+<div class="container">
+<div class="blog-grid">
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="初學者瑜伽">
+<div class="blog-card-body">
+<div class="date">2026.11.15</div>
+<h3>初學者的第一堂瑜伽課：你需要知道的一切</h3>
+<p>踏入瑜伽教室前的準備、心態調整，以及如何選擇適合自己的第一堂課。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="呼吸法">
+<div class="blog-card-body">
+<div class="date">2026.10.28</div>
+<h3>三種日常呼吸法，改善焦慮與失眠</h3>
+<p>不需要瑜伽墊，隨時隨地都能練習的呼吸技巧，幫助你在忙碌中找到平靜。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?w=600&q=80" alt="飲食">
+<div class="blog-card-body">
+<div class="date">2026.10.10</div>
+<h3>瑜伽練習者的飲食建議：輕盈而有能量</h3>
+<p>如何透過飲食支持你的練習？練習前後該吃什麼？素食是否必要？</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80" alt="冥想">
+<div class="blog-card-body">
+<div class="date">2026.09.22</div>
+<h3>冥想入門：從五分鐘開始的靜心練習</h3>
+<p>冥想不需要清空大腦。學習如何與念頭共處，培養內在的觀察者。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>風格誌 — Maison Noir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+section{padding:100px 0}.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+.page-hero{margin-top:70px;padding:120px 0 80px;text-align:center}
+.page-hero .label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.page-hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-style:italic;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:.9rem;max-width:560px;margin:0 auto}
+
+.blog-featured{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:500px;margin-bottom:48px}
+@media(max-width:768px){.blog-featured{grid-template-columns:1fr}}
+.blog-featured .image{overflow:hidden}.blog-featured .image img{width:100%;height:100%;object-fit:cover;min-height:400px;transition:.6s}
+.blog-featured:hover .image img{transform:scale(1.02)}
+.blog-featured .text{display:flex;flex-direction:column;justify-content:center;padding:60px 80px;background:var(--offwhite)}
+@media(max-width:768px){.blog-featured .text{padding:48px 24px}}
+.blog-featured .text .label{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--light-muted);margin-bottom:8px}
+.blog-featured .text h2{font-size:1.8rem;font-style:italic;margin-bottom:12px}
+.blog-featured .text p{color:var(--muted);font-size:.85rem;margin-bottom:16px}
+.blog-featured .text .date{font-size:.72rem;color:var(--light-muted)}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{display:block}
+.blog-card img{width:100%;height:320px;object-fit:cover;margin-bottom:16px;transition:.6s}
+.blog-card:hover img{transform:scale(1.02)}
+.blog-card .label{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--light-muted);margin-bottom:4px}
+.blog-card h3{font-size:1.2rem;margin-bottom:8px}
+.blog-card p{color:var(--muted);font-size:.82rem;margin-bottom:8px}
+.blog-card .date{font-size:.72rem;color:var(--light-muted)}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="page-hero">
+<div class="container">
+<p class="label">Journal</p>
+<h1>風格誌</h1>
+<p>關於穿搭、生活美學與永續時尚的深度思考。</p>
+</div>
+</div>
+
+<section style="padding-top:0">
+<div class="container">
+
+<a href="blog-detail.html" class="blog-featured">
+<div class="image"><img src="https://images.unsplash.com/photo-1558171814-2e52ef955be0?w=900&q=80" alt="膠囊衣櫥"></div>
+<div class="text">
+<p class="label">風格指南</p>
+<h2>膠囊衣櫥入門：用 20 件單品打造一整季穿搭</h2>
+<p>膠囊衣櫥的核心概念是「少而精」。透過精心挑選可互相搭配的基本款單品，讓你的衣櫥變得更有效率，每天出門不再煩惱穿什麼。本文將帶你一步步建立屬於自己的膠囊衣櫥。</p>
+<p class="date">2026.03.15</p>
+</div>
+</a>
+
+<div class="blog-grid">
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80" alt="永續時尚">
+<p class="label">永續專欄</p>
+<h3>慢時尚宣言：為什麼我們不再追逐潮流</h3>
+<p>快時尚每年製造 9200 萬噸紡織廢棄物。是時候重新思考我們與衣服的關係了。</p>
+<p class="date">2026.02.28</p>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80" alt="面料知識">
+<p class="label">面料教室</p>
+<h3>認識你的衣服：天然纖維與合成纖維的差異</h3>
+<p>從棉花田到你的衣櫥，了解不同纖維的特性、優缺點與適用場合。</p>
+<p class="date">2026.02.10</p>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="巴黎散策">
+<p class="label">靈感旅行</p>
+<h3>巴黎左岸散策：影響 Maison Noir 的五間小店</h3>
+<p>創辦人帶路，走訪巴黎聖日耳曼德佩區的五間獨立選品店與咖啡廳。</p>
+<p class="date">2026.01.20</p>
+</a>
+</div>
+
+</div>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

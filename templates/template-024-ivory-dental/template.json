@@ -1,0 +1,47 @@
+{
+  "id": "template-024",
+  "name": "Ivory 牙醫診所",
+  "description": "A clean, professional dental clinic website template with mint/white medical aesthetic. Features online booking, doctor profiles, treatment showcases, and patient education content.",
+  "category": "healthcare",
+  "theme": "light",
+  "colors": {
+    "background": "#f8fffe",
+    "white": "#ffffff",
+    "primary": "#2dd4bf",
+    "primaryDark": "#0d9488",
+    "navy": "#0f172a",
+    "text": "#1e293b",
+    "muted": "#64748b",
+    "border": "#e0f2f1",
+    "light": "#f0fdfb"
+  },
+  "fonts": {
+    "heading": "Inter",
+    "body": "Noto Sans TC"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "team.html",
+    "services.html",
+    "service-detail.html",
+    "cases.html",
+    "info.html",
+    "blog.html",
+    "blog-detail.html",
+    "technology.html",
+    "faq.html",
+    "appointment.html"
+  ],
+  "features": [
+    "online-booking",
+    "doctor-profiles",
+    "before-after-cases",
+    "blog",
+    "faq",
+    "responsive",
+    "mobile-menu"
+  ],
+  "language": "zh-TW",
+  "region": "Taiwan"
+}

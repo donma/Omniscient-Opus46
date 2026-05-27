@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>威士忌入門：從蘇格蘭到日本 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+.article-hero{height:50vh;position:relative;display:flex;align-items:end}
+.article-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.3)}
+.article-hero .content{position:relative;z-index:1;padding:60px;max-width:800px}
+.article-hero .meta{color:var(--copper);font-size:.85rem;margin-bottom:12px}
+.article-hero h1{font-size:2.5rem;margin-bottom:0}
+.article{max-width:750px;margin:0 auto;padding:80px 24px}
+.article p{color:var(--muted);margin-bottom:24px;font-size:1.05rem}
+.article h2{font-size:1.8rem;margin:40px 0 20px;color:var(--gold)}
+.article blockquote{border-left:3px solid var(--burgundy);padding-left:20px;margin:30px 0;color:var(--text);font-style:italic}
+.article img{margin:30px 0;border:1px solid var(--border)}
+.back-link{display:inline-block;margin-top:40px;color:var(--muted)}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.article-hero h1{font-size:1.8rem}.article-hero .content{padding:30px}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<div class="article-hero">
+  <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=1600" alt="Whisky">
+  <div class="content">
+    <div class="meta">2026.11.01 ｜ 烈酒知識 ｜ 文／陳昱翰</div>
+    <h1>威士忌入門：從蘇格蘭到日本</h1>
+  </div>
+</div>
+
+<article class="article">
+  <p>威士忌，這個源自蓋爾語「生命之水」(uisce beatha) 的烈酒，歷經數百年的演化，如今已成為全球最受歡迎的烈酒之一。對於初次接觸威士忌的人來說，面對琳琅滿目的產區、類型與品牌，往往不知從何開始。</p>
+
+  <h2>蘇格蘭：威士忌的故鄉</h2>
+  <p>蘇格蘭威士忌（Scotch）是所有威士忌的原型。根據產區不同，風味差異極大：高地區（Highlands）的威士忌通常帶有蜂蜜與花香；斯佩賽（Speyside）以果味與柔順著稱；而艾雷島（Islay）則以強烈的泥煤煙燻味聞名。</p>
+  <p>如果你喜歡溫和入門，我推薦從斯佩賽的 Glenfiddich 12年或 Macallan 12年開始。如果你是冒險家，不妨直接挑戰 Laphroaig 10年——那股如同營火邊烤魚的強烈煙燻味，你會愛上或恨透。</p>
+
+  <blockquote>「好的威士忌就像一本好書，每一口都是新的章節。」</blockquote>
+
+  <h2>日本：東方的新星</h2>
+  <p>日本威士忌的歷史始於1923年，當竹鶴政孝從蘇格蘭學藝歸來，在山崎建立了第一座蒸餾所。短短百年間，日本威士忌已從模仿者躍升為世界頂尖。</p>
+  <p>日本威士忌的特色在於其精緻與平衡。受到日本料理「調和」哲學的影響，日本調和威士忌追求的是各個元素間的完美和諧，而非單一風味的突出。響（Hibiki）系列是這個哲學的最佳代表。</p>
+  <p>單一麥芽方面，山崎的雪莉桶熟成帶來豐富的果乾與巧克力風味；余市則保留了更多蘇格蘭風格的煙燻感，但多了一份東方的優雅。</p>
+
+  <h2>如何品飲</h2>
+  <p>初次品飲威士忌，建議先純飲一小口感受原始風味，接著加入幾滴水（是的，只需幾滴），你會發現香氣被解放——隱藏的花香、果味、香料一一浮現。這就是威士忌迷人的地方：每一次品飲都可能有新的發現。</p>
+  <p>在 Noir，我們備有超過80款威士忌，涵蓋蘇格蘭五大產區、日本主要蒸餾所、以及來自台灣噶瑪蘭的得獎作品。歡迎坐到吧台前，讓我們的調酒師為你開啟威士忌的大門。</p>
+
+  <a href="blog.html" class="back-link">← 返回酒吧誌</a>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

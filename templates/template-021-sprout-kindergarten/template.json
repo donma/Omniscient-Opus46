@@ -1,0 +1,39 @@
+{
+  "id": "template-021-sprout-kindergarten",
+  "name": "Sprout 小芽幼兒園",
+  "category": "education",
+  "subcategory": "kindergarten",
+  "description": "A warm, playful kindergarten website template with multicolor design, rounded shapes, and child-friendly aesthetics. Designed for bilingual preschools with nature-based education philosophy.",
+  "theme": "light",
+  "style": "playful",
+  "language": "zh-TW",
+  "pages": [
+    "index.html",
+    "about.html",
+    "philosophy.html",
+    "programs.html",
+    "program-detail.html",
+    "facilities.html",
+    "teachers.html",
+    "parents.html",
+    "events.html",
+    "gallery.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "fonts": ["Fredoka One", "Noto Sans TC"],
+  "colors": {
+    "background": "#fffef8",
+    "white": "#ffffff",
+    "yellow": "#ffd43b",
+    "pink": "#ff6b9d",
+    "blue": "#4ecdc4",
+    "purple": "#a78bfa",
+    "orange": "#ff8c42",
+    "text": "#2d2d2d",
+    "muted": "#666666",
+    "border": "#f0e8d8"
+  },
+  "features": ["bilingual", "responsive", "mobile-menu", "playful-design", "multicolor"],
+  "version": "1.0.0"
+}

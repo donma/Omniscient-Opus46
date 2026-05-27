@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>旅客評價 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.review-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.review-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.review-header img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.review-header .name{font-weight:400;font-size:.95rem}
+.review-header .tour{font-size:.8rem;color:var(--muted)}
+.stars{color:var(--sunset);font-size:.9rem;margin-bottom:12px}
+.review-card p{font-size:.9rem;color:var(--muted)}
+.review-photo{margin-top:16px;border-radius:8px;overflow:hidden;height:150px}
+.review-photo img{width:100%;height:100%;object-fit:cover}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.reviews-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=1600&q=80" alt="旅客評價">
+<h1>旅客評價</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="reviews-grid">
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt=""><div><div class="name">林小美</div><div class="tour">冰島極光10日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>一生必去一次！看到極光的那一刻真的感動到哭。領隊凱文非常專業，每天都安排得很完美。冰川健行超刺激！</p>
+<div class="review-photo"><img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80" alt="極光"></div>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""><div><div class="name">陳大偉</div><div class="tour">紐西蘭南島健行12日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>身為登山愛好者，這趟旅程完全超出期待。米爾福德步道的風景無與倫比，團友都很棒，大家成了好朋友。</p>
+<div class="review-photo"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" alt="紐西蘭"></div>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt=""><div><div class="name">張雅琪</div><div class="tour">馬爾地夫水上屋7日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>蜜月旅行選擇Atlas真的太對了！水上屋美到不真實，旅行社還貼心準備了蜜月驚喜，老公超感動。</p>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt=""><div><div class="name">王志明</div><div class="tour">京都紅葉季5日</div></div></div>
+<div class="stars">★★★★☆</div>
+<p>帶媽媽一起參加，行程節奏很舒適不趕。私房紅葉景點人少風景美，茶道體驗也很特別。唯一可惜是天氣不太配合。</p>
+<div class="review-photo"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=80" alt="京都"></div>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt=""><div><div class="name">李佳蓉</div><div class="tour">希臘跳島8日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>聖托里尼的夕陽太美了！每一個島都有不同的驚喜。領隊推薦的當地餐廳都超好吃，是一次完美的閨蜜旅行。</p>
+<div class="review-photo"><img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&q=80" alt="希臘"></div>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt=""><div><div class="name">黃俊傑</div><div class="tour">秘魯印加古道9日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>馬丘比丘是我的夢想清單第一名！高山反應有點辛苦但領隊準備充分，古柯茶真的有效。彩虹山超壯觀。</p>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt=""><div><div class="name">吳雨萱</div><div class="tour">南法普羅旺斯7日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>薰衣草花田美如夢境！酒莊品酒、逛市集、吃法式料理，每天都像在拍電影。推薦給想慢步調旅行的人。</p>
+<div class="review-photo"><img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=400&q=80" alt="法國"></div>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80" alt=""><div><div class="name">劉建宏</div><div class="tour">瑞士阿爾卑斯8日</div></div></div>
+<div class="stars">★★★★☆</div>
+<p>風景壯麗到會詞窮。冰河列車的景色像明信片一樣，少女峰上的雪景也很震撼。物價稍高但值得。</p>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80" alt=""><div><div class="name">許芳瑜</div><div class="tour">冰島極光10日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>第二次參加Atlas的團了！這次運氣很好，連續三晚都看到極光。藍冰洞探險是這輩子最難忘的經歷。</p>
+</div>
+<div class="review-card">
+<div class="review-header"><img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80" alt=""><div><div class="name">鄭宇翔</div><div class="tour">紐西蘭南島健行12日</div></div></div>
+<div class="stars">★★★★★</div>
+<p>帶著8歲女兒一起參加，原本擔心體力問題，但領隊調配得很好。女兒說這是她最開心的假期！謝謝Atlas。</p>
+<div class="review-photo"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=80" alt="紐西蘭"></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

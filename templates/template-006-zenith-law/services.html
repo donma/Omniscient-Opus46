@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務領域 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem;font-weight:400}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text);font-size:1rem}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:8px}.page-hero p{color:var(--muted)}
+section{padding:60px 0}
+.service-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:40px;margin-bottom:24px}
+.service-item h2{font-size:1.5rem;color:var(--gold);margin-bottom:12px}
+.service-item p{color:var(--text);margin-bottom:12px;line-height:2}
+.service-item .scope{color:var(--muted);font-size:.9rem}
+.service-item .scope span{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:4px 12px;margin:4px 4px 4px 0}
+.service-item a.more{display:inline-block;margin-top:16px;color:var(--gold);font-size:.9rem;border-bottom:1px solid var(--gold)}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>服務領域</h1><p>全方位企業法律服務，深耕六大核心領域</p></div></section>
+
+<section>
+<div class="container">
+
+<div class="service-item">
+  <h2>公司法與商業法</h2>
+  <p>本所公司法團隊擁有豐富的企業法務經驗，從公司設立階段的組織架構規劃，到日常營運中的契約審閱、股東會與董事會運作、增資減資等各項公司治理議題，皆能提供完整的法律支援。我們協助客戶建構符合法令規範且具有彈性的治理架構，降低營運中的法律風險。</p>
+  <div class="scope"><span>公司設立與變更</span><span>股權架構規劃</span><span>董事責任與公司治理</span><span>商業契約</span><span>股東爭議</span></div>
+  <a href="service-detail.html" class="more">了解更多 →</a>
+</div>
+
+<div class="service-item">
+  <h2>智慧財產權</h2>
+  <p>在知識經濟時代，智慧財產權是企業最重要的無形資產。本所智財團隊由具有技術背景的律師組成，能夠深入理解客戶的技術內涵，提供從申請、佈局到維權的完整智財策略。我們在專利訴訟、商標爭議、著作權授權及營業秘密保護等領域，累積了大量的實務經驗。</p>
+  <div class="scope"><span>專利申請與訴訟</span><span>商標註冊與維權</span><span>著作權授權</span><span>營業秘密</span><span>技術移轉</span></div>
+  <a href="service-detail.html" class="more">了解更多 →</a>
+</div>
+
+<div class="service-item">
+  <h2>國際貿易法</h2>
+  <p>隨著全球化深入發展，台灣企業的跨境交易日益頻繁。本所國際貿易法團隊精通各國貿易法規與國際公約，協助客戶處理跨境交易架構設計、國際仲裁、反傾銷調查、出口管制合規等複雜議題，確保客戶在國際市場上的法律權益獲得完善保障。</p>
+  <div class="scope"><span>跨境交易架構</span><span>國際商務仲裁</span><span>反傾銷與反補貼</span><span>貿易合規</span><span>海關爭議</span></div>
+  <a href="service-detail.html" class="more">了解更多 →</a>
+</div>
+
+<div class="service-item">
+  <h2>勞資爭議</h2>
+  <p>勞動法規的遵循是企業經營的重要環節。本所勞動法團隊協助企業建立完善的人事管理制度，處理解僱爭議、職業災害賠償、工會協商等敏感議題。我們同時從預防與爭端解決兩個面向著手，幫助客戶降低勞資衝突的風險與損害。</p>
+  <div class="scope"><span>勞動契約規劃</span><span>解僱爭議處理</span><span>工會協商</span><span>職災賠償</span><span>競業禁止</span></div>
+  <a href="service-detail.html" class="more">了解更多 →</a>
+</div>
+
+<div class="service-item">
+  <h2>企業併購</h2>
+  <p>本所併購團隊擁有多件大型併購案的豐富經驗，從初步的策略評估、盡職調查、交易架構設計，到契約談判、主管機關申報及合併後整合，提供全程的法律服務。我們特別擅長跨境併購及涉及反壟斷法的複雜交易，能夠有效協調多國法律團隊共同完成交易。</p>
+  <div class="scope"><span>併購策略規劃</span><span>盡職調查</span><span>交易架構設計</span><span>反壟斷申報</span><span>合併後整合</span></div>
+  <a href="service-detail.html" class="more">了解更多 →</a>
+</div>
+
+<div class="service-item">
+  <h2>稅務規劃</h2>
+  <p>稅務是影響企業經營決策的關鍵因素。本所稅務團隊協助企業進行稅務架構優化、移轉定價規劃、國際稅務佈局等工作，確保客戶在合法範圍內實現稅務效益最大化。對於稅務爭訟，我們亦有豐富的行政救濟與訴訟經驗。</p>
+  <div class="scope"><span>企業稅務架構</span><span>移轉定價</span><span>國際稅務規劃</span><span>稅務爭訟</span><span>稅務遵循</span></div>
+  <a href="service-detail.html" class="more">了解更多 →</a>
+</div>
+
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><p>週一至週五 09:00-18:00</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商業攝影 | Lumière 攝影工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafafa;--white:#ffffff;--text:#111111;--muted:#666666;--accent:#111111;--border:#e0e0e0;--warm:#f5f0eb;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.3}
+a{color:var(--text);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,250,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'DM Serif Display',serif;font-size:1.4rem;letter-spacing:1px}
+nav{display:flex;gap:24px;align-items:center}
+nav a{font-size:0.85rem;letter-spacing:0.5px;transition:opacity 0.3s}
+nav a:hover{opacity:0.5}
+.menu-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.menu-btn span{width:24px;height:1.5px;background:var(--text);transition:0.3s}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:999;padding:80px 40px;display:flex;flex-direction:column;gap:24px;transition:right 0.4s ease;box-shadow:-4px 0 20px rgba(0,0,0,0.1)}
+.mobile-nav.active{right:0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.4s}
+.overlay.active{opacity:1;pointer-events:all}
+.page-hero{height:60vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:60px}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.5)}
+.page-hero h1{position:relative;z-index:1;color:#fff;font-size:clamp(2rem,4vw,3.5rem)}
+.section{padding:100px 0}
+.section-title{font-family:'DM Serif Display',serif;font-size:2.2rem;text-align:center;margin-bottom:16px}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:60px;max-width:700px;margin-left:auto;margin-right:auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.service-card{position:relative;overflow:hidden;border-radius:var(--radius);height:400px}
+.service-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.service-card:hover img{transform:scale(1.05)}
+.service-card .content{position:absolute;bottom:0;left:0;right:0;padding:30px;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:#fff}
+.service-card .content h3{font-size:1.3rem;margin-bottom:8px}
+.service-card .content p{font-size:0.8rem;opacity:0.8}
+.clients{background:var(--warm);padding:80px 0;text-align:center}
+.clients h2{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:40px}
+.client-list{display:flex;flex-wrap:wrap;justify-content:center;gap:30px 50px;max-width:800px;margin:0 auto}
+.client-list span{font-size:1rem;color:var(--muted);letter-spacing:1px}
+.work-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:60px}
+.work-gallery img{width:100%;height:350px;object-fit:cover;border-radius:var(--radius)}
+.btn{display:inline-block;padding:14px 36px;border:1px solid var(--text);font-size:0.85rem;letter-spacing:2px;transition:all 0.3s;border-radius:var(--radius)}
+.btn:hover{background:var(--text);color:var(--white)}
+.cta-section{padding:100px 0;text-align:center;background:var(--text);color:#fff}
+.cta-section h2{font-family:'DM Serif Display',serif;font-size:2.2rem;margin-bottom:16px;color:#fff}
+.cta-section p{color:rgba(255,255,255,0.7);margin-bottom:30px}
+.btn-light{border-color:#fff;color:#fff}
+.btn-light:hover{background:#fff;color:var(--text)}
+footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px 24px;text-align:center}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1000px;margin:0 auto 40px;text-align:left}
+footer h4{color:#fff;margin-bottom:16px;font-size:1rem}
+footer a{color:rgba(255,255,255,0.7);font-size:0.85rem;display:block;margin-bottom:8px;transition:color 0.3s}
+footer a:hover{color:#fff}
+footer .copyright{font-size:0.8rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:30px}
+@media(max-width:768px){nav{display:none}.menu-btn{display:flex}.services-grid{grid-template-columns:1fr}.work-gallery{grid-template-columns:1fr}footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html" class="logo">Lumière</a>
+<nav><a href="index.html">首頁</a><a href="about.html">關於攝影師</a><a href="portfolio.html">作品集</a><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="booking.html">預約拍攝</a><a href="blog.html">攝影日誌</a><a href="contact.html">聯絡我們</a></nav>
+<div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><a href="index.html">首頁</a><a href="about.html">關於攝影師</a><a href="portfolio.html">作品集</a><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="booking.html">預約拍攝</a><a href="blog.html">攝影日誌</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero">
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80" alt="商業攝影">
+<h1>商業攝影</h1>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">為品牌創造視覺力量</h2>
+<p class="section-sub">從品牌形象、產品攝影到美食拍攝，我們以專業的技術與獨特的美學觀點，為你的品牌打造令人印象深刻的視覺內容。</p>
+<div class="services-grid">
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="品牌形象">
+<div class="content"><h3>品牌形象</h3><p>企業形象照、團隊照、品牌故事視覺化</p></div>
+</div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="產品攝影">
+<div class="content"><h3>產品攝影</h3><p>電商產品照、型錄拍攝、生活情境照</p></div>
+</div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="美食攝影">
+<div class="content"><h3>美食攝影</h3><p>餐廳菜單、食譜攝影、餐飲品牌視覺</p></div>
+</div>
+</div>
+<div class="work-gallery">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" alt="運動品牌">
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80" alt="空間攝影">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80" alt="時尚品牌">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="美食">
+</div>
+</div>
+</section>
+
+<section class="clients">
+<div class="container">
+<h2>合作品牌</h2>
+<div class="client-list">
+<span>誠品書店</span><span>微熱山丘</span><span>小器生活</span><span>阿原肥皂</span><span>春水堂</span><span>路易莎咖啡</span><span>台灣設計研究院</span><span>雲門舞集</span><span>Pinkoi</span><span>富錦樹</span>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>讓我們為你的品牌說故事</h2>
+<p>預約免費諮詢，討論你的品牌視覺需求</p>
+<a href="booking.html" class="btn btn-light">預約諮詢</a>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div><h4>Lumière 攝影工作室</h4><p style="font-size:0.85rem;line-height:1.8">以光影記錄永恆瞬間<br>台北市大安區敦化南路一段 187 號 3F</p></div>
+<div><h4>服務項目</h4><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="portfolio.html">作品集</a><a href="pricing.html">價格方案</a></div>
+<div><h4>聯絡資訊</h4><a href="mailto:hello@lumiere.tw">hello@lumiere.tw</a><a href="tel:+886227001234">02-2700-1234</a><a href="https://instagram.com">Instagram</a><a href="https://facebook.com">Facebook</a></div>
+</div>
+<div class="copyright">© 2026 Lumière 攝影工作室. All Rights Reserved.</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

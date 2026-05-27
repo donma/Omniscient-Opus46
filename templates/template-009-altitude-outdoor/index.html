@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Altitude 戶外探索 — 首頁</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.5px}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}
+.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}
+.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border);font-size:1rem}
+.mobile-nav a:hover{color:var(--green)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}
+.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80') center/cover;z-index:-2}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,26,15,.4),rgba(13,26,15,.9));z-index:-1}
+.hero h1{font-size:clamp(3rem,8vw,6rem);text-transform:uppercase;margin-bottom:16px}
+.hero h1 span{color:var(--green)}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:600px;margin:0 auto 32px}
+.btn{display:inline-block;padding:14px 36px;background:var(--green-dark);color:#fff;border-radius:var(--radius);font-weight:700;font-family:'Oswald',sans-serif;font-size:1rem;transition:background .3s}
+.btn:hover{background:var(--green)}
+.btn-outline{background:transparent;border:2px solid var(--green);color:var(--green)}
+.btn-outline:hover{background:var(--green);color:var(--bg)}
+
+/* Stats */
+.stats{padding:80px 0;background:var(--surface)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;text-align:center}
+.stat-num{font-family:'Oswald',sans-serif;font-size:3rem;color:var(--green);font-weight:700}
+.stat-label{color:var(--muted);margin-top:8px}
+
+/* Trips */
+.section{padding:80px 0}
+.section-title{font-size:2.5rem;margin-bottom:48px;text-align:center}
+.section-title span{color:var(--green)}
+.trips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
+.trip-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform .3s}
+.trip-card:hover{transform:translateY(-6px)}
+.trip-card img{width:100%;height:220px;object-fit:cover}
+.trip-card-body{padding:24px}
+.trip-card-body h3{font-size:1.3rem;margin-bottom:8px}
+.trip-card-body p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.tag{display:inline-block;padding:4px 12px;background:rgba(74,222,128,.1);color:var(--green);border-radius:20px;font-size:.8rem;margin-right:8px}
+
+/* Testimonials */
+.testimonials{background:var(--surface);padding:80px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.testi-card{background:var(--card);padding:32px;border-radius:var(--radius);border:1px solid var(--border)}
+.testi-card p{color:var(--muted);font-style:italic;margin-bottom:16px}
+.testi-card .name{color:var(--earth);font-weight:700}
+
+/* Footer */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}
+footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .foot-links a{color:var(--muted);font-size:.85rem}
+footer .foot-links a:hover{color:var(--green)}
+
+@media(max-width:768px){
+.nav-links{display:none}
+.menu-btn{display:block}
+.trips-grid{grid-template-columns:1fr}
+.hero h1{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">品牌故事</a></li>
+<li><a href="trips.html">探索行程</a></li>
+<li><a href="gear.html">裝備推薦</a></li>
+<li><a href="gallery.html">活動相簿</a></li>
+<li><a href="guides.html">嚮導團隊</a></li>
+<li><a href="safety.html">安全須知</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="openNav()">&#9776;</button>
+</div>
+</nav>
+
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav">
+<button class="close-btn" onclick="closeNav()">&times;</button>
+<a href="index.html">首頁</a>
+<a href="about.html">品牌故事</a>
+<a href="trips.html">探索行程</a>
+<a href="gear.html">裝備推薦</a>
+<a href="gallery.html">活動相簿</a>
+<a href="guides.html">嚮導團隊</a>
+<a href="safety.html">安全須知</a>
+<a href="contact.html">聯絡我們</a>
+</div>
+
+<section class="hero">
+<div>
+<h1>征服<span>每座山</span></h1>
+<p>花蓮在地戶外探索品牌，帶你走入台灣最壯麗的自然秘境，體驗登山、溯溪、露營的極致冒險。</p>
+<a href="trips.html" class="btn">探索行程</a>
+<a href="about.html" class="btn btn-outline" style="margin-left:12px">品牌故事</a>
+</div>
+</section>
+
+<section class="stats">
+<div class="container">
+<div class="stats-grid">
+<div><div class="stat-num">500+</div><div class="stat-label">完成行程數</div></div>
+<div><div class="stat-num">98%</div><div class="stat-label">安全紀錄</div></div>
+<div><div class="stat-num">12</div><div class="stat-label">專業嚮導</div></div>
+<div><div class="stat-num">3000+</div><div class="stat-label">滿意旅客</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">精選<span>行程</span></h2>
+<div class="trips-grid">
+<div class="trip-card">
+<img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="合歡山日出團">
+<div class="trip-card-body">
+<h3>合歡山日出團</h3>
+<p>清晨出發，登上合歡山主峰迎接台灣最美日出，全程專業嚮導陪同。</p>
+<span class="tag">登山</span><span class="tag">2天1夜</span>
+</div>
+</div>
+<div class="trip-card">
+<img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="野溪溫泉露營">
+<div class="trip-card-body">
+<h3>野溪溫泉露營</h3>
+<p>深入花蓮山林秘境，在野溪溫泉旁搭帳露營，享受大自然的饋贈。</p>
+<span class="tag">露營</span><span class="tag">3天2夜</span>
+</div>
+</div>
+<div class="trip-card">
+<img src="https://images.unsplash.com/photo-1545652985-5edd365b12eb?w=600&q=80" alt="砂卡礑溯溪">
+<div class="trip-card-body">
+<h3>砂卡礑溯溪探險</h3>
+<p>在碧藍溪水中逆流而上，跳水、攀岩、滑瀑，挑戰你的極限。</p>
+<span class="tag">溯溪</span><span class="tag">1日</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<h2 class="section-title">旅客<span>好評</span></h2>
+<div class="testi-grid">
+<div class="testi-card">
+<p>「第一次爬百岳就選擇 Altitude，嚮導非常專業又有耐心，讓我安心完成了人生第一座百岳！」</p>
+<div class="name">— 林小姐，台北</div>
+</div>
+<div class="testi-card">
+<p>「溯溪行程太刺激了！教練安全措施做得很到位，玩得開心又放心。大推！」</p>
+<div class="name">— 陳先生，台中</div>
+</div>
+<div class="testi-card">
+<p>「帶全家人參加親子露營團，孩子們玩得超開心，會再回來報名其他行程。」</p>
+<div class="name">— 王太太，高雄</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a>
+<div class="foot-links">
+<a href="about.html">品牌故事</a>
+<a href="trips.html">探索行程</a>
+<a href="safety.html">安全須知</a>
+<a href="blog.html">冒險日誌</a>
+<a href="contact.html">聯絡我們</a>
+</div>
+<p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p>
+</div>
+</footer>
+
+<script>
+function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}
+function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}
+</script>
+</body>
+</html>

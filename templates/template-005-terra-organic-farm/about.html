@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>農場故事 — Terra 有機農場</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--white:#ffffff;--earth:#5c7a3a;--earth-dark:#3d5a22;--earth-light:#8fb065;--brown:#8b6914;--sand:#f0e8d8;--text:#2d2a26;--muted:#7a7264;--border:#e4ddd0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3{font-family:'Playfair Display','Noto Sans TC',serif;font-weight:700;line-height:1.3}
+a{color:var(--earth);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,244,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--earth-dark);font-weight:700}
+.logo span{color:var(--brown)}
+.nav-desktop{display:flex;gap:1.5rem}
+.nav-desktop a{color:var(--text);font-size:.9rem;font-weight:400;transition:color .3s}
+.nav-desktop a:hover{color:var(--earth)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--text);transition:.3s}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:3rem 2rem;transition:left .4s ease;box-shadow:2px 0 20px rgba(0,0,0,.1)}
+.mobile-nav.active{left:0}
+.mobile-nav .close{position:absolute;top:1rem;right:1rem;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.mobile-nav a{display:block;padding:.8rem 0;color:var(--text);font-size:1rem;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1500;display:none}
+.overlay.active{display:block}
+
+.page-hero{position:relative;height:60vh;min-height:400px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);margin-top:0}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500076656116-558758c991c1?w=1920&q=80') center/cover no-repeat;z-index:-2}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.4);z-index:-1}
+.page-hero h1{font-size:3rem;text-shadow:0 2px 15px rgba(0,0,0,.3)}
+.page-hero p{font-size:1.1rem;opacity:.9;margin-top:.5rem}
+
+.section{padding:6rem 2rem}
+.section-sand{background:var(--sand)}
+.container{max-width:900px;margin:0 auto}
+
+.story-block{margin-bottom:4rem}
+.story-block h2{font-size:1.8rem;color:var(--earth-dark);margin-bottom:1.5rem}
+.story-block p{margin-bottom:1.2rem;color:var(--text)}
+.story-block .quote{font-size:1.3rem;color:var(--brown);font-style:italic;border-left:3px solid var(--earth-light);padding-left:1.5rem;margin:2rem 0}
+.story-img{width:100%;height:400px;object-fit:cover;border-radius:8px;margin:2rem 0}
+
+.timeline{position:relative;padding-left:2rem;border-left:2px solid var(--earth-light)}
+.timeline-item{margin-bottom:2.5rem;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-2.55rem;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--earth)}
+.timeline-item h3{font-family:'Noto Sans TC',sans-serif;font-weight:500;color:var(--earth-dark);font-size:1.1rem}
+.timeline-item p{color:var(--muted);margin-top:.3rem}
+
+.footer{background:var(--earth-dark);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+.footer h4{color:var(--white);font-family:'Playfair Display',serif;margin-bottom:1rem}
+.footer a{color:rgba(255,255,255,.7);display:block;margin-bottom:.5rem;font-size:.9rem}
+.footer a:hover{color:var(--white)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
+
+@media(max-width:768px){
+.nav-desktop{display:none}
+.hamburger{display:flex}
+.page-hero h1{font-size:2rem}
+.story-img{height:250px}
+.footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="logo">Terra <span>有機農場</span></div>
+<nav class="nav-desktop">
+<a href="index.html">首頁</a><a href="about.html">農場故事</a><a href="philosophy.html">有機理念</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a><a href="products.html">線上訂購</a><a href="contact.html">聯絡我們</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="mobile-nav"><div class="close" onclick="toggleMenu()">&times;</div><a href="index.html">首頁</a><a href="about.html">農場故事</a><a href="philosophy.html">有機理念</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a><a href="products.html">線上訂購</a><a href="contact.html">聯絡我們</a></nav>
+
+<section class="page-hero">
+<div><h1>農場故事</h1><p>從台北到宜蘭，一段回歸土地的旅程</p></div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="story-block">
+<h2>離開，是為了找到真正的生活</h2>
+<p>2017年的秋天，志偉和雅琳做了一個讓所有親友都驚訝的決定——辭去在台北的工作，帶著兩歲的女兒小禾，搬到宜蘭三星鄉。志偉原本是科技公司的產品經理，雅琳則在廣告公司擔任創意總監。在外人看來，他們擁有人人稱羨的生活。</p>
+<p>但長年的高壓工作、被切割的家庭時間、以及對食安問題的焦慮，讓他們開始思考：什麼才是真正值得追求的生活？</p>
+<div class="quote">「我們不是逃離城市，而是選擇走向一種更誠實的生活方式。」——林志偉</div>
+</div>
+<img class="story-img" src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=1200&q=80" alt="農場日常">
+
+<div class="story-block">
+<h2>從零開始的農夫生涯</h2>
+<p>起初，一切都是陌生的。他們租下三星鄉大隱村一塊休耕多年的農地，面積約一甲。土壤貧瘠、雜草叢生，連隔壁的阿伯都搖頭說「這塊田要養好，至少要三年」。</p>
+<p>志偉白天在田裡跟著老農學習，從翻土、做畦、育苗開始；晚上則研讀有機農業的書籍和論文。雅琳負責農場的品牌規劃、社群經營，同時照顧小禾。第一年，他們種的菜有一半被蟲吃掉，稻米的收成只有慣行農法的三分之一。</p>
+<p>但他們沒有放棄。每一次失敗都是學習，每一季都比上一季更好。到了第三年，土壤終於活了過來——蚯蚓變多了、土變得鬆軟而芬芳，作物也開始展現有機栽培的獨特風味。</p>
+</div>
+<img class="story-img" src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=1200&q=80" alt="田間工作">
+
+<div class="story-block">
+<h2>Terra 的命名</h2>
+<p>「Terra」源自拉丁文，意為「土地」。取這個名字，是因為我們相信一切美好的食物都來自健康的土地。同時，「Terra」的發音也接近台語的「地」（tē），象徵著我們對這片在地土壤的深深連結。</p>
+</div>
+</div>
+</section>
+
+<section class="section section-sand">
+<div class="container">
+<h2 style="font-size:1.8rem;color:var(--earth-dark);margin-bottom:2rem;text-align:center">我們的足跡</h2>
+<div class="timeline">
+<div class="timeline-item"><h3>2017 秋</h3><p>辭去台北工作，全家遷居宜蘭三星</p></div>
+<div class="timeline-item"><h3>2018 春</h3><p>正式開始耕作第一期稻米，取得有機轉型期認證</p></div>
+<div class="timeline-item"><h3>2019 夏</h3><p>蔬菜品項擴展至 15 種，開始社區支持型農業（CSA）配送</p></div>
+<div class="timeline-item"><h3>2020 春</h3><p>正式取得有機農產品認證，開放農場體驗活動</p></div>
+<div class="timeline-item"><h3>2021 秋</h3><p>與在地餐廳合作「產地餐桌」計畫，小禾開始在田間幫忙</p></div>
+<div class="timeline-item"><h3>2023 春</h3><p>農場面積擴展至 1.5 甲，增設食農教育教室</p></div>
+<div class="timeline-item"><h3>2026 今</h3><p>持續深耕有機農業，分享土地的美好</p></div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-grid">
+<div><h4>Terra 有機農場</h4><p>宜蘭縣三星鄉大隱路 128 號</p><p style="margin-top:.5rem">電話：03-989-5678</p><p>信箱：hello@terra-farm.tw</p></div>
+<div><h4>導覽</h4><a href="about.html">農場故事</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a></div>
+<div><h4>營業資訊</h4><p>週二至週日 09:00-17:00</p><p style="margin-top:.5rem">週一公休</p></div>
+</div>
+<div class="footer-bottom">© 2026 Terra 有機農場 版權所有</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

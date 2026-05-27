@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>聯絡我們 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info h2{font-size:1.5rem;color:var(--sky-dark);margin-bottom:24px}
+.info-item{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.info-item .icon{width:44px;height:44px;background:var(--sand);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.info-item h4{font-size:.9rem;margin-bottom:4px;font-weight:600}
+.info-item p{font-size:.85rem;color:var(--muted)}
+.line-btn{display:inline-flex;align-items:center;gap:8px;background:#06c755;color:white;padding:14px 28px;border-radius:var(--radius);font-weight:600;font-size:.9rem;margin-top:16px;transition:opacity .3s}
+.line-btn:hover{opacity:.9}
+.emergency{background:var(--sand);border-radius:var(--radius);padding:24px;margin-top:32px}
+.emergency h3{font-size:1rem;color:var(--sunset);margin-bottom:8px}
+.emergency p{font-size:.85rem;color:var(--muted)}
+.contact-form{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.contact-form h2{font-size:1.5rem;color:var(--sky-dark);margin-bottom:24px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.85rem;margin-bottom:8px;font-weight:400}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius);font-family:'Noto Sans TC',sans-serif;font-size:.9rem;outline:none;transition:border .3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--sky)}
+.form-group textarea{min-height:120px;resize:vertical}
+.submit-btn{background:var(--sky);color:white;border:none;padding:16px 48px;border-radius:var(--radius);font-size:1rem;font-weight:600;cursor:pointer;width:100%;transition:background .3s}
+.submit-btn:hover{background:var(--sky-dark)}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.contact-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=1600&q=80" alt="聯絡我們">
+<h1>聯絡我們</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="contact-grid">
+<div class="contact-info">
+<h2>與我們聯繫</h2>
+<div class="info-item">
+<div class="icon">📍</div>
+<div><h4>辦公室地址</h4><p>台北市大安區旅行路88號5樓<br>（捷運忠孝復興站2號出口步行3分鐘）</p></div>
+</div>
+<div class="info-item">
+<div class="icon">📞</div>
+<div><h4>諮詢電話</h4><p>02-2345-6789<br>週一至週五 09:00-18:00<br>週六 10:00-16:00</p></div>
+</div>
+<div class="info-item">
+<div class="icon">✉️</div>
+<div><h4>電子信箱</h4><p>hello@atlas-travel.tw<br>一般諮詢24小時內回覆</p></div>
+</div>
+<div class="info-item">
+<div class="icon">💬</div>
+<div><h4>LINE 官方帳號</h4><p>@atlas-travel<br>即時線上諮詢，回覆最快速</p></div>
+</div>
+<a href="#" class="line-btn">加入 LINE 好友諮詢</a>
+
+<div class="emergency">
+<h3>海外緊急聯絡</h3>
+<p>旅途中如遇緊急狀況，請撥打24小時緊急專線：<br><strong>+886-912-345-678</strong>（全年無休）<br>我們的值班同仁會立即為您提供協助。</p>
+</div>
+</div>
+
+<div class="contact-form">
+<h2>線上諮詢表單</h2>
+<form>
+<div class="form-group"><label>姓名 *</label><input type="text" placeholder="您的姓名" required></div>
+<div class="form-group"><label>聯絡電話 *</label><input type="tel" placeholder="09xx-xxx-xxx" required></div>
+<div class="form-group"><label>Email *</label><input type="email" placeholder="your@email.com" required></div>
+<div class="form-group"><label>諮詢類型</label><select><option>行程諮詢</option><option>報名相關</option><option>客製行程</option><option>售後服務</option><option>合作提案</option><option>其他</option></select></div>
+<div class="form-group"><label>感興趣的行程</label><input type="text" placeholder="例如：冰島極光10日"></div>
+<div class="form-group"><label>詳細內容 *</label><textarea placeholder="請描述您的需求或問題..." required></textarea></div>
+<button type="submit" class="submit-btn">送出諮詢</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

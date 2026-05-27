@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>菜單｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="黑潮拉麵完整菜單 — 拉麵、沾麵、小食與飲品。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}.page-hero h1{font-size:2rem;letter-spacing:2px}
+section{padding:80px 0}
+.menu-category{margin-bottom:64px}
+.menu-category h2{font-size:1.4rem;color:var(--gold);margin-bottom:8px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.menu-category .subtitle{color:var(--muted);font-size:.82rem;margin-bottom:24px}
+.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border)}
+.menu-item:last-child{border:none}
+.menu-item .left h3{font-size:1rem;margin-bottom:4px;font-family:'Noto Sans TC',sans-serif;font-weight:500}
+.menu-item .left p{color:var(--muted);font-size:.82rem}
+.menu-item .price{color:var(--gold);font-weight:700;font-size:1rem;white-space:nowrap;margin-left:16px}
+.menu-item .badge{display:inline-block;background:rgba(212,168,83,.15);color:var(--gold);font-size:.7rem;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.menu-note{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:40px}
+.menu-note h4{color:var(--gold);margin-bottom:8px;font-size:.9rem}
+.menu-note p,.menu-note li{color:var(--muted);font-size:.85rem}
+.menu-note ul{list-style:none;margin-top:8px}.menu-note li{padding:4px 0}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<div class="page-hero"><p class="jp">メニュー</p><h1>菜單</h1></div>
+
+<section>
+<div class="container">
+  <div class="menu-category">
+    <h2>拉麵 RAMEN</h2>
+    <p class="subtitle">所有拉麵皆附半熟溏心蛋、海苔、蔥花</p>
+    <div class="menu-item"><div class="left"><h3>黑潮豚骨拉麵<span class="badge">人氣 No.1</span></h3><p>18 小時豚骨湯底 / 手工細麵 / 炙燒叉燒 ×3</p></div><div class="price">NT$220</div></div>
+    <div class="menu-item"><div class="left"><h3>地獄辛味噌拉麵<span class="badge">辣</span></h3><p>自家調製辣味噌 / 粗麵 / 溫泉蛋 / 豆芽</p></div><div class="price">NT$240</div></div>
+    <div class="menu-item"><div class="left"><h3>黑蒜油豚骨拉麵</h3><p>焦香蒜油 / 濃白豚骨湯 / 木耳絲 / 叉燒 ×2</p></div><div class="price">NT$230</div></div>
+    <div class="menu-item"><div class="left"><h3>柚子鹽清湯拉麵</h3><p>雞骨清湯 / 柚子皮 / 水菜 / 雞肉叉燒</p></div><div class="price">NT$210</div></div>
+    <div class="menu-item"><div class="left"><h3>味噌豚骨拉麵</h3><p>白味噌 / 豚骨湯底 / 玉米 / 奶油 / 叉燒</p></div><div class="price">NT$230</div></div>
+  </div>
+
+  <div class="menu-category">
+    <h2>沾麵 TSUKEMEN</h2>
+    <p class="subtitle">附粗直麵 300g（可免費加麵至 400g）</p>
+    <div class="menu-item"><div class="left"><h3>濃厚魚介沾麵<span class="badge">招牌</span></h3><p>魚介豚骨雙重沾汁 / 粗直麵 / 海苔 / 叉燒</p></div><div class="price">NT$260</div></div>
+    <div class="menu-item"><div class="left"><h3>辛辣沾麵</h3><p>辣味豚骨沾汁 / 粗直麵 / 溫泉蛋 / 筍乾</p></div><div class="price">NT$260</div></div>
+    <div class="menu-item"><div class="left"><h3>柑橘冷沾麵（夏季限定）</h3><p>柑橘醋醬油沾汁 / 冷麵 / 鴨肉片</p></div><div class="price">NT$270</div></div>
+  </div>
+
+  <div class="menu-category">
+    <h2>小食 SIDES</h2>
+    <div class="menu-item"><div class="left"><h3>炙燒叉燒飯</h3><p>炙燒五花叉燒 / 溫泉蛋 / 蔥花 / 特製醬汁</p></div><div class="price">NT$80</div></div>
+    <div class="menu-item"><div class="left"><h3>日式煎餃（6 顆）</h3><p>手工豬肉餡 / 薄皮脆底 / 柚子醋</p></div><div class="price">NT$90</div></div>
+    <div class="menu-item"><div class="left"><h3>唐揚雞（5 塊）</h3><p>醬油醃漬 / 現炸酥脆 / 美乃滋</p></div><div class="price">NT$100</div></div>
+    <div class="menu-item"><div class="left"><h3>半熟溏心蛋（加購）</h3><p>醬油漬 24 小時 / 完美半熟蛋黃</p></div><div class="price">NT$30</div></div>
+    <div class="menu-item"><div class="left"><h3>追加叉燒（3 片）</h3><p>低溫慢煮炙燒五花肉</p></div><div class="price">NT$60</div></div>
+  </div>
+
+  <div class="menu-category">
+    <h2>飲品 DRINKS</h2>
+    <div class="menu-item"><div class="left"><h3>生啤酒 ASAHI（中杯）</h3></div><div class="price">NT$120</div></div>
+    <div class="menu-item"><div class="left"><h3>可爾必思</h3></div><div class="price">NT$50</div></div>
+    <div class="menu-item"><div class="left"><h3>烏龍茶</h3></div><div class="price">NT$40</div></div>
+    <div class="menu-item"><div class="left"><h3>柚子蘇打</h3></div><div class="price">NT$60</div></div>
+  </div>
+
+  <div class="menu-note">
+    <h4>用餐須知</h4>
+    <ul>
+      <li>• 每日限量 80 碗，售完為止</li>
+      <li>• 麵條硬度可選：硬（カタ）/ 普通 / 軟</li>
+      <li>• 湯頭濃度可選：濃厚 / 普通 / 清爽</li>
+      <li>• 加麵一次免費（限沾麵）</li>
+      <li>• 內用限時 40 分鐘（尖峰時段）</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

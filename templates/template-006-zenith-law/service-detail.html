@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧財產權 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text)}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:8px}.page-hero p{color:var(--muted)}.page-hero .breadcrumb{color:var(--muted);font-size:.85rem;margin-bottom:12px}.page-hero .breadcrumb a{color:var(--gold)}
+section{padding:60px 0}
+.gold-line{width:40px;height:2px;background:var(--gold);margin-bottom:20px}
+.content-block{margin-bottom:48px}
+.content-block h2{font-size:1.5rem;color:var(--white);margin-bottom:16px}
+.content-block p{color:var(--text);margin-bottom:16px;line-height:2}
+.process-list{counter-reset:step;margin:24px 0}
+.process-list li{list-style:none;padding:20px 20px 20px 60px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;position:relative;counter-increment:step}
+.process-list li::before{content:counter(step);position:absolute;left:20px;top:20px;width:28px;height:28px;background:var(--gold);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-weight:700;font-size:.9rem}
+.process-list li strong{color:var(--white);display:block;margin-bottom:4px}
+.process-list li span{color:var(--muted);font-size:.9rem}
+.case-examples{margin-top:24px}
+.case-example{background:var(--card);border-left:3px solid var(--gold);padding:20px 24px;margin-bottom:16px;border-radius:0 var(--radius) var(--radius) 0}
+.case-example h4{color:var(--white);font-size:1.1rem;margin-bottom:8px}
+.case-example p{color:var(--muted);font-size:.9rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">首頁</a> / <a href="services.html">服務領域</a> / 智慧財產權</div>
+  <h1>智慧財產權</h1>
+  <p>全方位保護企業無形資產，從申請佈局到訴訟維權</p>
+</div></section>
+
+<section><div class="container">
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>服務概述</h2>
+    <p>在知識經濟時代，企業的核心競爭力往往體現在其智慧財產權的質量與佈局上。Zenith法律事務所的智慧財產權團隊由具備理工背景的專業律師組成，能夠深入理解客戶的技術創新，提供兼具法律專業與技術洞察的全方位智財服務。</p>
+    <p>我們的服務範圍涵蓋專利、商標、著作權、營業秘密及技術移轉等所有智財領域。無論是新創企業需要建立智財保護策略，或是成熟企業面臨侵權訴訟，我們都能提供精準有效的法律方案。</p>
+    <p>本團隊在台灣智慧財產及商業法院擁有豐富的訴訟經驗，過去十年間處理超過八十件智財訴訟案件，勝訴率達百分之九十以上。我們同時與美國、日本、歐洲的智財事務所建立了緊密的合作關係，能夠協助客戶進行跨國智財佈局與維權。</p>
+  </div>
+
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>服務範圍</h2>
+    <p><strong style="color:var(--gold)">專利服務：</strong>發明、新型及設計專利的申請與答辯；專利佈局策略規劃；專利侵權分析與鑑定；專利訴訟與行政救濟；專利授權與移轉。</p>
+    <p><strong style="color:var(--gold)">商標服務：</strong>商標檢索與註冊申請；商標異議與評定；商標侵權訴訟；品牌保護策略；網路域名爭議處理。</p>
+    <p><strong style="color:var(--gold)">著作權服務：</strong>著作權歸屬認定；授權契約擬定與審閱；侵權救濟；軟體著作權保護；數位內容法律諮詢。</p>
+    <p><strong style="color:var(--gold)">營業秘密：</strong>營業秘密管理制度建置；保密協議與競業禁止條款；營業秘密侵害救濟；員工離職管理法律建議。</p>
+  </div>
+
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>服務流程</h2>
+    <ol class="process-list">
+      <li><strong>初步諮詢與評估</strong><span>了解客戶的技術內容、商業目標及智財現況，進行初步法律評估。</span></li>
+      <li><strong>策略規劃</strong><span>根據評估結果，擬定智財保護策略與實施時程，包括申請佈局、維權計畫等。</span></li>
+      <li><strong>執行與申請</strong><span>撰寫申請文件、進行檢索分析、提出申請或展開法律行動。</span></li>
+      <li><strong>追蹤與維護</strong><span>持續追蹤案件進度，處理官方意見通知，維護已取得之智財權利。</span></li>
+      <li><strong>爭議解決</strong><span>如遇侵權或被控侵權，立即啟動訴訟或協商程序，保護客戶權益。</span></li>
+    </ol>
+  </div>
+
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>典型案例類型</h2>
+    <div class="case-examples">
+      <div class="case-example"><h4>科技公司專利佈局</h4><p>為某上市科技公司規劃全球專利佈局策略，於台灣、美國、中國大陸及歐洲提出逾五十件專利申請，有效建立技術護城河。</p></div>
+      <div class="case-example"><h4>商標侵權跨境維權</h4><p>代理台灣知名品牌於中國大陸進行商標異議與侵權訴訟，成功撤銷惡意搶註商標並取得損害賠償。</p></div>
+      <div class="case-example"><h4>營業秘密訴訟</h4><p>代理半導體公司對離職員工及競爭對手提起營業秘密侵害訴訟，成功取得禁制令及高額損害賠償。</p></div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

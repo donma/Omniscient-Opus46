@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>菜單介紹 — Ember 炭火燒肉</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0505;--surface:#1a0a0a;--card:#241010;--fire:#e63946;--ember:#ff6b35;--gold:#c8a430;--text:#f5ece8;--muted:#8a6a6a;--border:#3a1a1a;--gradient:linear-gradient(135deg,#e63946,#ff6b35);--radius:4px;--font-title:'Oswald',sans-serif;--font-body:'Noto Sans TC',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7}
+a{color:var(--fire);text-decoration:none;transition:color .3s}a:hover{color:var(--ember)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-title);font-size:1.6rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--fire)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;display:flex;flex-direction:column;gap:20px}
+.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.active{display:block}
+.close-menu{position:absolute;top:20px;right:20px;font-size:1.5rem;color:var(--text);cursor:pointer;background:none;border:none}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:var(--surface)}
+.page-hero h1{font-family:var(--font-title);font-size:3rem;font-weight:700}
+.page-hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.page-hero p{color:var(--muted);margin-top:12px}
+
+section{padding:80px 0}
+.menu-category{margin-bottom:60px}
+.menu-category h2{font-family:var(--font-title);font-size:2rem;margin-bottom:8px;color:var(--fire);border-left:4px solid var(--ember);padding-left:16px}
+.menu-category>p{color:var(--muted);margin-bottom:24px;padding-left:20px}
+.menu-items{display:grid;gap:16px}
+.menu-item{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.menu-item-info h3{font-size:1rem;margin-bottom:4px}
+.menu-item-info p{color:var(--muted);font-size:.85rem}
+.menu-item .price{color:var(--ember);font-family:var(--font-title);font-size:1.1rem;white-space:nowrap}
+.btn{display:inline-block;padding:14px 36px;background:var(--gradient);color:#fff;font-family:var(--font-title);font-size:1rem;font-weight:600;border-radius:var(--radius);letter-spacing:1px}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{font-family:var(--font-title);font-size:1.1rem;margin-bottom:16px;color:var(--fire)}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">EMBER 炭火燒肉</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="menu.html">菜單介紹</a></li><li><a href="ingredients.html">嚴選食材</a></li><li><a href="dining.html">用餐方式</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="reservation.html">線上訂位</a></li></ul><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><button class="close-menu" onclick="toggleMenu()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="menu.html">菜單介紹</a><a href="ingredients.html">嚴選食材</a><a href="dining.html">用餐方式</a><a href="stores.html">門市資訊</a><a href="news.html">最新消息</a><a href="reservation.html">線上訂位</a></div>
+
+<section class="page-hero">
+<h1>菜單 <span>介紹</span></h1>
+<p>嚴選頂級食材，以炭火淬煉極致風味</p>
+</section>
+
+<section>
+<div class="container">
+
+<div class="menu-category">
+<h2>和牛系列</h2>
+<p>日本及澳洲頂級和牛，每日新鮮分切 <a href="menu-detail.html">→ 查看完整和牛菜單</a></p>
+<div class="menu-items">
+<div class="menu-item"><div class="menu-item-info"><h3>日本A5和牛肋眼</h3><p>宮崎牛 / 約100g</p></div><span class="price">NT$ 1,680</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>日本A5和牛沙朗</h3><p>鹿兒島牛 / 約100g</p></div><span class="price">NT$ 1,580</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>澳洲M9和牛肋條</h3><p>約150g</p></div><span class="price">NT$ 880</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>厚切牛舌鹽燒</h3><p>約120g</p></div><span class="price">NT$ 580</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>和牛橫隔膜</h3><p>約120g</p></div><span class="price">NT$ 780</span></div>
+</div>
+</div>
+
+<div class="menu-category">
+<h2>豚肉系列</h2>
+<p>嚴選台灣及西班牙頂級豬肉</p>
+<div class="menu-items">
+<div class="menu-item"><div class="menu-item-info"><h3>西班牙伊比利豬梅花</h3><p>橡果飼育 / 約150g</p></div><span class="price">NT$ 780</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>屏東黑毛豬五花</h3><p>約150g</p></div><span class="price">NT$ 380</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>鹽麴松阪豬</h3><p>約120g</p></div><span class="price">NT$ 420</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>味噌漬豬頸肉</h3><p>約130g</p></div><span class="price">NT$ 350</span></div>
+</div>
+</div>
+
+<div class="menu-category">
+<h2>海鮮系列</h2>
+<p>每日市場直送新鮮海味</p>
+<div class="menu-items">
+<div class="menu-item"><div class="menu-item-info"><h3>活體大明蝦</h3><p>每尾</p></div><span class="price">NT$ 480</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>北海道干貝</h3><p>3L / 3顆</p></div><span class="price">NT$ 580</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>挪威鮭魚腹</h3><p>約100g</p></div><span class="price">NT$ 380</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>炭烤活鮑魚</h3><p>每顆</p></div><span class="price">NT$ 680</span></div>
+</div>
+</div>
+
+<div class="menu-category">
+<h2>野菜系列</h2>
+<p>宜蘭有機農場直送當季蔬菜</p>
+<div class="menu-items">
+<div class="menu-item"><div class="menu-item-info"><h3>炭烤椎茸</h3><p>埔里大香菇 / 3朵</p></div><span class="price">NT$ 180</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>烤玉米筍</h3><p>宜蘭有機 / 5支</p></div><span class="price">NT$ 150</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>奶油金針菇</h3><p>錫箔包烤</p></div><span class="price">NT$ 120</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>炭烤厚切杏鮑菇</h3><p>3片</p></div><span class="price">NT$ 160</span></div>
+</div>
+</div>
+
+<div class="menu-category">
+<h2>套餐系列</h2>
+<p>精心搭配的完整燒肉體驗</p>
+<div class="menu-items">
+<div class="menu-item"><div class="menu-item-info"><h3>極 — 雙人和牛套餐</h3><p>含A5和牛3種、海鮮2種、野菜、甜點</p></div><span class="price">NT$ 5,980</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>炎 — 雙人精選套餐</h3><p>含澳洲和牛、伊比利豬、海鮮、野菜</p></div><span class="price">NT$ 3,680</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>匠 — 四人豪華套餐</h3><p>含日本A5和牛5種、海鮮拼盤、野菜盛合</p></div><span class="price">NT$ 12,800</span></div>
+<div class="menu-item"><div class="menu-item-info"><h3>宴 — 六人饗宴套餐</h3><p>主廚特選當日最佳食材組合</p></div><span class="price">NT$ 18,800</span></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-col"><h4>EMBER 炭火燒肉</h4><p>傳承日本備長炭燒肉技藝</p></div><div class="footer-col"><h4>營業時間</h4><p>午餐 11:30 - 14:30</p><p>晚餐 17:30 - 23:00</p></div><div class="footer-col"><h4>聯絡我們</h4><a href="tel:0227001234">02-2700-1234</a><p>台北市大安區仁愛路四段 88 號</p></div><div class="footer-col"><h4>快速連結</h4><a href="reservation.html">線上訂位</a><a href="ingredients.html">嚴選食材</a></div></div><div class="footer-bottom"><p>&copy; 2026 Ember 炭火燒肉 All Rights Reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

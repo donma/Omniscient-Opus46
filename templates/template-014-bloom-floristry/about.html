@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們 — Bloom 花藝工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fdf8f5;--white:#ffffff;--rose:#e89bae;--rose-light:#fce8ee;--sage:#a8c5a0;--text:#3a2d2d;--muted:#8a7070;--border:#f0dede;--lavender:#d4c5e8;--radius:30px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,155,174,0.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+.nav-links{display:flex;gap:24px;font-size:0.9rem}
+.nav-links a:hover{color:var(--rose)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+section{padding:80px 0}
+.page-hero{text-align:center;padding:60px 0;background:var(--rose-light);border-radius:0 0 60px 60px;margin-bottom:60px}
+.page-hero h1{font-size:2.8rem;margin-bottom:8px}
+.page-hero p{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:80px}
+.about-grid img{border-radius:var(--radius);height:450px;object-fit:cover;width:100%}
+.about-grid h2{font-size:2rem;margin-bottom:16px}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+.philosophy{background:var(--white);border-radius:var(--radius);padding:60px;text-align:center;border:1px solid var(--border)}
+.philosophy h2{font-size:2rem;margin-bottom:24px}
+.philosophy-items{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px}
+.philosophy-item{padding:24px}
+.philosophy-item .icon{font-size:2.5rem;margin-bottom:12px}
+.philosophy-item h3{font-size:1.1rem;margin-bottom:8px}
+.philosophy-item p{color:var(--muted);font-size:0.9rem}
+.studio-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:60px}
+.studio-gallery img{border-radius:var(--radius);height:250px;object-fit:cover;width:100%}
+footer{background:var(--white);padding:48px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:1rem;margin-bottom:12px;color:var(--rose)}
+.footer-col p,.footer-col a{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:24px}
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;border-radius:0 0 var(--radius) var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.nav-links.active{display:flex}
+.menu-toggle{display:block}
+.about-grid{grid-template-columns:1fr}
+.philosophy-items{grid-template-columns:1fr}
+.studio-gallery{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Bloom 花藝</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html">首頁</a>
+<a href="about.html">關於我們</a>
+<a href="portfolio.html">花藝作品</a>
+<a href="order.html">花束訂購</a>
+<a href="weddings.html">婚禮花藝</a>
+<a href="courses.html">花藝課程</a>
+<a href="blog.html">花語日記</a>
+<a href="contact.html">聯絡我們</a>
+</div>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>關於我們</h1>
+<p>用花藝連結人與自然的美好</p>
+</div>
+
+<section style="padding-top:0">
+<div class="container">
+<div class="about-grid">
+<img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=700" alt="創辦人">
+<div>
+<h2>創辦人的故事</h2>
+<p>Bloom 花藝工作室由創辦人林芷瑜（Zoey）於 2018 年成立。曾在巴黎 École de Fleuriste 學習三年的她，將法式花藝的浪漫優雅與東方的細膩美學融合，創造出獨具風格的自然系花藝設計。</p>
+<p>從巴黎回到台北後，Zoey 希望將花藝帶入日常生活，讓每個人都能感受到花朵帶來的療癒力量。無論是一束日常小花、婚禮的盛大佈置，還是一堂花藝體驗課，Bloom 都堅持以最新鮮的花材與最用心的設計，為您創造美好回憶。</p>
+<p>「我相信每一朵花都有自己的故事，而我的工作，就是讓這些故事被看見。」— Zoey</p>
+</div>
+</div>
+
+<div class="about-grid">
+<div>
+<h2>工作室空間</h2>
+<p>位於大安區靜巷中的 Bloom 工作室，是一處充滿陽光與綠意的創作空間。推開木門，迎面而來的是滿室花香與柔和的自然光線。</p>
+<p>這裡不僅是我們的創作基地，也是花藝課程的教學場所。我們特別設計了寬敞的工作桌與完善的花藝工具，讓每位來訪的學員都能在舒適的環境中享受花藝創作的樂趣。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=700" alt="工作室空間">
+</div>
+
+<div class="philosophy">
+<h2>設計理念</h2>
+<p style="color:var(--muted);max-width:600px;margin:0 auto">我們相信花藝不只是裝飾，而是一種生活態度</p>
+<div class="philosophy-items">
+<div class="philosophy-item">
+<div class="icon">🌿</div>
+<h3>自然至上</h3>
+<p>尊重每朵花的天然姿態，以不過度修飾的方式展現花材最真實的美。</p>
+</div>
+<div class="philosophy-item">
+<div class="icon">🎨</div>
+<h3>色彩和諧</h3>
+<p>精心搭配色彩層次，運用同色系漸變或對比色彩創造視覺韻律。</p>
+</div>
+<div class="philosophy-item">
+<div class="icon">💝</div>
+<h3>情感傳遞</h3>
+<p>每束花都承載著送花人的心意，我們用設計將這份情感完美表達。</p>
+</div>
+</div>
+</div>
+
+<div class="studio-gallery">
+<img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=500" alt="工作室一隅">
+<img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=500" alt="花藝工作桌">
+<img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=500" alt="花材展示">
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>Bloom 花藝工作室</h4><p>以花為語，傳遞每一份心意與美好。</p></div>
+<div class="footer-col"><h4>快速連結</h4><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="courses.html">花藝課程</a></div>
+<div class="footer-col"><h4>聯絡資訊</h4><p>台北市大安區瑞安街 128 號 1 樓</p><p>02-2700-1234</p><p>hello@bloom-floral.tw</p></div>
+<div class="footer-col"><h4>營業時間</h4><p>週二至週六 10:00–19:00</p><p>週日 11:00–17:00</p><p>週一公休</p></div>
+</div>
+<div class="footer-bottom">© 2026 Bloom 花藝工作室 All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

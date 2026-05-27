@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>新手重訓完整指南 — Forge 健身工廠</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0a0a;--surface:#141414;--card:#1c1c1c;--red:#e63946;--red-dark:#c1121f;--text:#f0f0f0;--muted:#888888;--border:#2a2a2a;--radius:4px;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Anton',sans-serif;letter-spacing:1px;}
+a{color:var(--red);text-decoration:none;transition:.3s;}
+a:hover{color:var(--red-dark);}
+img{max-width:100%;display:block;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,.95);border-bottom:1px solid var(--border);padding:15px 0;}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--red);}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a{color:var(--text);}
+.nav-links a:hover{color:var(--red);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.menu-toggle span{width:25px;height:2px;background:var(--text);}
+.article-header{padding:140px 0 40px;}
+.article-header .breadcrumb{color:var(--muted);font-size:.9rem;margin-bottom:20px;}
+.article-header h1{font-size:3rem;color:var(--text);margin-bottom:15px;}
+.article-header .meta{color:var(--muted);font-size:.9rem;}
+.article-header .meta span{margin-right:20px;}
+.article-hero-img{width:100%;height:400px;object-fit:cover;border-radius:var(--radius);margin:30px 0;border:1px solid var(--border);}
+.article-content{max-width:800px;margin:0 auto;padding:40px 20px 80px;}
+.article-content h2{font-size:1.8rem;color:var(--red);margin:40px 0 15px;}
+.article-content p{color:var(--muted);margin-bottom:18px;font-size:1rem;}
+.article-content ul,.article-content ol{margin:15px 0 20px 20px;color:var(--muted);}
+.article-content li{margin-bottom:8px;}
+.article-content blockquote{border-left:4px solid var(--red);padding:15px 25px;margin:25px 0;background:var(--card);border-radius:var(--radius);}
+.article-content blockquote p{color:var(--text);margin:0;font-style:italic;}
+.tip-box{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--red);padding:25px;border-radius:var(--radius);margin:25px 0;}
+.tip-box h4{color:var(--red);margin-bottom:10px;font-size:1.1rem;}
+.tip-box p{color:var(--muted);margin:0;}
+.footer{background:var(--surface);padding:60px 0 30px;border-top:1px solid var(--border);}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;}
+.footer h4{font-family:'Anton',sans-serif;color:var(--red);margin-bottom:15px;}
+.footer p,.footer a{color:var(--muted);font-size:.9rem;}
+.footer a:hover{color:var(--red);}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+@media(max-width:768px){
+.nav-links{position:fixed;top:0;left:-100%;width:70%;height:100vh;background:var(--surface);flex-direction:column;padding:80px 30px;transition:.3s;border-right:1px solid var(--border);}
+.nav-links.active{left:0;}
+.menu-toggle{display:flex;}
+.article-header h1{font-size:2rem;}
+.article-hero-img{height:250px;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="index.html" class="logo">FORGE 健身工廠</a>
+<button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')"><span></span><span></span><span></span></button>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="programs.html">訓練課程</a></li>
+<li><a href="coaches.html">教練團隊</a></li>
+<li><a href="facilities.html">設備環境</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="transformations.html">成果見證</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div></nav>
+
+<article>
+<div class="container">
+<div class="article-header">
+<p class="breadcrumb"><a href="blog.html">健身知識</a> / 訓練</p>
+<h1>新手重訓完整指南：從零開始的肌力訓練</h1>
+<p class="meta"><span>2026.03.15</span><span>作者：Coach Wei</span><span>閱讀時間：8分鐘</span></p>
+</div>
+<img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1200" alt="重訓" class="article-hero-img">
+</div>
+
+<div class="article-content">
+<p>踏入健身房的第一天往往是最困難的——不是因為訓練本身，而是因為不知道該從何開始。這篇指南將帶你從零開始，建立正確的重量訓練觀念與方法。</p>
+
+<h2>為什麼要做重量訓練？</h2>
+<p>重量訓練（阻力訓練）不只是為了變壯或變瘦。它的好處遠比你想像的更多：</p>
+<ul>
+<li>增加基礎代謝率，即使休息時也能燃燒更多熱量</li>
+<li>增加骨質密度，預防骨質疏鬆</li>
+<li>改善姿勢，減少慢性疼痛</li>
+<li>提升運動表現與日常生活功能</li>
+<li>改善心理健康，增加自信</li>
+</ul>
+
+<h2>新手必學的五大動作模式</h2>
+<p>所有重訓動作都可歸類為五大基本動作模式。掌握這些模式，你就能建構一套完整有效的訓練計畫：</p>
+<ol>
+<li><strong>蹲（Squat）</strong> — 深蹲、杯式深蹲、分腿蹲</li>
+<li><strong>鉸鏈（Hinge）</strong> — 硬舉、羅馬尼亞硬舉、壺鈴擺盪</li>
+<li><strong>推（Push）</strong> — 臥推、肩推、伏地挺身</li>
+<li><strong>拉（Pull）</strong> — 划船、引體向上、滑輪下拉</li>
+<li><strong>負重行走（Carry）</strong> — 農夫走路、單手提物</li>
+</ol>
+
+<blockquote><p>「掌握基本動作模式比追求大重量重要一百倍。基礎打好了，重量自然會跟著來。」— Coach Wei</p></blockquote>
+
+<h2>新手課表建議</h2>
+<p>對於剛開始訓練的新手，建議採用全身性訓練，每週3天，每次訓練涵蓋所有動作模式：</p>
+
+<div class="tip-box">
+<h4>新手全身訓練範例（A日）</h4>
+<p>1. 杯式深蹲 3x10<br>2. 羅馬尼亞硬舉 3x10<br>3. 啞鈴臥推 3x10<br>4. 啞鈴划船 3x10<br>5. 農夫走路 3x30秒<br>6. 平板撐 3x30秒</p>
+</div>
+
+<h2>重量選擇與漸進超負荷</h2>
+<p>初學者最常犯的錯誤就是一開始用太重或太輕的重量。正確的重量選擇原則：</p>
+<ul>
+<li>選擇一個你能以正確姿勢完成所有次數的重量</li>
+<li>最後2-3下應該感到吃力，但不至於動作變形</li>
+<li>當你能輕鬆完成所有組數和次數時，增加2.5-5公斤</li>
+</ul>
+<p>這就是「漸進超負荷」的概念——逐步增加訓練量或強度，持續給身體新的刺激，促使它適應並變得更強。</p>
+
+<h2>常見錯誤與注意事項</h2>
+<ul>
+<li><strong>跳過暖身</strong> — 每次訓練前至少花10分鐘做動態暖身</li>
+<li><strong>忽略動作品質</strong> — 動作正確比重量大更重要</li>
+<li><strong>訓練頻率不一致</strong> — 規律比完美更重要，養成習慣</li>
+<li><strong>忽略恢復</strong> — 肌肉是在休息時生長的，確保充足睡眠</li>
+<li><strong>害怕求助</strong> — 不確定就問教練，這是他們存在的意義</li>
+</ul>
+
+<div class="tip-box">
+<h4>準備好開始了嗎？</h4>
+<p>Forge 提供免費體驗課程，由專業教練一對一帶領你認識器材、學習基礎動作。沒有壓力，只有第一步。<br><a href="contact.html">立即預約免費體驗 →</a></p>
+</div>
+</div>
+</article>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><h4>FORGE 健身工廠</h4><p>台北市信義區松仁路100號B1<br>鍛造你的極限，突破自我</p></div>
+<div><h4>快速連結</h4><p><a href="programs.html">訓練課程</a><br><a href="membership.html">會員方案</a><br><a href="schedule.html">課表查詢</a><br><a href="blog.html">健身知識</a></p></div>
+<div><h4>營業時間</h4><p>週一至週五 06:00 - 23:00<br>週六日 08:00 - 21:00<br>國定假日 09:00 - 18:00</p></div>
+<div><h4>聯絡我們</h4><p>電話：02-2765-1234<br>信箱：info@forge-gym.tw<br>LINE：@forge-gym</p></div>
+</div>
+<div class="footer-bottom">© 2026 Forge 健身工廠. All Rights Reserved.</div>
+</div></footer>
+</body>
+</html>

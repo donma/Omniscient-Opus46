@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>如何在家幫毛孩梳毛 — Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s ease;box-shadow:-4px 0 30px rgba(0,0,0,.1)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+.page-hero{padding:60px 0;text-align:center;background:var(--pink-light)}
+.page-hero h1{font-size:2rem;margin-bottom:8px}.page-hero p{color:var(--muted)}
+.section{padding:60px 0}
+.article{max-width:800px;margin:0 auto}
+.article .meta{display:flex;gap:16px;margin-bottom:32px;justify-content:center}
+.article .meta span{font-size:.85rem;color:var(--muted)}
+.article .featured-img{border-radius:var(--radius);overflow:hidden;margin-bottom:32px}
+.article .featured-img img{width:100%;height:400px;object-fit:cover}
+.article h2{font-size:1.4rem;margin:32px 0 12px;color:var(--pink)}
+.article p{color:var(--muted);margin-bottom:16px}
+.article ul,.article ol{margin:16px 0;padding-left:24px;color:var(--muted)}
+.article li{margin-bottom:8px}
+.tip-box{background:var(--pink-light);border-radius:var(--radius);padding:24px;margin:24px 0}
+.tip-box h4{color:var(--purple);margin-bottom:8px}
+.tip-box p{font-size:.9rem;color:var(--muted);margin:0}
+.article .step-img{border-radius:16px;margin:20px 0;overflow:hidden}
+.article .step-img img{width:100%;height:280px;object-fit:cover}
+.back-link{display:inline-block;margin-top:32px;color:var(--pink);font-size:.9rem}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-grid h4{font-size:.95rem;margin-bottom:12px;color:var(--pink)}.footer-grid p,.footer-grid li{font-size:.85rem;color:var(--muted);line-height:2}.footer-grid ul{list-style:none}
+.footer-bottom{text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+@media(max-width:768px){.menu-toggle{display:flex}nav{display:none}.article .featured-img img{height:250px}.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="container"><a href="index.html" class="logo">Paw<span>some</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>如何在家幫毛孩梳毛</h1><p>居家護理 ｜ 實用指南</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="article">
+<div class="meta"><span>📅 2026 年 3 月 15 日</span><span>⏱ 閱讀時間約 5 分鐘</span><span>✍️ 美容師小雅</span></div>
+
+<div class="featured-img">
+<img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=400&fit=crop" alt="梳毛">
+</div>
+
+<p>定期幫毛孩梳毛是居家護理中最重要的環節之一。梳毛不僅能去除廢毛、防止打結，還能促進血液循環、及早發現皮膚問題。更重要的是，梳毛的過程可以增進您與毛孩之間的信任與感情。</p>
+
+<h2>為什麼每天梳毛很重要？</h2>
+<ul>
+<li>去除已脫落的廢毛，減少家中毛髮飄散</li>
+<li>預防毛髮打結糾纏，避免需要剃除的窘境</li>
+<li>刺激皮膚分泌天然油脂，讓毛髮更有光澤</li>
+<li>及早發現寄生蟲、腫塊或皮膚異常</li>
+<li>建立毛孩對於被觸摸的正面經驗</li>
+</ul>
+
+<h2>Step 1：選擇適合的梳具</h2>
+<p>不同毛質需要不同的梳具。短毛犬適合使用橡膠手套或豬鬃刷，中長毛犬則需要針梳和排梳搭配使用。長毛犬建議先用開結梳處理打結部位，再用針梳全面梳理。</p>
+
+<div class="step-img"><img src="https://images.unsplash.com/photo-1583337130417-13104dec14a5?w=800&h=300&fit=crop" alt="梳毛工具"></div>
+
+<h2>Step 2：讓毛孩放鬆</h2>
+<p>在開始梳毛之前，先輕輕撫摸毛孩，讓牠感到放鬆。可以選在毛孩心情好的時候，例如散步回來休息後或是吃飽後。初次嘗試時間不要太長，5 分鐘即可。</p>
+
+<h2>Step 3：從不敏感的部位開始</h2>
+<p>建議從背部和側腹開始梳理，這些部位毛孩通常比較不敏感。避免一開始就碰觸腹部、尾巴根部或腿內側等敏感區域。等毛孩適應後再慢慢擴展範圍。</p>
+
+<h2>Step 4：順著毛流方向梳理</h2>
+<p>始終順著毛髮生長的方向梳理，由上往下、由前往後。遇到打結處不要硬拉，先用手指輕輕撥開，再用開結梳慢慢處理。</p>
+
+<div class="tip-box">
+<h4>小技巧</h4>
+<p>如果毛孩很抗拒梳毛，可以搭配零食獎勵。每梳幾下就給一個小零食，建立正面連結。持續幾天後，毛孩就會越來越接受甚至喜歡被梳毛的過程。</p>
+</div>
+
+<h2>Step 5：檢查皮膚狀況</h2>
+<p>梳毛時順便觀察皮膚有無紅腫、結痂、異常掉毛或寄生蟲。若發現任何異常，建議儘早帶毛孩就醫或來店請美容師協助檢查。</p>
+
+<h2>不同品種的梳毛頻率建議</h2>
+<ol>
+<li><strong>短毛犬（柴犬、拉布拉多）：</strong>每週 2-3 次</li>
+<li><strong>中長毛犬（黃金獵犬、邊牧）：</strong>每天一次</li>
+<li><strong>長毛犬（馬爾濟斯、約克夏）：</strong>每天 1-2 次</li>
+<li><strong>捲毛犬（貴賓、比熊）：</strong>每天一次，建議搭配專業定期美容</li>
+</ol>
+
+<div class="tip-box">
+<h4>需要專業協助嗎？</h4>
+<p>如果毛孩已經嚴重打結或您不確定如何處理，歡迎帶毛孩來 Pawsome 讓我們的專業美容師協助。千萬不要自行用剪刀剪除打結毛球，很容易不小心剪傷皮膚。</p>
+</div>
+
+<a href="tips.html" class="back-link">← 返回寵物知識列表</a>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Pawsome 寵物美容</h4><p>位於台北中山區的專業寵物美容沙龍，以愛心與專業技術，為每一位毛孩帶來最舒適的美容體驗。</p></div><div><h4>服務項目</h4><ul><li><a href="services.html">基礎洗澡</a></li><li><a href="services.html">全套美容</a></li><li><a href="services.html">SPA 護理</a></li><li><a href="services.html">口腔護理</a></li></ul></div><div><h4>快速連結</h4><ul><li><a href="booking.html">線上預約</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="faq.html">常見問題</a></li></ul></div><div><h4>聯絡資訊</h4><p>台北市中山區南京東路二段 88 號 1 樓</p><p>02-2567-8899</p><p>營業時間：10:00 - 19:00</p></div></div><div class="footer-bottom"><p>&copy; 2026 Pawsome 寵物美容. All rights reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

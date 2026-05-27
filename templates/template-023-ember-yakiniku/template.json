@@ -1,0 +1,37 @@
+{
+  "id": "template-023",
+  "name": "Ember 炭火燒肉",
+  "category": "restaurant",
+  "subcategory": "yakiniku",
+  "description": "Premium Japanese-style charcoal yakiniku restaurant template with dark dramatic theme, fire-red accents, and bold typography.",
+  "version": "1.0.0",
+  "author": "OmniscientTest",
+  "pages": [
+    "index.html",
+    "about.html",
+    "menu.html",
+    "menu-detail.html",
+    "ingredients.html",
+    "dining.html",
+    "stores.html",
+    "news.html",
+    "news-detail.html",
+    "gallery.html",
+    "faq.html",
+    "reservation.html"
+  ],
+  "fonts": ["Oswald:wght@600;700", "Noto Sans TC:wght@400;500"],
+  "colors": {
+    "bg": "#0d0505",
+    "surface": "#1a0a0a",
+    "card": "#241010",
+    "fire": "#e63946",
+    "ember": "#ff6b35",
+    "gold": "#c8a430",
+    "text": "#f5ece8",
+    "muted": "#8a6a6a",
+    "border": "#3a1a1a"
+  },
+  "features": ["responsive", "mobile-menu-left", "dark-theme", "inline-css", "traditional-chinese"],
+  "locale": "zh-TW"
+}

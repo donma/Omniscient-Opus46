@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林心如 — Canvas 當代藝廊</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--offwhite:#f9f9f7;--text:#111111;--muted:#777777;--accent:#111111;--border:#e5e5e5;--hover:#333333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.02em}
+a{color:var(--text);text-decoration:none}
+img{display:block;width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-0.03em}
+.logo span{font-weight:400;margin-left:4px;font-size:14px}
+nav.desktop{display:flex;gap:28px}
+nav.desktop a{font-size:13px;color:var(--muted);transition:color .2s}
+nav.desktop a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:20px;height:1.5px;background:var(--text);margin:5px 0}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--bg);z-index:200;padding:80px 32px;transition:left .3s ease;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}
+.mobile-nav a{display:block;font-size:16px;padding:12px 0;border-bottom:1px solid var(--border);color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;display:none}
+.overlay.active{display:block}
+.close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:24px;cursor:pointer}
+.meta{font-family:'Space Grotesk',monospace;font-size:12px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.page-header{margin-top:60px;padding:80px 0 40px}
+.page-header h1{font-size:clamp(28px,4vw,42px)}
+section{padding:60px 0}
+.artist-hero{display:grid;grid-template-columns:1fr 2fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.artist-hero img{aspect-ratio:3/4;object-fit:cover}
+.artist-hero h1{font-size:32px;margin-bottom:4px}
+.artist-hero .sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.artist-hero p{font-size:15px;margin-bottom:16px}
+.cv{padding:60px 0}
+.cv h2{font-size:18px;margin-bottom:24px}
+.cv-list{list-style:none}
+.cv-list li{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.cv-list li span:first-child{font-family:'Space Grotesk',monospace;color:var(--muted);font-size:12px}
+.works-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.works-grid .item img{aspect-ratio:4/3;object-fit:cover;margin-bottom:8px}
+.works-grid .item p{font-size:12px;color:var(--muted);font-family:'Space Grotesk',monospace}
+blockquote{border-left:2px solid var(--text);padding-left:24px;margin:48px 0;font-size:16px;font-style:italic}
+footer{border-top:1px solid var(--border);padding:48px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}footer a:hover{color:var(--text)}
+@media(max-width:768px){
+  nav.desktop{display:none}.menu-btn{display:block}
+  .artist-hero{grid-template-columns:1fr}
+  .works-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">CANVAS<span>當代藝廊</span></a>
+  <nav class="desktop">
+    <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+  </nav>
+  <button class="menu-btn" onclick="document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')"><span></span><span></span><span></span></button>
+</header>
+<div class="overlay" onclick="document.querySelector('.mobile-nav').classList.remove('active');this.classList.remove('active')"></div>
+<nav class="mobile-nav">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button>
+  <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+</nav>
+
+<div class="container">
+  <div class="page-header"><p class="meta"><a href="artists.html">Artists</a> / Lin Hsin-Ju</p></div>
+
+  <section class="artist-hero">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="林心如">
+    <div>
+      <h1>林心如</h1>
+      <p class="sub">Lin Hsin-Ju — b. 1985，台北 — 複合媒材・裝置藝術</p>
+      <p>林心如的創作實踐聚焦於身體、空間與記憶之間的關係。她以大型裝置與複合媒材繪畫為主要創作形式，探索人在空間中的存在感受，以及記憶如何在物質中留下痕跡。</p>
+      <p>林心如畢業於台北藝術大學美術系，後於英國皇家藝術學院取得碩士學位。作品曾於台北市立美術館、東京森美術館、首爾國立當代美術館及巴塞爾藝術展展出。</p>
+      <p>她的創作過程強調身體的直覺反應，經常在大尺幅的畫布上進行長時間的身體勞動，將繪畫視為一種行為的紀錄。近年來開始融入空間裝置元素，讓觀者能夠走入作品之中，以身體感受取代視覺閱讀。</p>
+    </div>
+  </section>
+
+  <blockquote>
+    「我不畫我所看到的，我畫我的身體所記得的。每一筆都是一次呼吸的痕跡。」<br>
+    <span style="font-style:normal;font-size:13px;color:var(--muted)">— 林心如，2023</span>
+  </blockquote>
+
+  <div class="cv">
+    <h2>展覽經歷（精選）</h2>
+    <ul class="cv-list">
+      <li><span>2026</span><span>界限之外（個展），Canvas 當代藝廊，台北</span></li>
+      <li><span>2023</span><span>身體的建築（聯展），森美術館，東京</span></li>
+      <li><span>2022</span><span>光州雙年展，光州市立美術館，光州</span></li>
+      <li><span>2021</span><span>記憶宮殿（個展），台北市立美術館，台北</span></li>
+      <li><span>2020</span><span>Art Basel Hong Kong，Canvas 當代藝廊展位</span></li>
+      <li><span>2019</span><span>威尼斯雙年展平行展，威尼斯</span></li>
+      <li><span>2018</span><span>邊界之間（個展），首爾國立當代美術館，首爾</span></li>
+    </ul>
+  </div>
+
+  <section>
+    <h2 style="font-size:20px;margin-bottom:32px">精選作品</h2>
+    <div class="works-grid">
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80" alt="作品">
+        <p>邊界練習 #1 — 壓克力、畫布 — 180×240cm — 2026</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&q=80" alt="作品">
+        <p>記憶的重量 — 複合媒材裝置 — 尺寸可變 — 2026</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=600&q=80" alt="作品">
+        <p>身體地圖 III — 油彩、麻布 — 150×150cm — 2023</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=600&q=80" alt="作品">
+        <p>漂浮的房間 — 壓克力、木材、金屬 — 300×400×250cm — 2026</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div><p><strong>CANVAS 當代藝廊</strong></p><p>台北市中山區大直街32號</p></div>
+  <div><p>© 2026 Canvas 當代藝廊. All Rights Reserved</p></div>
+</footer>
+</body>
+</html>

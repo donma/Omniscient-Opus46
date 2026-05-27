@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空間攝影 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+section{padding:100px 0}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.25)}
+.page-hero h1{position:relative;z-index:1;font-size:3rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gallery-grid img{width:100%;height:300px;object-fit:cover;border:1px solid var(--border);transition:filter .3s;cursor:pointer}
+.gallery-grid img:hover{filter:brightness(1.1)}
+.gallery-grid .wide{grid-column:span 2}
+.gallery-grid .tall{grid-row:span 2;height:100%}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.page-hero h1{font-size:2rem}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid .wide{grid-column:span 1}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1600" alt="Gallery">
+  <h1>空間攝影</h1>
+</div>
+
+<section>
+  <div class="container">
+    <p style="text-align:center;color:var(--muted);margin-bottom:60px;font-size:1.1rem">在燭光與陰影之間，每個角落都是一幅畫。</p>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800" alt="吧台全景" class="wide">
+      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800" alt="招牌調酒">
+      <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800" alt="酒架">
+      <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=800" alt="瓶身特寫" class="tall">
+      <img src="https://images.unsplash.com/photo-1574006852726-31d39bfba3f5?w=800" alt="調酒過程">
+      <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=800" alt="調酒特寫">
+      <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=800" alt="入口走廊" class="wide">
+      <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=800" alt="沙發區">
+      <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800" alt="燭光">
+      <img src="https://images.unsplash.com/photo-1563223771-5fe4038fbfc9?w=800" alt="人群氛圍">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

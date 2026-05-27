@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>關於會館 — Zen 瑜伽會館</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+section{padding:100px 0}
+.page-hero{text-align:center;padding:80px 24px;background:var(--white);border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.8rem;margin-bottom:16px}
+.page-hero p{color:var(--muted);max-width:600px;margin:0 auto}
+.story-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-section img{border-radius:var(--radius);height:450px;object-fit:cover;width:100%}
+.story-section h2{font-size:1.8rem;margin-bottom:20px}
+.story-section p{color:var(--muted);margin-bottom:16px}
+.philosophy{background:var(--white);padding:100px 0}
+.philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
+.philosophy-item{padding:40px;border:1px solid var(--border);border-radius:var(--radius)}
+.philosophy-item .icon{font-size:2.5rem;margin-bottom:16px}
+.philosophy-item h3{margin-bottom:12px;font-size:1.3rem}
+.philosophy-item p{color:var(--muted);font-size:.9rem}
+.space-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.space-gallery img{border-radius:var(--radius);height:280px;object-fit:cover;width:100%}
+.btn{display:inline-block;padding:14px 36px;background:var(--sage);color:var(--white);border-radius:var(--radius);font-size:.95rem;transition:background .3s}
+.btn:hover{background:var(--sage-dark)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+.story-section{grid-template-columns:1fr}
+.philosophy-grid{grid-template-columns:1fr}
+.space-gallery{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>關於會館</h1>
+<p>從一個簡單的信念出發——每個人都值得擁有一處寧靜的空間，與自己的身心重新連結</p>
+</div>
+
+<section>
+<div class="container">
+<div class="story-section">
+<img src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=800&q=80" alt="會館空間">
+<div>
+<h2>我們的故事</h2>
+<p>Zen 瑜伽會館成立於 2018 年，由創辦人林芷瑜老師在天母這個充滿綠意的社區中，打造了一處兼具專業與溫度的練習空間。</p>
+<p>我們相信瑜伽不僅僅是運動，更是一種生活態度。透過有意識的呼吸、專注的體位法練習，以及靜心冥想，每個人都能找到屬於自己的內在平靜。</p>
+<p>從最初只有一間教室、兩位老師開始，到如今擁有三間風格各異的練習空間與五位專業師資，我們始終堅持小班教學的理念，確保每位學員都能獲得充分的關注與指導。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="philosophy">
+<div class="container">
+<h2 style="text-align:center;font-size:2.2rem;margin-bottom:60px">教學理念</h2>
+<div class="philosophy-grid">
+<div class="philosophy-item">
+<div class="icon">🌿</div>
+<h3>身心合一</h3>
+<p>我們重視身體與心靈的整體連結，每堂課都融入呼吸覺察與正念練習，讓練習不只停留在墊子上。</p>
+</div>
+<div class="philosophy-item">
+<div class="icon">🌊</div>
+<h3>循序漸進</h3>
+<p>尊重每個身體的獨特性，不追求外在的完美體式，而是引導學員傾聽身體的訊息，安全地探索自己的極限。</p>
+</div>
+<div class="philosophy-item">
+<div class="icon">🌱</div>
+<h3>持續成長</h3>
+<p>瑜伽是一生的修行。我們提供從入門到進階的完整學習路徑，陪伴每位學員在不同階段持續深化練習。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 style="text-align:center;font-size:2.2rem;margin-bottom:60px">練習空間</h2>
+<div class="space-gallery">
+<img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=600&q=80" alt="主教室">
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="冥想室">
+<img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="休息區">
+</div>
+<div style="margin-top:40px;text-align:center">
+<p style="color:var(--muted);max-width:700px;margin:0 auto 32px">會館擁有三間練習空間：120坪的大教室適合團體課程、50坪的小教室用於小班制深度教學，以及30坪的冥想靜心室，提供學員課後沉澱的場所。</p>
+<a href="contact.html" class="btn">預約參觀</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

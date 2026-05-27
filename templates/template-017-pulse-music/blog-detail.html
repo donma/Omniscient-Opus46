@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>混音入門：5 個新手必知技巧 — Pulse 音樂工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d14;--surface:#14141f;--card:#1a1a28;--purple:#8b5cf6;--orange:#f97316;--pink:#ec4899;--text:#f0f0f8;--muted:#8888aa;--border:#2a2a3e;--gradient:linear-gradient(135deg,#8b5cf6,#f97316);--radius:16px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Poppins','Noto Sans TC',sans-serif;font-weight:800}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,13,20,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.4rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:.9rem;font-weight:400;transition:color .3s}.nav-links a:hover{color:var(--purple)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);padding:80px 32px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.mobile-menu a{display:block;padding:12px 0;font-size:1rem;border-bottom:1px solid var(--border)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+.article-hero{padding:140px 0 40px;text-align:center}.article-hero h1{font-size:2.2rem;margin-bottom:12px;max-width:700px;margin-left:auto;margin-right:auto}.gradient{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.article-meta{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+.article-img{width:100%;max-width:800px;height:400px;object-fit:cover;border-radius:var(--radius);margin:0 auto 48px;display:block}
+.article-content{max-width:720px;margin:0 auto;padding:0 24px 80px}
+.article-content h2{font-size:1.4rem;margin:40px 0 16px}
+.article-content p{color:var(--muted);margin-bottom:16px;font-size:1rem}
+.article-content .tip{background:var(--card);border-left:4px solid var(--purple);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0;margin:24px 0}
+.article-content .tip p{margin:0;color:var(--text)}
+.back-link{display:inline-block;margin-top:40px;color:var(--purple);font-weight:400}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{font-size:1rem;margin-bottom:16px;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:8px}.footer-col a:hover{color:var(--text)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;padding-top:24px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">PULSE</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">錄音服務</a></li><li><a href="portfolio.html">作品試聽</a></li><li><a href="equipment.html">設備介紹</a></li><li><a href="pricing.html">收費方案</a></li><li><a href="blog.html">音樂專欄</a></li><li><a href="contact.html">聯絡預約</a></li></ul><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="services.html">錄音服務</a><a href="portfolio.html">作品試聽</a><a href="equipment.html">設備介紹</a><a href="pricing.html">收費方案</a><a href="blog.html">音樂專欄</a><a href="contact.html">聯絡預約</a></div>
+
+<section class="article-hero">
+<div class="container">
+<h1>混音入門：5 個新手必知<span class="gradient">技巧</span></h1>
+<p class="article-meta">2026.03.15 · 作者：林雅婷 · 8 分鐘閱讀</p>
+</div>
+</section>
+
+<img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?w=900&h=450&fit=crop" alt="混音台" class="article-img">
+
+<div class="article-content">
+<p>混音是音樂製作中最關鍵的環節之一。一個好的混音能讓平凡的錄音素材脫胎換骨，而一個差的混音則可能毀掉一首好歌。以下是每位混音新手都應該掌握的 5 個核心技巧。</p>
+
+<h2>1. 從音量平衡開始</h2>
+<p>很多新手一開始就急著加 EQ 和效果器，但其實混音最重要的第一步是做好音量平衡（Level Balance）。先把所有推桿歸零，然後一軌一軌地加入，找到每個樂器之間的相對音量關係。</p>
+<div class="tip"><p>小技巧：試著在很小的音量下做平衡調整，如果在小音量下每個樂器都聽得清楚，那在正常音量下一定會更好。</p></div>
+
+<h2>2. 善用 EQ 創造空間</h2>
+<p>EQ 不只是用來讓聲音「好聽」，更重要的是用來讓每個樂器在頻率上各有其位置。當兩個樂器的頻率互相衝突時（例如人聲和吉他），用減法 EQ 在其中一個上削掉一些頻率，而不是一味地加。</p>
+<p>記住「減法優先」的原則：先嘗試切掉不需要的頻率，再考慮增加想要的頻率。這樣能保持混音的清晰度與動態。</p>
+
+<h2>3. 壓縮器的基本應用</h2>
+<p>壓縮器（Compressor）用來控制聲音的動態範圍。設定時關注四個主要參數：Threshold（閾值）、Ratio（壓縮比）、Attack（啟動時間）、Release（釋放時間）。</p>
+<div class="tip"><p>初學者建議：先用溫和的設定開始（Ratio 2:1~4:1），只做 2-3dB 的增益減少。如果壓縮讓聲音聽起來不自然，通常是壓太多了。</p></div>
+
+<h2>4. 利用 Pan 創造立體聲場</h2>
+<p>不要讓所有樂器都擠在正中間。善用左右聲道的分配（Panning），可以大幅提升混音的寬度與清晰度。一般來說，主唱、貝斯和大鼓放在中間，吉他、鍵盤、打擊樂器則分配到兩側。</p>
+<p>雙軌錄製的吉他可以一左一右各 80-100% 擺放，這是搖滾音樂中常見的做法，能創造出壯觀的聲場。</p>
+
+<h2>5. 使用參考曲目</h2>
+<p>找一首你喜歡的、風格類似的商業發行歌曲作為參考。在混音過程中不時切換到參考曲目，比較音色、頻率平衡和立體聲寬度。這能幫助你保持客觀，避免混音越做越偏。</p>
+<div class="tip"><p>注意：參考曲目通常已經過母帶處理，音量會比你的混音大。記得先調整到相似的感知音量再做比較。</p></div>
+
+<p>掌握這五個基礎技巧後，你的混音品質一定會有明顯的提升。混音是一門需要大量練習的技藝，持續學習、多聽多做，一定能不斷進步。如果你想要更深入學習，歡迎預約 Pulse 的混音教學課程。</p>
+
+<a href="blog.html" class="back-link">← 返回音樂專欄</a>
+</div>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Pulse 音樂工作室</h4><p>台北市松山區復興北路 99 號 5 樓</p><p>營業時間：週一至週六 10:00–22:00</p></div><div class="footer-col"><h4>服務項目</h4><a href="services.html">錄音工程</a><a href="services.html">混音服務</a><a href="services.html">母帶後期</a><a href="services.html">Podcast 製作</a></div><div class="footer-col"><h4>快速連結</h4><a href="about.html">關於我們</a><a href="portfolio.html">作品試聽</a><a href="pricing.html">收費方案</a><a href="contact.html">聯絡預約</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@pulse-studio.tw</p><p>02-2765-0017</p><p>LINE: @pulse-studio</p></div></div><div class="footer-bottom">© 2026 Pulse 音樂工作室 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

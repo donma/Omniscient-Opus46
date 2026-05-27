@@ -1,0 +1,36 @@
+{
+  "id": "template-009",
+  "name": "Altitude 戶外探索",
+  "description": "Dark-themed outdoor adventure brand website with forest green and earth tone accents, immersive hero sections, and bold typography for hiking/camping/mountaineering tours.",
+  "category": "outdoor-adventure",
+  "theme": "dark",
+  "locale": "zh-TW",
+  "fonts": ["Oswald:wght@400;700", "Noto Sans TC:wght@300;400;700"],
+  "colors": {
+    "background": "#0d1a0f",
+    "surface": "#142016",
+    "card": "#1a2b1c",
+    "primary": "#4ade80",
+    "primaryDark": "#22c55e",
+    "accent": "#c4a35a",
+    "text": "#e4ede5",
+    "muted": "#7a9a7e",
+    "border": "#2a3d2c"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "trips.html",
+    "trip-detail.html",
+    "gear.html",
+    "gallery.html",
+    "guides.html",
+    "safety.html",
+    "blog.html",
+    "blog-detail.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "features": ["immersive-hero", "masonry-gallery", "mobile-left-nav", "booking-form", "stats-counter"],
+  "version": "1.0.0"
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務價目 — Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s ease;box-shadow:-4px 0 30px rgba(0,0,0,.1)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+.page-hero{padding:60px 0;text-align:center;background:var(--pink-light)}
+.page-hero h1{font-size:2.2rem;margin-bottom:8px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.price-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.price-table th,.price-table td{padding:16px 20px;text-align:center;border-bottom:1px solid var(--border)}
+.price-table th{background:var(--pink);color:#fff;font-weight:500;font-size:.9rem}
+.price-table td{font-size:.9rem;color:var(--muted)}
+.price-table tr:last-child td{border-bottom:none}
+.price-table td:first-child{font-weight:400;color:var(--text);text-align:left}
+.price-table tr:hover td{background:var(--pink-light)}
+.addon-section{margin-top:60px}
+.addon-section h2{font-size:1.4rem;margin-bottom:24px;text-align:center}
+.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.addon-card{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--border);text-align:center}
+.addon-card h4{font-size:.95rem;margin-bottom:4px}
+.addon-card .price{color:var(--pink);font-size:1.2rem;font-weight:700;font-family:'Quicksand',sans-serif}
+.addon-card p{font-size:.8rem;color:var(--muted);margin-top:4px}
+.membership{margin-top:60px}
+.membership h2{font-size:1.4rem;margin-bottom:24px;text-align:center}
+.membership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.member-card{background:var(--white);border-radius:var(--radius);padding:32px;border:2px solid var(--border);text-align:center;transition:all .3s}
+.member-card.popular{border-color:var(--pink);position:relative}
+.member-card.popular::before{content:'最超值';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:var(--btn-radius);font-size:.75rem}
+.member-card h3{font-size:1.1rem;margin-bottom:8px}
+.member-card .price{font-size:2rem;font-weight:700;color:var(--pink);font-family:'Quicksand',sans-serif}
+.member-card .price small{font-size:.8rem;color:var(--muted);font-weight:300}
+.member-card ul{list-style:none;margin:16px 0;text-align:left}
+.member-card li{font-size:.85rem;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--border)}
+.btn{display:inline-block;padding:12px 28px;border-radius:var(--btn-radius);font-weight:500;font-size:.9rem;transition:all .3s}
+.btn-primary{background:var(--pink);color:#fff}.btn-primary:hover{background:#d4627a}
+.btn-outline{border:2px solid var(--pink);color:var(--pink)}.btn-outline:hover{background:var(--pink-light)}
+.note{text-align:center;margin-top:32px;font-size:.85rem;color:var(--muted)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-grid h4{font-size:.95rem;margin-bottom:12px;color:var(--pink)}.footer-grid p,.footer-grid li{font-size:.85rem;color:var(--muted);line-height:2}.footer-grid ul{list-style:none}
+.footer-bottom{text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+@media(max-width:768px){.menu-toggle{display:flex}nav{display:none}.addon-grid,.membership-grid{grid-template-columns:1fr}.price-table{font-size:.8rem}.price-table th,.price-table td{padding:10px 8px}.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="container"><a href="index.html" class="logo">Paw<span>some</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>服務價目</h1><p>透明公開的價格，讓您安心選擇最適合的服務</p></div></section>
+
+<section class="section">
+<div class="container">
+<table class="price-table">
+<thead>
+<tr><th>服務項目</th><th>小型犬 S<br><small>5kg以下</small></th><th>中型犬 M<br><small>5-15kg</small></th><th>大型犬 L<br><small>15-30kg</small></th><th>超大型 XL<br><small>30kg以上</small></th></tr>
+</thead>
+<tbody>
+<tr><td>基礎洗澡</td><td>$600</td><td>$800</td><td>$1,100</td><td>$1,500</td></tr>
+<tr><td>全套美容</td><td>$1,000</td><td>$1,300</td><td>$1,800</td><td>$2,500</td></tr>
+<tr><td>SPA 護理</td><td>$1,200</td><td>$1,500</td><td>$2,000</td><td>$2,800</td></tr>
+<tr><td>口腔護理</td><td>$500</td><td>$500</td><td>$600</td><td>$700</td></tr>
+<tr><td>指甲護理</td><td>$150</td><td>$150</td><td>$200</td><td>$200</td></tr>
+<tr><td>藥浴護理</td><td>$800</td><td>$1,000</td><td>$1,400</td><td>$1,800</td></tr>
+</tbody>
+</table>
+<p class="note">※ 以上價格為參考，實際費用依毛量、毛況及造型複雜度調整。貓咪價格請另洽。</p>
+
+<div class="addon-section">
+<h2>加購服務</h2>
+<div class="addon-grid">
+<div class="addon-card"><h4>深層護毛</h4><div class="price">+$300</div><p>使用進口護毛精華，讓毛髮柔順亮澤</p></div>
+<div class="addon-card"><h4>除蚤處理</h4><div class="price">+$200</div><p>天然除蚤噴霧，安全有效驅除跳蚤</p></div>
+<div class="addon-card"><h4>創意染色</h4><div class="price">+$500</div><p>使用寵物專用無毒染料，打造獨特造型</p></div>
+<div class="addon-card"><h4>精油按摩</h4><div class="price">+$400</div><p>天然植萃精油舒壓按摩，放鬆身心</p></div>
+<div class="addon-card"><h4>毛球去除</h4><div class="price">+$200</div><p>專業處理嚴重打結毛球（依程度計價）</p></div>
+<div class="addon-card"><h4>拍照紀念</h4><div class="price">+$150</div><p>專業背景布拍攝，留下毛孩最美瞬間</p></div>
+</div>
+</div>
+
+<div class="membership">
+<h2>會員方案</h2>
+<div class="membership-grid">
+<div class="member-card">
+<h3>輕鬆卡</h3>
+<div class="price">$2,500 <small>/5次</small></div>
+<ul>
+<li>基礎洗澡 5 次</li>
+<li>95 折優惠</li>
+<li>免費指甲修剪</li>
+<li>有效期限 3 個月</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">了解更多</a>
+</div>
+<div class="member-card popular">
+<h3>美麗卡</h3>
+<div class="price">$5,500 <small>/5次</small></div>
+<ul>
+<li>全套美容 5 次</li>
+<li>9 折優惠</li>
+<li>贈送 SPA 護理 1 次</li>
+<li>免費指甲與耳朵護理</li>
+<li>有效期限 6 個月</li>
+</ul>
+<a href="contact.html" class="btn btn-primary">立即辦理</a>
+</div>
+<div class="member-card">
+<h3>尊寵卡</h3>
+<div class="price">$12,000 <small>/12次</small></div>
+<ul>
+<li>任選服務 12 次</li>
+<li>85 折優惠</li>
+<li>每月免費健康檢查</li>
+<li>專屬美容師指定</li>
+<li>有效期限 12 個月</li>
+</ul>
+<a href="contact.html" class="btn btn-outline">了解更多</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Pawsome 寵物美容</h4><p>位於台北中山區的專業寵物美容沙龍，以愛心與專業技術，為每一位毛孩帶來最舒適的美容體驗。</p></div><div><h4>服務項目</h4><ul><li><a href="services.html">基礎洗澡</a></li><li><a href="services.html">全套美容</a></li><li><a href="services.html">SPA 護理</a></li><li><a href="services.html">口腔護理</a></li></ul></div><div><h4>快速連結</h4><ul><li><a href="booking.html">線上預約</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="faq.html">常見問題</a></li></ul></div><div><h4>聯絡資訊</h4><p>台北市中山區南京東路二段 88 號 1 樓</p><p>02-2567-8899</p><p>營業時間：10:00 - 19:00</p></div></div><div class="footer-bottom"><p>&copy; 2026 Pawsome 寵物美容. All rights reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

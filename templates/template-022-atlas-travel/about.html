@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>關於我們 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:80px}
+.story img{width:100%;border-radius:var(--radius);height:400px;object-fit:cover}
+.story h2{font-size:1.8rem;color:var(--sky-dark);margin-bottom:16px}
+.story p{color:var(--muted);margin-bottom:16px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:80px}
+.value-card{background:var(--white);padding:32px;border-radius:var(--radius);text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.value-card .icon{font-size:2.5rem;margin-bottom:16px}
+.value-card h3{font-size:1.1rem;color:var(--sky-dark);margin-bottom:8px}
+.value-card p{font-size:.9rem;color:var(--muted)}
+.team{text-align:center;margin-bottom:80px}
+.team h2{font-size:1.8rem;color:var(--sky-dark);margin-bottom:40px}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.team-member img{width:100%;height:200px;object-fit:cover;border-radius:var(--radius);margin-bottom:12px}
+.team-member h4{font-size:.95rem;margin-bottom:4px}
+.team-member p{font-size:.8rem;color:var(--muted)}
+.certs{background:var(--sand);padding:48px;border-radius:var(--radius);text-align:center}
+.certs h2{font-size:1.5rem;color:var(--sky-dark);margin-bottom:16px}
+.certs p{color:var(--muted);font-size:.9rem}
+.cert-badges{display:flex;justify-content:center;gap:32px;margin-top:24px;flex-wrap:wrap}
+.cert-badge{background:var(--white);padding:16px 24px;border-radius:var(--radius);font-size:.85rem;font-weight:400;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.story{grid-template-columns:1fr}
+.values{grid-template-columns:1fr}
+.team-grid{grid-template-columns:repeat(2,1fr)}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=80" alt="旅行">
+<h1>關於我們</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="story">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="團隊">
+<div>
+<h2>我們的故事</h2>
+<p>Atlas 旅行社成立於2015年，由一群熱愛旅行的冒險家共同創立。我們相信旅行不只是移動，更是一種生命的體驗與成長。</p>
+<p>從第一趟冰島極光團開始，我們堅持小團制、深度體驗的理念，帶領旅客走入當地生活，感受真正的文化魅力。</p>
+<p>至今已帶領超過2,500位旅客，踏遍45個國家，創造無數難忘回憶。</p>
+</div>
+</div>
+
+<div class="values">
+<div class="value-card">
+<div class="icon">🧭</div>
+<h3>小團深度</h3>
+<p>每團最多12人，確保每位旅客都能獲得最佳體驗與個人化服務</p>
+</div>
+<div class="value-card">
+<div class="icon">🌍</div>
+<h3>在地體驗</h3>
+<p>與當地嚮導合作，深入一般觀光客無法觸及的私房景點</p>
+</div>
+<div class="value-card">
+<div class="icon">💚</div>
+<h3>永續旅遊</h3>
+<p>支持在地社區、選擇環保住宿，讓旅行成為正面的力量</p>
+</div>
+</div>
+
+<div class="team">
+<h2>專業團隊</h2>
+<div class="team-grid">
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="林志遠">
+<h4>林志遠</h4>
+<p>創辦人暨執行長</p>
+</div>
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="陳雅婷">
+<h4>陳雅婷</h4>
+<p>行程總監</p>
+</div>
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="張凱文">
+<h4>張凱文</h4>
+<p>歐洲線領隊</p>
+</div>
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="王小萱">
+<h4>王小萱</h4>
+<p>客戶服務經理</p>
+</div>
+</div>
+</div>
+
+<div class="certs">
+<h2>專業認證</h2>
+<p>合法立案、品質保障，讓您安心出遊</p>
+<div class="cert-badges">
+<div class="cert-badge">交觀甲字第 7890 號</div>
+<div class="cert-badge">品保協會北 1234</div>
+<div class="cert-badge">IATA 認證旅行社</div>
+<div class="cert-badge">台北市旅行公會會員</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

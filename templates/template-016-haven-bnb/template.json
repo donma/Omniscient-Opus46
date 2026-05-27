@@ -1,0 +1,40 @@
+{
+  "id": "template-016-haven-bnb",
+  "name": "Haven 山居民宿",
+  "category": "hospitality",
+  "subcategory": "bed-and-breakfast",
+  "description": "A warm, cozy boutique B&B website template with wooden textures, mountain photography, and inviting atmosphere. Designed for guesthouses and homestays in scenic mountain areas.",
+  "theme": "light",
+  "colors": {
+    "background": "#faf7f2",
+    "white": "#ffffff",
+    "primary": "#8b5e3c",
+    "primaryDark": "#6b3f1f",
+    "cream": "#f5ece0",
+    "text": "#2c231c",
+    "muted": "#7a6b5a",
+    "border": "#e8ddd0",
+    "accent": "#7a9a6a"
+  },
+  "fonts": {
+    "heading": "Libre Baskerville",
+    "body": "Noto Sans TC"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "rooms.html",
+    "room-detail.html",
+    "dining.html",
+    "attractions.html",
+    "reviews.html",
+    "booking.html",
+    "gallery.html",
+    "blog.html",
+    "blog-detail.html",
+    "contact.html"
+  ],
+  "features": ["responsive", "mobile-menu-right", "photography-driven", "bilingual-ready"],
+  "radius": "12px",
+  "language": "zh-TW"
+}

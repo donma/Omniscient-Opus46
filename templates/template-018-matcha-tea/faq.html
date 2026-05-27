@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>常見問題 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.page-header{padding:60px 0;text-align:center;background:var(--cream);border-bottom:1px solid var(--border)}
+.page-header h1{font-size:2.2rem;margin-bottom:8px}
+.page-header p{color:var(--muted)}
+
+section{padding:80px 0}
+.faq-section{max-width:760px;margin:0 auto}
+.faq-category{margin-bottom:48px}
+.faq-category h2{font-size:1.3rem;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:400;font-size:.95rem}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--matcha);transition:transform .3s}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 24px 20px;color:var(--muted);font-size:.9rem;display:none}
+.faq-item.open .faq-a{display:block}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<header class="page-header">
+<div class="container">
+<h1>常見問題</h1>
+<p>關於茶道空間的一切，在這裡找到答案</p>
+</div>
+</header>
+
+<section>
+<div class="container">
+<div class="faq-section">
+
+<div class="faq-category">
+<h2>茶道禮儀</h2>
+<div class="faq-item open">
+<div class="faq-q">第一次參加茶道體驗需要準備什麼？</div>
+<div class="faq-a">不需要任何事前準備！我們會在體驗開始前說明所有禮儀。建議穿著舒適的服裝，以及白色或素色襪子（我們也備有白足袋可借用）。請避免使用氣味濃烈的香水。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">茶道體驗中可以拍照嗎？</div>
+<div class="faq-a">正式茶席進行中請勿攝影或錄音，以維護茶道的專注氛圍。體驗結束後，我們會安排拍照時間，讓您與茶道具合影留念。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">不會正座（跪坐）怎麼辦？</div>
+<div class="faq-a">完全沒問題！我們備有正座椅（小板凳），讓膝蓋不方便的朋友也能舒適地參與。入門體驗也可選擇在吧台席進行。</div>
+</div>
+</div>
+
+<div class="faq-category">
+<h2>預約相關</h2>
+<div class="faq-item">
+<div class="faq-q">如何預約茶道體驗？</div>
+<div class="faq-a">您可以透過本網站的聯絡表單、電話（02-2358-7742）或 Instagram 私訊預約。建議於體驗日三天前完成預約。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">可以臨時取消預約嗎？</div>
+<div class="faq-a">體驗前一日 18:00 前可免費取消或改期。之後取消需收取 50% 費用。當日未到則收取全額費用。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">平日來店需要預約嗎？</div>
+<div class="faq-a">一般喝茶用餐不需預約，歡迎直接來店。但若希望坐在吧台席觀賞點茶，建議事先預約以確保座位。週末下午較為繁忙。</div>
+</div>
+</div>
+
+<div class="faq-category">
+<h2>餐點相關</h2>
+<div class="faq-item">
+<div class="faq-q">有提供正餐嗎？</div>
+<div class="faq-a">目前我們以茶品與甜點為主，不提供正餐。但每日限量供應簡單的茶漬飯（お茶漬け）與季節小食，歡迎搭配享用。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">有素食或過敏原選擇嗎？</div>
+<div class="faq-a">我們的和菓子多為蛋奶素可食（部分使用蛋白）。如有特殊過敏需求，請於點餐時告知服務人員，我們會為您推薦適合的品項。</div>
+</div>
+</div>
+
+<div class="faq-category">
+<h2>體驗內容</h2>
+<div class="faq-item">
+<div class="faq-q">入門體驗和正式體驗有什麼不同？</div>
+<div class="faq-a">入門體驗（60分鐘）著重於認識茶道基本概念與親手點茶的樂趣，氣氛較為輕鬆。正式體驗（90分鐘）則完整重現裏千家薄茶席的儀式流程，包含露地通行、拜見掛軸等完整禮儀。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">小朋友可以參加嗎？</div>
+<div class="faq-a">入門體驗歡迎 10 歲以上的小朋友參加（需家長陪同）。正式體驗建議 15 歲以上參加，以便能靜心感受完整的茶席氛圍。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">團體包場可以客製化內容嗎？</div>
+<div class="faq-a">可以的。我們會依據團體性質（企業、朋友、家庭等）與需求，調整體驗的深度與內容。也可搭配特別的茶菓子或伴手禮。請提前兩週與我們聯繫討論。</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{q.parentElement.classList.toggle('open')})})
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>熱門行程 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.tour-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.tour-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .3s}
+.tour-card:hover{transform:translateY(-4px)}
+.tour-card img{width:100%;height:220px;object-fit:cover}
+.tour-card .info{padding:24px}
+.tour-card h3{font-size:1.1rem;color:var(--sky-dark);margin-bottom:8px}
+.tour-card p{font-size:.85rem;color:var(--muted);margin-bottom:16px}
+.tour-meta{display:flex;justify-content:space-between;align-items:center}
+.tour-meta .price{font-size:1.2rem;color:var(--sunset);font-weight:600;font-family:'Montserrat',sans-serif}
+.tour-meta .duration{font-size:.8rem;color:var(--muted);background:var(--sand);padding:4px 12px;border-radius:20px}
+.difficulty{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:600;margin-bottom:12px}
+.difficulty.easy{background:#dcfce7;color:#16a34a}
+.difficulty.medium{background:#fef3c7;color:#d97706}
+.difficulty.hard{background:#fee2e2;color:#dc2626}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.tour-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80" alt="旅行">
+<h1>熱門行程</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="tour-grid">
+<a href="tour-detail.html" class="tour-card">
+<img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80" alt="冰島極光">
+<div class="info">
+<span class="difficulty hard">挑戰</span>
+<h3>冰島極光10日深度之旅</h3>
+<p>追尋北極光、探索冰川、浸泡地熱溫泉，體驗冰與火之國的壯麗</p>
+<div class="tour-meta"><span class="price">NT$ 168,000</span><span class="duration">10天8夜</span></div>
+</div>
+</a>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=600&q=80" alt="馬爾地夫">
+<div class="info">
+<span class="difficulty easy">輕鬆</span>
+<h3>馬爾地夫水上屋7日</h3>
+<p>私人水上別墅、浮潛珊瑚礁、夕陽海豚巡航</p>
+<div class="tour-meta"><span class="price">NT$ 128,000</span><span class="duration">7天5夜</span></div>
+</div>
+</div>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" alt="京都">
+<div class="info">
+<span class="difficulty easy">輕鬆</span>
+<h3>京都紅葉季5日漫遊</h3>
+<p>穿越千年古都、茶道體驗、嵐山小火車、私房紅葉名所</p>
+<div class="tour-meta"><span class="price">NT$ 52,000</span><span class="duration">5天4夜</span></div>
+</div>
+</div>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="紐西蘭">
+<div class="info">
+<span class="difficulty hard">挑戰</span>
+<h3>紐西蘭南島健行12日</h3>
+<p>米爾福德步道、冰川健行、峽灣巡遊、星空營地</p>
+<div class="tour-meta"><span class="price">NT$ 195,000</span><span class="duration">12天10夜</span></div>
+</div>
+</div>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&q=80" alt="希臘">
+<div class="info">
+<span class="difficulty easy">輕鬆</span>
+<h3>希臘跳島8日浪漫遊</h3>
+<p>聖托里尼夕陽、米克諾斯風車、雅典衛城巡禮</p>
+<div class="tour-meta"><span class="price">NT$ 112,000</span><span class="duration">8天6夜</span></div>
+</div>
+</div>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="秘魯">
+<div class="info">
+<span class="difficulty medium">適中</span>
+<h3>秘魯印加古道9日</h3>
+<p>馬丘比丘、庫斯科古城、的的喀喀湖、彩虹山</p>
+<div class="tour-meta"><span class="price">NT$ 155,000</span><span class="duration">9天7夜</span></div>
+</div>
+</div>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=80" alt="法國">
+<div class="info">
+<span class="difficulty easy">輕鬆</span>
+<h3>南法普羅旺斯7日</h3>
+<p>薰衣草花田、酒莊品酒、中世紀小鎮、地中海海岸</p>
+<div class="tour-meta"><span class="price">NT$ 98,000</span><span class="duration">7天5夜</span></div>
+</div>
+</div>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="瑞士">
+<div class="info">
+<span class="difficulty medium">適中</span>
+<h3>瑞士阿爾卑斯8日</h3>
+<p>少女峰、乘坐冰河列車、湖畔小鎮漫步、起司工坊</p>
+<div class="tour-meta"><span class="price">NT$ 142,000</span><span class="duration">8天6夜</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

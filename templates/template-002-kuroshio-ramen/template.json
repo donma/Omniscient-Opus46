@@ -1,0 +1,27 @@
+{
+  "id": "template-002-kuroshio-ramen",
+  "name": "黑潮拉麵 KUROSHIO",
+  "description": "暗黑金色系日式拉麵店網站，以沉浸式全屏 Hero 與日本職人美學為核心，呈現專注與堅持的品牌精神。適合日式餐廳、拉麵店、居酒屋、壽司屋等餐飲業。",
+  "industry": "餐飲 / 日式料理",
+  "theme": "dark",
+  "colorScheme": ["#0a0a0a", "#141414", "#d4a853", "#f5f5f0", "#1a1a1a"],
+  "fonts": ["Noto Serif TC", "Noto Sans TC"],
+  "layout": "immersive-hero",
+  "mobileMenu": "left",
+  "pages": [
+    {"file": "index.html", "name": "首頁"},
+    {"file": "about.html", "name": "職人精神"},
+    {"file": "menu.html", "name": "菜單"},
+    {"file": "menu-detail.html", "name": "招牌推薦"},
+    {"file": "atmosphere.html", "name": "店內風景"},
+    {"file": "reviews.html", "name": "食客評價"},
+    {"file": "faq.html", "name": "常見問題"},
+    {"file": "process.html", "name": "製麵工序"},
+    {"file": "blog.html", "name": "拉麵誌"},
+    {"file": "blog-detail.html", "name": "文章內頁"},
+    {"file": "specials.html", "name": "季節限定"},
+    {"file": "events.html", "name": "活動企劃"}
+  ],
+  "features": ["fullscreen-hero", "scroll-header", "hamburger-menu-left", "masonry-gallery", "accordion-faq", "responsive", "dark-theme"],
+  "preview": "preview.jpg"
+}

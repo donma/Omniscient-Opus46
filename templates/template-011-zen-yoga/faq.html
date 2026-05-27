@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>常見問題 — Zen 瑜伽會館</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+.page-hero{text-align:center;padding:80px 24px;background:var(--white);border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.8rem;margin-bottom:16px}
+.page-hero p{color:var(--muted);max-width:600px;margin:0 auto}
+section{padding:80px 0}
+.faq-group{margin-bottom:60px}
+.faq-group h2{font-size:1.6rem;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--sage)}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{padding:20px 24px;cursor:pointer;font-weight:400;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:"+";font-size:1.2rem;color:var(--sage)}
+.faq-item[open] summary::after{content:"−"}
+.faq-item .answer{padding:0 24px 20px;color:var(--muted);font-size:.9rem}
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>常見問題</h1>
+<p>整理了大家最常詢問的問題，希望能解答您的疑惑</p>
+</div>
+
+<section>
+<div class="container">
+<div class="faq-group">
+<h2>課程相關</h2>
+<details class="faq-item">
+<summary>我完全沒有運動基礎，可以上瑜伽課嗎？</summary>
+<div class="answer">當然可以！瑜伽適合所有人，不需要任何運動基礎。我們的哈達瑜伽課程專為初學者設計，老師會從最基礎的動作開始教起，並提供不同難度的選項讓你選擇。</div>
+</details>
+<details class="faq-item">
+<summary>一堂課大概多長時間？</summary>
+<div class="answer">依課程類型而不同：冥想靜心 45 分鐘、流動瑜伽/空中瑜伽/孕婦瑜伽 60 分鐘、哈達瑜伽 75 分鐘、陰瑜伽 90 分鐘。</div>
+</details>
+<details class="faq-item">
+<summary>需要預約嗎？可以直接walk-in嗎？</summary>
+<div class="answer">建議透過 LINE 或電話預約，以確保有名額。因為我們堅持小班制，每堂課人數有限，特別是空中瑜伽和孕婦瑜伽經常滿班。若有臨時空位，也歡迎現場報名。</div>
+</details>
+<details class="faq-item">
+<summary>如果臨時無法上課，可以取消嗎？</summary>
+<div class="answer">可以的。請於課程開始前 4 小時取消預約，即不會扣除堂數。若未提前取消且未到課（no-show），月卡會員不受影響，但單堂票將視為已使用。</div>
+</details>
+</div>
+
+<div class="faq-group">
+<h2>收費相關</h2>
+<details class="faq-item">
+<summary>首次體驗價格是多少？</summary>
+<div class="answer">首次到訪的新朋友享有 $300 體驗價（原價 $500），所有課程類型皆適用。每人限使用一次。</div>
+</details>
+<details class="faq-item">
+<summary>月卡可以暫停嗎？</summary>
+<div class="answer">可以。月卡會員每年享有一次暫停權益，最長可暫停 30 天（需提前 7 天申請）。暫停期間不計費。</div>
+</details>
+<details class="faq-item">
+<summary>可以使用哪些付款方式？</summary>
+<div class="answer">接受現金、信用卡（Visa/Mastercard/JCB）、LINE Pay、以及銀行轉帳。年卡方案可申請分期付款（3期零利率）。</div>
+</details>
+</div>
+
+<div class="faq-group">
+<h2>準備事項</h2>
+<details class="faq-item">
+<summary>需要自備瑜伽墊嗎？</summary>
+<div class="answer">不需要。會館提供高品質的瑜伽墊、瑜伽磚、瑜伽帶等所有輔具。當然，如果你有自己的墊子也歡迎攜帶。</div>
+</details>
+<details class="faq-item">
+<summary>穿什麼衣服比較適合？</summary>
+<div class="answer">建議穿著合身、有彈性的運動服裝。避免太寬鬆的衣物（倒立時可能滑落），也避免有拉鏈或扣子的服裝。空中瑜伽建議穿包覆腋下的上衣。</div>
+</details>
+<details class="faq-item">
+<summary>有提供淋浴設施嗎？</summary>
+<div class="answer">有的。會館設有男女獨立淋浴間，並提供沐浴乳與洗髮精。建議自備毛巾，或可向櫃台借用（$30/次）。</div>
+</details>
+</div>
+
+<div class="faq-group">
+<h2>健康相關</h2>
+<details class="faq-item">
+<summary>生理期可以上課嗎？</summary>
+<div class="answer">可以的，但建議避免倒立姿勢與強烈的腹部收縮動作。陰瑜伽和冥想課程是生理期間的好選擇。請在課前告知老師，老師會提供適當的替代動作。</div>
+</details>
+<details class="faq-item">
+<summary>我有腰椎間盤突出，可以練瑜伽嗎？</summary>
+<div class="answer">建議先諮詢醫生意見。如果醫生同意，我們的老師有能力針對脊椎問題提供安全的練習指導。課前請務必告知老師您的狀況，必要時可預約一對一私人課程做更精準的評估。</div>
+</details>
+<details class="faq-item">
+<summary>懷孕幾週可以開始上孕婦瑜伽？</summary>
+<div class="answer">一般建議懷孕滿 12 週（進入第二孕期）、經醫生確認無特殊風險後即可開始。佩蓉老師的孕婦瑜伽課程會根據不同孕期調整動作內容，從 12 週一直到預產期前都適合參加。</div>
+</details>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

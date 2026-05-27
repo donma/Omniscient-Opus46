@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑潮 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+section{padding:100px 0}
+.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:100px}
+.detail-img{width:100%;height:600px;object-fit:cover;border:1px solid var(--border)}
+.detail-info h1{font-size:3rem;margin-bottom:8px}
+.detail-info .spirit-tag{color:var(--copper);font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:24px}
+.detail-info .price{font-size:2rem;color:var(--gold);font-family:'Bodoni Moda',serif;font-style:italic;margin-bottom:30px}
+.detail-info .story{color:var(--muted);margin-bottom:30px;font-size:1rem}
+.ingredient-list{list-style:none;margin-bottom:30px}
+.ingredient-list li{padding:10px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.ingredient-list li span:first-child{color:var(--text)}
+.ingredient-list li span:last-child{color:var(--muted);font-size:.9rem}
+.flavor-profile{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.flavor-tag{padding:6px 16px;border:1px solid var(--border);color:var(--muted);font-size:.8rem}
+.back-link{display:inline-block;margin-top:30px;color:var(--muted);font-size:.9rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.detail-layout{grid-template-columns:1fr;padding-top:80px}.detail-img{height:350px}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="detail-layout">
+      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800" alt="黑潮" class="detail-img">
+      <div class="detail-info">
+        <div class="spirit-tag">Smoky Whisky Based</div>
+        <h1>黑潮</h1>
+        <div class="price">NT$480</div>
+        <div class="story">
+          <p>靈感來自台灣東海岸的黑潮洋流——深邃、溫暖、充滿力量。這杯調酒以艾雷島煙燻威士忌為基底，混合沖繩黑糖的深沉甜味，加入微量竹炭賦予其漆黑如墨的色澤。最後以安格仕苦精點綴，如同黑潮中偶爾浮現的磷光。</p>
+          <p style="margin-top:12px">首席調酒師陳昱翰於2020年創作此酒，靈感源自一次花東海岸公路的夜間旅行。「我想捕捉那種深不見底卻又溫暖的感覺。」</p>
+        </div>
+        <h3 style="font-size:1.2rem;margin-bottom:16px">成分</h3>
+        <ul class="ingredient-list">
+          <li><span>艾雷島煙燻威士忌</span><span>45ml</span></li>
+          <li><span>沖繩黑糖糖漿</span><span>20ml</span></li>
+          <li><span>食用竹炭粉</span><span>微量</span></li>
+          <li><span>安格仕苦精</span><span>2 dashes</span></li>
+          <li><span>橙皮油</span><span>噴附</span></li>
+        </ul>
+        <h3 style="font-size:1.2rem;margin-bottom:16px">風味描述</h3>
+        <div class="flavor-profile">
+          <span class="flavor-tag">煙燻</span>
+          <span class="flavor-tag">焦糖</span>
+          <span class="flavor-tag">深沉</span>
+          <span class="flavor-tag">微苦</span>
+          <span class="flavor-tag">溫暖</span>
+          <span class="flavor-tag">礦物感</span>
+        </div>
+        <a href="menu.html" class="back-link">← 返回酒單</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

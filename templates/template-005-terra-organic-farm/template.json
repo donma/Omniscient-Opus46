@@ -1,0 +1,27 @@
+{
+  "id": "template-005-terra-organic-farm",
+  "name": "Terra 有機農場",
+  "description": "溫暖大地色系有機農場網站，以自然攝影與故事敘述捲軸呈現農場的人文精神。適合有機農場、小農品牌、農產直售、食農教育等農業相關產業。",
+  "industry": "農業 / 有機食品",
+  "theme": "light",
+  "colorScheme": ["#faf8f4", "#5c7a3a", "#8b6914", "#2d2a26", "#f0e8d8"],
+  "fonts": ["Playfair Display", "Noto Sans TC"],
+  "layout": "storytelling-scroll",
+  "mobileMenu": "left",
+  "pages": [
+    {"file": "index.html", "name": "首頁"},
+    {"file": "about.html", "name": "農場故事"},
+    {"file": "philosophy.html", "name": "有機理念"},
+    {"file": "products.html", "name": "當季農產"},
+    {"file": "product-detail.html", "name": "農產細節"},
+    {"file": "experiences.html", "name": "農場體驗"},
+    {"file": "experience-detail.html", "name": "體驗細節"},
+    {"file": "recipes.html", "name": "食譜分享"},
+    {"file": "recipe-detail.html", "name": "食譜內頁"},
+    {"file": "blog.html", "name": "農場日誌"},
+    {"file": "blog-detail.html", "name": "日誌內頁"},
+    {"file": "contact.html", "name": "聯絡我們"}
+  ],
+  "features": ["storytelling-scroll", "product-grid", "recipe-layout", "booking-form", "hamburger-menu-left", "responsive"],
+  "preview": "preview.jpg"
+}

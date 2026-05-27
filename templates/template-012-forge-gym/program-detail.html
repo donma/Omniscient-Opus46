@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CrossFit 課程詳情 — Forge 健身工廠</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0a0a;--surface:#141414;--card:#1c1c1c;--red:#e63946;--red-dark:#c1121f;--text:#f0f0f0;--muted:#888888;--border:#2a2a2a;--radius:4px;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Anton',sans-serif;letter-spacing:1px;}
+a{color:var(--text);text-decoration:none;transition:.3s;}
+img{max-width:100%;display:block;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,.95);border-bottom:1px solid var(--border);padding:15px 0;}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--red);}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a:hover{color:var(--red);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.menu-toggle span{width:25px;height:2px;background:var(--text);}
+.detail-hero{padding:140px 0 60px;position:relative;overflow:hidden;}
+.detail-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1400') center/cover;}
+.detail-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.95) 0%,rgba(10,10,10,.6) 100%);}
+.detail-hero-content{position:relative;z-index:2;}
+.detail-hero-content h1{font-size:4rem;color:var(--red);}
+.detail-hero-content p{color:var(--muted);font-size:1.1rem;margin-top:10px;max-width:600px;}
+.breadcrumb{color:var(--muted);font-size:.9rem;margin-bottom:20px;}
+.breadcrumb a{color:var(--red);}
+.section{padding:80px 0;}
+.content-grid{display:grid;grid-template-columns:2fr 1fr;gap:50px;}
+.content-main h2{font-size:2rem;color:var(--red);margin-bottom:20px;margin-top:40px;}
+.content-main h2:first-child{margin-top:0;}
+.content-main p{color:var(--muted);margin-bottom:15px;}
+.content-main ul{list-style:none;margin-bottom:20px;}
+.content-main ul li{padding:8px 0;padding-left:20px;position:relative;color:var(--muted);}
+.content-main ul li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--red);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);}
+.workout-structure{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px;margin:20px 0;}
+.workout-structure h3{color:var(--red);margin-bottom:15px;font-size:1.3rem;}
+.workout-block{border-left:3px solid var(--red);padding-left:20px;margin-bottom:20px;}
+.workout-block h4{color:var(--text);font-size:1rem;margin-bottom:5px;}
+.workout-block p{color:var(--muted);font-size:.9rem;}
+.sidebar{position:sticky;top:100px;}
+.sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:25px;margin-bottom:20px;}
+.sidebar-card h3{font-size:1.2rem;color:var(--red);margin-bottom:15px;}
+.sidebar-card p{color:var(--muted);font-size:.9rem;margin-bottom:10px;}
+.sidebar-card .info-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
+.sidebar-card .info-row:last-child{border:none;}
+.sidebar-card .info-row span:first-child{color:var(--muted);}
+.sidebar-card .info-row span:last-child{color:var(--text);font-weight:700;}
+.levels{display:flex;gap:10px;margin:15px 0;}
+.level-badge{padding:6px 14px;border-radius:var(--radius);font-size:.8rem;border:1px solid var(--border);color:var(--muted);}
+.level-badge.active{background:var(--red);border-color:var(--red);color:#fff;}
+.btn{display:inline-block;padding:14px 36px;background:var(--red);color:#fff;font-weight:700;border-radius:var(--radius);transition:.3s;width:100%;text-align:center;}
+.btn:hover{background:var(--red-dark);}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:20px 0;}
+.benefit-item{background:var(--surface);padding:15px;border-radius:var(--radius);border:1px solid var(--border);text-align:center;}
+.benefit-item h4{color:var(--red);font-size:1rem;margin-bottom:5px;}
+.benefit-item p{color:var(--muted);font-size:.8rem;}
+.footer{background:var(--surface);padding:60px 0 30px;border-top:1px solid var(--border);}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;}
+.footer h4{font-family:'Anton',sans-serif;color:var(--red);margin-bottom:15px;}
+.footer p,.footer a{color:var(--muted);font-size:.9rem;}
+.footer a:hover{color:var(--red);}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+@media(max-width:768px){
+.nav-links{position:fixed;top:0;left:-100%;width:70%;height:100vh;background:var(--surface);flex-direction:column;padding:80px 30px;transition:.3s;border-right:1px solid var(--border);}
+.nav-links.active{left:0;}
+.menu-toggle{display:flex;}
+.detail-hero-content h1{font-size:2.5rem;}
+.content-grid{grid-template-columns:1fr;}
+.benefits-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="index.html" class="logo">FORGE 健身工廠</a>
+<button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')"><span></span><span></span><span></span></button>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="programs.html">訓練課程</a></li>
+<li><a href="coaches.html">教練團隊</a></li>
+<li><a href="facilities.html">設備環境</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="transformations.html">成果見證</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div></nav>
+
+<section class="detail-hero">
+<div class="detail-hero-bg"></div>
+<div class="detail-hero-overlay"></div>
+<div class="detail-hero-content container">
+<p class="breadcrumb"><a href="programs.html">訓練課程</a> / CrossFit</p>
+<h1>CROSSFIT</h1>
+<p>結合體操、奧林匹克舉重與代謝體能的終極功能性訓練系統</p>
+</div>
+</section>
+
+<section class="section"><div class="container">
+<div class="content-grid">
+<div class="content-main">
+<h2>課程介紹</h2>
+<p>CrossFit 是一套以「不斷變化的功能性動作，在高強度下執行」為核心理念的訓練系統。在Forge，我們的CrossFit課程由認證教練帶領，每日設計不同的WOD（Workout of the Day），確保你的身體永遠不會適應，持續進步。</p>
+<p>我們的課程融合了體操動作（引體向上、倒立撐、肌力上槓）、奧林匹克舉重（抓舉、挺舉）、以及代謝體能訓練（划船、跳繩、跑步），全面發展你的十大體能面向。</p>
+
+<h2>課堂結構</h2>
+<div class="workout-structure">
+<h3>典型60分鐘課堂</h3>
+<div class="workout-block"><h4>暖身 Warm-up（10分鐘）</h4><p>動態伸展、關節活動度、輕量動作模式練習</p></div>
+<div class="workout-block"><h4>技術/肌力 Skill/Strength（15分鐘）</h4><p>針對當日WOD相關動作進行技術教學或肌力組訓練</p></div>
+<div class="workout-block"><h4>WOD 每日訓練（25分鐘）</h4><p>高強度組合訓練，可能是AMRAP、For Time、EMOM等形式</p></div>
+<div class="workout-block"><h4>收操 Cool Down（10分鐘）</h4><p>心率恢復、靜態伸展、筋膜放鬆</p></div>
+</div>
+
+<h2>適合程度</h2>
+<p>我們的CrossFit課程分為三個等級，所有動作皆可依個人能力調整（Scale）：</p>
+<ul>
+<li><strong>Foundations（基礎班）</strong> — 適合完全沒有CrossFit經驗者，學習九大基礎動作</li>
+<li><strong>WOD（一般班）</strong> — 已完成基礎班，能安全執行所有基本動作</li>
+<li><strong>Competition（競技班）</strong> — 準備參加比賽的進階選手，高容量高強度</li>
+</ul>
+
+<h2>訓練效益</h2>
+<div class="benefits-grid">
+<div class="benefit-item"><h4>心肺耐力</h4><p>大幅提升最大攝氧量</p></div>
+<div class="benefit-item"><h4>肌力</h4><p>全身功能性肌力發展</p></div>
+<div class="benefit-item"><h4>爆發力</h4><p>快速產生力量的能力</p></div>
+<div class="benefit-item"><h4>靈活度</h4><p>關節活動度與柔軟度</p></div>
+<div class="benefit-item"><h4>協調性</h4><p>複合動作的神經肌肉控制</p></div>
+<div class="benefit-item"><h4>社群</h4><p>團隊氛圍激發最大潛能</p></div>
+</div>
+</div>
+
+<div class="sidebar">
+<div class="sidebar-card">
+<h3>課程資訊</h3>
+<div class="info-row"><span>時間</span><span>60 分鐘</span></div>
+<div class="info-row"><span>人數</span><span>最多 16 人</span></div>
+<div class="info-row"><span>頻率</span><span>週一至週六</span></div>
+<div class="info-row"><span>教練</span><span>陳威廷 / 張志豪</span></div>
+<div class="info-row"><span>程度</span><span>中級 - 進階</span></div>
+</div>
+<div class="sidebar-card">
+<h3>開課時段</h3>
+<p>06:30 / 07:30 / 12:00</p>
+<p>18:00 / 19:00 / 20:00</p>
+<p style="margin-top:10px;font-size:.8rem;color:var(--muted);">週六僅 09:00 / 10:00 兩班</p>
+</div>
+<div class="sidebar-card">
+<h3>準備好挑戰了嗎？</h3>
+<p>新手請先報名 Foundations 基礎班（共4堂），完成後即可加入正式WOD課程。</p>
+<a href="contact.html" class="btn" style="margin-top:15px;">預約體驗</a>
+</div>
+</div>
+</div>
+</div></section>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><h4>FORGE 健身工廠</h4><p>台北市信義區松仁路100號B1<br>鍛造你的極限，突破自我</p></div>
+<div><h4>快速連結</h4><p><a href="programs.html">訓練課程</a><br><a href="membership.html">會員方案</a><br><a href="schedule.html">課表查詢</a><br><a href="blog.html">健身知識</a></p></div>
+<div><h4>營業時間</h4><p>週一至週五 06:00 - 23:00<br>週六日 08:00 - 21:00<br>國定假日 09:00 - 18:00</p></div>
+<div><h4>聯絡我們</h4><p>電話：02-2765-1234<br>信箱：info@forge-gym.tw<br>LINE：@forge-gym</p></div>
+</div>
+<div class="footer-bottom">© 2026 Forge 健身工廠. All Rights Reserved.</div>
+</div></footer>
+</body>
+</html>

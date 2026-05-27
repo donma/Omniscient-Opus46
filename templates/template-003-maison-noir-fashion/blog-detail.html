@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>膠囊衣櫥入門 — Maison Noir 風格誌</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+.article-hero{margin-top:70px;height:60vh;position:relative;overflow:hidden}
+.article-hero img{width:100%;height:100%;object-fit:cover}
+
+.article-header{max-width:720px;margin:0 auto;padding:60px 40px 0;text-align:center}
+.article-header .label{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.article-header h1{font-size:clamp(1.8rem,3.5vw,2.8rem);font-style:italic;margin-bottom:16px}
+.article-header .meta{font-size:.78rem;color:var(--light-muted)}
+
+.article-body{max-width:720px;margin:0 auto;padding:48px 40px 100px}
+@media(max-width:768px){.article-body{padding:48px 24px 80px}}
+.article-body p{margin-bottom:24px;font-size:.92rem;color:var(--muted)}
+.article-body h2{font-size:1.6rem;font-style:italic;margin:48px 0 16px}
+.article-body blockquote{border-left:2px solid var(--border);padding-left:24px;margin:32px 0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--text)}
+.article-body img{width:100%;margin:32px 0}
+.article-body ul{list-style:none;padding:0;margin-bottom:24px}
+.article-body li{padding:8px 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--muted)}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;padding:0 24px}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px;border:none;padding:0}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666;max-width:1200px;margin:0 auto}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="article-hero">
+<img src="https://images.unsplash.com/photo-1558171814-2e52ef955be0?w=1400&q=80" alt="膠囊衣櫥">
+</div>
+
+<div class="article-header">
+<p class="label">風格指南</p>
+<h1>膠囊衣櫥入門：用 20 件單品打造一整季穿搭</h1>
+<p class="meta">2026.03.15 — 文 / 林靜宜</p>
+</div>
+
+<div class="article-body">
+<p>打開衣櫥的瞬間，你是否曾有過「衣服很多卻不知道穿什麼」的無力感？根據統計，現代女性平均擁有超過 100 件衣物，但日常穿著的卻不到其中的 20%。剩下的 80% 靜靜躺在衣櫥深處，佔據空間、消耗資源，最終在某次大掃除中被丟棄。</p>
+
+<p>膠囊衣櫥（Capsule Wardrobe）的概念最早由倫敦精品店 Wardrobe 的創辦人 Susie Faux 在 1970 年代提出，後來由美國設計師 Donna Karan 的「Seven Easy Pieces」系列發揚光大。核心理念很簡單：用少量精選、可互相搭配的單品，組成一個功能完整的衣櫥。</p>
+
+<blockquote>真正的風格不在於你擁有多少衣服，而在於你多了解自己。</blockquote>
+
+<h2>第一步：審視現有衣櫥</h2>
+
+<p>在添購任何新單品之前，先花一個下午認真面對你的衣櫥。將所有衣物攤開，分成三堆：經常穿的、偶爾穿的、以及超過一年沒穿的。觀察你經常穿的那堆衣物，你會發現它們可能有共同的特徵 — 也許是特定的顏色、版型或材質。這些就是你的「風格密碼」。</p>
+
+<img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=900&q=80" alt="衣櫥整理">
+
+<h2>第二步：建立色彩系統</h2>
+
+<p>一個成功的膠囊衣櫥需要統一的色彩語言。建議選擇 3-4 個基礎色（如黑、白、灰、駝色）作為主色調，再搭配 1-2 個你喜歡的重點色。當所有單品的色系相近時，任意組合都不會出錯。</p>
+
+<p>Maison Noir 的設計一直以大地色系與中性色為主軸，正是因為這些顏色最容易互相搭配，也最經得起時間考驗。</p>
+
+<h2>第三步：20 件單品清單</h2>
+
+<p>以下是我們建議的基本配置，你可以依照自己的生活型態與氣候條件做調整：</p>
+
+<ul>
+<li>外套類（3 件）：風衣、西裝外套、羊毛大衣</li>
+<li>上衣類（6 件）：白襯衫 x2、針織衫 x2、T恤 x2</li>
+<li>下著類（5 件）：直筒長褲 x2、寬褲 x1、中長裙 x1、牛仔褲 x1</li>
+<li>洋裝類（2 件）：日常連身裙 x1、正式場合洋裝 x1</li>
+<li>鞋履類（4 件）：平底鞋、樂福鞋、短靴、一雙正式鞋款</li>
+</ul>
+
+<h2>第四步：品質優於數量</h2>
+
+<p>膠囊衣櫥的精髓在於每一件都是「最好的選擇」。與其花 NT$1,000 買五件穿一季就變形的 T 恤，不如投資 NT$3,000 買一件剪裁合身、面料上乘的款式，穿三年依然如新。</p>
+
+<p>選購時請注意以下細節：車縫是否整齊、布料的垂墜度與回彈性、鈕扣與拉鍊的品質、以及洗標上的材質成分。天然纖維（棉、絲、羊毛、亞麻）雖然需要更用心保養，但穿著舒適度與壽命遠勝合成纖維。</p>
+
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80" alt="質感穿搭">
+
+<h2>第五步：一進一出原則</h2>
+
+<p>建立膠囊衣櫥後，維持的關鍵在於紀律。每次想添購新單品時，先問自己三個問題：它能和衣櫥裡至少三件單品搭配嗎？它填補了什麼穿搭缺口？我願意穿它至少 30 次嗎？</p>
+
+<p>如果答案都是肯定的，那就放心購入 — 但同時請從衣櫥中移出一件不再需要的單品。透過 Maison Noir 的舊衣循環計畫，你可以將不再穿著的品牌單品帶回門市回收，讓它找到新的主人。</p>
+
+<blockquote>衣櫥是你內在世界的外在投射。當它變得清晰有序，你的生活也會隨之輕盈。</blockquote>
+
+<p>建立膠囊衣櫥不是一天的事，它是一個持續認識自己、精煉品味的過程。從今天開始，少買一件不確定的衣服，多留一點空間給真正值得的選擇。</p>
+</div>
+
+<footer class="site-footer">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

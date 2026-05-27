@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurora 美學沙龍｜專業護膚 · 身體SPA · 新娘保養</title>
+<meta name="description" content="Aurora 美學沙龍位於台北信義區，提供臉部深層護理、精油SPA、新娘專屬保養等頂級服務。以專業與溫柔，喚醒肌膚的自然光彩。">
+<meta property="og:title" content="Aurora 美學沙龍｜喚醒肌膚的溫柔光輝">
+<meta property="og:description" content="專業護膚 · 身體SPA · 新娘保養 — 台北信義區頂級美學沙龍">
+<meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80">
+<link rel="canonical" href="#">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#faf6f1;--white:#ffffff;--text:#2c2825;--muted:#8a7e72;--gold:#c9a574;--gold-dark:#a67c4a;--border:#ede4d8;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC','PingFang TC',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.4}
+a{color:inherit;text-decoration:none;transition:.3s}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== HEADER ===== */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(250,246,241,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.4rem;font-weight:700;color:var(--gold-dark);letter-spacing:1px}
+.main-nav ul{display:flex;gap:28px;list-style:none}
+.main-nav a{font-size:.92rem;color:var(--text);font-weight:400;position:relative}
+.main-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:.3s}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%}
+.burger{display:none;background:none;border:none;font-size:1.6rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--white);z-index:200;padding:80px 32px 32px;box-shadow:-4px 0 30px rgba(0,0,0,.1);transform:translateX(100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}
+.mobile-nav a{font-size:1.1rem;color:var(--text);font-weight:500}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+
+/* ===== HERO — Split Layout ===== */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:85vh;overflow:hidden}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:60px 48px 60px 0;margin-left:auto;max-width:560px}
+.hero-content h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:20px;color:var(--text)}
+.hero-content p{color:var(--muted);font-size:1.05rem;margin-bottom:32px;line-height:2}
+.hero-content .cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:14px 36px;border-radius:99px;font-weight:500;font-size:.95rem;transition:.3s}
+.hero-content .cta:hover{background:var(--gold-dark);transform:translateY(-2px)}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-content{padding:48px 24px;max-width:100%;order:2}
+  .hero-img{height:50vh;order:1}
+}
+
+/* ===== SECTIONS ===== */
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:1.8rem;margin-bottom:12px}
+.section-title p{color:var(--muted);font-size:1rem}
+
+/* ===== USP Cards ===== */
+.usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.usp-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:.3s}
+.usp-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(201,165,116,.12)}
+.usp-card .icon{width:56px;height:56px;margin:0 auto 16px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem}
+.usp-card h3{font-size:1.1rem;margin-bottom:8px}
+.usp-card p{color:var(--muted);font-size:.9rem}
+@media(max-width:768px){.usp-grid{grid-template-columns:1fr}}
+
+/* ===== Services Grid ===== */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.3s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.service-card img{width:100%;height:220px;object-fit:cover}
+.service-card .body{padding:20px}
+.service-card h3{font-size:1rem;margin-bottom:6px}
+.service-card .price{color:var(--gold-dark);font-weight:600;font-size:.95rem;margin-bottom:8px}
+.service-card p{color:var(--muted);font-size:.85rem;line-height:1.6}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+
+/* ===== Testimonials ===== */
+.testimonials{background:var(--white);padding:80px 0}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.test-card{border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
+.test-card::before{content:'\201C';position:absolute;top:12px;left:20px;font-size:3rem;color:var(--gold);opacity:.3;font-family:serif}
+.test-card p{color:var(--text);font-style:italic;margin-bottom:16px;padding-top:20px}
+.test-card .author{display:flex;align-items:center;gap:12px}
+.test-card .author img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.test-card .author .name{font-weight:500;font-size:.9rem}
+.test-card .author .role{color:var(--muted);font-size:.8rem}
+@media(max-width:768px){.test-grid{grid-template-columns:1fr}}
+
+/* ===== CTA ===== */
+.cta-section{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;text-align:center;padding:64px 24px;border-radius:var(--radius);margin:0 24px}
+.cta-section h2{font-size:1.8rem;margin-bottom:12px}
+.cta-section p{opacity:.9;margin-bottom:24px}
+.cta-section .btn{background:#fff;color:var(--gold-dark);padding:14px 40px;border-radius:99px;font-weight:600;display:inline-block}
+.cta-section .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+
+/* ===== Info / Contact ===== */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.info-grid .map{border-radius:var(--radius);overflow:hidden;height:320px}
+.info-grid .map iframe{width:100%;height:100%;border:0}
+.info-item{display:flex;gap:16px;margin-bottom:20px}
+.info-item .icon-box{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.info-item h4{font-size:.95rem;margin-bottom:2px}
+.info-item p{color:var(--muted);font-size:.88rem}
+@media(max-width:768px){.info-grid{grid-template-columns:1fr}}
+
+/* ===== Footer ===== */
+.site-footer{background:#2c2825;color:#d4c8ba;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
+.footer-grid h4{color:#fff;margin-bottom:16px;font-size:1rem}
+.footer-grid p,.footer-grid a{color:#a89d91;font-size:.88rem;line-height:2}
+.footer-grid a:hover{color:var(--gold)}
+.footer-grid ul{list-style:none}
+.footer-bottom{border-top:1px solid #3d3630;padding-top:20px;text-align:center;font-size:.82rem;color:#7a6f62}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Aurora 美學</a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務項目</a></li>
+        <li><a href="portfolio.html">作品案例</a></li>
+        <li><a href="reviews.html">顧客好評</a></li>
+        <li><a href="faq.html">常見問題</a></li>
+        <li><a href="booking.html">預約諮詢</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+    <button class="burger" onclick="openMenu()">&#9776;</button>
+  </div>
+</header>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">&times;</button>
+  <ul>
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="about.html">關於我們</a></li>
+    <li><a href="services.html">服務項目</a></li>
+    <li><a href="portfolio.html">作品案例</a></li>
+    <li><a href="reviews.html">顧客好評</a></li>
+    <li><a href="faq.html">常見問題</a></li>
+    <li><a href="booking.html">預約諮詢</a></li>
+    <li><a href="contact.html">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- HERO: Split Layout -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>喚醒肌膚的<br>溫柔光輝</h1>
+      <p>Aurora 美學沙龍以十年專業經驗，為每位顧客量身設計療程方案。從臉部深層護理到全身精油 SPA，我們用心呵護您的每一寸肌膚。</p>
+      <a href="booking.html" class="cta">立即預約諮詢 →</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=960&q=80" alt="Aurora 美學沙龍 — 專業護膚療程">
+    </div>
+  </section>
+
+  <!-- USP -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>為什麼選擇 Aurora</h2>
+        <p>我們以專業、信任、溫柔為核心，守護您的美麗</p>
+      </div>
+      <div class="usp-grid">
+        <div class="usp-card">
+          <div class="icon">✦</div>
+          <h3>十年專業經驗</h3>
+          <p>資深美容師親自操作，每個療程步驟都有專業保障。超過 5,000 位顧客的信賴選擇。</p>
+        </div>
+        <div class="usp-card">
+          <div class="icon">♡</div>
+          <h3>一對一專屬諮詢</h3>
+          <p>不套公式、不推銷，針對您的膚況客製最合適的療程方案。</p>
+        </div>
+        <div class="usp-card">
+          <div class="icon">◈</div>
+          <h3>醫療級儀器設備</h3>
+          <p>使用歐洲進口導入儀、超音波、微電流等專業設備，安全有效。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section style="background:var(--white)">
+    <div class="container">
+      <div class="section-title">
+        <h2>精選服務項目</h2>
+        <p>依您的需求，選擇最適合的療程</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="臉部深層護理">
+          <div class="body">
+            <h3>臉部深層護理</h3>
+            <div class="price">NT$2,800</div>
+            <p>醫療級導入儀搭配精華液，深層滋養並重現肌膚透亮光澤。</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="精油身體 SPA">
+          <div class="body">
+            <h3>精油身體 SPA</h3>
+            <div class="price">NT$3,500</div>
+            <p>法國有機精油搭配溫熱石按摩，舒緩深層肌肉緊繃。</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="眼周頸部緊緻">
+          <div class="body">
+            <h3>眼周頸部緊緻</h3>
+            <div class="price">NT$2,200</div>
+            <p>針對眼周細紋與頸部鬆弛，溫和拉提儀器搭配胜肽精華。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>顧客真實回饋</h2>
+        <p>聽聽她們怎麼說</p>
+      </div>
+      <div class="test-grid">
+        <div class="test-card">
+          <p>做完三次療程膚況明顯穩定，膚色變透亮，老闆娘很細心會記得我的需求。</p>
+          <div class="author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="陳小姐">
+            <div><div class="name">陳小姐</div><div class="role">32 歲・行銷主管</div></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <p>眼周細紋淡化很多，先生都說我看起來年輕 5 歲，已經介紹好幾位朋友過來。</p>
+          <div class="author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="林太太">
+            <div><div class="name">林太太</div><div class="role">45 歲・家庭主婦</div></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <p>環境很放鬆，沒有業務壓力，每次來都像度假一樣舒服。</p>
+          <div class="author">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Amber">
+            <div><div class="name">Amber</div><div class="role">28 歲・設計師</div></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <p>第一次嘗試美容，老闆娘很專業地解說，沒有強迫推銷，療程後皮膚很舒服。</p>
+          <div class="author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="許先生">
+            <div><div class="name">許先生</div><div class="role">35 歲・工程師</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>服務流程</h2>
+        <p>從預約到術後追蹤，全程用心陪伴</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center">
+        <div><div style="width:48px;height:48px;margin:0 auto 12px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">01</div><h4 style="font-size:.9rem;margin-bottom:4px">電話預約</h4><p style="font-size:.8rem;color:var(--muted)">告知肌膚問題，安排適合時段</p></div>
+        <div><div style="width:48px;height:48px;margin:0 auto 12px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">02</div><h4 style="font-size:.9rem;margin-bottom:4px">膚況諮詢</h4><p style="font-size:.8rem;color:var(--muted)">專業膚質檢測與方案規劃</p></div>
+        <div><div style="width:48px;height:48px;margin:0 auto 12px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">03</div><h4 style="font-size:.9rem;margin-bottom:4px">療程體驗</h4><p style="font-size:.8rem;color:var(--muted)">舒適單人房，全程溝通感受</p></div>
+        <div><div style="width:48px;height:48px;margin:0 auto 12px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">04</div><h4 style="font-size:.9rem;margin-bottom:4px">居家建議</h4><p style="font-size:.8rem;color:var(--muted)">保養品搭配與日常護理指導</p></div>
+        <div><div style="width:48px;height:48px;margin:0 auto 12px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">05</div><h4 style="font-size:.9rem;margin-bottom:4px">追蹤回饋</h4><p style="font-size:.8rem;color:var(--muted)">7天內主動關心膚況變化</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:40px 0 80px">
+    <div class="cta-section">
+      <h2>準備開始您的美麗旅程？</h2>
+      <p>首次體驗優惠 NT$980 起，立即預約免費膚質諮詢</p>
+      <a href="booking.html" class="btn">立即預約</a>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section style="background:var(--white)">
+    <div class="container">
+      <div class="info-grid">
+        <div>
+          <div class="section-title" style="text-align:left;margin-bottom:32px">
+            <h2>聯絡資訊</h2>
+            <p>歡迎蒞臨或來電預約</p>
+          </div>
+          <div class="info-item">
+            <div class="icon-box">📍</div>
+            <div><h4>地址</h4><p>台北市信義區松仁路 68 號 2 樓</p></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box">📞</div>
+            <div><h4>電話</h4><p>02-2720-1688</p></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box">⏰</div>
+            <div><h4>營業時間</h4><p>週二至週六 10:00–20:00｜週日 10:00–18:00｜週一公休</p></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box">💬</div>
+            <div><h4>LINE 預約</h4><p>@aurora-beauty</p></div>
+          </div>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8!2d121.56!3d25.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAyJzI0LjAiTiAxMjHCsDMzJzM2LjAiRQ!5e0!3m2!1szh-TW!2stw!4v1" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Aurora 美學沙龍</h4>
+        <p>以專業與溫柔，喚醒肌膚的自然光彩。十年來堅持一對一服務，不推銷、不套公式，為每一位顧客量身打造最適合的保養方案。</p>
+      </div>
+      <div>
+        <h4>快速連結</h4>
+        <ul>
+          <li><a href="about.html">關於我們</a></li>
+          <li><a href="services.html">服務項目</a></li>
+          <li><a href="portfolio.html">作品案例</a></li>
+          <li><a href="booking.html">預約諮詢</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>營業資訊</h4>
+        <p>台北市信義區松仁路 68 號 2 樓</p>
+        <p>02-2720-1688</p>
+        <p>LINE: @aurora-beauty</p>
+        <p>週二至週六 10:00–20:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Aurora 美學沙龍 版權所有｜本網站為設計樣板展示用途
+    </div>
+  </div>
+</footer>
+
+<script>
+function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

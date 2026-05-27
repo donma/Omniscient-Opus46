@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們｜Aurora 美學沙龍</title>
+<meta name="description" content="認識 Aurora 美學沙龍的品牌理念、創辦人故事與專業團隊。">
+<meta property="og:title" content="關於我們｜Aurora 美學沙龍">
+<link rel="canonical" href="#">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#faf6f1;--white:#ffffff;--text:#2c2825;--muted:#8a7e72;--gold:#c9a574;--gold-dark:#a67c4a;--border:#ede4d8;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.4}
+a{color:inherit;text-decoration:none;transition:.3s}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(250,246,241,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.4rem;font-weight:700;color:var(--gold-dark)}
+.main-nav ul{display:flex;gap:28px;list-style:none}
+.main-nav a{font-size:.92rem;color:var(--text)}
+.main-nav a:hover{color:var(--gold)}
+.burger{display:none;background:none;border:none;font-size:1.6rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--white);z-index:200;padding:80px 32px;box-shadow:-4px 0 30px rgba(0,0,0,.1);transform:translateX(100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}
+.mobile-nav a{font-size:1.1rem;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2rem;margin-bottom:8px}
+.page-hero p{color:var(--muted)}
+section{padding:80px 0}
+.story-section{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:768px){.story-section{grid-template-columns:1fr}}
+.story-section img{border-radius:var(--radius);width:100%;height:400px;object-fit:cover}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media(max-width:768px){.team-grid{grid-template-columns:1fr}}
+.team-card{text-align:center}
+.team-card img{width:180px;height:180px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:4px solid var(--border)}
+.team-card h3{font-size:1rem;margin-bottom:4px}
+.team-card p{color:var(--muted);font-size:.88rem}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:768px){.values-grid{grid-template-columns:1fr}}
+.value-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.value-item h3{color:var(--gold-dark);margin-bottom:8px;font-size:1.05rem}
+.value-item p{color:var(--muted);font-size:.9rem}
+.site-footer{background:#2c2825;color:#d4c8ba;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
+.footer-grid h4{color:#fff;margin-bottom:16px}
+.footer-grid p,.footer-grid a{color:#a89d91;font-size:.88rem;line-height:2}
+.footer-grid a:hover{color:var(--gold)}
+.footer-grid ul{list-style:none}
+.footer-bottom{border-top:1px solid #3d3630;padding-top:20px;text-align:center;font-size:.82rem;color:#7a6f62}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Aurora 美學</a>
+    <nav class="main-nav"><ul>
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">作品案例</a></li>
+      <li><a href="reviews.html">顧客好評</a></li>
+      <li><a href="faq.html">常見問題</a></li>
+      <li><a href="booking.html">預約諮詢</a></li>
+      <li><a href="contact.html">聯絡我們</a></li>
+    </ul></nav>
+    <button class="burger" onclick="openMenu()">&#9776;</button>
+  </div>
+</header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">&times;</button>
+  <ul>
+    <li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li>
+    <li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品案例</a></li>
+    <li><a href="reviews.html">顧客好評</a></li><li><a href="faq.html">常見問題</a></li>
+    <li><a href="booking.html">預約諮詢</a></li><li><a href="contact.html">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <h1>關於我們</h1>
+    <p>從一個人的工作室，到您最信賴的美學夥伴</p>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="story-section">
+        <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=800&q=80" alt="Aurora 創辦故事">
+        <div>
+          <h2 style="margin-bottom:16px">品牌故事</h2>
+          <p>2015 年，創辦人 Emily 在信義區一間 12 坪的小空間開始了 Aurora 的旅程。從一張美容床、一台導入儀開始，以口碑相傳的方式慢慢建立起顧客群。</p>
+          <p style="margin-top:16px">「我想做的不是快速消費型的美容院，而是一個能讓人真正放鬆、被照顧的空間。」Emily 始終堅持不請業務、不推銷高額課程，靠實力與真心留住每一位顧客。</p>
+          <p style="margin-top:16px">如今 Aurora 已搬遷至 40 坪的獨立空間，團隊成長至 5 位專業美容師，但那份「把每位顧客當朋友」的初心從未改變。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white)">
+    <div class="container">
+      <div class="section-title" style="text-align:center;margin-bottom:48px">
+        <h2>核心價值</h2>
+        <p>Aurora 堅持的四件事</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>專業至上</h3>
+          <p>所有美容師均持有國際 CIDESCO / ITEC 認證，每季進修最新技術。使用醫療級設備與品牌授權產品。</p>
+        </div>
+        <div class="value-item">
+          <h3>真心不推銷</h3>
+          <p>不請業務人員、不設業績壓力、不販售大量預繳課程。顧客可單次付款，滿意再回來。</p>
+        </div>
+        <div class="value-item">
+          <h3>一對一諮詢</h3>
+          <p>療程前花時間了解膚況、生活作息、過敏史，量身打造專屬方案，不套公版流程。</p>
+        </div>
+        <div class="value-item">
+          <h3>術後追蹤</h3>
+          <p>療程後 7 天內主動關心膚況變化，提供居家保養建議，建立長期信任關係。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title" style="text-align:center;margin-bottom:48px">
+        <h2>專業團隊</h2>
+        <p>每位美容師都有超過 5 年實務經驗</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Emily 創辦人">
+          <h3>Emily｜創辦人</h3>
+          <p>CIDESCO 國際認證美容師<br>專精臉部抗齡與肌膚修復</p>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Lisa 資深美容師">
+          <h3>Lisa｜資深美容師</h3>
+          <p>ITEC Level 3 認證<br>專精身體 SPA 與精油芳療</p>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" alt="Mia 美容師">
+          <h3>Mia｜美容師</h3>
+          <p>新娘保養專家<br>韓系皮膚管理認證</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white)">
+    <div class="container">
+      <div class="story-section">
+        <div>
+          <h2 style="margin-bottom:16px">空間介紹</h2>
+          <p>Aurora 的空間設計以「家的溫暖」為核心。暖色系燈光、天然木質家具、植栽綠意，營造出讓人一進門就能放下壓力的氛圍。</p>
+          <p style="margin-top:16px">每間療程室皆為獨立隔音空間，配備高品質音響播放療癒音樂。冬天有加熱墊、夏天有涼爽空調，四季都能舒適享受療程。</p>
+          <p style="margin-top:16px">門口設有無障礙坡道，洗手間提供友善設施，歡迎所有人蒞臨。</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbec6a?w=800&q=80" alt="Aurora 沙龍空間">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Aurora 美學沙龍</h4><p>以專業與溫柔，喚醒肌膚的自然光彩。</p></div>
+      <div><h4>快速連結</h4><ul><li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品案例</a></li><li><a href="booking.html">預約諮詢</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+      <div><h4>營業資訊</h4><p>台北市信義區松仁路 68 號 2 樓</p><p>02-2720-1688</p><p>LINE: @aurora-beauty</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 Aurora 美學沙龍 版權所有</div>
+  </div>
+</footer>
+<script>
+function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>顧客好評｜Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s;box-shadow:-4px 0 30px rgba(0,0,0,.1)}
+.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+@media(max-width:768px){nav{display:none}.menu-toggle{display:flex}}
+.page-header{padding:60px 0;text-align:center;background:var(--pink-light)}.page-header h1{font-size:2.2rem;margin-bottom:8px}.page-header p{color:var(--muted)}
+section{padding:60px 0}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:60px}
+@media(max-width:768px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.stat-card{background:var(--white);border-radius:var(--radius);padding:28px;text-align:center;border:1px solid var(--border)}
+.stat-card .num{font-size:2.2rem;font-weight:700;color:var(--pink);font-family:'Quicksand',sans-serif}
+.stat-card p{font-size:.85rem;color:var(--muted);margin-top:4px}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:768px){.reviews-grid{grid-template-columns:1fr}}
+.review-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--border)}
+.review-card .header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.review-card .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.review-card .info h4{font-size:1rem;margin-bottom:2px}.review-card .info p{font-size:.82rem;color:var(--muted)}
+.review-card .stars{color:var(--accent);margin-bottom:12px;font-size:1rem}
+.review-card .content{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+.review-card .pet-info{display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border)}
+.review-card .pet-img{width:48px;height:48px;border-radius:12px;object-fit:cover}
+.review-card .pet-name{font-size:.85rem}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:60px}
+.footer-bottom{text-align:center;font-size:.82rem;color:var(--muted);padding-top:20px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<header><div class="container">
+<a href="index.html" class="logo">Paw<span>some</span></a>
+<nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<div class="menu-toggle" onclick="openNav()"><span></span><span></span><span></span></div>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav" id="mobileNav"><span class="close-btn" onclick="closeNav()">&times;</span><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<div class="page-header"><h1>顧客好評</h1><p>聽聽毛孩家長們怎麼說</p></div>
+
+<section><div class="container">
+<div class="stats-row">
+<div class="stat-card"><div class="num">4.9</div><p>Google 評分</p></div>
+<div class="stat-card"><div class="num">1,200+</div><p>服務毛孩數</p></div>
+<div class="stat-card"><div class="num">98%</div><p>回訪率</p></div>
+<div class="stat-card"><div class="num">5年</div><p>專業經驗</p></div>
+</div>
+
+<div class="reviews-grid">
+<div class="review-card">
+<div class="header"><img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt=""><div class="info"><h4>王小姐</h4><p>2026.03.15</p></div></div>
+<div class="stars">★★★★★</div>
+<div class="content">第一次帶我家柴柴來洗澡，本來很擔心他會緊張，沒想到美容師超有耐心，全程溫柔對待。洗完毛色超亮，連指甲都修得很漂亮！已經預約下次了。</div>
+<div class="pet-info"><img class="pet-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=100&q=80" alt=""><span class="pet-name">柴柴｜柴犬｜3歲</span></div>
+</div>
+<div class="review-card">
+<div class="header"><img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""><div class="info"><h4>林先生</h4><p>2026.03.08</p></div></div>
+<div class="stars">★★★★★</div>
+<div class="content">我們家貴賓每次來都超開心，美容師會記得她的習慣和喜好。SPA 護理後毛真的超蓬鬆柔軟，而且香香的味道可以維持好久。價格也很合理！</div>
+<div class="pet-info"><img class="pet-img" src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=100&q=80" alt=""><span class="pet-name">棉花糖｜貴賓｜5歲</span></div>
+</div>
+<div class="review-card">
+<div class="header"><img class="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt=""><div class="info"><h4>陳小姐</h4><p>2026.02.28</p></div></div>
+<div class="stars">★★★★★</div>
+<div class="content">家裡的老狗狗 12 歲了，很多地方不敢帶去，怕他們不夠溫柔。這裡的美容師會特別照顧老狗狗，動作很輕柔，還會隨時注意他的狀態。大推！</div>
+<div class="pet-info"><img class="pet-img" src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=100&q=80" alt=""><span class="pet-name">旺財｜米克斯｜12歲</span></div>
+</div>
+<div class="review-card">
+<div class="header"><img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt=""><div class="info"><h4>張先生</h4><p>2026.02.20</p></div></div>
+<div class="stars">★★★★☆</div>
+<div class="content">環境很乾淨，等候區也很舒適。美容後會拍照傳 LINE 給我們，服務很貼心。唯一小建議是假日人比較多，建議平日來比較不用等。</div>
+<div class="pet-info"><img class="pet-img" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=100&q=80" alt=""><span class="pet-name">小橘｜橘貓｜2歲</span></div>
+</div>
+<div class="review-card">
+<div class="header"><img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt=""><div class="info"><h4>黃小姐</h4><p>2026.02.10</p></div></div>
+<div class="stars">★★★★★</div>
+<div class="content">我家法鬥皮膚很敏感，之前去別家洗完都會抓。這裡用的洗劑很溫和，藥浴也很專業，洗完皮膚狀況改善很多。美容師還會教我怎麼在家保養。</div>
+<div class="pet-info"><img class="pet-img" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=100&q=80" alt=""><span class="pet-name">肉包｜法國鬥牛犬｜4歲</span></div>
+</div>
+<div class="review-card">
+<div class="header"><img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt=""><div class="info"><h4>李先生</h4><p>2026.01.25</p></div></div>
+<div class="stars">★★★★★</div>
+<div class="content">帶我們家雪納瑞來做造型，美容師很專業，剪出來的造型比我想像的還好看！而且會先溝通想要的風格，不會自己亂剪。已經變成固定客戶了。</div>
+<div class="pet-info"><img class="pet-img" src="https://images.unsplash.com/photo-1599663253220-065a3d4f500b?w=100&q=80" alt=""><span class="pet-name">Lucky｜雪納瑞｜3歲</span></div>
+</div>
+</div>
+</div></section>
+
+<footer><div class="container"><div class="footer-bottom">© 2026 Pawsome 寵物美容. All rights reserved.</div></div></footer>
+<script>function openNav(){document.getElementById('mobileNav').classList.add('active');document.getElementById('overlay').classList.add('active')}function closeNav(){document.getElementById('mobileNav').classList.remove('active');document.getElementById('overlay').classList.remove('active')}</script>
+</body>
+</html>

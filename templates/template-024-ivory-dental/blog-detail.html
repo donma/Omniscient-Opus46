@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牙齒美白全攻略 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.section{padding:80px 0}
+.article-header{text-align:center;padding:60px 0 40px;background:var(--white);border-bottom:1px solid var(--border)}
+.article-header h1{font-size:2rem;margin-bottom:12px;max-width:700px;margin-left:auto;margin-right:auto}
+.article-header .meta{color:var(--muted);font-size:.9rem}
+.article-content{max-width:760px;margin:0 auto;padding:60px 24px}
+.article-content img{width:100%;border-radius:var(--radius);margin:32px 0}
+.article-content h2{margin:40px 0 16px;font-size:1.4rem}
+.article-content h3{margin:28px 0 12px;font-size:1.15rem}
+.article-content p{margin-bottom:16px;color:var(--text)}
+.article-content ul,.article-content ol{margin:16px 0;padding-left:24px;color:var(--muted)}
+.article-content li{margin-bottom:8px}
+.article-content table{width:100%;border-collapse:collapse;margin:24px 0}
+.article-content table th,.article-content table td{padding:12px 16px;border:1px solid var(--border);font-size:.9rem}
+.article-content table th{background:var(--light);font-weight:600;color:var(--navy)}
+.article-content table td{color:var(--muted)}
+.article-content .note{background:var(--light);border-left:4px solid var(--mint-dark);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0;margin:24px 0}
+.article-content .note p{margin:0;color:var(--mint-dark);font-weight:400}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<div class="article-header">
+<div class="container">
+<h1>牙齒美白全攻略：方法比較與注意事項</h1>
+<div class="meta">2026.03.15 ｜ 陳柏翰 醫師 撰文</div>
+</div>
+</div>
+
+<article class="article-content">
+<img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=900&h=400&fit=crop" alt="牙齒美白">
+
+<p>擁有一口亮白的牙齒是許多人的夢想。然而，市面上美白方法百百種，從藥妝店的美白牙膏到診所的專業冷光美白，究竟該如何選擇？本文將為您詳細比較各種牙齒美白方式的優缺點。</p>
+
+<h2>為什麼牙齒會變黃？</h2>
+<p>牙齒變色的原因可分為外因性與內因性：</p>
+<ul>
+<li><strong>外因性：</strong>咖啡、茶、紅酒、吸菸等造成的表面染色</li>
+<li><strong>內因性：</strong>四環黴素牙、氟斑牙、牙齒老化等深層變色</li>
+<li><strong>年齡因素：</strong>隨年紀增長，琺瑯質磨損變薄，露出較黃的象牙質</li>
+</ul>
+
+<h2>常見美白方法比較</h2>
+<table>
+<thead><tr><th>方法</th><th>效果</th><th>維持時間</th><th>費用</th></tr></thead>
+<tbody>
+<tr><td>冷光美白</td><td>提升5-8色階</td><td>1-2年</td><td>NT$15,000-25,000</td></tr>
+<tr><td>居家美白</td><td>提升3-5色階</td><td>6個月-1年</td><td>NT$8,000-12,000</td></tr>
+<tr><td>美白貼片</td><td>提升1-2色階</td><td>使用期間</td><td>NT$500-1,500</td></tr>
+<tr><td>陶瓷貼片</td><td>永久改變齒色</td><td>10-15年</td><td>NT$20,000-35,000/顆</td></tr>
+</tbody>
+</table>
+
+<h2>冷光美白</h2>
+<p>冷光美白是目前診所最常使用的專業美白方式。利用特殊波長的藍光照射搭配高濃度美白藥劑（過氧化氫），加速氧化還原反應，分解牙齒深層色素。</p>
+<h3>適合對象</h3>
+<ul>
+<li>希望快速見效的患者</li>
+<li>外因性染色（咖啡、茶漬）</li>
+<li>輕度至中度牙齒變黃</li>
+</ul>
+
+<h2>居家美白</h2>
+<p>由醫師製作客製化牙托，搭配低濃度美白凝膠（10-15% 過氧化碳醯胺），每天配戴 4-6 小時或睡前使用，持續 2-4 週即可見效。</p>
+
+<div class="note"><p>提醒：無論選擇哪種美白方式，建議先由牙醫師評估口腔狀況。若有蛀牙或牙周問題，應先行治療再進行美白。</p></div>
+
+<h2>美白後注意事項</h2>
+<ol>
+<li>術後 48 小時內避免深色食物（咖啡、咖哩、紅酒等）</li>
+<li>使用抗敏感牙膏減緩術後敏感</li>
+<li>定期回診維護，建議每半年洗牙一次</li>
+<li>避免吸菸，減少色素再沉積</li>
+<li>可搭配居家美白維持效果</li>
+</ol>
+
+<h2>結語</h2>
+<p>牙齒美白是一項安全且有效的療程，但每個人的牙齒狀況不同，適合的方式也不盡相同。建議您預約諮詢，讓專業醫師為您量身打造最適合的美白計畫。</p>
+</article>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

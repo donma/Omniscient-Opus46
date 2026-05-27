@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noir 酒吧 — 隱身東區的秘密酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}
+a:hover{color:var(--copper)}
+h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}
+nav ul a{color:var(--text);font-size:.9rem;letter-spacing:.5px}
+nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+
+/* MOBILE NAV */
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}
+.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border);font-size:.95rem}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}
+.overlay.open{display:block}
+
+/* HERO */
+.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
+.hero-content{position:relative;z-index:1}
+.hero h1{font-size:4rem;margin-bottom:16px;letter-spacing:4px}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:500px;margin:0 auto}
+
+/* SECTIONS */
+section{padding:100px 0}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:60px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--border);padding:0;overflow:hidden;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--burgundy)}
+.card img{width:100%;height:240px;object-fit:cover}
+.card-body{padding:24px}
+.card-body h3{font-size:1.3rem;margin-bottom:8px}
+.card-body p{color:var(--muted);font-size:.9rem}
+.price{color:var(--gold);font-size:1.1rem;margin-top:8px}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+
+/* HOURS BAR */
+.hours-bar{background:var(--surface);border:1px solid var(--border);padding:40px;text-align:center;margin-top:60px}
+.hours-bar h3{margin-bottom:12px;font-size:1.5rem}
+.hours-bar p{color:var(--muted)}
+
+/* BTN */
+.btn{display:inline-block;padding:14px 36px;background:var(--burgundy);color:var(--text);font-size:.9rem;letter-spacing:1px;border:none;cursor:pointer;transition:background .3s}
+.btn:hover{background:#a02035;color:var(--text)}
+
+@media(max-width:768px){
+  nav ul{display:none}
+  .menu-btn{display:block}
+  .hero h1{font-size:2.5rem}
+  .grid-4,.grid-3,.grid-2{grid-template-columns:1fr}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile Nav -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a>
+  <a href="about.html">酒吧故事</a>
+  <a href="menu.html">調酒菜單</a>
+  <a href="specials.html">本月特調</a>
+  <a href="bartenders.html">調酒師</a>
+  <a href="events.html">活動之夜</a>
+  <a href="private.html">包場資訊</a>
+  <a href="contact.html">聯絡我們</a>
+</div>
+
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul>
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="about.html">酒吧故事</a></li>
+    <li><a href="menu.html">調酒菜單</a></li>
+    <li><a href="specials.html">本月特調</a></li>
+    <li><a href="bartenders.html">調酒師</a></li>
+    <li><a href="events.html">活動之夜</a></li>
+    <li><a href="private.html">包場資訊</a></li>
+    <li><a href="contact.html">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1600" alt="Cocktail close-up">
+  <div class="hero-content">
+    <h1>Noir 酒吧</h1>
+    <p>隱身東區巷弄的秘密酒吧，推開那扇無名之門，一杯調酒帶你走進另一個世界。</p>
+    <br>
+    <a href="menu.html" class="btn">探索酒單</a>
+  </div>
+</section>
+
+<!-- SIGNATURE DRINKS -->
+<section>
+  <div class="container">
+    <h2 class="section-title">招牌調酒</h2>
+    <div class="grid-4">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600" alt="黑潮">
+        <div class="card-body">
+          <h3>黑潮</h3>
+          <p>煙燻威士忌 · 黑糖 · 竹炭</p>
+          <div class="price">NT$480</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600" alt="絲絨之吻">
+        <div class="card-body">
+          <h3>絲絨之吻</h3>
+          <p>琴酒 · 玫瑰利口酒 · 接骨木花</p>
+          <div class="price">NT$420</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=600" alt="午夜東京">
+        <div class="card-body">
+          <h3>午夜東京</h3>
+          <p>日本威士忌 · 梅酒 · 柚子</p>
+          <div class="price">NT$520</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1541546006121-5c3bc624f8b4?w=600" alt="銅鏡">
+        <div class="card-body">
+          <h3>銅鏡</h3>
+          <p>蘭姆酒 · 肉桂 · 焦糖 · 苦精</p>
+          <div class="price">NT$450</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATMOSPHERE -->
+<section style="background:var(--surface)">
+  <div class="container">
+    <h2 class="section-title">空間氛圍</h2>
+    <div class="grid-3">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600" alt="Bar interior" style="width:100%;height:300px;object-fit:cover;border:1px solid var(--border)">
+      <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600" alt="Candlelight" style="width:100%;height:300px;object-fit:cover;border:1px solid var(--border)">
+      <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=600" alt="Bottles" style="width:100%;height:300px;object-fit:cover;border:1px solid var(--border)">
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section>
+  <div class="container">
+    <div class="hours-bar">
+      <h3>營業時間</h3>
+      <p>週二至週四 20:00 – 02:00</p>
+      <p>週五至週六 20:00 – 03:00</p>
+      <p>週日 20:00 – 01:00 ｜ 週一公休</p>
+      <p style="color:var(--burgundy);margin-top:12px">⚠ 未滿18歲請勿飲酒</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="index.html">首頁</a>
+      <a href="about.html">酒吧故事</a>
+      <a href="menu.html">調酒菜單</a>
+      <a href="events.html">活動之夜</a>
+      <a href="contact.html">聯絡我們</a>
+    </div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+
+<script>
+function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

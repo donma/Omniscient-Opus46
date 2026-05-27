@@ -1,0 +1,38 @@
+{
+  "id": "template-020-noir-bar",
+  "name": "Noir 酒吧",
+  "description": "Dark, moody speakeasy cocktail bar template with burgundy and gold accents. Cinematic atmosphere with vintage typography.",
+  "category": "bar",
+  "theme": "dark",
+  "colors": {
+    "background": "#0d0808",
+    "surface": "#1a1010",
+    "card": "#241515",
+    "primary": "#8b1a2a",
+    "secondary": "#c8a45c",
+    "text": "#f0e8e0",
+    "muted": "#8a7a6a",
+    "border": "#3a2020",
+    "accent": "#b87333"
+  },
+  "fonts": {
+    "heading": "Bodoni Moda",
+    "body": "Noto Sans TC"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "menu.html",
+    "menu-detail.html",
+    "specials.html",
+    "bartenders.html",
+    "events.html",
+    "private.html",
+    "gallery.html",
+    "blog.html",
+    "blog-detail.html",
+    "contact.html"
+  ],
+  "features": ["responsive", "mobile-menu-left", "sharp-corners", "cinematic-hero", "dark-theme"],
+  "language": "zh-TW"
+}

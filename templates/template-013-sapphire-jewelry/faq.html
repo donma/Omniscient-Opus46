@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;background:var(--surface);border-bottom:1px solid var(--border)}
+.page-hero-content{text-align:center}.page-hero-content h1{font-size:2.5rem;margin-bottom:12px}.page-hero-content p{color:var(--muted);letter-spacing:0.2em;font-size:0.9rem}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{padding:28px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1rem;color:var(--text)}
+.faq-question::after{content:'+';font-size:1.5rem;color:var(--gold);transition:transform 0.3s}
+.faq-item.active .faq-question::after{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease;color:var(--muted);font-size:0.9rem;line-height:2}
+.faq-item.active .faq-answer{max-height:300px}
+.faq-answer p{padding-bottom:28px}
+
+.faq-category{margin-bottom:60px}
+.faq-category h2{font-size:1.2rem;margin-bottom:8px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.faq-category .en{color:var(--gold);font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.15em;margin-bottom:24px}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+  <div class="page-hero-content"><h1>常見問題</h1><div class="divider"></div><p>FAQ</p></div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="faq-list">
+      <div class="faq-category">
+        <h2>購買相關</h2>
+        <div class="en">PURCHASING</div>
+        <div class="faq-item">
+          <div class="faq-question">是否需要預約才能參觀門市？</div>
+          <div class="faq-answer"><p>是的，為提供最優質的服務體驗，我們的門市採預約制。請透過電話或線上表單提前預約，我們將為您安排專屬的鑑賞空間與珠寶顧問。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">接受哪些付款方式？</div>
+          <div class="faq-answer"><p>我們接受現金、銀行轉帳、信用卡（Visa / Mastercard / JCB / American Express）。金額超過NT$500,000的訂單可提供分期付款方案，詳情請洽門市顧問。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">是否提供國際配送？</div>
+          <div class="faq-answer"><p>目前我們僅提供台灣本島配送服務，所有訂單均以專人護送方式配達。海外客戶歡迎親臨門市選購，或聯繫我們安排特殊配送。</p></div>
+        </div>
+      </div>
+      <div class="faq-category">
+        <h2>訂製服務</h2>
+        <div class="en">BESPOKE</div>
+        <div class="faq-item">
+          <div class="faq-question">訂製珠寶需要多長時間？</div>
+          <div class="faq-answer"><p>依設計複雜度而定，一般訂製作品約需6-12週。特殊設計或需要尋找特定寶石的訂單可能需要更長時間。我們會在諮詢階段提供明確的時間表。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">可以使用自己的寶石進行訂製嗎？</div>
+          <div class="faq-answer"><p>可以。我們歡迎客戶提供自有寶石進行訂製或改款。我們的寶石學家會先進行專業鑑定評估，確認寶石狀態適合進行加工後，再進行設計討論。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">訂製服務的最低預算是多少？</div>
+          <div class="faq-answer"><p>訂製服務起始價格為NT$300,000。此價格包含設計費、工藝費及基礎材料費用。寶石費用依客戶選擇的規格另計。</p></div>
+        </div>
+      </div>
+      <div class="faq-category">
+        <h2>證書與保固</h2>
+        <div class="en">CERTIFICATES & WARRANTY</div>
+        <div class="faq-item">
+          <div class="faq-question">鑽石是否附帶GIA證書？</div>
+          <div class="faq-answer"><p>所有0.30克拉以上的鑽石均附帶GIA（美國寶石學院）國際鑑定證書。部分寶石另附有Gübelin或SSEF等國際權威機構的產地證明。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">保固範圍包含哪些？</div>
+          <div class="faq-answer"><p>所有Sapphire珠寶作品享有終身保固，涵蓋：免費清潔拋光、爪鑲鬆動修復、鍊扣更換等基礎維護。因人為損壞或意外造成的維修將酌收材料費。</p></div>
+        </div>
+      </div>
+      <div class="faq-category">
+        <h2>維修服務</h2>
+        <div class="en">REPAIRS</div>
+        <div class="faq-item">
+          <div class="faq-question">戒指可以改圈嗎？</div>
+          <div class="faq-answer"><p>大部分戒指都可以進行改圈服務，通常可調整±2號。品牌作品享有首次免費改圈服務。部分設計（如滿鑲款）可能受限於結構無法調整，詳情請洽門市。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">非本品牌的珠寶可以維修嗎？</div>
+          <div class="faq-answer"><p>我們的工坊主要服務本品牌作品。如有其他品牌珠寶的維修需求，歡迎攜帶至門市評估，我們會視情況提供建議或協助。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>
+function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}
+document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>{q.parentElement.classList.toggle('active')})});
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>冒險日誌 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:linear-gradient(to bottom,rgba(13,26,15,.5),var(--bg)),url('https://images.unsplash.com/photo-1501554728187-ce583db33af7?w=1920&q=80') center/cover}
+.page-hero h1{font-size:3.5rem;margin-bottom:16px}.page-hero h1 span{color:var(--green)}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+
+.section{padding:80px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.blog-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform .3s}
+.blog-card:hover{transform:translateY(-4px)}
+.blog-card img{width:100%;height:200px;object-fit:cover}
+.blog-card-body{padding:24px}
+.blog-card-body .date{color:var(--earth);font-size:.8rem;margin-bottom:8px}
+.blog-card-body h3{font-size:1.2rem;margin-bottom:8px}
+.blog-card-body p{color:var(--muted);font-size:.85rem;margin-bottom:16px}
+.read-more{color:var(--green);font-size:.9rem;font-weight:700}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}footer .foot-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.blog-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="trips.html">探索行程</a></li><li><a href="gear.html">裝備推薦</a></li><li><a href="gallery.html">活動相簿</a></li><li><a href="guides.html">嚮導團隊</a></li><li><a href="safety.html">安全須知</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="openNav()">&#9776;</button></div></nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeNav()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero">
+<h1>冒險<span>日誌</span></h1>
+<p>分享山林故事、裝備心得與戶外知識</p>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="blog-grid">
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="">
+<div class="blog-card-body">
+<div class="date">2026.01.15</div>
+<h3>第一次百岳就上手：新手登山完全指南</h3>
+<p>想挑戰人生第一座百岳卻不知從何開始？這篇文章從體能準備、裝備選購到行程規劃，手把手帶你踏出第一步。</p>
+<a href="blog-detail.html" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="">
+<div class="blog-card-body">
+<div class="date">2026.01.08</div>
+<h3>露營新手必看：野外過夜的 10 個生存技巧</h3>
+<p>從選擇營地到搭帳技巧，從野炊料理到防蟲對策，十個實用建議讓你的第一次露營就能睡得安穩。</p>
+<a href="#" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1545652985-5edd365b12eb?w=600&q=80" alt="">
+<div class="blog-card-body">
+<div class="date">2023.12.20</div>
+<h3>花蓮溯溪秘境：五條最美溪谷路線推薦</h3>
+<p>花蓮擁有台灣最豐富的溪谷資源，從適合親子的入門路線到挑戰極限的進階峽谷，帶你一探碧藍水域的魅力。</p>
+<a href="#" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=600&q=80" alt="">
+<div class="blog-card-body">
+<div class="date">2023.12.05</div>
+<h3>冬季登山注意事項：高山雪季安全指南</h3>
+<p>台灣冬季高山同樣迷人但危險性倍增。了解雪季裝備需求、高山症預防與緊急應變，讓你的冬攀之旅安全又精彩。</p>
+<a href="#" class="read-more">閱讀全文 →</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><div class="foot-links"><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a></div><p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p></div></footer>
+<script>function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

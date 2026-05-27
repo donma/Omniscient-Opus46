@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>診療項目 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999;box-shadow:-4px 0 20px rgba(0,0,0,.1)}.mobile-menu.active{right:0}.mobile-menu a{font-size:1.1rem}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;margin-bottom:12px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.services-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.svc-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(45,212,191,.1)}
+.svc-card img{width:100%;height:180px;object-fit:cover}
+.svc-card-body{padding:24px}
+.svc-card-body h3{margin-bottom:8px;font-size:1.1rem}
+.svc-card-body p{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+.btn-sm{display:inline-block;padding:8px 20px;background:var(--mint-dark);color:var(--white);border-radius:var(--radius);font-size:.85rem;font-weight:600}
+.btn-sm:hover{background:var(--navy)}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>診療項目</h1><p>全方位牙科照護，從基礎保健到高階美學治療</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="services-list">
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=300&fit=crop" alt="一般牙科"><div class="svc-card-body"><h3>一般牙科</h3><p>蛀牙填補、定期洗牙、智齒拔除、牙齒敏感治療等基礎牙科服務，守護您的口腔健康。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&h=300&fit=crop" alt="牙齒美白"><div class="svc-card-body"><h3>牙齒美白</h3><p>採用最新冷光美白技術，搭配居家美白方案，安全有效提升牙齒色階，重現亮白笑容。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=300&fit=crop" alt="隱形矯正"><div class="svc-card-body"><h3>隱形矯正</h3><p>隱適美透明牙套，舒適美觀不影響日常生活。數位規劃精確預測矯正結果。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&h=300&fit=crop" alt="人工植牙"><div class="svc-card-body"><h3>人工植牙</h3><p>採用國際大廠植體，結合3D導引技術，微創植牙恢復快、成功率高。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=300&fit=crop" alt="根管治療"><div class="svc-card-body"><h3>根管治療</h3><p>顯微鏡輔助根管治療，精確清除感染組織，保留自然牙齒。搭配活髓保存術。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&h=300&fit=crop" alt="牙周病治療"><div class="svc-card-body"><h3>牙周病治療</h3><p>系統性牙周病治療，從基本治療到再生手術，恢復牙周健康，防止牙齒脫落。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=500&h=300&fit=crop" alt="兒童牙科"><div class="svc-card-body"><h3>兒童牙科</h3><p>溫馨友善的看診環境，塗氟、溝隙封填、乳牙治療，從小建立正確口腔保健習慣。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+<div class="svc-card"><img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&h=300&fit=crop" alt="假牙贋復"><div class="svc-card-body"><h3>假牙贋復</h3><p>全瓷冠、陶瓷貼片、活動假牙、固定假牙，恢復牙齒功能與美觀。</p><a href="service-detail.html" class="btn-sm">了解更多</a></div></div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

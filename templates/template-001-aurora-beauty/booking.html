@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>預約諮詢｜Aurora 美學沙龍</title>
+<meta name="description" content="預約 Aurora 美學沙龍的專業療程或免費膚質諮詢。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#faf6f1;--white:#ffffff;--text:#2c2825;--muted:#8a7e72;--gold:#c9a574;--gold-dark:#a67c4a;--border:#ede4d8;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+h1,h2,h3{font-family:'Noto Serif TC',serif;line-height:1.4}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(250,246,241,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.4rem;font-weight:700;color:var(--gold-dark)}
+.main-nav ul{display:flex;gap:28px;list-style:none}.main-nav a{font-size:.92rem;color:var(--text)}.main-nav a:hover{color:var(--gold)}
+.burger{display:none;background:none;border:none;font-size:1.6rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--white);z-index:200;padding:80px 32px;box-shadow:-4px 0 30px rgba(0,0,0,.1);transform:translateX(100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2rem;margin-bottom:8px}.page-hero p{color:var(--muted)}
+section{padding:60px 0}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:768px){.booking-grid{grid-template-columns:1fr}}
+.booking-info h3{margin-bottom:12px;color:var(--gold-dark)}
+.booking-info p{color:var(--muted);margin-bottom:16px;font-size:.92rem}
+.booking-info .note{background:rgba(201,165,116,.1);border-left:4px solid var(--gold);padding:16px;border-radius:0 var(--radius) var(--radius) 0;margin-top:24px;font-size:.88rem}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-weight:500;margin-bottom:6px;font-size:.92rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:8px;font-size:.92rem;background:var(--white);color:var(--text);font-family:inherit}
+.form-group textarea{height:120px;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.submit-btn{background:var(--gold);color:#fff;padding:14px 40px;border:none;border-radius:99px;font-size:1rem;font-weight:500;cursor:pointer;width:100%;transition:.3s}
+.submit-btn:hover{background:var(--gold-dark)}
+.site-footer{background:#2c2825;color:#d4c8ba;padding:48px 0 24px}
+.footer-bottom{border-top:1px solid #3d3630;padding-top:20px;text-align:center;font-size:.82rem;color:#7a6f62}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Aurora 美學</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品案例</a></li><li><a href="reviews.html">顧客好評</a></li><li><a href="faq.html">常見問題</a></li><li><a href="booking.html">預約諮詢</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品案例</a></li><li><a href="reviews.html">顧客好評</a></li><li><a href="faq.html">常見問題</a></li><li><a href="booking.html">預約諮詢</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<main>
+<div class="page-hero"><h1>預約諮詢</h1><p>填寫表單或透過 LINE 快速預約</p></div>
+
+<section>
+<div class="container">
+<div class="booking-grid">
+  <div>
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-group"><label>姓名</label><input type="text" placeholder="請輸入您的姓名" required></div>
+      <div class="form-group"><label>電話</label><input type="tel" placeholder="09xx-xxx-xxx" required></div>
+      <div class="form-group"><label>電子信箱</label><input type="email" placeholder="your@email.com"></div>
+      <div class="form-group"><label>想諮詢的服務</label>
+        <select required>
+          <option value="">請選擇</option>
+          <option>臉部深層護理</option>
+          <option>精油身體 SPA</option>
+          <option>眼周頸部緊緻</option>
+          <option>問題肌膚調理</option>
+          <option>新娘專屬保養</option>
+          <option>男士保養體驗</option>
+          <option>免費膚質諮詢</option>
+        </select>
+      </div>
+      <div class="form-group"><label>希望預約時段</label>
+        <select>
+          <option value="">請選擇</option>
+          <option>平日上午 10:00-12:00</option>
+          <option>平日下午 14:00-17:00</option>
+          <option>平日晚間 17:00-20:00</option>
+          <option>週末上午 10:00-12:00</option>
+          <option>週末下午 14:00-18:00</option>
+        </select>
+      </div>
+      <div class="form-group"><label>備註事項</label><textarea placeholder="如有特殊需求、過敏史或想了解的事項，請在此說明"></textarea></div>
+      <button type="submit" class="submit-btn">送出預約</button>
+    </form>
+  </div>
+  <div class="booking-info">
+    <h3>預約須知</h3>
+    <p>我們收到預約後會於 4 小時內回覆確認（營業時間內）。</p>
+    <p><strong>預約方式：</strong></p>
+    <p>1. 填寫本頁表單<br>2. LINE 加入 @aurora-beauty 傳訊息<br>3. 電話撥打 02-2720-1688</p>
+    <p><strong>取消政策：</strong></p>
+    <p>預約時間 24 小時前可免費改期或取消。未提前通知將酌收 30% 預約金。</p>
+    <div class="note">
+      <strong>首次來店體驗優惠：</strong><br>
+      臉部護理體驗 NT$980（原價 NT$2,800）<br>
+      身體 SPA 體驗 NT$1,580（原價 NT$3,500）<br>
+      <small>每人限享一次，不可與其他優惠併用</small>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 Aurora 美學沙龍 版權所有</div></div></footer>
+<script>
+function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+function handleSubmit(e){e.preventDefault();alert('感謝您的預約！我們將於 4 小時內與您聯繫確認。');e.target.reset();}
+</script>
+</body>
+</html>

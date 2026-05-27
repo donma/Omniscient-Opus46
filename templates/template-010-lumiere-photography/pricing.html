@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>價格方案 | Lumière 攝影工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafafa;--white:#ffffff;--text:#111111;--muted:#666666;--accent:#111111;--border:#e0e0e0;--warm:#f5f0eb;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.3}
+a{color:var(--text);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,250,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'DM Serif Display',serif;font-size:1.4rem;letter-spacing:1px}
+nav{display:flex;gap:24px;align-items:center}
+nav a{font-size:0.85rem;letter-spacing:0.5px;transition:opacity 0.3s}
+nav a:hover{opacity:0.5}
+.menu-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.menu-btn span{width:24px;height:1.5px;background:var(--text);transition:0.3s}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:999;padding:80px 40px;display:flex;flex-direction:column;gap:24px;transition:right 0.4s ease;box-shadow:-4px 0 20px rgba(0,0,0,0.1)}
+.mobile-nav.active{right:0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.4s}
+.overlay.active{opacity:1;pointer-events:all}
+.section{padding:120px 0 100px;margin-top:60px}
+.section h1{font-size:2.5rem;text-align:center;margin-bottom:12px}
+.section>p{text-align:center;color:var(--muted);margin-bottom:60px}
+.pricing-category{margin-bottom:80px}
+.pricing-category h2{font-size:1.8rem;margin-bottom:30px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.pricing-table{width:100%;border-collapse:collapse;margin-bottom:20px}
+.pricing-table th{text-align:left;padding:12px 16px;background:var(--text);color:#fff;font-weight:400;font-size:0.85rem}
+.pricing-table td{padding:14px 16px;border-bottom:1px solid var(--border);font-size:0.9rem}
+.pricing-table tr:hover td{background:var(--warm)}
+.pricing-table .price-col{text-align:right;font-family:'DM Serif Display',serif;font-size:1.1rem}
+.addons{background:var(--warm);border-radius:var(--radius);padding:40px;margin-top:60px}
+.addons h2{font-size:1.8rem;margin-bottom:24px}
+.addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.addon-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
+.addon-item span:last-child{font-family:'DM Serif Display',serif}
+.note{margin-top:40px;padding:24px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.85rem;color:var(--muted)}
+.btn{display:inline-block;padding:14px 36px;border:1px solid var(--text);font-size:0.85rem;letter-spacing:2px;transition:all 0.3s;border-radius:var(--radius);margin-top:40px}
+.btn:hover{background:var(--text);color:var(--white)}
+footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px 24px;text-align:center}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1000px;margin:0 auto 40px;text-align:left}
+footer h4{color:#fff;margin-bottom:16px;font-size:1rem}
+footer a{color:rgba(255,255,255,0.7);font-size:0.85rem;display:block;margin-bottom:8px;transition:color 0.3s}
+footer a:hover{color:#fff}
+footer .copyright{font-size:0.8rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:30px}
+@media(max-width:768px){nav{display:none}.menu-btn{display:flex}.addon-grid{grid-template-columns:1fr}footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html" class="logo">Lumière</a>
+<nav><a href="index.html">首頁</a><a href="about.html">關於攝影師</a><a href="portfolio.html">作品集</a><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="booking.html">預約拍攝</a><a href="blog.html">攝影日誌</a><a href="contact.html">聯絡我們</a></nav>
+<div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><a href="index.html">首頁</a><a href="about.html">關於攝影師</a><a href="portfolio.html">作品集</a><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="booking.html">預約拍攝</a><a href="blog.html">攝影日誌</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="section">
+<div class="container">
+<h1>價格方案</h1>
+<p>透明的價格，專業的服務品質</p>
+
+<div class="pricing-category">
+<h2>婚禮攝影</h2>
+<table class="pricing-table">
+<tr><th>方案</th><th>內容</th><th>價格</th></tr>
+<tr><td>經典方案</td><td>單攝影師 8 小時、精修 300 張、線上相簿、全原始檔</td><td class="price-col">NT$68,000</td></tr>
+<tr><td>典藏方案</td><td>雙攝影師 10 小時、精修 500 張、精裝相冊 30 頁、3 分鐘影片</td><td class="price-col">NT$98,000</td></tr>
+<tr><td>尊榮方案</td><td>雙攝影師 + 錄影全天、精修 800 張、精裝相冊 2 本、5 分鐘影片、婚前寫真</td><td class="price-col">NT$158,000</td></tr>
+</table>
+</div>
+
+<div class="pricing-category">
+<h2>人像寫真</h2>
+<table class="pricing-table">
+<tr><th>方案</th><th>內容</th><th>價格</th></tr>
+<tr><td>個人寫真</td><td>2 小時拍攝、2 套造型、精修 30 張</td><td class="price-col">NT$18,000</td></tr>
+<tr><td>情侶寫真</td><td>3 小時拍攝、2 個場景、精修 50 張</td><td class="price-col">NT$25,000</td></tr>
+<tr><td>家庭攝影</td><td>2 小時拍攝、全家福 + 個別照、精修 40 張</td><td class="price-col">NT$22,000</td></tr>
+<tr><td>孕婦寫真</td><td>2 小時拍攝、含工作室場景、精修 30 張</td><td class="price-col">NT$20,000</td></tr>
+</table>
+</div>
+
+<div class="pricing-category">
+<h2>商業攝影</h2>
+<table class="pricing-table">
+<tr><th>方案</th><th>內容</th><th>價格</th></tr>
+<tr><td>品牌形象</td><td>半天拍攝、含前期規劃、精修 20 張</td><td class="price-col">NT$35,000 起</td></tr>
+<tr><td>產品攝影</td><td>每件產品含白底 + 情境各 1 張</td><td class="price-col">NT$2,000/件</td></tr>
+<tr><td>美食攝影</td><td>半天拍攝、含道具佈景、精修 15 張</td><td class="price-col">NT$28,000 起</td></tr>
+<tr><td>空間攝影</td><td>含室內外全景、細節照、精修 25 張</td><td class="price-col">NT$30,000 起</td></tr>
+</table>
+</div>
+
+<div class="addons">
+<h2>加購項目</h2>
+<div class="addon-grid">
+<div class="addon-item"><span>延長拍攝（每小時）</span><span>NT$5,000</span></div>
+<div class="addon-item"><span>精裝相冊（30 頁）</span><span>NT$8,000</span></div>
+<div class="addon-item"><span>加修照片（每張）</span><span>NT$300</span></div>
+<div class="addon-item"><span>急件加急（3天內交件）</span><span>NT$10,000</span></div>
+<div class="addon-item"><span>第二位攝影師</span><span>NT$15,000</span></div>
+<div class="addon-item"><span>妝髮造型師</span><span>NT$8,000 起</span></div>
+<div class="addon-item"><span>外縣市交通費</span><span>實報實銷</span></div>
+<div class="addon-item"><span>海外拍攝（不含機票住宿）</span><span>NT$20,000/天</span></div>
+</div>
+</div>
+
+<div class="note">
+<strong>備註：</strong>以上價格均含稅。婚禮攝影需支付 30% 訂金以保留檔期。所有方案均包含全部原始檔案（無浮水印）。取消政策：拍攝前 30 天取消可全額退款，14 天內取消退還 50%。
+</div>
+
+<div style="text-align:center">
+<a href="booking.html" class="btn">立即預約諮詢</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div><h4>Lumière 攝影工作室</h4><p style="font-size:0.85rem;line-height:1.8">以光影記錄永恆瞬間<br>台北市大安區敦化南路一段 187 號 3F</p></div>
+<div><h4>服務項目</h4><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="portfolio.html">作品集</a><a href="pricing.html">價格方案</a></div>
+<div><h4>聯絡資訊</h4><a href="mailto:hello@lumiere.tw">hello@lumiere.tw</a><a href="tel:+886227001234">02-2700-1234</a><a href="https://instagram.com">Instagram</a><a href="https://facebook.com">Facebook</a></div>
+</div>
+<div class="copyright">© 2026 Lumière 攝影工作室. All Rights Reserved.</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

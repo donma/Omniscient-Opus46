@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先進設備 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;margin-bottom:12px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:32px}
+.tech-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.tech-card img{width:100%;height:220px;object-fit:cover}
+.tech-card-body{padding:28px;flex:1}
+.tech-card-body h3{margin-bottom:8px;font-size:1.1rem;color:var(--mint-dark)}
+.tech-card-body h4{margin-bottom:12px;font-size:1rem}
+.tech-card-body p{font-size:.9rem;color:var(--muted)}
+.tech-card-body ul{margin-top:12px;padding-left:18px;font-size:.85rem;color:var(--muted)}
+.tech-card-body ul li{margin-bottom:4px}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>先進設備</h1><p>引進國際級牙科設備，提供精準、高效的治療體驗</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="tech-grid">
+<div class="tech-card">
+<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=350&fit=crop" alt="CBCT">
+<div class="tech-card-body">
+<h3>3D 影像診斷</h3>
+<h4>錐狀射束電腦斷層（CBCT）</h4>
+<p>提供高解析度 3D 影像，精確顯示骨骼結構、神經管路位置，是植牙手術規劃不可或缺的工具。</p>
+<ul><li>輻射劑量僅傳統CT的1/10</li><li>掃描時間僅14秒</li><li>0.1mm超高解析度</li></ul>
+</div>
+</div>
+<div class="tech-card">
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=350&fit=crop" alt="數位口掃">
+<div class="tech-card-body">
+<h3>數位印模</h3>
+<h4>iTero 數位口腔掃描機</h4>
+<p>取代傳統印模，利用光學掃描技術快速建立精確的3D齒列模型，舒適無異物感。</p>
+<ul><li>掃描時間僅60秒</li><li>精確度達微米等級</li><li>即時預覽矯正模擬</li></ul>
+</div>
+</div>
+<div class="tech-card">
+<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=350&fit=crop" alt="顯微鏡">
+<div class="tech-card-body">
+<h3>顯微鏡輔助治療</h3>
+<h4>Carl Zeiss 牙科顯微鏡</h4>
+<p>提供最高25倍放大率，讓醫師能清楚辨識肉眼無法察覺的微小結構，提升根管治療成功率。</p>
+<ul><li>25倍光學放大</li><li>LED高亮度照明</li><li>同步錄影功能</li></ul>
+</div>
+</div>
+<div class="tech-card">
+<img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&h=350&fit=crop" alt="CAD/CAM">
+<div class="tech-card-body">
+<h3>數位製造</h3>
+<h4>CAD/CAM 全瓷修復系統</h4>
+<p>電腦輔助設計與製造，可在診所內完成全瓷冠的設計、研磨與安裝，大幅縮短治療時間。</p>
+<ul><li>當日完成全瓷修復</li><li>高強度氧化鋯材料</li><li>色澤自然逼真</li></ul>
+</div>
+</div>
+<div class="tech-card">
+<img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=350&fit=crop" alt="水雷射">
+<div class="tech-card-body">
+<h3>微創治療</h3>
+<h4>Er:YAG 水雷射</h4>
+<p>利用特殊波長雷射搭配水分子，進行軟硬組織切割。出血少、恢復快，大幅降低治療不適感。</p>
+<ul><li>幾乎無痛治療</li><li>殺菌效果優異</li><li>促進傷口癒合</li></ul>
+</div>
+</div>
+<div class="tech-card">
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=350&fit=crop" alt="滅菌設備">
+<div class="tech-card-body">
+<h3>感染控制</h3>
+<h4>B級高溫高壓滅菌鍋</h4>
+<p>符合歐洲EN13060標準的B級滅菌設備，可處理所有類型的器械包裝，確保100%滅菌。</p>
+<ul><li>134°C/2.1bar高溫高壓</li><li>真空脈動式滅菌</li><li>每日生物指示劑監測</li></ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

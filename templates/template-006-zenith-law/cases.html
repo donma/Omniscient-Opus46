@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成功案例 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text)}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:8px}.page-hero p{color:var(--muted)}
+section{padding:60px 0}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;margin-bottom:24px}
+.case-card .meta{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.case-card .meta span{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:4px 12px;font-size:.8rem;color:var(--muted)}
+.case-card h3{color:var(--white);font-size:1.3rem;margin-bottom:12px}
+.case-card .issue{color:var(--text);margin-bottom:12px;line-height:2}
+.case-card .outcome{border-top:1px solid var(--border);padding-top:12px;margin-top:12px}
+.case-card .outcome strong{color:var(--gold);font-size:.85rem;display:block;margin-bottom:4px}
+.case-card .outcome p{color:var(--text);font-size:.9rem}
+.disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:40px;color:var(--muted);font-size:.85rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>成功案例</h1><p>精選代表性案件成果（均經當事人同意後匿名刊載）</p></div></section>
+
+<section><div class="container">
+<div class="disclaimer">本頁所列案例均已徵得當事人同意，且為保護當事人隱私，已將可辨識之資訊予以去除或修改。案例結果因個案事實不同而異，過往案件結果不代表未來案件之保證。</div>
+
+<div class="case-card">
+  <div class="meta"><span>科技業</span><span>企業併購</span><span>2026</span></div>
+  <h3>上市科技公司跨國併購案</h3>
+  <p class="issue">某上市科技公司計劃收購東南亞同業，涉及台灣、新加坡及越南三地法律規範。交易面臨反壟斷審查、外資持股限制、員工權益保障等複雜法律議題，且買賣雙方對價格調整機制存在重大分歧。</p>
+  <div class="outcome"><strong>案件結果</strong><p>成功協調三國法律團隊，於六個月內完成所有主管機關申報。透過創新的對價架構設計化解雙方分歧，最終以新台幣八十億元完成交易，為客戶實現策略性擴張目標。</p></div>
+</div>
+
+<div class="case-card">
+  <div class="meta"><span>半導體業</span><span>營業秘密</span><span>2023</span></div>
+  <h3>半導體公司營業秘密侵害案</h3>
+  <p class="issue">客戶之核心研發人員遭競爭對手挖角後，疑似將關鍵製程技術帶至新公司使用。客戶需在證據保全、侵害認定及損害賠償計算等方面獲得法律支援，並希望盡速取得禁制令以防止損害擴大。</p>
+  <div class="outcome"><strong>案件結果</strong><p>成功向智慧財產及商業法院聲請定暫時狀態處分，禁止離職員工於競爭對手處從事相關業務。後續本案訴訟中，法院認定侵害成立，判賠新台幣一億兩千萬元。</p></div>
+</div>
+
+<div class="case-card">
+  <div class="meta"><span>製造業</span><span>反傾銷</span><span>2023</span></div>
+  <h3>鋼鐵製品反傾銷調查應對</h3>
+  <p class="issue">客戶之出口產品遭進口國發起反傾銷調查，面臨高額反傾銷稅之威脅。需在極短期限內準備大量財務及銷售資料，並提出有力之價格承諾方案。</p>
+  <div class="outcome"><strong>案件結果</strong><p>成功協助客戶於調查程序中提出價格承諾方案，獲進口國主管機關接受，避免被課徵反傾銷稅。客戶得以維持於該市場之競爭力，年出口額約新台幣十五億元之業務不受影響。</p></div>
+</div>
+
+<div class="case-card">
+  <div class="meta"><span>金融業</span><span>公司治理</span><span>2022</span></div>
+  <h3>金控集團經營權爭議</h3>
+  <p class="issue">某金控集團面臨市場派股東之委託書徵求挑戰，經營權保衛戰涉及公司法、證券交易法及金融控股公司法等多部法規之交錯適用。需於股東會前擬定完整的防禦策略。</p>
+  <div class="outcome"><strong>案件結果</strong><p>成功協助客戶透過合法之股東溝通策略及議事程序設計，於股東常會中取得過半數支持，穩固經營團隊。後續並協助修改公司章程，強化公司治理架構。</p></div>
+</div>
+
+<div class="case-card">
+  <div class="meta"><span>電子商務</span><span>商標侵權</span><span>2022</span></div>
+  <h3>知名品牌跨境商標維權案</h3>
+  <p class="issue">客戶之知名品牌遭中國大陸業者惡意搶註，並以該搶註商標於電商平台販售仿冒品。客戶需同時處理商標行政爭議及民事侵權訴訟，且面臨證據蒐集之困難。</p>
+  <div class="outcome"><strong>案件結果</strong><p>透過與中國大陸合作律所之協調，成功於商標評審委員會撤銷搶註商標，並於法院取得侵權損害賠償判決人民幣三百萬元。同時協助客戶於各大電商平台完成品牌備案，建立長期保護機制。</p></div>
+</div>
+
+<div class="case-card">
+  <div class="meta"><span>生技醫療</span><span>技術授權</span><span>2021</span></div>
+  <h3>生技公司專利授權爭議</h3>
+  <p class="issue">客戶與國際藥廠間之專利授權契約因里程碑付款條件之解釋產生爭議，國際藥廠主張客戶未達成特定研發里程碑而拒絕付款。爭議金額達美金兩千萬元。</p>
+  <div class="outcome"><strong>案件結果</strong><p>代理客戶於國際商會（ICC）仲裁程序中主張權利，經一年審理，仲裁庭認定客戶已達成里程碑條件，裁決國際藥廠應給付美金一千八百萬元及利息。</p></div>
+</div>
+
+</div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全職設計視角 — 90 套高品質網站模板庫</title>
+<meta name="description" content="精選 90 套獨立設計的高品質網站模板，涵蓋各行各業，每套 12 頁完整架構。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;
+  --surface:#12121a;
+  --card:#1a1a24;
+  --border:#2a2a3a;
+  --text:#e8e8f0;
+  --muted:#888899;
+  --accent:#6366f1;
+  --accent-light:#818cf8;
+  --success:#10b981;
+  --radius:16px;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1400px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.3rem;font-weight:700;letter-spacing:1px}
+.logo span{color:var(--accent)}
+.header-stats{display:flex;gap:24px;font-size:.85rem;color:var(--muted)}
+.header-stats strong{color:var(--text)}
+
+/* Hero */
+.hero{text-align:center;padding:80px 32px 60px;border-bottom:1px solid var(--border)}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin-bottom:16px;background:linear-gradient(135deg,var(--text) 0%,var(--accent-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto 32px}
+.search-box{max-width:500px;margin:0 auto;position:relative}
+.search-box input{width:100%;padding:16px 24px 16px 48px;background:var(--surface);border:1px solid var(--border);border-radius:99px;color:var(--text);font-size:1rem;outline:none;transition:border .3s}
+.search-box input:focus{border-color:var(--accent)}
+.search-box::before{content:'🔍';position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1rem}
+
+/* Filters */
+.filters{padding:24px 32px;border-bottom:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.filter-btn{padding:8px 20px;background:var(--surface);border:1px solid var(--border);border-radius:99px;color:var(--muted);font-size:.85rem;cursor:pointer;transition:all .3s}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Grid */
+.templates-section{max-width:1400px;margin:0 auto;padding:48px 32px}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+.section-header h2{font-size:1.4rem;font-weight:600}
+.template-count{color:var(--muted);font-size:.9rem}
+.templates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px}
+
+/* Card */
+.template-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .4s}
+.template-card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 20px 60px rgba(99,102,241,.15)}
+.card-image{position:relative;height:220px;overflow:hidden;background:var(--surface)}
+.card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.template-card:hover .card-image img{transform:scale(1.05)}
+.card-badges{position:absolute;top:12px;left:12px;display:flex;gap:8px}
+.badge{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.badge-dark{background:rgba(0,0,0,.7);color:#fff}
+.badge-light{background:rgba(255,255,255,.9);color:#111}
+.card-overlay{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.8));opacity:0;transition:.3s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+.template-card:hover .card-overlay{opacity:1}
+.preview-btn{padding:10px 28px;background:var(--accent);color:#fff;border-radius:99px;font-size:.85rem;font-weight:500}
+.card-body{padding:20px}
+.card-body h3{font-size:1.05rem;font-weight:600;margin-bottom:6px}
+.card-meta{display:flex;gap:16px;font-size:.8rem;color:var(--muted);margin-bottom:12px}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{padding:3px 10px;background:var(--surface);border-radius:6px;font-size:.72rem;color:var(--muted)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:40px 32px;text-align:center;color:var(--muted);font-size:.85rem}
+
+@media(max-width:768px){
+  .header-inner{padding:12px 16px}
+  .header-stats{display:none}
+  .hero{padding:48px 16px 40px}
+  .filters{padding:16px}
+  .templates-section{padding:32px 16px}
+  .templates-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="header-inner">
+  <a href="index.html" class="logo">全職設計<span>視角</span></a>
+  <div class="header-stats">
+    <span><strong>24</strong> 套模板</span>
+    <span><strong>289</strong> 個頁面</span>
+    <span><strong>12</strong> Light / <strong>12</strong> Dark</span>
+  </div>
+</div>
+</header>
+
+<section class="hero">
+<h1>高品質網站模板庫</h1>
+<p>精心設計的網站模板，涵蓋各行各業。每套模板 12 頁完整架構，支援 RWD 響應式設計，可直接使用或作為設計參考。</p>
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="搜尋模板名稱、產業或標籤..." onkeyup="filterTemplates()">
+</div>
+</section>
+
+<div class="filters">
+<button class="filter-btn active" onclick="setFilter('all')">全部</button>
+<button class="filter-btn" onclick="setFilter('light')">Light 主題</button>
+<button class="filter-btn" onclick="setFilter('dark')">Dark 主題</button>
+<button class="filter-btn" onclick="setFilter('美容')">美容</button>
+<button class="filter-btn" onclick="setFilter('餐飲')">餐飲</button>
+<button class="filter-btn" onclick="setFilter('時尚')">時尚</button>
+<button class="filter-btn" onclick="setFilter('科技')">科技</button>
+<button class="filter-btn" onclick="setFilter('農業')">農業</button>
+<button class="filter-btn" onclick="setFilter('法律')">法律</button>
+<button class="filter-btn" onclick="setFilter('藝術')">藝術</button>
+<button class="filter-btn" onclick="setFilter('寵物')">寵物</button>
+<button class="filter-btn" onclick="setFilter('戶外')">戶外</button>
+<button class="filter-btn" onclick="setFilter('攝影')">攝影</button>
+<button class="filter-btn" onclick="setFilter('健身')">健身</button>
+<button class="filter-btn" onclick="setFilter('珠寶')">珠寶</button>
+<button class="filter-btn" onclick="setFilter('花藝')">花藝</button>
+<button class="filter-btn" onclick="setFilter('旅遊')">旅遊</button>
+<button class="filter-btn" onclick="setFilter('建築')">建築</button>
+<button class="filter-btn" onclick="setFilter('醫療')">醫療</button>
+<button class="filter-btn" onclick="setFilter('教育')">教育</button>
+<button class="filter-btn" onclick="setFilter('音樂')">音樂</button>
+</div>
+
+<section class="templates-section">
+<div class="section-header">
+  <h2>所有模板</h2>
+  <span class="template-count" id="templateCount">顯示 24 套模板</span>
+</div>
+<div class="templates-grid" id="templatesGrid">
+
+  <a href="template-detail.html?id=template-001-aurora-beauty" class="template-card" data-theme="light" data-tags="美容,SPA,沙龍">
+    <div class="card-image">
+      <img src="screenshots/template-001-aurora-beauty-home.png" alt="Aurora 美學沙龍首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Aurora 美學沙龍</h3>
+      <div class="card-meta"><span>美容 / SPA</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">奶油色</span><span class="tag">金色</span><span class="tag">優雅</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-002-kuroshio-ramen" class="template-card" data-theme="dark" data-tags="餐飲,日式,拉麵">
+    <div class="card-image">
+      <img src="screenshots/template-002-kuroshio-ramen-home.png" alt="黑潮拉麵首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>黑潮拉麵 KUROSHIO</h3>
+      <div class="card-meta"><span>餐飲 / 日式料理</span><span>13 頁</span></div>
+      <div class="card-tags"><span class="tag">黑金</span><span class="tag">職人</span><span class="tag">沉浸式</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-003-maison-noir-fashion" class="template-card" data-theme="light" data-tags="時尚,精品,極簡">
+    <div class="card-image">
+      <img src="screenshots/template-003-maison-noir-fashion-home.png" alt="Maison Noir 首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Maison Noir 當代時裝</h3>
+      <div class="card-meta"><span>時尚 / 精品</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">極簡白</span><span class="tag">編輯風</span><span class="tag">雜誌感</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-004-nexus-saas" class="template-card" data-theme="dark" data-tags="科技,SaaS,AI">
+    <div class="card-image">
+      <img src="screenshots/template-004-nexus-saas-home.png" alt="Nexus SaaS 首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Nexus 智能協作平台</h3>
+      <div class="card-meta"><span>科技 / SaaS</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">紫藍漸層</span><span class="tag">玻璃擬態</span><span class="tag">Bento</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-005-terra-organic-farm" class="template-card" data-theme="light" data-tags="農業,有機,小農">
+    <div class="card-image">
+      <img src="screenshots/template-005-terra-organic-farm-home.png" alt="Terra 有機農場首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Terra 有機農場</h3>
+      <div class="card-meta"><span>農業 / 有機食品</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">大地色</span><span class="tag">故事敘述</span><span class="tag">自然</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-006-zenith-law" class="template-card" data-theme="dark" data-tags="法律,事務所,專業">
+    <div class="card-image">
+      <img src="screenshots/template-006-zenith-law-home.png" alt="Zenith 法律事務所首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Zenith 法律事務所</h3>
+      <div class="card-meta"><span>法律 / 專業服務</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">海軍藍</span><span class="tag">金色</span><span class="tag">權威感</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-007-canvas-gallery" class="template-card" data-theme="light" data-tags="藝術,藝廊,展覽">
+    <div class="card-image">
+      <img src="screenshots/template-007-canvas-gallery-home.png" alt="Canvas 當代藝廊首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Canvas 當代藝廊</h3>
+      <div class="card-meta"><span>藝術 / 藝廊</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">純白</span><span class="tag">Masonry</span><span class="tag">極簡</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-008-pawsome-pets" class="template-card" data-theme="light" data-tags="寵物,美容,可愛">
+    <div class="card-image">
+      <img src="screenshots/template-008-pawsome-pets-home.png" alt="Pawsome 寵物美容首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Pawsome 寵物美容</h3>
+      <div class="card-meta"><span>寵物 / 美容</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">粉紅色</span><span class="tag">活潑</span><span class="tag">圓角</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-009-altitude-outdoor" class="template-card" data-theme="dark" data-tags="戶外,探索,冒險,運動">
+    <div class="card-image">
+      <img src="screenshots/template-009-altitude-outdoor-home.png" alt="Altitude 戶外探索首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Altitude 戶外探索</h3>
+      <div class="card-meta"><span>戶外 / 運動用品</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">森林綠</span><span class="tag">沉浸式</span><span class="tag">冒險</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-010-lumiere-photography" class="template-card" data-theme="light" data-tags="攝影,藝術,黑白,工作室">
+    <div class="card-image">
+      <img src="screenshots/template-010-lumiere-photography-home.png" alt="Lumière 攝影工作室首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Lumière 攝影工作室</h3>
+      <div class="card-meta"><span>攝影 / 創作</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">黑白</span><span class="tag">Masonry</span><span class="tag">底片感</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-011-zen-yoga" class="template-card" data-theme="light" data-tags="瑜伽,健康,身心靈,運動">
+    <div class="card-image">
+      <img src="screenshots/template-011-zen-yoga-home.png" alt="Zen 瑜伽會館首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Zen 瑜伽會館</h3>
+      <div class="card-meta"><span>瑜伽 / 身心靈</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">鼠尾草綠</span><span class="tag">平靜</span><span class="tag">呼吸感</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-012-forge-gym" class="template-card" data-theme="dark" data-tags="健身,運動,健身房,重訓">
+    <div class="card-image">
+      <img src="screenshots/template-012-forge-gym-home.png" alt="Forge 健身工廠首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Forge 健身工廠</h3>
+      <div class="card-meta"><span>健身 / 運動</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">紅黑</span><span class="tag">粗獷</span><span class="tag">力量感</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-013-sapphire-jewelry" class="template-card" data-theme="dark" data-tags="珠寶,奢華,精品,鑽石">
+    <div class="card-image">
+      <img src="screenshots/template-013-sapphire-jewelry-home.png" alt="Sapphire 珠寶首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Sapphire 珠寶</h3>
+      <div class="card-meta"><span>珠寶 / 奢華精品</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">深藍銀</span><span class="tag">奢華</span><span class="tag">精緻</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-014-bloom-floristry" class="template-card" data-theme="light" data-tags="花藝,花店,浪漫,婚禮">
+    <div class="card-image">
+      <img src="screenshots/template-014-bloom-floristry-home.png" alt="Bloom 花藝工作室首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Bloom 花藝工作室</h3>
+      <div class="card-meta"><span>花藝 / 婚禮</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">粉彩</span><span class="tag">浪漫</span><span class="tag">有機形狀</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-015-circuit-repair" class="template-card" data-theme="dark" data-tags="科技,維修,電子,3C">
+    <div class="card-image">
+      <img src="screenshots/template-015-circuit-repair-home.png" alt="Circuit 電子維修首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Circuit 電子維修</h3>
+      <div class="card-meta"><span>科技 / 維修服務</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">霓虹綠</span><span class="tag">終端機風</span><span class="tag">駭客</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-016-haven-bnb" class="template-card" data-theme="light" data-tags="民宿,旅遊,住宿,山居">
+    <div class="card-image">
+      <img src="screenshots/template-016-haven-bnb-home.png" alt="Haven 山居民宿首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Haven 山居民宿</h3>
+      <div class="card-meta"><span>民宿 / 旅遊</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">木質色</span><span class="tag">溫馨</span><span class="tag">自然</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-017-pulse-music" class="template-card" data-theme="dark" data-tags="音樂,錄音,工作室,製作">
+    <div class="card-image">
+      <img src="screenshots/template-017-pulse-music-home.png" alt="Pulse 音樂工作室首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Pulse 音樂工作室</h3>
+      <div class="card-meta"><span>音樂 / 錄音製作</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">紫橘漸層</span><span class="tag">動感</span><span class="tag">音波</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-018-matcha-tea" class="template-card" data-theme="light" data-tags="茶道,日式,抹茶,餐飲">
+    <div class="card-image">
+      <img src="screenshots/template-018-matcha-tea-home.png" alt="Matcha 茶道空間首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Matcha 茶道空間</h3>
+      <div class="card-meta"><span>茶道 / 日式餐飲</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">抹茶綠</span><span class="tag">禪風</span><span class="tag">侘寂</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-019-vertex-architecture" class="template-card" data-theme="light" data-tags="建築,設計,事務所,室內">
+    <div class="card-image">
+      <img src="screenshots/template-019-vertex-architecture-home.png" alt="Vertex 建築事務所首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Vertex 建築事務所</h3>
+      <div class="card-meta"><span>建築 / 設計</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">混凝土灰</span><span class="tag">幾何</span><span class="tag">精準</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-020-noir-bar" class="template-card" data-theme="dark" data-tags="餐飲,酒吧,調酒,夜生活">
+    <div class="card-image">
+      <img src="screenshots/template-020-noir-bar-home.png" alt="Noir 酒吧首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Noir 酒吧</h3>
+      <div class="card-meta"><span>餐飲 / 酒吧</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">酒紅金</span><span class="tag">慵懶</span><span class="tag">Speakeasy</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-021-sprout-kindergarten" class="template-card" data-theme="light" data-tags="教育,幼兒園,兒童,學校">
+    <div class="card-image">
+      <img src="screenshots/template-021-sprout-kindergarten-home.png" alt="Sprout 小芽幼兒園首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Sprout 小芽幼兒園</h3>
+      <div class="card-meta"><span>教育 / 幼兒園</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">多彩</span><span class="tag">活潑</span><span class="tag">圓潤</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-022-atlas-travel" class="template-card" data-theme="light" data-tags="旅遊,旅行社,冒險,探索">
+    <div class="card-image">
+      <img src="screenshots/template-022-atlas-travel-home.png" alt="Atlas 旅行社首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Atlas 旅行社</h3>
+      <div class="card-meta"><span>旅遊 / 旅行社</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">天空藍</span><span class="tag">冒險</span><span class="tag">開闊</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-023-ember-yakiniku" class="template-card" data-theme="dark" data-tags="餐飲,燒肉,日式,美食">
+    <div class="card-image">
+      <img src="screenshots/template-023-ember-yakiniku-home.png" alt="Ember 炭火燒肉首頁截圖">
+      <div class="card-badges"><span class="badge badge-dark">Dark</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Ember 炭火燒肉</h3>
+      <div class="card-meta"><span>餐飲 / 燒肉</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">火焰紅</span><span class="tag">戲劇性</span><span class="tag">炭烤</span></div>
+    </div>
+  </a>
+
+  <a href="template-detail.html?id=template-024-ivory-dental" class="template-card" data-theme="light" data-tags="醫療,牙醫,診所,健康">
+    <div class="card-image">
+      <img src="screenshots/template-024-ivory-dental-home.png" alt="Ivory 牙醫診所首頁截圖">
+      <div class="card-badges"><span class="badge badge-light">Light</span></div>
+      <div class="card-overlay"><span class="preview-btn">查看詳情</span></div>
+    </div>
+    <div class="card-body">
+      <h3>Ivory 牙醫診所</h3>
+      <div class="card-meta"><span>醫療 / 牙醫</span><span>12 頁</span></div>
+      <div class="card-tags"><span class="tag">薄荷白</span><span class="tag">專業</span><span class="tag">乾淨</span></div>
+    </div>
+  </a>
+
+</div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2026 全職設計視角. 共 24 套模板，289 個頁面。</p>
+</footer>
+
+<script>
+let currentFilter = 'all';
+
+function setFilter(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.includes(filter) || (filter === 'all' && btn.textContent === '全部'));
+  });
+  filterTemplates();
+}
+
+function filterTemplates() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.template-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const theme = card.dataset.theme;
+    const tags = card.dataset.tags.toLowerCase();
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const meta = card.querySelector('.card-meta').textContent.toLowerCase();
+
+    let show = true;
+
+    // Filter by theme/category
+    if (currentFilter !== 'all') {
+      if (currentFilter === 'light' || currentFilter === 'dark') {
+        show = theme === currentFilter;
+      } else {
+        show = tags.includes(currentFilter.toLowerCase()) || meta.includes(currentFilter.toLowerCase());
+      }
+    }
+
+    // Filter by search
+    if (show && search) {
+      show = title.includes(search) || tags.includes(search) || meta.includes(search);
+    }
+
+    card.style.display = show ? 'block' : 'none';
+    if (show) visibleCount++;
+  });
+
+  document.getElementById('templateCount').textContent = `顯示 ${visibleCount} 套模板`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>流動瑜伽 — Zen 瑜伽會館</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+.detail-hero{position:relative;height:50vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.detail-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4}
+.detail-hero h1{position:relative;z-index:1;font-size:3rem}
+section{padding:80px 0}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:60px}
+.info-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}
+.info-box .label{font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.info-box .value{font-size:1.1rem;font-weight:500;color:var(--sage-dark)}
+.content-block{margin-bottom:48px}
+.content-block h2{font-size:1.6rem;margin-bottom:16px}
+.content-block p{color:var(--muted);margin-bottom:12px}
+.content-block ul{list-style:none;padding:0}
+.content-block ul li{padding:8px 0;color:var(--muted);border-bottom:1px solid var(--border)}
+.content-block ul li::before{content:"✦ ";color:var(--sage)}
+.btn{display:inline-block;padding:14px 36px;background:var(--sage);color:var(--white);border-radius:var(--radius);font-size:.95rem;transition:background .3s}
+.btn:hover{background:var(--sage-dark)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+.info-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="detail-hero">
+<img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1400&q=80" alt="流動瑜伽">
+<h1>流動瑜伽 Vinyasa Flow</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="info-grid">
+<div class="info-box">
+<div class="label">課程時長</div>
+<div class="value">60 分鐘</div>
+</div>
+<div class="info-box">
+<div class="label">適合程度</div>
+<div class="value">初階至中階</div>
+</div>
+<div class="info-box">
+<div class="label">班級人數</div>
+<div class="value">最多 18 人</div>
+</div>
+<div class="info-box">
+<div class="label">強度</div>
+<div class="value">★★★☆☆</div>
+</div>
+</div>
+
+<div class="content-block">
+<h2>課程介紹</h2>
+<p>流動瑜伽（Vinyasa Flow）是一種以呼吸串連動作的動態練習風格。「Vinyasa」意為「以特定方式放置」，在練習中每一個動作都與呼吸精準配合，創造出如行雲流水般的連續序列。</p>
+<p>在 Zen 瑜伽會館的流動瑜伽課程中，老師會根據不同主題設計每堂課的序列——有時專注於開髖，有時著重後彎或平衡，讓每次練習都充滿新鮮感與探索。</p>
+</div>
+
+<div class="content-block">
+<h2>練習效益</h2>
+<ul>
+<li>提升心肺功能與身體耐力</li>
+<li>增強全身肌肉力量與核心穩定性</li>
+<li>改善身體協調性與空間感知</li>
+<li>培養呼吸與動作的連結意識</li>
+<li>促進血液循環與新陳代謝</li>
+<li>釋放壓力，提升專注力</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h2>適合對象</h2>
+<p>具備基礎瑜伽經驗（至少 5 堂以上），希望在動態練習中挑戰自我、提升體能的練習者。若您喜歡有節奏感、流暢的運動方式，流動瑜伽會是很好的選擇。</p>
+<p>建議初學者先參加哈達瑜伽課程建立基礎後再加入。</p>
+</div>
+
+<div class="content-block">
+<h2>上課準備</h2>
+<ul>
+<li>穿著合身、有彈性的運動服裝</li>
+<li>自備毛巾與水壺（會館提供飲水機）</li>
+<li>建議課前 2 小時避免進食</li>
+<li>瑜伽墊與輔具由會館提供</li>
+<li>課前 10 分鐘抵達，讓身心有緩衝時間</li>
+</ul>
+</div>
+
+<div style="text-align:center;margin-top:40px">
+<a href="schedule.html" class="btn">查看課表</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

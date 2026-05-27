@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="關於黑潮拉麵的常見問題 — 訂位、候位、菜單客製化等疑問一次解答。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}.page-hero h1{font-size:2rem;letter-spacing:2px}
+section{padding:80px 0}
+.faq-group{margin-bottom:48px}
+.faq-group h2{font-size:1.1rem;color:var(--gold);margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border:none}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0}
+.faq-q h3{font-size:.95rem;font-family:'Noto Sans TC',sans-serif;font-weight:500}
+.faq-q .toggle{color:var(--gold);font-size:1.2rem;transition:.3s}
+.faq-item.open .toggle{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:.4s;color:var(--muted);font-size:.88rem}
+.faq-item.open .faq-a{max-height:300px;padding-top:12px}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<div class="page-hero"><p class="jp">よくある質問</p><h1>常見問題</h1></div>
+
+<section>
+<div class="container">
+  <div class="faq-group">
+    <h2>候位與訂位</h2>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>可以電話訂位嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>不行，本店不接受任何形式的預約訂位，一律採現場排隊候位制。建議平日 11:00 前或 17:00 前來排隊可減少等待時間。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>平均等候時間多久？</h3><span class="toggle">+</span></div><div class="faq-a"><p>平日午餐約 15-30 分鐘，假日可能需要 40-60 分鐘。晚餐時段通常 17:30 開門前就會有排隊人潮。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>可以等候時先看菜單嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>可以！排隊時工作人員會發放菜單，您可以先決定好餐點，入座後直接點餐可加快出餐速度。</p></div></div>
+  </div>
+
+  <div class="faq-group">
+    <h2>菜單與餐點</h2>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>可以選擇麵條硬度嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>可以！我們提供三種硬度：硬（カタ）、普通、軟。建議第一次來的客人先選「普通」感受我們麵條原本的口感。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>有素食選項嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>很抱歉，由於我們的湯底全部以豚骨為基底，目前無法提供素食選項。未來會考慮推出植物性湯底。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>可以加麵嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>沾麵可免費加麵一次（從 300g 加至 400g）。拉麵加麵需加 NT$30。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>辣度可以調整嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>地獄辛味噌拉麵的辣度可選：小辣、中辣、大辣、地獄辣。其他拉麵可免費加辣味噌。</p></div></div>
+  </div>
+
+  <div class="faq-group">
+    <h2>用餐規定</h2>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>有用餐時間限制嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>尖峰時段（11:30-13:00、18:00-19:30）用餐時間限 40 分鐘。離峰時段不限時。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>可以帶小孩嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>歡迎！我們提供兒童椅，但目前沒有兒童餐。12 歲以下兒童可與家長共食，不強制點餐。</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h3>可以外帶嗎？</h3><span class="toggle">+</span></div><div class="faq-a"><p>可以，但建議 10 分鐘內食用完畢以維持最佳口感。外帶麵條與湯底會分開裝。外帶不提供加麵服務。</p></div></div>
+  </div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

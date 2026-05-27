@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text)}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:8px}.page-hero p{color:var(--muted)}
+section{padding:60px 0}
+.faq-group{margin-bottom:48px}
+.faq-group h2{font-size:1.4rem;color:var(--gold);margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-item summary{padding:20px 24px;cursor:pointer;color:var(--white);font-weight:400;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:'+';color:var(--gold);font-size:1.2rem;font-weight:700}
+.faq-item[open] summary::after{content:'−'}
+.faq-item .answer{padding:0 24px 20px;color:var(--text);line-height:2;font-size:.9rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:0 24px}.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border);max-width:1100px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>常見問題</h1><p>關於法律諮詢與委託的常見疑問</p></div></section>
+
+<section><div class="container">
+
+<div class="faq-group">
+  <h2>諮詢流程</h2>
+  <details class="faq-item"><summary>如何預約法律諮詢？</summary><div class="answer">您可透過本所網站的聯絡表單、電話（02-2720-8888）或電子郵件（info@zenith-law.com.tw）預約諮詢。我們的行政團隊將於一個工作日內回覆您，並依據您的法律需求安排適當的律師進行初步諮詢。初次諮詢時間通常為三十至六十分鐘。</div></details>
+  <details class="faq-item"><summary>初次諮詢是否收費？</summary><div class="answer">本所提供三十分鐘的免費初次諮詢服務。在此期間，律師將了解您的案件概況，初步評估法律議題，並說明本所可提供的服務方式與預估費用。若您決定委託本所處理，初次諮詢費用將不另收取。</div></details>
+  <details class="faq-item"><summary>諮詢前需要準備哪些資料？</summary><div class="answer">為使諮詢更有效率，建議您事先準備：案件相關的契約或文件影本、事件經過的時間表、對方當事人的基本資訊、以及您希望達成的目標。若涉及訴訟案件，請攜帶已收到的法院文書。資料越完整，律師越能提供精準的法律建議。</div></details>
+</div>
+
+<div class="faq-group">
+  <h2>收費方式</h2>
+  <details class="faq-item"><summary>律師費用如何計算？</summary><div class="answer">本所的收費方式依案件性質而定，主要包括：（一）鐘點費制：按律師實際工作時數計費，費率依律師資歷而有不同，範圍約為每小時新台幣五千至一萬五千元；（二）專案固定費：針對可預見工作量的案件（如公司設立、契約審閱），約定固定服務費用；（三）成功報酬制：部分訴訟案件可採取基本費加成功報酬之方式。具體費用將於初次諮詢後，以書面報價方式提供。</div></details>
+  <details class="faq-item"><summary>是否需要支付預付金？</summary><div class="answer">是的，委託本所處理案件時，通常需要支付預付金（Retainer Fee）。預付金金額依案件複雜度而定，律師費用將從預付金中扣除。當預付金餘額低於一定水位時，我們會通知您補足。案件結束後，未使用之預付金將全額退還。</div></details>
+  <details class="faq-item"><summary>費用是否包含政府規費及第三方費用？</summary><div class="answer">律師費用通常不包含政府規費（如法院裁判費、專利申請規費）、公證費、鑑定費、翻譯費等第三方費用。這些費用將另行計算，並於發生前先行告知客戶。我們會在報價階段盡可能列明可能產生的額外費用項目。</div></details>
+</div>
+
+<div class="faq-group">
+  <h2>案件處理</h2>
+  <details class="faq-item"><summary>案件處理的一般時程為何？</summary><div class="answer">時程因案件類型而異。一般契約審閱約需三至五個工作日；公司設立登記約需二至四週；商標註冊申請至核准約需八至十二個月；民事訴訟一審約需一至二年。我們會在接案時告知預估時程，並在過程中隨時向客戶報告進度。</div></details>
+  <details class="faq-item"><summary>如何追蹤案件進度？</summary><div class="answer">每位客戶都有指定的承辦律師作為主要聯絡窗口。您可透過電話或電子郵件隨時向承辦律師詢問案件進度。對於較大型或長期性的案件，我們會定期（通常為每月或每兩週）提供書面進度報告，並於重要事件發生時即時通知客戶。</div></details>
+  <details class="faq-item"><summary>律師是否會為我的資訊保密？</summary><div class="answer">當然。保密義務是律師最基本的職業倫理。依律師法及律師倫理規範，律師對於因業務知悉或持有之當事人秘密及個人資料，負有嚴格的保密義務。本所亦建立了完善的資訊安全管理制度，確保客戶資料的安全性。未經客戶書面同意，我們絕不會向任何第三方揭露案件相關資訊。</div></details>
+</div>
+
+<div class="faq-group">
+  <h2>一般法律問題</h2>
+  <details class="faq-item"><summary>何時應該尋求法律協助？</summary><div class="answer">建議在以下情況下盡早諮詢律師：簽訂重要契約前、收到律師函或法院文書時、發生商業糾紛時、規劃重大交易（如併購、投資）時、設立公司或變更組織時、面臨智財侵權問題時。事前預防的成本遠低於事後補救，越早諮詢越能有效控制風險。</div></details>
+  <details class="faq-item"><summary>訴訟與仲裁有何不同？</summary><div class="answer">訴訟是向法院提起的正式司法程序，判決具有強制執行力，但程序公開且耗時較長。仲裁是當事人合意將爭議交由仲裁人裁決的替代爭議解決方式，具有保密性高、程序彈性大、可選擇具專業背景之仲裁人等優點，特別適合國際商務爭議。兩者各有優缺，應依個案情況選擇。</div></details>
+  <details class="faq-item"><summary>本所是否處理個人法律事務？</summary><div class="answer">本所主要專注於企業法律服務。對於個人法律事務（如家事案件、刑事案件、消費糾紛等），我們通常不予受理，但可以為您推薦其他專精該領域的律師事務所。若個人法律事務與企業經營相關（如企業主的股權規劃），我們仍可提供服務。</div></details>
+</div>
+
+</div></section>
+
+<footer><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

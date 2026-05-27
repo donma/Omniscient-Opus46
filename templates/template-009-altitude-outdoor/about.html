@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>品牌故事 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}
+.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}
+.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}
+.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:linear-gradient(to bottom,rgba(13,26,15,.5),var(--bg)),url('https://images.unsplash.com/photo-1501554728187-ce583db33af7?w=1920&q=80') center/cover}
+.page-hero h1{font-size:3.5rem;margin-bottom:16px}
+.page-hero h1 span{color:var(--green)}
+.page-hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto}
+
+.section{padding:80px 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+.story img{width:100%;border-radius:var(--radius);height:400px;object-fit:cover}
+.story h2{font-size:2rem;margin-bottom:16px}
+.story h2 span{color:var(--green)}
+.story p{color:var(--muted);margin-bottom:16px}
+
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:48px}
+.value-card{background:var(--card);padding:32px;border-radius:var(--radius);border:1px solid var(--border);text-align:center}
+.value-card .icon{font-size:2.5rem;margin-bottom:16px}
+.value-card h3{margin-bottom:12px;color:var(--green)}
+.value-card p{color:var(--muted);font-size:.9rem}
+
+.timeline{max-width:700px;margin:48px auto 0;position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:40px}
+.timeline-item::before{content:'';position:absolute;left:-30px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green)}
+.timeline-item h4{color:var(--earth);margin-bottom:4px}
+.timeline-item p{color:var(--muted);font-size:.9rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}
+footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .foot-links a{color:var(--muted);font-size:.85rem}
+
+@media(max-width:768px){
+.nav-links{display:none}
+.menu-btn{display:block}
+.story{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">品牌故事</a></li>
+<li><a href="trips.html">探索行程</a></li>
+<li><a href="gear.html">裝備推薦</a></li>
+<li><a href="gallery.html">活動相簿</a></li>
+<li><a href="guides.html">嚮導團隊</a></li>
+<li><a href="safety.html">安全須知</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="openNav()">&#9776;</button>
+</div>
+</nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav">
+<button class="close-btn" onclick="closeNav()">&times;</button>
+<a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a>
+</div>
+
+<section class="page-hero">
+<h1>品牌<span>故事</span></h1>
+<p>從花蓮出發，我們用腳步丈量台灣的每一寸壯闊山河</p>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="story">
+<img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="創辦人登山">
+<div>
+<h2>我們的<span>起點</span></h2>
+<p>2016 年，三位熱愛山林的花蓮青年——阿凱、小魚和阿德——在一次合歡山之旅中萌生了創業的念頭。他們發現，台灣擁有世界級的自然景觀，卻缺少能讓一般人安全、深入體驗的專業服務。</p>
+<p>於是 Altitude 戶外探索誕生了。我們的使命很簡單：讓每個人都能安全地走進山林，感受大自然最純粹的力量。</p>
+</div>
+</div>
+<div class="story">
+<div>
+<h2>我們的<span>使命</span></h2>
+<p>連結人與自然，是我們最核心的信念。我們相信，當人們走入山林、踏入溪流，能找到都市生活中遺失的平靜與力量。</p>
+<p>透過專業嚮導、完善的安全系統和精心設計的行程，我們降低戶外活動的門檻，讓更多人能夠體驗台灣山林之美。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=600&q=80" alt="山林溪流">
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--surface)">
+<div class="container">
+<h2 style="font-size:2rem;text-align:center;margin-bottom:16px">品牌<span style="color:var(--green)">核心價值</span></h2>
+<div class="values">
+<div class="value-card"><div class="icon">🏔️</div><h3>安全至上</h3><p>每趟行程都經過嚴格的風險評估，配備專業救護設備，確保每位旅客平安歸來。</p></div>
+<div class="value-card"><div class="icon">🌿</div><h3>永續共生</h3><p>遵循無痕山林原則，推廣環境教育，讓美景能世代傳承。</p></div>
+<div class="value-card"><div class="icon">🤝</div><h3>在地連結</h3><p>與原住民部落合作，支持在地經濟，尊重山林文化。</p></div>
+<div class="value-card"><div class="icon">⚡</div><h3>突破極限</h3><p>我們鼓勵每個人挑戰自我，在安全的前提下體驗超越日常的冒險。</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 style="font-size:2rem;text-align:center">發展<span style="color:var(--green)">歷程</span></h2>
+<div class="timeline">
+<div class="timeline-item"><h4>2016</h4><p>三位創辦人於花蓮成立 Altitude 戶外探索，首年帶領 50 位旅客完成百岳行程。</p></div>
+<div class="timeline-item"><h4>2018</h4><p>取得交通部觀光局認證，團隊擴展至 8 位專業嚮導。</p></div>
+<div class="timeline-item"><h4>2020</h4><p>推出溯溪與海岸線行程，年度服務人次突破 1000 人。</p></div>
+<div class="timeline-item"><h4>2022</h4><p>獲選花蓮縣優良觀光業者，推出冬季雪訓特別行程。</p></div>
+<div class="timeline-item"><h4>2026</h4><p>累計帶領超過 3000 位旅客安全探索台灣山林，持續擴展行程版圖。</p></div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a>
+<div class="foot-links">
+<a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a>
+</div>
+<p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p>
+</div>
+</footer>
+<script>
+function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}
+function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}
+</script>
+</body>
+</html>

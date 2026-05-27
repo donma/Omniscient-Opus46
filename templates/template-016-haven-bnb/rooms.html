@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>客房介紹 — Haven 山居民宿</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--white:#ffffff;--wood:#8b5e3c;--wood-dark:#6b3f1f;--cream:#f5ece0;--text:#2c231c;--muted:#7a6b5a;--border:#e8ddd0;--green:#7a9a6a;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.4}
+a{color:var(--wood);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--wood-dark);font-weight:700}
+nav .logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--text);font-size:.9rem;transition:color .3s}
+nav ul a:hover{color:var(--wood)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+@media(max-width:768px){nav ul{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;gap:16px;border:1px solid var(--border);border-radius:0 0 0 var(--radius);min-width:200px}nav ul.open{display:flex}.menu-btn{display:block}}
+section{padding:80px 0}
+.page-header{background:var(--cream);padding:60px 0;text-align:center}
+.page-header h1{font-size:2.2rem;color:var(--wood-dark);margin-bottom:8px}
+.page-header p{color:var(--muted)}
+.btn{display:inline-block;padding:12px 28px;background:var(--wood);color:var(--white);border-radius:var(--radius);font-size:.9rem;transition:background .3s}
+.btn:hover{background:var(--wood-dark);color:var(--white)}
+.room-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:32px}
+.room-card:nth-child(even){direction:rtl}
+.room-card:nth-child(even)>*{direction:ltr}
+.room-card img{width:100%;height:100%;object-fit:cover;min-height:300px}
+.room-info{padding:40px}
+.room-info h3{font-size:1.4rem;color:var(--wood-dark);margin-bottom:12px}
+.room-info .price{font-size:1.2rem;color:var(--wood);margin:16px 0;font-weight:400}
+.room-info ul{list-style:none;margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.room-info ul li{font-size:.85rem;color:var(--muted)}
+.room-info ul li::before{content:"✓ ";color:var(--green)}
+@media(max-width:768px){.room-card,.room-card:nth-child(even){grid-template-columns:1fr;direction:ltr}.room-card img{min-height:200px}}
+footer{background:var(--wood-dark);color:var(--cream);padding:48px 0 24px}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+footer h4{font-family:'Libre Baskerville',serif;margin-bottom:16px;font-size:1rem}
+footer p,footer a{color:rgba(245,236,224,.8);font-size:.85rem}
+footer .copy{text-align:center;padding-top:24px;border-top:1px solid rgba(245,236,224,.2);font-size:.8rem;color:rgba(245,236,224,.5)}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Haven<span>山居民宿</span></a>
+<button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於民宿</a></li>
+<li><a href="rooms.html">客房介紹</a></li>
+<li><a href="dining.html">餐飲服務</a></li>
+<li><a href="attractions.html">周邊景點</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="booking.html">訂房資訊</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="page-header">
+<h1>客房介紹</h1>
+<p>四種房型，每間都有獨特的山中風景</p>
+</div>
+
+<section>
+<div class="container">
+<div class="room-card">
+<img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="山嵐雙人房">
+<div class="room-info">
+<h3>山嵐雙人房</h3>
+<p>溫馨舒適的雙人空間，以暖色木質調為主，窗外即是層疊山巒。適合情侶或獨旅的寧靜時光。</p>
+<div class="price">NT$ 3,200 起/晚</div>
+<ul>
+<li>雙人加大床</li>
+<li>獨立衛浴</li>
+<li>山景陽台</li>
+<li>免費WiFi</li>
+<li>暖氣設備</li>
+<li>迎賓茶點</li>
+</ul>
+<a href="booking.html" class="btn">立即預訂</a>
+</div>
+</div>
+
+<div class="room-card">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d82de0e75?w=600&q=80" alt="雲端四人房">
+<div class="room-info">
+<h3>雲端四人房</h3>
+<p>寬敞明亮的空間，設有兩張雙人床，適合三五好友或小家庭一起享受山中度假時光。</p>
+<div class="price">NT$ 5,600 起/晚</div>
+<ul>
+<li>兩張雙人床</li>
+<li>獨立衛浴</li>
+<li>觀景窗</li>
+<li>免費WiFi</li>
+<li>小客廳區</li>
+<li>暖氣設備</li>
+</ul>
+<a href="booking.html" class="btn">立即預訂</a>
+</div>
+</div>
+
+<div class="room-card">
+<img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80" alt="溫馨家庭房">
+<div class="room-info">
+<h3>溫馨家庭房</h3>
+<p>專為親子旅遊設計，備有兒童安全設施，空間寬敞，讓全家人都能安心放鬆。</p>
+<div class="price">NT$ 6,200 起/晚</div>
+<ul>
+<li>一大床＋兩小床</li>
+<li>獨立衛浴（浴缸）</li>
+<li>兒童備品</li>
+<li>遊戲角落</li>
+<li>免費WiFi</li>
+<li>暖氣設備</li>
+</ul>
+<a href="booking.html" class="btn">立即預訂</a>
+</div>
+</div>
+
+<div class="room-card">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="景觀套房">
+<div class="room-info">
+<h3>景觀套房</h3>
+<p>Haven 最引以為傲的房型，270度環景落地窗將整片山景盡收眼底，獨立客廳與按摩浴缸。</p>
+<div class="price">NT$ 6,800 起/晚</div>
+<ul>
+<li>King Size 大床</li>
+<li>按摩浴缸</li>
+<li>270度落地窗</li>
+<li>獨立客廳</li>
+<li>膠囊咖啡機</li>
+<li>高級備品</li>
+</ul>
+<a href="room-detail.html" class="btn">查看詳情</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Haven 山居民宿</h4><p>南投縣仁愛鄉大同村信義巷32號</p></div>
+<div><h4>聯絡方式</h4><p>電話：049-280-1234</p><p>信箱：stay@haven-bnb.tw</p></div>
+<div><h4>入住資訊</h4><p>入住：15:00 後 ｜ 退房：11:00 前</p></div>
+</div>
+<div class="copy">© 2026 Haven 山居民宿 — All Rights Reserved</div>
+</div>
+</footer>
+</body>
+</html>

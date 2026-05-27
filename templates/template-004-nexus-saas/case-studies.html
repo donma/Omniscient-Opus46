@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>客戶案例 — Nexus SaaS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0b1a;--surface:#12122a;--card:#1a1a3a;--primary:#7c5cff;--primary-light:#a78bfa;--accent:#06d6a0;--text:#e8e8f0;--muted:#8888aa;--border:#2a2a4a;--radius:16px;--btn-radius:99px}
+body{font-family:'Inter','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,11,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}.nav-links a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 32px;transition:right .3s;display:flex;flex-direction:column;gap:24px}.mobile-menu.active{right:0}.mobile-menu a{font-size:1.1rem;color:var(--muted)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}}
+.page-hero{padding:140px 0 40px;text-align:center}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+.filters{display:flex;gap:12px;justify-content:center;margin:32px 0;flex-wrap:wrap}
+.filter-btn{padding:8px 20px;border-radius:var(--btn-radius);border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:.85rem;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:var(--primary);border-color:var(--primary);color:#fff}
+.cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:20px 0 100px}
+.case-card{background:rgba(26,26,58,.6);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--radius);padding:36px;transition:transform .2s,box-shadow .2s}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(124,92,255,.15)}
+.case-card .tag{display:inline-block;font-size:.75rem;padding:4px 12px;border-radius:99px;background:rgba(124,92,255,.15);color:var(--primary-light);margin-bottom:16px}
+.case-card h3{font-size:1.3rem;font-weight:600;margin-bottom:8px}
+.case-card .company{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.case-card .metric{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.case-card .metric-label{color:var(--muted);font-size:.85rem;margin-bottom:16px}
+.case-card .link{color:var(--primary-light);font-size:.9rem;font-weight:500}
+@media(max-width:768px){.cases-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--border);padding:60px 0 32px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{color:var(--muted);margin-top:12px;font-size:.9rem}
+.footer-col h4{font-size:.85rem;text-transform:uppercase;color:var(--muted);margin-bottom:16px;letter-spacing:1px}
+.footer-col a{display:block;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.footer-newsletter input{width:100%;padding:10px 16px;border-radius:var(--btn-radius);border:1px solid var(--border);background:var(--card);color:var(--text);margin-bottom:12px;font-size:.9rem}
+.footer-newsletter button{width:100%;padding:10px;border-radius:var(--btn-radius);background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:.9rem}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;padding-top:24px;border-top:1px solid var(--border)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><nav><a href="index.html" class="logo">Nexus</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">產品功能</a></li><li><a href="pricing.html">定價方案</a></li><li><a href="case-studies.html">客戶案例</a></li><li><a href="integrations.html">整合生態系</a></li><li><a href="docs.html">開發者文件</a></li><li><a href="about.html">關於我們</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')">&#9776;</button></nav></header>
+<div class="overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu"><button class="mobile-close" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button><a href="index.html">首頁</a><a href="features.html">產品功能</a><a href="pricing.html">定價方案</a><a href="case-studies.html">客戶案例</a><a href="integrations.html">整合生態系</a><a href="docs.html">開發者文件</a><a href="about.html">關於我們</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero"><div class="container"><h1>客戶案例</h1><p>了解全球頂尖團隊如何透過 Nexus 實現效率突破。</p></div></section>
+
+<div class="container">
+<div class="filters">
+<button class="filter-btn active">全部</button>
+<button class="filter-btn">科技業</button>
+<button class="filter-btn">金融業</button>
+<button class="filter-btn">電商</button>
+<button class="filter-btn">醫療</button>
+</div>
+<div class="cases-grid">
+<div class="case-card">
+<span class="tag">科技業</span>
+<h3>DataFlow 如何提升 40% 團隊產出</h3>
+<p class="company">DataFlow — 數據分析平台 · 120 人團隊</p>
+<div class="metric">+40%</div>
+<p class="metric-label">團隊生產力提升</p>
+<a href="case-study-detail.html" class="link">閱讀完整案例 →</a>
+</div>
+<div class="case-card">
+<span class="tag">金融業</span>
+<h3>FinCore 將專案交付週期縮短 60%</h3>
+<p class="company">FinCore — 金融科技新創 · 85 人團隊</p>
+<div class="metric">-60%</div>
+<p class="metric-label">交付週期縮短</p>
+<a href="case-study-detail.html" class="link">閱讀完整案例 →</a>
+</div>
+<div class="case-card">
+<span class="tag">電商</span>
+<h3>ShopNest 跨部門協作效率翻倍</h3>
+<p class="company">ShopNest — 跨境電商平台 · 200 人團隊</p>
+<div class="metric">2x</div>
+<p class="metric-label">協作效率提升</p>
+<a href="case-study-detail.html" class="link">閱讀完整案例 →</a>
+</div>
+<div class="case-card">
+<span class="tag">醫療</span>
+<h3>MediTech 實現零延遲的研發管理</h3>
+<p class="company">MediTech — 醫療器材研發 · 60 人團隊</p>
+<div class="metric">0</div>
+<p class="metric-label">專案延遲次數</p>
+<a href="case-study-detail.html" class="link">閱讀完整案例 →</a>
+</div>
+</div>
+</div>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo" style="font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Nexus</div><p>AI 驅動的智能協作平台，助力全球團隊高效運作。</p></div><div class="footer-col"><h4>產品</h4><a href="features.html">功能</a><a href="pricing.html">定價</a><a href="integrations.html">整合</a><a href="docs.html">文件</a></div><div class="footer-col"><h4>公司</h4><a href="about.html">關於我們</a><a href="blog.html">部落格</a><a href="careers.html">加入我們</a><a href="contact.html">聯絡</a></div><div class="footer-col"><h4>訂閱電子報</h4><div class="footer-newsletter"><input type="email" placeholder="輸入您的 Email"><button>訂閱</button></div></div></div><div class="footer-bottom">© 2026 Nexus SaaS. All rights reserved. 台北市信義區信義路五段7號</div></div></footer>
+</body>
+</html>

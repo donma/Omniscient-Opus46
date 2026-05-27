@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>酒吧誌 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+section{padding:100px 0}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.25)}
+.page-hero h1{position:relative;z-index:1;font-size:3rem}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.blog-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
+.blog-card:hover{border-color:var(--burgundy)}
+.blog-card img{width:100%;height:240px;object-fit:cover}
+.blog-card .body{padding:30px}
+.blog-card .meta{color:var(--copper);font-size:.8rem;margin-bottom:8px}
+.blog-card h3{font-size:1.3rem;margin-bottom:12px}
+.blog-card h3 a{color:var(--gold)}
+.blog-card p{color:var(--muted);font-size:.9rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.page-hero h1{font-size:2rem}.blog-grid{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=1600" alt="Blog">
+  <h1>酒吧誌</h1>
+</div>
+
+<section>
+  <div class="container">
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=800" alt="威士忌">
+        <div class="body">
+          <div class="meta">2026.11.01 ｜ 烈酒知識</div>
+          <h3><a href="blog-detail.html">威士忌入門：從蘇格蘭到日本</a></h3>
+          <p>從蘇格蘭高地的泥煤煙燻，到日本北海道的清澈水源，一篇帶你走進威士忌的廣闊世界。</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800" alt="經典調酒">
+        <div class="body">
+          <div class="meta">2026.10.15 ｜ 調酒文化</div>
+          <h3><a href="blog-detail.html">五杯你必須知道的經典調酒</a></h3>
+          <p>Old Fashioned、Negroni、Martini⋯⋯這些跨越百年的經典配方為何能歷久不衰？</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800" alt="苦精">
+        <div class="body">
+          <div class="meta">2026.09.28 ｜ 烈酒知識</div>
+          <h3><a href="blog-detail.html">苦精的世界：調酒的隱形魔法</a></h3>
+          <p>只需幾滴就能改變一杯調酒的靈魂，認識這個被低估的調酒材料。</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1574006852726-31d39bfba3f5?w=800" alt="居家調酒">
+        <div class="body">
+          <div class="meta">2026.09.10 ｜ 調酒文化</div>
+          <h3><a href="blog-detail.html">居家調酒入門：你需要的五件工具</a></h3>
+          <p>想在家複製酒吧的魔法？從搖酒器到量酒器，調酒師推薦的必備器具。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

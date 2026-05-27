@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>線上預約 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;margin-bottom:12px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.form-container{max-width:680px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:48px}
+.form-group{margin-bottom:24px}
+.form-group label{display:block;margin-bottom:8px;font-weight:600;font-size:.9rem;color:var(--navy)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:8px;font-size:.95rem;font-family:'Noto Sans TC',sans-serif;background:var(--bg);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--mint-dark)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.form-row{grid-template-columns:1fr}}
+.checkbox-group{display:flex;align-items:center;gap:8px;margin-top:8px}
+.checkbox-group input[type="checkbox"]{width:18px;height:18px;accent-color:var(--mint-dark)}
+.checkbox-group label{margin:0;font-weight:300;font-size:.9rem}
+.btn{display:inline-block;padding:14px 36px;background:var(--mint-dark);color:var(--white);border-radius:var(--radius);font-weight:600;font-family:'Inter',sans-serif;border:none;cursor:pointer;font-size:1rem;width:100%;text-align:center;transition:background .2s}
+.btn:hover{background:var(--navy)}
+.form-note{margin-top:16px;font-size:.85rem;color:var(--muted);text-align:center}
+.info-sidebar{background:var(--light);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:32px;max-width:680px;margin-left:auto;margin-right:auto}
+.info-sidebar h4{margin-bottom:12px;color:var(--mint-dark)}
+.info-sidebar p{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>線上預約</h1><p>填寫以下表單，我們將盡快與您確認預約時間</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="form-container">
+<form onsubmit="event.preventDefault();alert('預約已送出！我們將於一個工作天內與您聯繫確認。')">
+<div class="form-row">
+<div class="form-group">
+<label>姓名 *</label>
+<input type="text" placeholder="請輸入您的姓名" required>
+</div>
+<div class="form-group">
+<label>手機號碼 *</label>
+<input type="tel" placeholder="0912-345-678" required>
+</div>
+</div>
+<div class="form-group">
+<label>電子信箱</label>
+<input type="email" placeholder="your@email.com">
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>希望看診醫師</label>
+<select>
+<option value="">不指定</option>
+<option>陳柏翰 醫師（美學牙科）</option>
+<option>李雅婷 醫師（齒顎矯正）</option>
+<option>張文豪 醫師（植牙專科）</option>
+<option>王心怡 醫師（牙周病科）</option>
+<option>劉育成 醫師（兒童牙科）</option>
+</select>
+</div>
+<div class="form-group">
+<label>診療項目 *</label>
+<select required>
+<option value="">請選擇</option>
+<option>一般牙科（洗牙/補牙/拔牙）</option>
+<option>牙齒美白</option>
+<option>隱形矯正諮詢</option>
+<option>人工植牙諮詢</option>
+<option>根管治療</option>
+<option>牙周病治療</option>
+<option>兒童牙科</option>
+<option>假牙/全瓷冠</option>
+<option>其他</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>希望日期 *</label>
+<input type="date" required>
+</div>
+<div class="form-group">
+<label>希望時段 *</label>
+<select required>
+<option value="">請選擇</option>
+<option>上午 9:00-12:00</option>
+<option>下午 14:00-17:30</option>
+<option>晚間 18:00-21:00</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>症狀描述或備註</label>
+<textarea placeholder="請簡述您的症狀或需求，以便我們為您安排適當的看診時間..."></textarea>
+</div>
+<div class="form-group">
+<div class="checkbox-group">
+<input type="checkbox" id="first-visit">
+<label for="first-visit">這是我第一次到 Ivory 看診（初診）</label>
+</div>
+<div class="checkbox-group" style="margin-top:8px">
+<input type="checkbox" id="agree" required>
+<label for="agree">我同意 Ivory 牙醫診所蒐集上述個人資料用於預約聯繫 *</label>
+</div>
+</div>
+<button type="submit" class="btn">送出預約</button>
+<p class="form-note">送出後我們將於 1 個工作天內以電話或簡訊與您確認。如需緊急就診，請直接來電 (02) 2567-8900。</p>
+</form>
+</div>
+
+<div class="info-sidebar">
+<h4>預約須知</h4>
+<p>• 線上預約為「預約申請」，需經診所確認後才算完成預約</p>
+<p>• 如需取消或更改時間，請於預約時間 24 小時前來電通知</p>
+<p>• 初診請提早 10 分鐘到達填寫病歷資料</p>
+<p>• 請攜帶健保卡，自費項目請準備相關付款方式</p>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

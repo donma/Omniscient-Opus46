@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>課程介紹 — Sprout 小芽幼兒園</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:0.95rem;font-weight:500}.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:2px solid var(--border)}
+.page-hero h1{font-size:2.5rem;margin-bottom:12px}.page-hero p{color:var(--muted);font-size:1.1rem}
+.section{padding:60px 0}
+.programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:32px}
+.program-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);transition:transform 0.3s}
+.program-card:hover{transform:translateY(-4px)}
+.program-card img{width:100%;height:220px;object-fit:cover}
+.program-card-body{padding:28px}
+.program-card-body .badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:0.8rem;font-weight:700;color:var(--white);margin-bottom:12px}
+.program-card:nth-child(1) .badge{background:var(--yellow);color:var(--text)}
+.program-card:nth-child(2) .badge{background:var(--pink)}
+.program-card:nth-child(3) .badge{background:var(--blue)}
+.program-card:nth-child(4) .badge{background:var(--purple)}
+.program-card-body h3{font-size:1.3rem;margin-bottom:8px}
+.program-card-body p{color:var(--muted);font-size:0.9rem;margin-bottom:16px}
+.program-card-body .details{font-size:0.85rem;color:var(--muted)}
+.program-card-body .details span{display:block;margin-bottom:4px}
+.btn{display:inline-block;padding:10px 24px;border-radius:50px;font-weight:700;font-size:0.9rem;background:var(--pink);color:var(--white);margin-top:12px;transition:transform 0.3s}
+.btn:hover{transform:translateY(-2px)}
+.schedule{margin-top:40px}
+.schedule h2{margin-bottom:24px}
+.schedule-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid var(--border)}
+.schedule-table th,.schedule-table td{padding:14px 20px;text-align:left;font-size:0.9rem}
+.schedule-table th{background:var(--blue);color:var(--white);font-family:'Fredoka One',cursive}
+.schedule-table tr:nth-child(even){background:rgba(78,205,196,0.05)}
+.schedule-table td:first-child{font-weight:700;color:var(--blue)}
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}footer a{color:rgba(255,255,255,0.8)}footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s}
+.mobile-menu.active{right:0}.mobile-menu ul{list-style:none}.mobile-menu li{margin-bottom:20px}.mobile-menu a{font-size:1.1rem}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:block}.programs-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.schedule-table{font-size:0.8rem}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-toggle" onclick="openMenu()">☰</button></div></nav>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+<div class="container">
+<h1>課程介紹 📚</h1>
+<p>依據不同年齡發展需求，為孩子設計最適合的學習旅程</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="programs-grid">
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=600&h=220&fit=crop" alt="幼幼班">
+<div class="program-card-body">
+<span class="badge">2–3 歲</span>
+<h3>幼幼班 Seedling</h3>
+<p>以安全感建立為核心，透過感官探索和親密互動，幫助孩子順利適應團體生活，發展基礎動作與語言能力。</p>
+<div class="details">
+<span>👶 師生比 1:4</span>
+<span>🕐 上午班 8:30–12:00 / 全日班 8:30–16:00</span>
+<span>👥 每班12人</span>
+</div>
+</div>
+</div>
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=220&fit=crop" alt="小班">
+<div class="program-card-body">
+<span class="badge">3–4 歲</span>
+<h3>小班 Sprout</h3>
+<p>語言爆發期！透過豐富的故事、歌謠和對話，大量發展中英文口語能力，同時培養基本社交技巧與生活自理能力。</p>
+<div class="details">
+<span>👶 師生比 1:6</span>
+<span>🕐 全日班 8:30–16:00</span>
+<span>👥 每班15人</span>
+</div>
+</div>
+</div>
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600&h=220&fit=crop" alt="中班">
+<div class="program-card-body">
+<span class="badge">4–5 歲</span>
+<h3>中班 Bloom</h3>
+<p>探索與創造的黃金期！以主題式教學引導孩子深入觀察、提問與表達，發展批判性思考和團隊合作能力。</p>
+<div class="details">
+<span>👶 師生比 1:8</span>
+<span>🕐 全日班 8:30–16:00</span>
+<span>👥 每班18人</span>
+</div>
+<a href="program-detail.html" class="btn">查看詳細課程</a>
+</div>
+</div>
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=220&fit=crop" alt="大班">
+<div class="program-card-body">
+<span class="badge">5–6 歲</span>
+<h3>大班 Blossom</h3>
+<p>為小學做好準備！在維持遊戲精神的同時，逐步建立閱讀、書寫與數學基礎，培養獨立學習與領導能力。</p>
+<div class="details">
+<span>👶 師生比 1:8</span>
+<span>🕐 全日班 8:30–16:00</span>
+<span>👥 每班20人</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="schedule">
+<h2>一日作息參考</h2>
+<table class="schedule-table">
+<thead><tr><th>時間</th><th>活動內容</th><th>說明</th></tr></thead>
+<tbody>
+<tr><td>08:30</td><td>入園 / 自由探索</td><td>溫暖迎接，自選角落活動</td></tr>
+<tr><td>09:00</td><td>晨圈時光</td><td>歌謠、律動、今日計畫分享</td></tr>
+<tr><td>09:30</td><td>主題學習</td><td>中英文主題探究活動</td></tr>
+<tr><td>10:30</td><td>點心時間</td><td>健康有機點心</td></tr>
+<tr><td>10:50</td><td>戶外活動</td><td>體能遊戲、自然探索</td></tr>
+<tr><td>11:40</td><td>繪本/故事</td><td>中英文繪本共讀</td></tr>
+<tr><td>12:00</td><td>午餐</td><td>營養均衡餐點</td></tr>
+<tr><td>12:40</td><td>午休</td><td>安靜休息時間</td></tr>
+<tr><td>14:30</td><td>下午活動</td><td>美術/音樂/體能等專科課程</td></tr>
+<tr><td>15:30</td><td>下午點心</td><td>水果與點心</td></tr>
+<tr><td>16:00</td><td>放學</td><td>回顧今日、溫馨道別</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Sprout 小芽幼兒園</h4><p>台北市士林區天母西路50號</p><p>電話：(02) 2871-5678</p><p>信箱：hello@sprout-kindergarten.tw</p></div>
+<div><h4>快速連結</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>入學資訊</h4><ul><li><a href="faq.html">常見問題</a></li><li><a href="parents.html">家長手冊</a></li><li><a href="events.html">活動行事曆</a></li><li><a href="contact.html">預約參觀</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

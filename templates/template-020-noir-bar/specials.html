@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本月特調 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+section{padding:100px 0}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.25)}
+.page-hero h1{position:relative;z-index:1;font-size:3rem}
+.special-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--card);border:1px solid var(--border);margin-bottom:40px;overflow:hidden}
+.special-card img{width:100%;height:100%;min-height:350px;object-fit:cover}
+.special-card .info{padding:40px;display:flex;flex-direction:column;justify-content:center}
+.special-card h3{font-size:1.8rem;margin-bottom:8px}
+.special-card .season{color:var(--copper);font-size:.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.special-card p{color:var(--muted);margin-bottom:16px}
+.special-card .price{color:var(--gold);font-size:1.5rem;font-family:'Bodoni Moda',serif;font-style:italic}
+.bartender-pick{background:var(--surface);border:1px solid var(--border);padding:40px;text-align:center;margin-top:60px}
+.bartender-pick h2{margin-bottom:16px}
+.bartender-pick p{color:var(--muted);max-width:600px;margin:0 auto}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.page-hero h1{font-size:2rem}.special-card{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1563223771-5fe4038fbfc9?w=1600" alt="Seasonal cocktails">
+  <h1>本月特調</h1>
+</div>
+
+<section>
+  <div class="container">
+    <p style="text-align:center;color:var(--muted);margin-bottom:60px;font-size:1.1rem">每月由調酒師團隊以當季食材創作限定調酒，售完為止。</p>
+
+    <div class="special-card">
+      <img src="https://images.unsplash.com/photo-1587223962930-cb7f31384c19?w=800" alt="秋日物語">
+      <div class="info">
+        <div class="season">十一月限定 · 秋季食材</div>
+        <h3>秋日物語</h3>
+        <p>以台灣本土柿子釀製的糖漿為核心，搭配陳年蘭姆酒的圓潤口感，點綴肉桂與丁香的溫暖香氣。杯緣以楓糖鹽圈裝飾，是一杯能喝到季節轉換的調酒。</p>
+        <p><strong>食材：</strong>陳年蘭姆酒 · 柿子糖漿 · 肉桂 · 丁香 · 楓糖鹽</p>
+        <div class="price">NT$520</div>
+      </div>
+    </div>
+
+    <div class="special-card">
+      <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=800" alt="霧中花">
+      <div class="info">
+        <div class="season">十一月限定 · 花卉系列</div>
+        <h3>霧中花</h3>
+        <p>以台灣高山茶（阿里山金萱）冷泡浸漬琴酒為基底，加入桂花蜜與新鮮柚子汁，最後以蛋白打出綿密泡沫。淡雅的花香在煙霧中若隱若現。</p>
+        <p><strong>食材：</strong>金萱茶浸漬琴酒 · 桂花蜜 · 柚子汁 · 蛋白</p>
+        <div class="price">NT$480</div>
+      </div>
+    </div>
+
+    <div class="special-card">
+      <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?w=800" alt="黑森林">
+      <div class="info">
+        <div class="season">十一月限定 · 調酒師挑戰</div>
+        <h3>黑森林</h3>
+        <p>靈感來自經典黑森林蛋糕，以櫻桃白蘭地為主體，混合可可苦精與鮮奶油，底部沉澱的櫻桃果醬如同森林地表的落葉。甜美中帶著一絲神秘的苦韻。</p>
+        <p><strong>食材：</strong>櫻桃白蘭地 · 可可苦精 · 鮮奶油 · 櫻桃果醬</p>
+        <div class="price">NT$500</div>
+      </div>
+    </div>
+
+    <div class="bartender-pick">
+      <h2>調酒師私藏推薦</h2>
+      <p>本月由首席調酒師陳昱翰推薦：「如果你今晚只喝一杯，我會推薦『秋日物語』。柿子的甜美配上蘭姆酒的深度，是這個季節最完美的搭配。」</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

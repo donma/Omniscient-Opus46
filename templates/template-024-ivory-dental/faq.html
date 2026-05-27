@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;margin-bottom:12px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;overflow:hidden}
+.faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Inter','Noto Sans TC',sans-serif;color:var(--navy)}
+.faq-question::after{content:'+';font-size:1.4rem;color:var(--mint-dark);transition:transform .2s}
+.faq-item.active .faq-question::after{content:'−'}
+.faq-answer{padding:0 24px;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.faq-item.active .faq-answer{max-height:300px;padding:0 24px 20px}
+.faq-answer p{color:var(--muted);font-size:.9rem}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>常見問題</h1><p>關於就診與治療的常見疑問解答</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="faq-list">
+<div class="faq-item active">
+<div class="faq-question" onclick="toggleFaq(this)">看牙會痛嗎？可以打麻藥嗎？</div>
+<div class="faq-answer"><p>現代牙科治療搭配局部麻醉，大多數治療過程是無痛的。我們使用電腦控制無痛注射系統，連打麻藥都幾乎感覺不到。對於特別緊張的患者，也可選擇舒眠鎮靜治療。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">哪些項目有健保給付？</div>
+<div class="faq-answer"><p>健保給付項目包含：每半年一次洗牙、一般補牙、根管治療（非顯微）、拔牙等。美白、矯正、植牙、全瓷冠、陶瓷貼片等屬自費項目。初診時醫師會詳細說明各項費用。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">牙齒突然很痛怎麼辦？有急診嗎？</div>
+<div class="faq-answer"><p>若在門診時間內，請直接來電預約緊急看診，我們會盡快安排。非門診時間可撥打急診專線 (02) 2567-8901 轉接值班醫師。在就醫前，可先服用一般止痛藥緩解疼痛，避免熱敷患處。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">小朋友幾歲可以開始看牙？</div>
+<div class="faq-answer"><p>建議在長出第一顆牙齒後（約6個月大），或最遲在1歲前帶來做第一次口腔檢查。及早建立看牙習慣，可以預防蛀牙並讓孩子不畏懼看牙。我們的兒牙專科劉醫師非常有耐心，能讓孩子在輕鬆的氛圍下完成治療。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">牙齒美白安全嗎？會傷害牙齒嗎？</div>
+<div class="faq-answer"><p>在合格牙醫師操作下，牙齒美白是安全的。使用的美白藥劑經過衛福部核准，不會傷害琺瑯質結構。少數患者可能出現暫時性敏感，通常在1-2天內緩解。建議避免自行購買來路不明的美白產品。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">隱形矯正需要多久？需要每天戴嗎？</div>
+<div class="faq-answer"><p>隱形矯正療程通常為 6 個月至 2 年，視牙齒複雜度而定。牙套需每天配戴 20-22 小時，僅在吃飯和刷牙時取下。每 1-2 週更換一副新牙套，每 6-8 週回診一次。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">植牙的成功率高嗎？能用多久？</div>
+<div class="faq-answer"><p>現代植牙的成功率超過 95%。在良好的口腔清潔維護下，植牙可以使用 20 年以上甚至終身。我們使用國際知名品牌植體（Nobel Biocare），搭配 3D 電腦導引手術，確保精確與安全。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">自費項目可以分期付款嗎？</div>
+<div class="faq-answer"><p>可以的。自費金額達 NT$30,000 以上，可選擇信用卡 3 期、6 期或 12 期零利率分期。部分高額療程（如全口重建）也可與診所商議客製化分期方案。</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>
+function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}
+function toggleFaq(el){const item=el.parentElement;item.classList.toggle('active')}
+</script>
+</body>
+</html>

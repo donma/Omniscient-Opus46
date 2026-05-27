@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom 花藝工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fdf8f5;--white:#ffffff;--rose:#e89bae;--rose-light:#fce8ee;--sage:#a8c5a0;--text:#3a2d2d;--muted:#8a7070;--border:#f0dede;--lavender:#d4c5e8;--radius:30px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,155,174,0.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+.nav-links{display:flex;gap:24px;font-size:0.9rem}
+.nav-links a:hover{color:var(--rose)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+
+/* Hero */
+.hero{position:relative;height:85vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1400') center/cover;filter:brightness(0.9)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(253,248,245,0.85),rgba(252,232,238,0.7))}
+.hero-content{position:relative;z-index:2;max-width:600px;padding:0 48px}
+.hero h1{font-size:3.5rem;margin-bottom:16px;color:var(--text)}
+.hero p{font-size:1.1rem;color:var(--muted);margin-bottom:32px}
+.btn{display:inline-block;padding:14px 36px;background:var(--rose);color:var(--white);border-radius:var(--radius);font-size:0.95rem;transition:all 0.3s}
+.btn:hover{background:var(--sage);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1.5px solid var(--rose);color:var(--rose)}
+.btn-outline:hover{background:var(--rose);color:var(--white)}
+
+/* Blob decorations */
+.blob{position:absolute;border-radius:50% 40% 60% 50%;opacity:0.3;pointer-events:none}
+.blob-rose{background:var(--rose-light);width:300px;height:300px;top:-50px;right:-80px}
+.blob-sage{background:var(--sage);width:200px;height:200px;bottom:-40px;left:-60px;opacity:0.15}
+.blob-lavender{background:var(--lavender);width:250px;height:250px;top:50%;right:10%;opacity:0.2}
+
+/* Sections */
+section{padding:80px 0;position:relative;overflow:hidden}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:2.2rem;margin-bottom:8px}
+.section-title p{color:var(--muted)}
+
+/* Featured Bouquets */
+.bouquets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.bouquet-card{background:var(--white);border-radius:var(--radius);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s}
+.bouquet-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(232,155,174,0.15)}
+.bouquet-card img{height:240px;width:100%;object-fit:cover}
+.bouquet-card .info{padding:20px}
+.bouquet-card h3{font-size:1.1rem;margin-bottom:6px}
+.bouquet-card .price{color:var(--rose);font-weight:500}
+
+/* Courses Preview */
+.courses-preview{background:var(--rose-light);border-radius:var(--radius);padding:48px;display:flex;align-items:center;gap:48px}
+.courses-preview img{width:50%;border-radius:var(--radius);height:350px;object-fit:cover}
+.courses-preview .content{flex:1}
+.courses-preview h2{font-size:2rem;margin-bottom:16px}
+.courses-preview p{color:var(--muted);margin-bottom:24px}
+
+/* Testimonials */
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial{background:var(--white);padding:32px;border-radius:var(--radius);border:1px solid var(--border)}
+.testimonial p{font-style:italic;margin-bottom:16px;color:var(--muted)}
+.testimonial .author{font-weight:500;color:var(--rose)}
+
+/* Footer */
+footer{background:var(--white);padding:48px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:1rem;margin-bottom:12px;color:var(--rose)}
+.footer-col p,.footer-col a{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:24px}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;border-radius:0 0 var(--radius) var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+  .nav-links.active{display:flex}
+  .menu-toggle{display:block}
+  .hero h1{font-size:2.2rem}
+  .bouquets-grid{grid-template-columns:repeat(2,1fr)}
+  .courses-preview{flex-direction:column}
+  .courses-preview img{width:100%}
+  .testimonials{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Bloom 花藝</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html">首頁</a>
+<a href="about.html">關於我們</a>
+<a href="portfolio.html">花藝作品</a>
+<a href="order.html">花束訂購</a>
+<a href="weddings.html">婚禮花藝</a>
+<a href="courses.html">花藝課程</a>
+<a href="blog.html">花語日記</a>
+<a href="contact.html">聯絡我們</a>
+</div>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1>用花藝，訴說生活的美好</h1>
+<p>Bloom 花藝工作室位於台北大安區，以自然系花藝設計，為您的每個重要時刻增添溫柔色彩。</p>
+<a href="order.html" class="btn">探索花束</a>
+<a href="courses.html" class="btn btn-outline" style="margin-left:12px">花藝課程</a>
+</div>
+<div class="blob blob-lavender"></div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>人氣花束推薦</h2>
+<p>每一束花，都是獨一無二的心意</p>
+</div>
+<div class="bouquets-grid">
+<a href="order-detail.html" class="bouquet-card">
+<img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600" alt="春日花語">
+<div class="info"><h3>春日花語</h3><p class="price">NT$1,800</p></div>
+</a>
+<div class="bouquet-card">
+<img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600" alt="粉黛佳人">
+<div class="info"><h3>粉黛佳人</h3><p class="price">NT$2,200</p></div>
+</div>
+<div class="bouquet-card">
+<img src="https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=600" alt="森林幻夢">
+<div class="info"><h3>森林幻夢</h3><p class="price">NT$2,800</p></div>
+</div>
+<div class="bouquet-card">
+<img src="https://images.unsplash.com/photo-1471696035578-3d8c78d99571?w=600" alt="經典永恆">
+<div class="info"><h3>經典永恆</h3><p class="price">NT$3,500</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="container">
+<div class="courses-preview">
+<img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=700" alt="花藝課程">
+<div class="content">
+<h2>花藝課程體驗</h2>
+<p>從零開始學習花藝，在花與綠之間找到屬於自己的療癒時光。我們提供基礎花藝、手綁花束、乾燥花等多元課程，適合所有程度的花藝愛好者。</p>
+<a href="courses.html" class="btn">了解課程</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container" style="position:relative">
+<div class="blob blob-rose"></div>
+<div class="blob blob-sage"></div>
+<div class="section-title">
+<h2>學員好評</h2>
+<p>來自每一位花藝愛好者的真心回饋</p>
+</div>
+<div class="testimonials">
+<div class="testimonial">
+<p>「在 Bloom 上了第一堂花藝課後就愛上了，老師很有耐心，作品比想像中美太多！」</p>
+<span class="author">— 林小姐</span>
+</div>
+<div class="testimonial">
+<p>「婚禮花藝完全超出預期，每個細節都是我夢想中的樣子，感謝 Bloom 團隊！」</p>
+<span class="author">— 陳太太</span>
+</div>
+<div class="testimonial">
+<p>「每次收到 Bloom 的花束都好感動，包裝精美、花材新鮮，送禮首選！」</p>
+<span class="author">— 王先生</span>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>Bloom 花藝工作室</h4>
+<p>以花為語，傳遞每一份心意與美好。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="about.html">關於我們</a>
+<a href="portfolio.html">花藝作品</a>
+<a href="order.html">花束訂購</a>
+<a href="courses.html">花藝課程</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市大安區瑞安街 128 號 1 樓</p>
+<p>02-2700-1234</p>
+<p>hello@bloom-floral.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週二至週六 10:00–19:00</p>
+<p>週日 11:00–17:00</p>
+<p>週一公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Bloom 花藝工作室 All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

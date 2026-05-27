@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lookbook SS24 — Maison Noir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+.lookbook-hero{margin-top:70px;height:calc(100vh - 70px);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lookbook-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lookbook-hero .overlay-text{position:relative;z-index:2;text-align:center;color:var(--white)}
+.lookbook-hero .overlay-text .label{font-size:.72rem;letter-spacing:6px;text-transform:uppercase;margin-bottom:12px;opacity:.8}
+.lookbook-hero .overlay-text h1{font-size:clamp(3rem,6vw,5rem);font-style:italic}
+.lookbook-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.2)}
+.lookbook-hero .overlay-text{z-index:3}
+
+.look{position:relative;overflow:hidden}
+.look img{width:100%;height:100vh;object-fit:cover}
+@media(max-width:768px){.look img{height:70vh}}
+.look .look-info{position:absolute;bottom:60px;left:60px;color:var(--white)}
+@media(max-width:768px){.look .look-info{bottom:32px;left:24px}}
+.look .look-info .num{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;opacity:.7;margin-bottom:4px}
+.look .look-info h2{font-size:1.8rem;font-style:italic}
+
+.look-split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
+@media(max-width:768px){.look-split{grid-template-columns:1fr;min-height:auto}}
+.look-split img{width:100%;height:100%;object-fit:cover}
+@media(max-width:768px){.look-split img{height:60vh}}
+
+.lookbook-credits{padding:80px 0;text-align:center;background:var(--offwhite)}
+.lookbook-credits p{font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.lookbook-credits h3{font-size:1.4rem;font-style:italic;margin-bottom:24px}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;padding:0 24px}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666;max-width:1200px;margin:0 auto;padding-left:40px;padding-right:40px}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="lookbook-hero">
+<img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1400&q=80" alt="SS24 Lookbook">
+<div class="overlay-text">
+<p class="label">Spring / Summer 2026</p>
+<h1>Quiet Power</h1>
+</div>
+</div>
+
+<div class="look">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1400&q=80" alt="Look 1">
+<div class="look-info"><p class="num">Look 01</p><h2>亞麻寬肩西裝外套</h2></div>
+</div>
+
+<div class="look-split">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80" alt="Look 2">
+<img src="https://images.unsplash.com/photo-1495385794356-15371f348c31?w=800&q=80" alt="Look 3">
+</div>
+
+<div class="look">
+<img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1400&q=80" alt="Look 4">
+<div class="look-info"><p class="num">Look 04</p><h2>真絲垂墜連身裙</h2></div>
+</div>
+
+<div class="look-split">
+<img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&q=80" alt="Look 5">
+<img src="https://images.unsplash.com/photo-1581044777550-4cfa60707998?w=800&q=80" alt="Look 6">
+</div>
+
+<div class="look">
+<img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=1400&q=80" alt="Look 7">
+<div class="look-info"><p class="num">Look 07</p><h2>喀什米爾針織套裝</h2></div>
+</div>
+
+<div class="look-split">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Look 8">
+<img src="https://images.unsplash.com/photo-1558171814-2e52ef955be0?w=800&q=80" alt="Look 9">
+</div>
+
+<div class="lookbook-credits">
+<h3>Credits</h3>
+<p>攝影 Photography — 王志明</p>
+<p>造型 Styling — 陳雅芳</p>
+<p>模特兒 Model — Lin Wei @ Storm Models</p>
+<p>妝髮 Hair & Makeup — 張筱涵</p>
+<p>拍攝地點 Location — 台北華山 1914 文創園區</p>
+</div>
+
+<footer class="site-footer">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

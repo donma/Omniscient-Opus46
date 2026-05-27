@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>珠寶保養 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;background:var(--surface);border-bottom:1px solid var(--border)}
+.page-hero-content{text-align:center}.page-hero-content h1{font-size:2.5rem;margin-bottom:12px}.page-hero-content p{color:var(--muted);letter-spacing:0.2em;font-size:0.9rem}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+
+.care-section{max-width:800px;margin:0 auto}
+.care-category{margin-bottom:80px}
+.care-category h2{font-size:1.5rem;margin-bottom:8px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.care-category .en{color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.15em;margin-bottom:24px}
+.care-category ul{list-style:none}
+.care-category ul li{padding:16px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.9rem;padding-left:20px;position:relative}
+.care-category ul li::before{content:'';position:absolute;left:0;top:24px;width:6px;height:6px;background:var(--gold)}
+
+.care-note{background:var(--card);border:1px solid var(--border);padding:48px;text-align:center;margin-top:60px}
+.care-note h3{font-size:1.1rem;margin-bottom:16px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.care-note p{color:var(--muted);font-size:0.9rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+  <div class="page-hero-content"><h1>珠寶保養</h1><div class="divider"></div><p>JEWELRY CARE</p></div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="care-section">
+      <div class="care-category">
+        <h2>鑽石與寶石</h2>
+        <div class="en">DIAMONDS & GEMSTONES</div>
+        <ul>
+          <li>使用溫水加中性洗碗精浸泡10分鐘，以軟毛牙刷輕輕刷洗，再用清水沖淨並以軟布擦乾</li>
+          <li>避免接觸香水、髮膠、化妝品等化學物質，建議最後佩戴、最先摘除</li>
+          <li>鑽石雖硬度極高，但仍可能因撞擊而產生裂紋，請避免劇烈碰撞</li>
+          <li>祖母綠、蛋白石等較脆弱的寶石，切勿使用超音波清洗機</li>
+          <li>建議每半年回店進行一次專業清潔與爪鑲檢查</li>
+        </ul>
+      </div>
+      <div class="care-category">
+        <h2>珍珠</h2>
+        <div class="en">PEARLS</div>
+        <ul>
+          <li>珍珠極為嬌貴，佩戴後請用柔軟的麂皮布輕輕擦拭，去除汗水與油脂</li>
+          <li>嚴禁接觸任何酸性物質、香水與清潔劑</li>
+          <li>珍珠項鍊建議每1-2年重新穿線，以防線材老化斷裂</li>
+          <li>儲存時以單獨的軟布袋包裹，避免與其他珠寶摩擦</li>
+          <li>避免長時間日曬或高溫環境，以免珍珠脫水變質</li>
+        </ul>
+      </div>
+      <div class="care-category">
+        <h2>貴金屬</h2>
+        <div class="en">PRECIOUS METALS</div>
+        <ul>
+          <li>黃金與鉑金較穩定，日常以軟布擦拭即可維持光澤</li>
+          <li>白金表面的電鍍層會隨時間磨損，建議每年回店重新電鍍</li>
+          <li>銀飾容易氧化變黑，可使用專用拭銀布擦拭恢復光澤</li>
+          <li>游泳、泡溫泉前請務必取下所有珠寶，氯和硫磺會腐蝕金屬</li>
+        </ul>
+      </div>
+      <div class="care-category">
+        <h2>收納建議</h2>
+        <div class="en">STORAGE</div>
+        <ul>
+          <li>每件珠寶應獨立收納於柔軟的首飾盒格層中，避免互相碰撞刮傷</li>
+          <li>收納環境應保持乾燥，可放置乾燥劑防止潮氣侵蝕</li>
+          <li>項鍊應平放或懸掛，避免打結變形</li>
+          <li>長期不佩戴的珠寶，建議以夾鏈袋密封並放入原廠收藏盒保存</li>
+        </ul>
+      </div>
+      <div class="care-note">
+        <h3>專業保養服務</h3>
+        <p>Sapphire 珠寶為所有品牌作品提供終身免費清潔與基礎保養服務。<br>如需進階維修或改圈等服務，歡迎預約回店諮詢。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}</script>
+</body>
+</html>

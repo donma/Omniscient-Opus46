@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>旅客評價 — Haven 山居民宿</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--white:#ffffff;--wood:#8b5e3c;--wood-dark:#6b3f1f;--cream:#f5ece0;--text:#2c231c;--muted:#7a6b5a;--border:#e8ddd0;--green:#7a9a6a;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.4}
+a{color:var(--wood);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--wood-dark);font-weight:700}
+nav .logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--text);font-size:.9rem;transition:color .3s}
+nav ul a:hover{color:var(--wood)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+@media(max-width:768px){nav ul{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;gap:16px;border:1px solid var(--border);border-radius:0 0 0 var(--radius);min-width:200px}nav ul.open{display:flex}.menu-btn{display:block}}
+section{padding:80px 0}
+.page-header{background:var(--cream);padding:60px 0;text-align:center}
+.page-header h1{font-size:2.2rem;color:var(--wood-dark);margin-bottom:8px}
+.page-header p{color:var(--muted)}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:768px){.reviews-grid{grid-template-columns:1fr}}
+.review{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.review .stars{color:#e6a817;margin-bottom:12px;font-size:1.1rem}
+.review p{margin-bottom:16px;font-size:.95rem}
+.review .meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted)}
+.review .meta .room{background:var(--cream);padding:2px 10px;border-radius:10px}
+.avg-score{text-align:center;margin-bottom:48px}
+.avg-score .big{font-size:3rem;color:var(--wood-dark);font-family:'Libre Baskerville',serif}
+.avg-score p{color:var(--muted)}
+footer{background:var(--wood-dark);color:var(--cream);padding:48px 0 24px}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+footer h4{font-family:'Libre Baskerville',serif;margin-bottom:16px;font-size:1rem}
+footer p,footer a{color:rgba(245,236,224,.8);font-size:.85rem}
+footer .copy{text-align:center;padding-top:24px;border-top:1px solid rgba(245,236,224,.2);font-size:.8rem;color:rgba(245,236,224,.5)}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Haven<span>山居民宿</span></a>
+<button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於民宿</a></li>
+<li><a href="rooms.html">客房介紹</a></li>
+<li><a href="dining.html">餐飲服務</a></li>
+<li><a href="attractions.html">周邊景點</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="booking.html">訂房資訊</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="page-header">
+<h1>旅客評價</h1>
+<p>聽聽來自各地旅人的真實回饋</p>
+</div>
+
+<section>
+<div class="container">
+<div class="avg-score">
+<div class="big">4.9</div>
+<p>⭐⭐⭐⭐⭐ 平均評分（共 126 則評價）</p>
+</div>
+
+<div class="reviews-grid">
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>一打開房門就被窗外的雲海震撼到，完全捨不得離開房間。早餐更是驚艷，每一道都看得出用心。下次一定要帶家人再來！</p>
+<div class="meta"><span>小雅 — 台北</span><span>2026年3月</span><span class="room">景觀套房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>民宿主人超級親切，像老朋友一樣。推薦的合歡山日出路線太棒了，凌晨四點出發完全值得。房間暖氣很給力，山上的夜晚完全不冷。</p>
+<div class="meta"><span>Kevin — 新竹</span><span>2026年2月</span><span class="room">山嵐雙人房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>帶兩個小朋友來住家庭房，空間很大孩子玩得很開心。兒童備品齊全不用自己帶一堆東西上山，太貼心了。下午茶的蛋糕小孩搶著吃！</p>
+<div class="meta"><span>美玲一家 — 台中</span><span>2026年1月</span><span class="room">溫馨家庭房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★☆</div>
+<p>環境很棒，早餐超好吃。唯一小建議是停車場到大門的路稍微陡了一點，下雨天要小心。整體來說非常推薦，CP值很高。</p>
+<div class="meta"><span>阿文 — 高雄</span><span>2023年12月</span><span class="room">雲端四人房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>這是我住過景觀最棒的民宿，沒有之一。270度的落地窗不是噱頭，是真的能看到整片山脈。按摩浴缸泡著看星星，人生巔峰。</p>
+<div class="meta"><span>Jess — 桃園</span><span>2026年4月</span><span class="room">景觀套房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>連續三年的結婚紀念日都來Haven度過，每次來都有不同的驚喜。小惠姊的料理越來越厲害，今年的法式吐司太逆天了。</p>
+<div class="meta"><span>品蓉與志明 — 台南</span><span>2026年5月</span><span class="room">景觀套房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>一個人的輕旅行選擇Haven完全正確。安靜、舒適、不被打擾。公共空間的書架有很多好書，坐在壁爐旁看書喝茶，時間過得特別慢。</p>
+<div class="meta"><span>心怡 — 台北</span><span>2026年3月</span><span class="room">山嵐雙人房</span></div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>日本來的我們，被台灣的民宿水準驚艷到了。房間乾淨程度和服務品質完全不輸日本旅館。阿勝桑的中英日文都很流利，溝通完全沒問題。</p>
+<div class="meta"><span>田中夫婦 — 東京</span><span>2026年4月</span><span class="room">雲端四人房</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Haven 山居民宿</h4><p>南投縣仁愛鄉大同村信義巷32號</p></div>
+<div><h4>聯絡方式</h4><p>電話：049-280-1234</p><p>信箱：stay@haven-bnb.tw</p></div>
+<div><h4>入住資訊</h4><p>入住：15:00 後 ｜ 退房：11:00 前</p></div>
+</div>
+<div class="copy">© 2026 Haven 山居民宿 — All Rights Reserved</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>典藏作品 — Canvas 當代藝廊</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--offwhite:#f9f9f7;--text:#111111;--muted:#777777;--accent:#111111;--border:#e5e5e5;--hover:#333333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.02em}
+a{color:var(--text);text-decoration:none}
+img{display:block;width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-0.03em}
+.logo span{font-weight:400;margin-left:4px;font-size:14px}
+nav.desktop{display:flex;gap:28px}
+nav.desktop a{font-size:13px;color:var(--muted);transition:color .2s}
+nav.desktop a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:20px;height:1.5px;background:var(--text);margin:5px 0}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--bg);z-index:200;padding:80px 32px;transition:left .3s ease;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}
+.mobile-nav a{display:block;font-size:16px;padding:12px 0;border-bottom:1px solid var(--border);color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;display:none}
+.overlay.active{display:block}
+.close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:24px;cursor:pointer}
+.meta{font-family:'Space Grotesk',monospace;font-size:12px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.page-header{margin-top:60px;padding:80px 0 40px;border-bottom:1px solid var(--border)}
+.page-header h1{font-size:clamp(28px,4vw,42px)}
+section{padding:80px 0}
+.masonry{columns:3;column-gap:24px}
+.masonry .item{break-inside:avoid;margin-bottom:24px;cursor:pointer}
+.masonry .item img{margin-bottom:10px;transition:opacity .3s}
+.masonry .item:hover img{opacity:.85}
+.masonry .item h4{font-size:14px;margin-bottom:2px}
+.masonry .item p{font-size:11px;color:var(--muted);font-family:'Space Grotesk',monospace;line-height:1.6}
+footer{border-top:1px solid var(--border);padding:48px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}footer a:hover{color:var(--text)}
+@media(max-width:768px){
+  nav.desktop{display:none}.menu-btn{display:block}
+  .masonry{columns:2}
+}
+@media(max-width:480px){.masonry{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">CANVAS<span>當代藝廊</span></a>
+  <nav class="desktop">
+    <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+  </nav>
+  <button class="menu-btn" onclick="document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')"><span></span><span></span><span></span></button>
+</header>
+<div class="overlay" onclick="document.querySelector('.mobile-nav').classList.remove('active');this.classList.remove('active')"></div>
+<nav class="mobile-nav">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button>
+  <a href="index.html">首頁</a><a href="about.html">關於藝廊</a><a href="exhibitions.html">當期展覽</a><a href="artists.html">藝術家</a><a href="collection.html">典藏作品</a><a href="shop.html">藝術商店</a><a href="events.html">活動講座</a><a href="contact.html">聯絡我們</a>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <p class="meta">Collection</p>
+    <h1>典藏作品</h1>
+  </div>
+
+  <section>
+    <div class="masonry">
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=500&q=80" alt="典藏">
+        <h4>邊界練習 #3</h4>
+        <p>林心如 — 2022<br>壓克力、畫布 — 150×200cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=500&q=80" alt="典藏">
+        <h4>數據山水 — 春</h4>
+        <p>張雅涵 — 2023<br>數位輸出、鋁板 — 120×180cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=500&q=80" alt="典藏">
+        <h4>靜物研究 VII</h4>
+        <p>陳威廷 — 2021<br>油彩、亞麻布 — 90×120cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=500&q=80" alt="典藏">
+        <h4>容器 — 大地</h4>
+        <p>李若瑜 — 2022<br>陶土、釉藥 — 45×45×60cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=500&q=80" alt="典藏">
+        <h4>城市殘像 #12</h4>
+        <p>黃柏翰 — 2020<br>銀鹽攝影 — 60×90cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=500&q=80" alt="典藏">
+        <h4>浮世繪解構</h4>
+        <p>田中由紀 — 2023<br>絹本設色、金箔 — 100×150cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&q=80" alt="典藏">
+        <h4>呼吸的痕跡</h4>
+        <p>林心如 — 2020<br>複合媒材 — 200×300cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69799?w=500&q=80" alt="典藏">
+        <h4>藍色時刻</h4>
+        <p>吳佩珊 — 2022<br>木刻版畫 — 50×70cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=500&q=80" alt="典藏">
+        <h4>無題（身體）</h4>
+        <p>許哲豪 — 2021<br>行為紀錄攝影 — 80×120cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=500&q=80" alt="典藏">
+        <h4>夜的結構</h4>
+        <p>陳威廷 — 2023<br>油彩、畫布 — 180×240cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1577720643272-265f09367456?w=500&q=80" alt="典藏">
+        <h4>織物記憶</h4>
+        <p>田中由紀 — 2022<br>纖維、染料 — 200×150cm</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="典藏">
+        <h4>光的容器 II</h4>
+        <p>李若瑜 — 2023<br>玻璃、金屬 — 30×30×45cm</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div><p><strong>CANVAS 當代藝廊</strong></p><p>台北市中山區大直街32號</p></div>
+  <div><p>© 2026 Canvas 當代藝廊. All Rights Reserved</p></div>
+</footer>
+</body>
+</html>

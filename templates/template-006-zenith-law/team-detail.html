@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陳明哲律師 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text)}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:4px}.page-hero .subtitle{color:var(--gold);font-size:1.1rem;margin-bottom:8px}.page-hero p{color:var(--muted)}.page-hero .breadcrumb{color:var(--muted);font-size:.85rem;margin-bottom:12px}.page-hero .breadcrumb a{color:var(--gold)}
+section{padding:60px 0}
+.gold-line{width:40px;height:2px;background:var(--gold);margin-bottom:20px}
+.content-block{margin-bottom:48px}
+.content-block h2{font-size:1.5rem;color:var(--white);margin-bottom:16px}
+.content-block p{color:var(--text);margin-bottom:16px;line-height:2}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:24px 0}
+.detail-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.detail-item h4{color:var(--gold);font-size:.9rem;margin-bottom:8px}
+.detail-item p,.detail-item li{color:var(--text);font-size:.9rem}
+.detail-item ul{list-style:none;padding:0}
+.detail-item li{margin-bottom:6px;padding-left:12px;border-left:2px solid var(--border)}
+.publications{margin-top:24px}
+.publications li{list-style:none;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;color:var(--text);font-size:.9rem}
+.publications li .year{color:var(--gold);font-size:.8rem;display:block;margin-bottom:4px}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.detail-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">首頁</a> / <a href="team.html">律師團隊</a> / 陳明哲律師</div>
+  <h1>陳明哲</h1>
+  <div class="subtitle">創辦合夥人 / 所長</div>
+  <p>專注企業併購與公司法領域逾三十年</p>
+</div></section>
+
+<section><div class="container">
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>專業簡介</h2>
+    <p>陳明哲律師為Zenith法律事務所創辦人暨所長，自1994年創所以來，一直領導事務所的公司法與企業併購業務。陳律師於台灣大學法律學系取得學士學位後，赴美國哈佛大學法學院深造，取得法學碩士學位，並通過紐約州律師考試。</p>
+    <p>陳律師在企業併購領域擁有超過三十年的豐富經驗，曾主導數十件大型併購案，交易總金額累計超過新台幣五百億元。其客戶涵蓋上市櫃公司、私募股權基金及跨國企業。陳律師以其深厚的法學素養、敏銳的商業洞察力及卓越的談判技巧著稱，多次獲得國際法律評鑑機構的推薦與認可。</p>
+    <p>除執業外，陳律師亦積極參與法學教育與公共事務，曾擔任台灣大學法律學院兼任教授、台灣併購與私募股權協會理事，並經常受邀於國內外學術研討會發表演講。</p>
+  </div>
+
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>基本資料</h2>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <h4>學歷</h4>
+        <ul><li>台灣大學法律學系學士（1988）</li><li>哈佛大學法學院法學碩士（1991）</li></ul>
+      </div>
+      <div class="detail-item">
+        <h4>律師資格</h4>
+        <ul><li>中華民國律師（1989）</li><li>美國紐約州律師（1992）</li></ul>
+      </div>
+      <div class="detail-item">
+        <h4>專業領域</h4>
+        <ul><li>企業併購與重組</li><li>公司法與公司治理</li><li>國際貿易與投資</li><li>私募股權與創投</li></ul>
+      </div>
+      <div class="detail-item">
+        <h4>專業認可</h4>
+        <ul><li>Chambers Asia Pacific 推薦律師（2018-2026）</li><li>Legal 500 亞太區領先律師</li><li>台灣併購與私募股權協會年度最佳律師（2020）</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>代表性案件</h2>
+    <p>（以下案件因保密義務，僅摘述公開資訊範圍內之內容）</p>
+    <ul class="publications">
+      <li>代理某上市科技公司以新台幣八十億元收購國內競爭對手，完成公平交易委員會結合申報程序。</li>
+      <li>協助國際私募股權基金完成對台灣某醫療集團之槓桿收購案，交易金額約新台幣一百二十億元。</li>
+      <li>代理台灣某金控集團進行跨國併購，於六個司法管轄區協調法律團隊完成交易。</li>
+      <li>為某上市半導體公司設計防禦性反收購策略，成功抵禦敵意收購。</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <div class="gold-line"></div>
+    <h2>著作與演講</h2>
+    <ul class="publications">
+      <li><span class="year">2026</span>〈台灣企業併購法修正對實務之影響〉，《月旦法學雜誌》第350期。</li>
+      <li><span class="year">2023</span>〈跨境併購之反壟斷審查趨勢分析〉，台灣併購與私募股權協會年會演講。</li>
+      <li><span class="year">2022</span>〈特別委員會制度在台灣併購實務之運用〉，《台灣法學雜誌》第420期。</li>
+      <li><span class="year">2020</span>《企業併購法律實務》（合著），元照出版。</li>
+    </ul>
+  </div>
+</div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

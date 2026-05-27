@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>衛教專欄 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px}.nav-links a{font-size:.9rem;color:var(--text)}.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999}.mobile-menu.active{right:0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;margin-bottom:12px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(45,212,191,.1)}
+.blog-card img{width:100%;height:200px;object-fit:cover}
+.blog-card-body{padding:24px}
+.blog-card-body .date{font-size:.8rem;color:var(--muted);margin-bottom:8px}
+.blog-card-body h3{font-size:1.05rem;margin-bottom:8px;line-height:1.4}
+.blog-card-body p{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+.read-more{color:var(--mint-dark);font-weight:600;font-size:.9rem}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px}.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>衛教專欄</h1><p>專業牙科知識分享，守護您的口腔健康</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="blog-grid">
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&h=300&fit=crop" alt="牙齒美白">
+<div class="blog-card-body">
+<div class="date">2026.03.15</div>
+<h3>牙齒美白全攻略：方法比較與注意事項</h3>
+<p>市面上美白產品琳瑯滿目，冷光美白、居家美白、美白貼片有什麼差別？哪種最適合你？</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=300&fit=crop" alt="隱形矯正">
+<div class="blog-card-body">
+<div class="date">2026.02.28</div>
+<h3>隱形矯正 vs 傳統矯正：該怎麼選？</h3>
+<p>想矯正牙齒但不知道選哪種？了解隱適美與傳統矯正的優缺點，找到最適合你的方案。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=500&h=300&fit=crop" alt="兒童牙科">
+<div class="blog-card-body">
+<div class="date">2026.02.10</div>
+<h3>孩子幾歲該第一次看牙醫？兒童口腔保健指南</h3>
+<p>許多家長不確定孩子何時該開始看牙。專業建議：第一顆牙萌發後就應帶來檢查。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&h=300&fit=crop" alt="植牙">
+<div class="blog-card-body">
+<div class="date">2026.01.20</div>
+<h3>植牙前必知的5件事：費用、流程與術後照護</h3>
+<p>植牙是缺牙重建的最佳選擇之一，但你真的了解植牙嗎？本文帶你全面認識植牙。</p>
+<span class="read-more">閱讀更多 →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

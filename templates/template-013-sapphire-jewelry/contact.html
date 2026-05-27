@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯絡我們 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;position:relative;background:var(--surface);border-bottom:1px solid var(--border)}
+.page-hero-content{text-align:center}.page-hero-content h1{font-size:2.5rem;margin-bottom:12px}.page-hero-content p{color:var(--muted);letter-spacing:0.2em;font-size:0.9rem}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+.btn{display:inline-block;padding:16px 48px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;transition:all 0.4s;cursor:pointer;background:transparent}.btn:hover{background:var(--gold);color:var(--bg)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-form h2{font-size:1.5rem;margin-bottom:8px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.contact-form .subtitle{color:var(--gold);font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.15em;margin-bottom:32px}
+.form-group{margin-bottom:24px}
+.form-group label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;background:var(--card);border:1px solid var(--border);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:0.9rem;transition:border-color 0.3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.form-group textarea{height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+.contact-info h2{font-size:1.5rem;margin-bottom:8px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.contact-info .subtitle{color:var(--gold);font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.15em;margin-bottom:32px}
+.info-block{margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--border)}
+.info-block:last-child{border-bottom:none}
+.info-block h3{font-size:0.95rem;margin-bottom:12px;font-family:'Noto Sans TC',sans-serif;font-weight:400;color:var(--text)}
+.info-block p{color:var(--muted);font-size:0.9rem}
+.vip-box{background:var(--card);border:1px solid var(--gold);padding:32px;margin-top:40px}
+.vip-box h3{color:var(--gold);font-size:0.9rem;margin-bottom:12px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.vip-box p{color:var(--muted);font-size:0.85rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+  <div class="page-hero-content"><h1>聯絡我們</h1><div class="divider"></div><p>CONTACT</p></div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2>預約鑑賞</h2>
+        <div class="subtitle">BOOK AN APPOINTMENT</div>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>姓名 *</label>
+              <input type="text" placeholder="您的姓名" required>
+            </div>
+            <div class="form-group">
+              <label>電話 *</label>
+              <input type="tel" placeholder="聯絡電話" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>電子信箱</label>
+            <input type="email" placeholder="email@example.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>希望預約門市</label>
+              <select>
+                <option>信義旗艦店</option>
+                <option>中山精品店</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>服務類型</label>
+              <select>
+                <option>珠寶鑑賞</option>
+                <option>訂製諮詢</option>
+                <option>維修保養</option>
+                <option>其他</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>希望預約日期與時間</label>
+            <input type="text" placeholder="例：2026/04/15 下午2:00">
+          </div>
+          <div class="form-group">
+            <label>備註</label>
+            <textarea placeholder="如有特殊需求或想了解的商品，請在此說明"></textarea>
+          </div>
+          <button type="submit" class="btn">送出預約</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h2>聯絡資訊</h2>
+        <div class="subtitle">CONTACT INFORMATION</div>
+        <div class="info-block">
+          <h3>信義旗艦店</h3>
+          <p>台北市信義區松仁路88號1樓<br>電話：02-2345-6789<br>週二至週日 11:00-20:00</p>
+        </div>
+        <div class="info-block">
+          <h3>中山精品店</h3>
+          <p>台北市中山區中山北路二段39號<br>電話：02-2567-8901<br>週二至週六 12:00-19:00（預約制）</p>
+        </div>
+        <div class="info-block">
+          <h3>客服信箱</h3>
+          <p>service@sapphire-jewelry.com.tw</p>
+        </div>
+        <div class="vip-box">
+          <h3>VIP 專屬服務</h3>
+          <p>VIP會員請直接聯繫您的專屬珠寶顧問，<br>或撥打VIP專線：02-2345-6700<br>我們將為您提供優先預約與到府服務。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}</script>
+</body>
+</html>

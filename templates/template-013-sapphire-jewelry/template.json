@@ -1,0 +1,38 @@
+{
+  "id": "template-013-sapphire-jewelry",
+  "name": "Sapphire 珠寶",
+  "category": "luxury-retail",
+  "description": "Ultra-luxury jewelry brand website with dark blue/silver theme, elegant serif typography, and cinematic product presentation for a prestigious Taipei-based family jeweler.",
+  "theme": "dark",
+  "colors": {
+    "background": "#0a0d1a",
+    "surface": "#101530",
+    "card": "#151a3a",
+    "silver": "#c0c8d8",
+    "gold": "#d4af37",
+    "blue": "#1e3a8a",
+    "text": "#e8ecf4",
+    "muted": "#7888aa",
+    "border": "#1e2550"
+  },
+  "fonts": {
+    "heading": "Cinzel",
+    "body": "Noto Sans TC"
+  },
+  "borderRadius": "0px",
+  "mobileMenuPosition": "right",
+  "pages": [
+    "index.html",
+    "about.html",
+    "collections.html",
+    "collection-detail.html",
+    "bespoke.html",
+    "craftsmanship.html",
+    "stores.html",
+    "news.html",
+    "news-detail.html",
+    "care.html",
+    "faq.html",
+    "contact.html"
+  ]
+}

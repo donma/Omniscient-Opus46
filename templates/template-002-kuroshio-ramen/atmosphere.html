@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店內風景｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="黑潮拉麵店內空間 — 融合日式居酒屋與現代工業風的用餐環境。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}.page-hero h1{font-size:2rem;letter-spacing:2px}
+section{padding:80px 0}
+.gallery-masonry{columns:3;column-gap:16px}
+@media(max-width:768px){.gallery-masonry{columns:2}}
+.gallery-item{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:var(--radius);overflow:hidden}
+.gallery-item img{width:100%;display:block;transition:.5s}
+.gallery-item:hover img{transform:scale(1.03);filter:brightness(1.1)}
+.gallery-item .caption{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.8));opacity:0;transition:.3s}
+.gallery-item:hover .caption{opacity:1}
+.gallery-item .caption p{font-size:.82rem;color:var(--white)}
+.space-info{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:768px){.space-info{grid-template-columns:1fr}}
+.space-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center}
+.space-card h3{color:var(--gold);font-size:1rem;margin-bottom:8px}
+.space-card p{color:var(--muted);font-size:.85rem}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<div class="page-hero"><p class="jp">雰囲気</p><h1>店內風景</h1></div>
+
+<section>
+<div class="container">
+<div class="gallery-masonry">
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="吧台座位"><div class="caption"><p>吧台座位 — 面對開放廚房感受職人魂</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="主用餐區"><div class="caption"><p>主用餐區 — 暖黃燈光與深色木質</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="開放廚房"><div class="caption"><p>開放廚房 — 每一碗的誕生過程</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80" alt="牆面細節"><div class="caption"><p>手寫菜單牆 — 日本帶回的傳統</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="入口暖簾"><div class="caption"><p>暖簾入口 — 跨過即是另一個世界</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="外觀"><div class="caption"><p>巷弄外觀 — 低調卻讓人忍不住走進</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=600&q=80" alt="角落"><div class="caption"><p>角落座位 — 適合獨自享用的安靜空間</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="料理特寫"><div class="caption"><p>料理特寫 — 濃白湯底的誘惑</p></div></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=600&q=80" alt="備料"><div class="caption"><p>每日備料 — 凌晨四點的日常</p></div></div>
+</div>
+
+<div class="space-info">
+  <div class="space-card"><h3>座位數</h3><p>吧台 8 席 + 桌席 10 席<br>共 18 個座位</p></div>
+  <div class="space-card"><h3>空間特色</h3><p>日式居酒屋風格<br>深色木質 × 工業金屬</p></div>
+  <div class="space-card"><h3>音樂</h3><p>日本 City Pop<br>& Lo-Fi Hip Hop</p></div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

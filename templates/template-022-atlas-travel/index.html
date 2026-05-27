@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Atlas 旅行社 — 探索世界的起點</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+/* NAV */
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+/* HERO */
+.hero{position:relative;height:85vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,105,161,.3),rgba(26,42,58,.6))}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:0 24px}
+.hero h1{font-size:3.2rem;margin-bottom:16px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero p{font-size:1.2rem;margin-bottom:32px;font-weight:300}
+.search-bar{display:flex;background:var(--white);border-radius:50px;overflow:hidden;max-width:500px;margin:0 auto;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.search-bar input{flex:1;border:none;padding:16px 24px;font-size:1rem;font-family:'Noto Sans TC',sans-serif;outline:none}
+.search-bar button{background:var(--sky);color:white;border:none;padding:16px 28px;font-weight:600;cursor:pointer;font-size:.95rem;transition:background .3s}
+.search-bar button:hover{background:var(--sky-dark)}
+/* SECTIONS */
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:2rem;color:var(--sky-dark);margin-bottom:8px}
+.section-title p{color:var(--muted);font-size:1rem}
+/* DESTINATIONS */
+.dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.dest-card{border-radius:var(--radius);overflow:hidden;position:relative;height:280px;cursor:pointer;transition:transform .3s}
+.dest-card:hover{transform:translateY(-4px)}
+.dest-card img{width:100%;height:100%;object-fit:cover}
+.dest-card .overlay{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:white}
+.dest-card h3{font-size:1.1rem;margin-bottom:4px}
+.dest-card span{font-size:.85rem;opacity:.85}
+/* SEASONAL */
+.seasonal{background:var(--sand)}
+.seasonal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.seasonal-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.seasonal-card img{width:100%;height:200px;object-fit:cover}
+.seasonal-card .info{padding:20px}
+.seasonal-card h3{font-size:1rem;margin-bottom:8px;color:var(--sky-dark)}
+.seasonal-card p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.badge{display:inline-block;background:var(--sunset);color:white;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;padding:60px 0}
+.stat-item h3{font-size:2.4rem;color:var(--sky);font-weight:800}
+.stat-item p{color:var(--muted);font-size:.9rem;margin-top:4px}
+/* FOOTER */
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+/* MOBILE */
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.hero h1{font-size:2rem}
+.dest-grid{grid-template-columns:repeat(2,1fr)}
+.seasonal-grid{grid-template-columns:1fr}
+.stats{grid-template-columns:repeat(2,1fr)}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<section class="hero">
+<img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1600&q=80" alt="美麗海灘">
+<div class="hero-content">
+<h1>探索世界，發現自己</h1>
+<p>專業小團深度旅遊，帶您走進世界最美的角落</p>
+<div class="search-bar">
+<input type="text" placeholder="搜尋目的地、行程...">
+<button>搜尋</button>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>熱門目的地</h2>
+<p>精選旅人最愛的夢想之地</p>
+</div>
+<div class="dest-grid">
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80" alt="冰島">
+<div class="overlay"><h3>冰島</h3><span>極光・冰川・溫泉</span></div>
+</div>
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&q=80" alt="日本">
+<div class="overlay"><h3>日本</h3><span>文化・美食・溫泉</span></div>
+</div>
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" alt="紐西蘭">
+<div class="overlay"><h3>紐西蘭</h3><span>冒險・自然・純淨</span></div>
+</div>
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&q=80" alt="希臘">
+<div class="overlay"><h3>希臘</h3><span>海島・古蹟・浪漫</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="seasonal">
+<div class="container">
+<div class="section-title">
+<h2>季節精選</h2>
+<p>把握最佳旅遊時節</p>
+</div>
+<div class="seasonal-grid">
+<div class="seasonal-card">
+<img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80" alt="極光">
+<div class="info">
+<span class="badge">限定</span>
+<h3>冰島極光10日深度之旅</h3>
+<p>追尋北極光，探索冰與火之國的壯麗奇景</p>
+</div>
+</div>
+<div class="seasonal-card">
+<img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=600&q=80" alt="海島">
+<div class="info">
+<span class="badge">熱銷</span>
+<h3>馬爾地夫蜜月7日</h3>
+<p>私人水上屋，盡享印度洋的碧藍與寧靜</p>
+</div>
+</div>
+<div class="seasonal-card">
+<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" alt="京都">
+<div class="info">
+<span class="badge">早鳥</span>
+<h3>京都紅葉季5日漫遊</h3>
+<p>穿梭千年古都，感受秋楓詩意</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="stats">
+<div class="stat-item"><h3>2,500+</h3><p>滿意旅客</p></div>
+<div class="stat-item"><h3>85+</h3><p>精選行程</p></div>
+<div class="stat-item"><h3>45+</h3><p>目的地國家</p></div>
+<div class="stat-item"><h3>9.6</h3><p>平均評分</p></div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Atlas 旅行社</h4>
+<p>成立於2015年，我們是一群熱愛旅行的冒險家。專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p>
+</div>
+<div>
+<h4>行程類型</h4>
+<a href="themes.html">極光之旅</a><br>
+<a href="themes.html">海島度假</a><br>
+<a href="themes.html">文化巡禮</a><br>
+<a href="themes.html">健行冒險</a>
+</div>
+<div>
+<h4>旅客服務</h4>
+<a href="faq.html">常見問題</a><br>
+<a href="guides.html">旅遊攻略</a><br>
+<a href="custom.html">客製行程</a><br>
+<a href="reviews.html">旅客評價</a>
+</div>
+<div>
+<h4>聯絡資訊</h4>
+<p>台北市大安區旅行路88號5樓</p>
+<p>02-2345-6789</p>
+<p>hello@atlas-travel.tw</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

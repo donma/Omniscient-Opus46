@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花語日記 — Bloom 花藝工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fdf8f5;--white:#ffffff;--rose:#e89bae;--rose-light:#fce8ee;--sage:#a8c5a0;--text:#3a2d2d;--muted:#8a7070;--border:#f0dede;--lavender:#d4c5e8;--radius:30px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,155,174,0.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--rose)}
+.nav-links{display:flex;gap:24px;font-size:0.9rem}
+.nav-links a:hover{color:var(--rose)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{text-align:center;padding:60px 0;background:var(--rose-light);border-radius:0 0 60px 60px;margin-bottom:60px}
+.page-hero h1{font-size:2.8rem;margin-bottom:8px}
+.page-hero p{color:var(--muted)}
+section{padding:0 0 80px}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.blog-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(232,155,174,0.12)}
+.blog-card img{height:220px;width:100%;object-fit:cover}
+.blog-card .info{padding:24px}
+.blog-card .tag{display:inline-block;padding:4px 12px;background:var(--rose-light);color:var(--rose);border-radius:var(--radius);font-size:0.75rem;margin-bottom:12px}
+.blog-card h3{font-size:1.2rem;margin-bottom:8px}
+.blog-card p{color:var(--muted);font-size:0.85rem;margin-bottom:12px}
+.blog-card .date{font-size:0.8rem;color:var(--muted)}
+footer{background:var(--white);padding:48px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:1rem;margin-bottom:12px;color:var(--rose)}
+.footer-col p,.footer-col a{font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:24px}
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;border-radius:0 0 var(--radius) var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.nav-links.active{display:flex}
+.menu-toggle{display:block}
+.blog-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Bloom 花藝</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="weddings.html">婚禮花藝</a><a href="courses.html">花藝課程</a><a href="blog.html">花語日記</a><a href="contact.html">聯絡我們</a>
+</div>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<h1>花語日記</h1>
+<p>關於花、關於生活、關於美好的一切</p>
+</div>
+
+<section>
+<div class="container">
+<div class="blog-grid">
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600" alt="如何讓鮮花維持更久">
+<div class="info">
+<span class="tag">花藝知識</span>
+<h3>如何讓鮮花維持更久？7 個實用小技巧</h3>
+<p>掌握這些簡單的養護方法，讓你的花束綻放更長時間，每一天都能享受花帶來的好心情。</p>
+<span class="date">2026 年 11 月 28 日</span>
+</div>
+</a>
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=600" alt="冬季花材推薦">
+<div class="info">
+<span class="tag">季節推薦</span>
+<h3>冬日暖心｜12 月必入手的 5 款當季花材</h3>
+<p>冬天也有屬於自己的浪漫花材，從聖誕玫瑰到蠟梅，帶你認識冬季最美的花朵們。</p>
+<span class="date">2026 年 12 月 1 日</span>
+</div>
+</div>
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600" alt="花藝配色">
+<div class="info">
+<span class="tag">設計靈感</span>
+<h3>花藝配色入門：從色彩學理解花束之美</h3>
+<p>為什麼有些花束看起來特別和諧？學習基本的配色原理，提升你的花藝審美力。</p>
+<span class="date">2026 年 11 月 15 日</span>
+</div>
+</div>
+<div class="blog-card">
+<img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600" alt="花藝課程體驗">
+<div class="info">
+<span class="tag">工作室日常</span>
+<h3>一堂花藝課的誕生：幕後準備全記錄</h3>
+<p>每一堂課背後的用心準備，從花材採購到教案設計，帶你看見 Bloom 的日常。</p>
+<span class="date">2026 年 11 月 5 日</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>Bloom 花藝工作室</h4><p>以花為語，傳遞每一份心意與美好。</p></div>
+<div class="footer-col"><h4>快速連結</h4><a href="about.html">關於我們</a><a href="portfolio.html">花藝作品</a><a href="order.html">花束訂購</a><a href="courses.html">花藝課程</a></div>
+<div class="footer-col"><h4>聯絡資訊</h4><p>台北市大安區瑞安街 128 號 1 樓</p><p>02-2700-1234</p><p>hello@bloom-floral.tw</p></div>
+<div class="footer-col"><h4>營業時間</h4><p>週二至週六 10:00–19:00</p><p>週日 11:00–17:00</p><p>週一公休</p></div>
+</div>
+<div class="footer-bottom">© 2026 Bloom 花藝工作室 All Rights Reserved.</div>
+</div>
+</footer>
+</body>
+</html>

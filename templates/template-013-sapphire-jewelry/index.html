@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sapphire 珠寶 | 頂級珠寶世家</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}
+a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}
+.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em;transition:color 0.3s}
+nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}
+.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}
+.mobile-menu.active{right:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}
+.mobile-menu ul li a{font-size:1rem;color:var(--text)}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}
+.overlay.active{display:block}
+
+/* Hero */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1515562141589-67f0d97f6d5b?w=1920&q=80') center/cover;opacity:0.4}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,26,0.3),rgba(10,13,26,0.9))}
+.hero-content{position:relative;z-index:1;text-align:center;animation:fadeUp 1.2s ease}
+.hero-content h1{font-size:clamp(2.5rem,5vw,4.5rem);color:var(--text);margin-bottom:16px}
+.hero-content p{font-size:1.1rem;color:var(--muted);margin-bottom:40px;letter-spacing:0.2em}
+.btn{display:inline-block;padding:16px 48px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;transition:all 0.4s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+
+/* Sections */
+section{padding:120px 0}
+.section-title{text-align:center;margin-bottom:64px}
+.section-title h2{font-size:2rem;color:var(--text);margin-bottom:12px}
+.section-title p{color:var(--muted);font-size:0.9rem;letter-spacing:0.1em}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+
+/* Collections Grid */
+.collections-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.collection-card{position:relative;height:450px;overflow:hidden;border:1px solid var(--border)}
+.collection-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s}
+.collection-card:hover img{transform:scale(1.05)}
+.collection-card .overlay-text{position:absolute;bottom:0;left:0;right:0;padding:40px;background:linear-gradient(transparent,rgba(10,13,26,0.95))}
+.collection-card .overlay-text h3{font-size:1.3rem;color:var(--text);margin-bottom:8px}
+.collection-card .overlay-text p{color:var(--muted);font-size:0.85rem}
+
+/* Heritage */
+.heritage{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.heritage-img{height:500px;border:1px solid var(--border);overflow:hidden}
+.heritage-img img{width:100%;height:100%;object-fit:cover}
+.heritage-text h2{font-size:2rem;margin-bottom:24px}
+.heritage-text p{color:var(--muted);margin-bottom:24px;line-height:2}
+
+/* CTA */
+.cta-section{text-align:center;background:var(--surface);padding:100px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cta-section h2{font-size:2rem;margin-bottom:16px}
+.cta-section p{color:var(--muted);margin-bottom:40px}
+
+/* Footer */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}
+.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  nav ul{display:none}
+  .mobile-toggle{display:flex}
+  .collections-grid{grid-template-columns:1fr}
+  .heritage{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .header-inner{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">品牌故事</a></li>
+        <li><a href="collections.html">珠寶系列</a></li>
+        <li><a href="bespoke.html">訂製服務</a></li>
+        <li><a href="craftsmanship.html">工藝傳承</a></li>
+        <li><a href="stores.html">門市資訊</a></li>
+        <li><a href="news.html">最新消息</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu">
+  <div class="close-btn" onclick="toggleMenu()">&times;</div>
+  <ul>
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="about.html">品牌故事</a></li>
+    <li><a href="collections.html">珠寶系列</a></li>
+    <li><a href="bespoke.html">訂製服務</a></li>
+    <li><a href="craftsmanship.html">工藝傳承</a></li>
+    <li><a href="stores.html">門市資訊</a></li>
+    <li><a href="news.html">最新消息</a></li>
+    <li><a href="contact.html">聯絡我們</a></li>
+  </ul>
+</div>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>SAPPHIRE 珠寶</h1>
+    <p>傳承三代的珠寶工藝 · 始於1965</p>
+    <a href="collections.html" class="btn">探索系列</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>精選系列</h2>
+      <div class="divider"></div>
+      <p>FEATURED COLLECTIONS</p>
+    </div>
+    <div class="collections-grid">
+      <a href="collection-detail.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="鑽石系列">
+        <div class="overlay-text">
+          <h3>鑽石系列</h3>
+          <p>Diamond Collection</p>
+        </div>
+      </a>
+      <a href="collections.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1583937443566-6b5e8e3c6b3a?w=600&q=80" alt="藍寶石系列">
+        <div class="overlay-text">
+          <h3>藍寶石系列</h3>
+          <p>Sapphire Collection</p>
+        </div>
+      </a>
+      <a href="collections.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" alt="珍珠系列">
+        <div class="overlay-text">
+          <h3>珍珠系列</h3>
+          <p>Pearl Collection</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="heritage">
+      <div class="heritage-img">
+        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80" alt="品牌傳承">
+      </div>
+      <div class="heritage-text">
+        <h2>三代傳承的<br>珠寶工藝</h2>
+        <div class="divider" style="margin:20px 0"></div>
+        <p>自1965年創立以來，薩菲爾珠寶始終堅持以最頂級的寶石原料與精湛的工藝技術，為每一位貴賓打造獨一無二的珠寶作品。三代匠心傳承，我們不僅延續了傳統工藝的精髓，更融入當代設計美學。</p>
+        <a href="about.html" class="btn">了解更多</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>預約私人鑑賞</h2>
+    <div class="divider"></div>
+    <p>我們誠摯邀請您蒞臨門市，享受一對一的專屬珠寶鑑賞服務</p>
+    <a href="contact.html" class="btn">立即預約</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">SAPPHIRE 珠寶</span>
+        <p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p>
+      </div>
+      <div class="footer-col">
+        <h4>珠寶系列</h4>
+        <ul>
+          <li><a href="collection-detail.html">鑽石系列</a></li>
+          <li><a href="collections.html">紅寶石系列</a></li>
+          <li><a href="collections.html">藍寶石系列</a></li>
+          <li><a href="collections.html">珍珠系列</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>服務</h4>
+        <ul>
+          <li><a href="bespoke.html">訂製服務</a></li>
+          <li><a href="care.html">珠寶保養</a></li>
+          <li><a href="faq.html">常見問題</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>門市</h4>
+        <ul>
+          <li><a href="stores.html">信義旗艦店</a></li>
+          <li><a href="stores.html">中山精品店</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span>
+      <span>台北市信義區松仁路88號</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.querySelector('.mobile-menu').classList.toggle('active');
+  document.querySelector('.overlay').classList.toggle('active');
+}
+</script>
+</body>
+</html>

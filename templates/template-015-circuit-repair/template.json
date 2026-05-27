@@ -1,0 +1,47 @@
+{
+  "id": "template-015-circuit-repair",
+  "name": "Circuit 電子維修",
+  "description": "Dark theme electronics repair shop website with neon green terminal/hacker aesthetic, designed for a Taipei-based repair service near 光華商場.",
+  "category": "service",
+  "industry": "electronics-repair",
+  "language": "zh-TW",
+  "theme": "dark",
+  "colors": {
+    "background": "#0a0f0a",
+    "surface": "#111a11",
+    "card": "#1a241a",
+    "primary": "#39ff14",
+    "primaryDim": "#2acd0f",
+    "text": "#e0f0e0",
+    "muted": "#6a8a6a",
+    "border": "#1e3a1e",
+    "darkAccent": "#0d1f0d"
+  },
+  "fonts": {
+    "heading": "JetBrains Mono",
+    "body": "Noto Sans TC"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "services.html",
+    "service-detail.html",
+    "process.html",
+    "pricing.html",
+    "faq.html",
+    "cases.html",
+    "blog.html",
+    "blog-detail.html",
+    "parts.html",
+    "contact.html"
+  ],
+  "features": [
+    "responsive",
+    "mobile-menu-left",
+    "scanline-effect",
+    "inline-css",
+    "traditional-chinese"
+  ],
+  "borderRadius": "4px",
+  "mobileMenuPosition": "left"
+}

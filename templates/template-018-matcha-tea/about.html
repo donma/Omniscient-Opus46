@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>茶道文化 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s;box-shadow:2px 0 20px rgba(0,0,0,.1)}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.page-header{padding:60px 0;text-align:center;background:var(--cream);border-bottom:1px solid var(--border)}
+.page-header h1{font-size:2.2rem;margin-bottom:8px}
+.page-header p{color:var(--muted)}
+
+section{padding:80px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:80px}
+.about-grid img{width:100%;border-radius:var(--radius);height:400px;object-fit:cover}
+.about-grid h2{font-size:1.6rem;margin-bottom:16px}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+
+.timeline{max-width:700px;margin:0 auto}
+.timeline-item{padding-left:40px;border-left:2px solid var(--matcha-light);padding-bottom:40px;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-6px;top:4px;width:10px;height:10px;background:var(--matcha);border-radius:50%}
+.timeline-item h3{font-size:1.1rem;margin-bottom:4px}
+.timeline-item .year{color:var(--matcha);font-size:.85rem;margin-bottom:8px}
+.timeline-item p{color:var(--muted);font-size:.9rem}
+
+.philosophy-section{background:var(--white);padding:80px 0}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center}
+.values .value{padding:32px}
+.values .value h3{font-size:1.2rem;margin:16px 0 8px}
+.values .value p{color:var(--muted);font-size:.88rem}
+.values .icon{font-size:2rem}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+.about-grid{grid-template-columns:1fr}
+.values{grid-template-columns:1fr}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<header class="page-header">
+<div class="container">
+<h1>茶道文化</h1>
+<p>從一碗茶湯開始，認識日本茶道的美學與哲思</p>
+</div>
+</header>
+
+<section>
+<div class="container">
+<div class="about-grid">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="茶道">
+<div>
+<h2>關於茶道空間</h2>
+<p>茶道空間創立於 2019 年，由主理人林靜雅在京都學習裏千家茶道五年後，帶著對茶道的熱忱回到台北，在永康街巷弄中打造了這處結合台日美學的茶空間。</p>
+<p>我們相信，茶道不僅是一種飲茶方式，更是一種生活態度。在匆忙的都市節奏中，一碗茶湯可以讓人重新找回內心的寧靜。</p>
+</div>
+</div>
+<div class="about-grid">
+<div>
+<h2>京都的啟蒙之旅</h2>
+<p>2014 年，靜雅隻身前往京都，拜入裏千家門下學習茶道。從最基本的帛紗摺法開始，到完整的濃茶與薄茶點前，五年的修習讓她深刻體會「和敬清寂」的精神。</p>
+<p>每日清晨的水屋準備、茶室的清掃、花的選擇——這些看似瑣碎的日常，都是茶道修行不可或缺的一部分。回到台北後，她希望將這份感動分享給更多人。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="京都">
+</div>
+</div>
+</section>
+
+<section class="philosophy-section">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<h2 style="font-size:1.8rem">茶道四規</h2>
+<p style="color:var(--muted)">千利休所傳茶道精神的核心</p>
+</div>
+<div class="values">
+<div class="value">
+<div class="icon">和</div>
+<h3>和 — 調和</h3>
+<p>人與人之間、人與自然之間的和諧共處，在茶室中放下身份地位的差異。</p>
+</div>
+<div class="value">
+<div class="icon">敬</div>
+<h3>敬 — 尊敬</h3>
+<p>對茶具、對同席者、對空間的尊重，每一個動作都帶著敬意。</p>
+</div>
+<div class="value">
+<div class="icon">清</div>
+<h3>清 — 清淨</h3>
+<p>保持身心與環境的清淨，透過茶道的儀式洗滌內心的雜念。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<h2 style="font-size:1.8rem">我們的歷程</h2>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="year">2014</div>
+<h3>赴京都學習茶道</h3>
+<p>主理人林靜雅前往京都裏千家，開始為期五年的茶道修行。</p>
+</div>
+<div class="timeline-item">
+<div class="year">2019</div>
+<h3>茶道空間創立</h3>
+<p>回到台北，在永康街開設第一間結合台日美學的茶空間。</p>
+</div>
+<div class="timeline-item">
+<div class="year">2021</div>
+<h3>茶道體驗課程開始</h3>
+<p>推出入門與正式茶道體驗，讓更多人有機會親近茶道文化。</p>
+</div>
+<div class="timeline-item">
+<div class="year">2023</div>
+<h3>庭園茶室完工</h3>
+<p>增設獨立茶室與小型枯山水庭園，提供更完整的茶道體驗空間。</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

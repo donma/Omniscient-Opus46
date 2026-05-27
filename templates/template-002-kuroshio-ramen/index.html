@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑潮拉麵 KUROSHIO — 職人魂，一碗入魂</title>
+<meta name="description" content="黑潮拉麵 KUROSHIO — 以日本職人精神打造每一碗拉麵，濃郁豚骨湯底與手工麵條的極致融合。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+
+/* Header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .4s}
+.site-header.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+
+/* Hero */
+.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1600&q=80') center/cover no-repeat;filter:brightness(.35)}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.3) 0%,rgba(10,10,10,.8) 100%)}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:0 24px}
+.hero-content .jp{font-size:.9rem;letter-spacing:8px;color:var(--gold);margin-bottom:12px;opacity:.8}
+.hero-content h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;margin-bottom:16px;letter-spacing:4px}
+.hero-content p{color:var(--muted);font-size:1rem;margin-bottom:32px}
+.hero-btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:14px 48px;font-size:.9rem;letter-spacing:2px;transition:.3s}
+.hero-btn:hover{background:var(--gold);color:var(--black)}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;color:var(--muted);font-size:.75rem;letter-spacing:3px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* Sections */
+section{padding:100px 0}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}
+.section-title h2{font-size:2rem;letter-spacing:2px}
+.section-title p{color:var(--muted);margin-top:8px;font-size:.9rem}
+
+/* Philosophy */
+.philosophy{background:var(--dark)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+@media(max-width:768px){.philosophy-grid{grid-template-columns:1fr;gap:32px}}
+.philo-card{text-align:center;padding:40px 24px;border:1px solid var(--border);border-radius:var(--radius)}
+.philo-card .icon{font-size:2.5rem;margin-bottom:16px}
+.philo-card h3{font-size:1.1rem;margin-bottom:8px;color:var(--gold)}
+.philo-card p{color:var(--muted);font-size:.88rem}
+
+/* Menu Highlight */
+.menu-highlight{position:relative}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+@media(max-width:768px){.menu-grid{grid-template-columns:1fr}}
+.menu-card{position:relative;border-radius:var(--radius);overflow:hidden;height:320px}
+.menu-card img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.menu-card:hover img{transform:scale(1.05)}
+.menu-card .info{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+.menu-card .info h3{font-size:1.2rem;margin-bottom:4px}
+.menu-card .info p{color:var(--muted);font-size:.82rem}
+.menu-card .price{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--black);padding:6px 14px;border-radius:99px;font-size:.8rem;font-weight:700}
+
+/* Atmosphere */
+.atmosphere{background:var(--dark)}
+.atmo-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.atmo-row:nth-child(2){grid-template-columns:1fr 1fr 2fr}
+@media(max-width:768px){.atmo-row{grid-template-columns:1fr}}
+.atmo-img{border-radius:var(--radius);overflow:hidden;height:240px}
+.atmo-img img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.atmo-img:hover img{transform:scale(1.05)}
+
+/* CTA */
+.cta-section{text-align:center;padding:80px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cta-section h2{font-size:1.8rem;margin-bottom:12px}
+.cta-section p{color:var(--muted);margin-bottom:28px}
+.cta-btn{display:inline-block;background:var(--gold);color:var(--black);padding:16px 56px;font-weight:700;font-size:.95rem;letter-spacing:2px;border-radius:0;transition:.3s}
+.cta-btn:hover{background:var(--gold-light)}
+
+/* Footer */
+.site-footer{background:var(--dark);padding:60px 0 24px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+.footer-grid h4{color:var(--gold);font-size:.9rem;margin-bottom:16px;letter-spacing:2px}
+.footer-grid p,.footer-grid li{color:var(--muted);font-size:.85rem}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header" id="siteHeader"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<section class="hero">
+<div class="hero-content">
+  <p class="jp">一杯入魂</p>
+  <h1>黑潮拉麵</h1>
+  <p>十八小時熬煮的濃郁豚骨湯底，搭配每日手工製作的細捲麵，<br>每一口都是職人精神的展現。</p>
+  <a href="menu.html" class="hero-btn">瀏覽菜單</a>
+</div>
+<div class="scroll-hint">SCROLL</div>
+</section>
+
+<section class="philosophy">
+<div class="container">
+<div class="section-title"><p class="jp">こだわり</p><h2>三大堅持</h2></div>
+<div class="philosophy-grid">
+  <div class="philo-card"><div class="icon">🍜</div><h3>湯底</h3><p>精選國產豬大骨，以大火猛煮再轉文火慢熬 18 小時，逼出骨髓精華，成就乳白濃郁的豚骨原湯。</p></div>
+  <div class="philo-card"><div class="icon">🌾</div><h3>麵條</h3><p>每日清晨由師傅手工揉製，使用日本進口高筋麵粉，28% 含水率造就彈牙口感，與濃湯完美融合。</p></div>
+  <div class="philo-card"><div class="icon">🔥</div><h3>炙燒</h3><p>嚴選黑毛豬五花肉，低溫慢煮 6 小時後以備長炭高溫炙燒，外焦內嫩，肉香四溢。</p></div>
+</div>
+</div>
+</section>
+
+<section class="menu-highlight">
+<div class="container">
+<div class="section-title"><p class="jp">おすすめ</p><h2>招牌推薦</h2><p>每一碗都是經典</p></div>
+<div class="menu-grid">
+  <div class="menu-card"><img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=800&q=80" alt="黑潮豚骨拉麵"><div class="info"><h3>黑潮豚骨拉麵</h3><p>18 小時豚骨湯底 / 手工細麵 / 炙燒叉燒</p></div><span class="price">NT$220</span></div>
+  <div class="menu-card"><img src="https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&q=80" alt="地獄辛味噌拉麵"><div class="info"><h3>地獄辛味噌拉麵</h3><p>自家調製辣味噌 / 粗麵 / 溫泉蛋</p></div><span class="price">NT$240</span></div>
+  <div class="menu-card"><img src="https://images.unsplash.com/photo-1614563637806-1d0e645e0940?w=800&q=80" alt="黑蒜油豚骨"><div class="info"><h3>黑蒜油豚骨</h3><p>焦香蒜油 / 濃白豚骨 / 木耳絲</p></div><span class="price">NT$230</span></div>
+  <div class="menu-card"><img src="https://images.unsplash.com/photo-1567982047351-76b6f93e38ee?w=800&q=80" alt="沾麵"><div class="info"><h3>濃厚魚介沾麵</h3><p>魚介豚骨雙重湯底 / 粗直麵 / 海苔</p></div><span class="price">NT$260</span></div>
+</div>
+</div>
+</section>
+
+<section class="atmosphere">
+<div class="container">
+<div class="section-title"><p class="jp">雰囲気</p><h2>店內風景</h2></div>
+<div class="atmo-row">
+  <div class="atmo-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="吧台座位"></div>
+  <div class="atmo-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="燈飾"></div>
+  <div class="atmo-img"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="廚房"></div>
+</div>
+<div class="atmo-row">
+  <div class="atmo-img"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80" alt="角落"></div>
+  <div class="atmo-img"><img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="細節"></div>
+  <div class="atmo-img"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80" alt="外觀"></div>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>今日，來一碗吧</h2>
+<p>每日限量 80 碗，售完為止</p>
+<a href="contact.html" class="cta-btn">店舖資訊</a>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+  <div><h4>黑潮拉麵 KUROSHIO</h4><p>以日本職人精神打造每一碗拉麵。<br>十八小時熬煮的靈魂湯底，只為讓您品嚐最純粹的美味。</p></div>
+  <div><h4>營業資訊</h4><ul><li>週二至週日</li><li>11:30 – 14:00</li><li>17:30 – 21:00</li><li>週一公休</li></ul></div>
+  <div><h4>聯絡方式</h4><ul><li>台北市大安區忠孝東路四段 120 巷 8 號</li><li>02-2771-0808</li><li>IG @kuroshio.ramen</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div>
+</div></footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('siteHeader').classList.toggle('scrolled',window.scrollY>60)});
+function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

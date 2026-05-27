@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訂製服務 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+.page-hero{height:50vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1920&q=80') center/cover;opacity:0.3}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,26,0.4),rgba(10,13,26,0.95))}
+.page-hero-content{position:relative;z-index:1;text-align:center}.page-hero-content h1{font-size:2.5rem;margin-bottom:12px}.page-hero-content p{color:var(--muted);letter-spacing:0.2em;font-size:0.9rem}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+.btn{display:inline-block;padding:16px 48px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;transition:all 0.4s}.btn:hover{background:var(--gold);color:var(--bg)}
+
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:80px}
+.process-step{text-align:center;padding:48px 24px;border:1px solid var(--border);background:var(--card);position:relative}
+.process-step .step-num{font-family:'Cinzel',serif;font-size:2.5rem;color:var(--gold);opacity:0.3;margin-bottom:16px}
+.process-step h3{font-size:1rem;margin-bottom:12px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.process-step p{color:var(--muted);font-size:0.85rem}
+
+.pricing{text-align:center;background:var(--surface);padding:100px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pricing h2{font-size:1.8rem;margin-bottom:16px}
+.pricing .price-note{color:var(--muted);font-size:0.9rem;margin-bottom:8px}
+.pricing .price-start{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);margin-bottom:32px}
+
+.testimonials{max-width:800px;margin:0 auto}
+.testimonial{border:1px solid var(--border);padding:48px;margin-bottom:32px;background:var(--card)}
+.testimonial blockquote{font-size:1rem;color:var(--text);margin-bottom:24px;font-style:italic;line-height:2}
+.testimonial .author{color:var(--gold);font-size:0.85rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.process-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+  <div class="page-hero-content"><h1>訂製服務</h1><div class="divider"></div><p>BESPOKE SERVICE</p></div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto">
+      <h2 style="font-size:1.8rem;margin-bottom:24px">專屬於您的珠寶</h2>
+      <p style="color:var(--muted)">從一個靈感開始，我們的設計師與匠師團隊將與您攜手，將夢想化為永恆的珠寶藝術品。每一件訂製作品都是獨一無二的存在。</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>私人諮詢</h3>
+        <p>與專屬珠寶顧問一對一面談，了解您的需求、喜好與預算，共同探索設計方向。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>設計提案</h3>
+        <p>設計師根據諮詢結果繪製設計圖稿與3D模擬圖，反覆修改直到完美呈現您的構想。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>精工製作</h3>
+        <p>資深匠師以傳統手工結合現代技術，歷時6-12週精心打造您的專屬珠寶。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>交付典禮</h3>
+        <p>於私人包廂舉行交付儀式，附贈GIA鑑定證書、品牌保證書與精美收藏盒。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <h2>訂製價格</h2>
+    <div class="divider"></div>
+    <p class="price-note">訂製服務起始價格</p>
+    <p class="price-start">NT$ 300,000 起</p>
+    <p style="color:var(--muted);max-width:500px;margin:0 auto 40px;font-size:0.9rem">實際價格依寶石規格、貴金屬材質與設計複雜度而定。我們的顧問將在諮詢階段為您提供詳細報價。</p>
+    <a href="contact.html" class="btn">預約諮詢</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px">
+      <h2 style="font-size:1.8rem">客戶見證</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial">
+        <blockquote>「從第一次諮詢到收到成品，整個過程充滿驚喜。設計師完美捕捉了我心中的構想，這枚訂婚戒指讓我的太太感動落淚。」</blockquote>
+        <div class="author">— 陳先生，訂製訂婚戒指</div>
+      </div>
+      <div class="testimonial">
+        <blockquote>「母親的遺物經過Sapphire珠寶的重新設計，化為一條優雅的項鍊。既保留了珍貴的記憶，又擁有全新的生命。感謝團隊的細心與用心。」</blockquote>
+        <div class="author">— 王小姐，舊飾翻新訂製</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}</script>
+</body>
+</html>

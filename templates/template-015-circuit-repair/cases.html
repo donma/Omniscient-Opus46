@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>維修案例 | Circuit 電子維修</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f0a;--surface:#111a11;--card:#1a241a;--neon:#39ff14;--neon-dim:#2acd0f;--text:#e0f0e0;--muted:#6a8a6a;--border:#1e3a1e;--dark-accent:#0d1f0d;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);z-index:9999}
+h1,h2,h3,h4{font-family:'JetBrains Mono',monospace;color:var(--neon)}
+a{color:var(--neon);text-decoration:none}a:hover{color:var(--neon-dim)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:15px 0;position:sticky;top:0;z-index:1000}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--neon);font-weight:700}.logo span{color:var(--muted)}
+.nav-links{display:flex;gap:25px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--neon)}
+.menu-btn{display:none;background:none;border:1px solid var(--neon);color:var(--neon);padding:8px 12px;cursor:pointer;font-family:'JetBrains Mono',monospace;border-radius:var(--radius)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);border-right:1px solid var(--neon);padding:60px 30px;transition:left .3s;z-index:2000;display:flex;flex-direction:column;gap:20px}
+.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.mobile-menu .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;color:var(--neon);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1999;display:none}.overlay.active{display:block}
+.page-header{padding:60px 0;text-align:center;background:var(--dark-accent)}.page-header h1{font-size:2.5rem;margin-bottom:10px}.page-header p{color:var(--muted)}
+.section{padding:60px 0}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s}
+.case-card:hover{border-color:var(--neon)}
+.case-images{display:grid;grid-template-columns:1fr 1fr;height:200px}
+.case-images img{width:100%;height:100%;object-fit:cover}
+.case-images .before{position:relative}.case-images .before::after{content:'BEFORE';position:absolute;bottom:5px;left:5px;background:rgba(0,0,0,.8);color:var(--muted);font-size:.65rem;padding:2px 6px;border-radius:2px;font-family:'JetBrains Mono',monospace}
+.case-images .after{position:relative}.case-images .after::after{content:'AFTER';position:absolute;bottom:5px;left:5px;background:rgba(57,255,20,.2);color:var(--neon);font-size:.65rem;padding:2px 6px;border-radius:2px;font-family:'JetBrains Mono',monospace}
+.case-body{padding:20px}
+.case-body h3{font-size:1rem;margin-bottom:8px}
+.case-body p{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+.case-meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding-top:10px;border-top:1px solid var(--border)}
+.difficulty{font-family:'JetBrains Mono',monospace}
+.difficulty .bar{display:inline-block;width:8px;height:8px;background:var(--border);margin-right:2px;border-radius:1px}
+.difficulty .bar.active{background:var(--neon)}
+.case-tag{background:var(--surface);border:1px solid var(--border);padding:2px 8px;border-radius:var(--radius);color:var(--muted);font-size:.75rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:40px 0;margin-top:60px}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.footer-col h4{margin-bottom:15px;font-size:.9rem}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.cases-grid{grid-template-columns:1fr}.page-header h1{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo">Circuit<span>_</span>電子維修</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">維修服務</a></li><li><a href="process.html">維修流程</a></li><li><a href="pricing.html">價目表</a></li><li><a href="faq.html">常見問題</a></li><li><a href="cases.html">維修案例</a></li><li><a href="contact.html">聯絡我們</a></li>
+    </ul>
+    <button class="menu-btn" onclick="toggleMenu()">≡ MENU</button>
+  </div>
+</nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="toggleMenu()">✕</button><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="services.html">維修服務</a><a href="process.html">維修流程</a><a href="pricing.html">價目表</a><a href="faq.html">常見問題</a><a href="cases.html">維修案例</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-header">
+  <div class="container">
+    <h1>// 維修案例</h1>
+    <p>真實維修案例分享，展示我們的技術與品質</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-images">
+          <div class="before"><img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=300&h=200&fit=crop" alt="before"></div>
+          <div class="after"><img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=300&h=200&fit=crop" alt="after"></div>
+        </div>
+        <div class="case-body">
+          <h3>iPhone 14 Pro 螢幕粉碎維修</h3>
+          <p>客戶手機從二樓掉落，螢幕完全碎裂但觸控部分功能仍在。更換原廠等級 OLED 螢幕總成，35 分鐘完工。</p>
+          <div class="case-meta">
+            <div class="difficulty">難度：<span class="bar active"></span><span class="bar active"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <span class="case-tag">iPhone</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-images">
+          <div class="before"><img src="https://images.unsplash.com/photo-1530319067432-f2a729c03db5?w=300&h=200&fit=crop" alt="before"></div>
+          <div class="after"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=200&fit=crop" alt="after"></div>
+        </div>
+        <div class="case-body">
+          <h3>MacBook Pro 主機板進水維修</h3>
+          <p>咖啡潑灑導致無法開機。超音波清洗主機板，更換腐蝕的電容與 IC，成功修復所有功能。</p>
+          <div class="case-meta">
+            <div class="difficulty">難度：<span class="bar active"></span><span class="bar active"></span><span class="bar active"></span><span class="bar active"></span><span class="bar"></span></div>
+            <span class="case-tag">筆電</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-images">
+          <div class="before"><img src="https://images.unsplash.com/photo-1585399000684-d2f72660f092?w=300&h=200&fit=crop" alt="before"></div>
+          <div class="after"><img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=300&h=200&fit=crop" alt="after"></div>
+        </div>
+        <div class="case-body">
+          <h3>PS5 HDMI 接口損壞更換</h3>
+          <p>搬家時 HDMI 線纏繞導致接口內部焊點斷裂。使用熱風台拆除舊接口，焊接全新 HDMI 座。</p>
+          <div class="case-meta">
+            <div class="difficulty">難度：<span class="bar active"></span><span class="bar active"></span><span class="bar active"></span><span class="bar"></span><span class="bar"></span></div>
+            <span class="case-tag">遊戲主機</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-images">
+          <div class="before"><img src="https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=300&h=200&fit=crop" alt="before"></div>
+          <div class="after"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=200&fit=crop" alt="after"></div>
+        </div>
+        <div class="case-body">
+          <h3>Samsung S23 Ultra 泡水資料救援</h3>
+          <p>手機掉入游泳池超過 5 分鐘。螢幕與主機板損壞，但成功救回 95% 的照片與聯絡人資料。</p>
+          <div class="case-meta">
+            <div class="difficulty">難度：<span class="bar active"></span><span class="bar active"></span><span class="bar active"></span><span class="bar active"></span><span class="bar active"></span></div>
+            <span class="case-tag">資料救援</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-images">
+          <div class="before"><img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?w=300&h=200&fit=crop" alt="before"></div>
+          <div class="after"><img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=200&fit=crop" alt="after"></div>
+        </div>
+        <div class="case-body">
+          <h3>iPad Pro 電池膨脹緊急處理</h3>
+          <p>iPad 螢幕突起變形，判斷為電池膨脹。安全取出膨脹電池並更換全新電池，恢復正常使用。</p>
+          <div class="case-meta">
+            <div class="difficulty">難度：<span class="bar active"></span><span class="bar active"></span><span class="bar active"></span><span class="bar"></span><span class="bar"></span></div>
+            <span class="case-tag">平板</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-images">
+          <div class="before"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop" alt="before"></div>
+          <div class="after"><img src="https://images.unsplash.com/photo-1625480861498-28b4c142087d?w=300&h=200&fit=crop" alt="after"></div>
+        </div>
+        <div class="case-body">
+          <h3>Switch Joy-Con 飄移 + 外殼更換</h3>
+          <p>左右 Joy-Con 均有飄移問題。更換兩側搖桿模組，客戶另選透明外殼改裝，煥然一新。</p>
+          <div class="case-meta">
+            <div class="difficulty">難度：<span class="bar active"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <span class="case-tag">遊戲主機</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col"><h4>// Circuit 電子維修</h4><p>台北市中正區市民大道三段8號</p><p>（光華商場正對面）</p><p>營業時間：週一至週六 11:00-21:00</p></div>
+      <div class="footer-col"><h4>// 快速連結</h4><a href="services.html">維修服務</a><a href="pricing.html">價目表</a><a href="process.html">維修流程</a><a href="faq.html">常見問題</a></div>
+      <div class="footer-col"><h4>// 聯絡方式</h4><p>電話：(02) 2396-5500</p><p>LINE ID：@circuit-repair</p><p>Email：service@circuit-repair.tw</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Circuit 電子維修. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

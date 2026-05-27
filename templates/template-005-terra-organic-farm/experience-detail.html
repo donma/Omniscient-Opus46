@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>插秧體驗 — Terra 有機農場</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--white:#ffffff;--earth:#5c7a3a;--earth-dark:#3d5a22;--earth-light:#8fb065;--brown:#8b6914;--sand:#f0e8d8;--text:#2d2a26;--muted:#7a7264;--border:#e4ddd0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}h1,h2,h3{font-family:'Playfair Display','Noto Sans TC',serif;font-weight:700;line-height:1.3}a{color:var(--earth);text-decoration:none}img{max-width:100%;height:auto;display:block}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,244,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--earth-dark);font-weight:700}.logo span{color:var(--brown)}.nav-desktop{display:flex;gap:1.5rem}.nav-desktop a{color:var(--text);font-size:.9rem;font-weight:400}.nav-desktop a:hover{color:var(--earth)}.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:3rem 2rem;transition:left .4s}.mobile-nav.active{left:0}.mobile-nav .close{position:absolute;top:1rem;right:1rem;font-size:1.5rem;cursor:pointer;color:var(--muted)}.mobile-nav a{display:block;padding:.8rem 0;color:var(--text);border-bottom:1px solid var(--border)}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1500;display:none}.overlay.active{display:block}
+
+.breadcrumb{padding:5.5rem 2rem 1rem;max-width:1000px;margin:0 auto;font-size:.9rem;color:var(--muted)}.breadcrumb a{color:var(--earth)}
+.detail-hero{width:100%;height:450px;object-fit:cover;margin-bottom:0}
+.section{padding:4rem 2rem}.section-sand{background:var(--sand)}.container{max-width:900px;margin:0 auto}
+.detail-header{margin-bottom:2rem}.detail-header h1{font-size:2.2rem;color:var(--earth-dark);margin-bottom:.5rem}.detail-header .meta{display:flex;gap:2rem;color:var(--muted);font-size:.95rem;flex-wrap:wrap;margin-bottom:1rem}
+.detail-header .price{font-size:1.4rem;color:var(--earth);font-weight:500}
+
+.itinerary{margin:2rem 0}.itinerary h2{font-family:'Noto Sans TC',sans-serif;font-weight:500;font-size:1.3rem;color:var(--earth-dark);margin-bottom:1.5rem}
+.itinerary-item{display:flex;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.itinerary-item .time{font-weight:500;color:var(--brown);min-width:80px}
+.itinerary-item .desc h4{font-family:'Noto Sans TC',sans-serif;font-weight:500;margin-bottom:.2rem}
+.itinerary-item .desc p{color:var(--muted);font-size:.95rem}
+
+.info-boxes{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0}
+.info-box{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+.info-box h3{font-family:'Noto Sans TC',sans-serif;font-weight:500;color:var(--earth-dark);margin-bottom:.8rem;font-size:1rem}
+.info-box ul{list-style:none;padding:0}.info-box li{padding:.3rem 0;color:var(--muted);font-size:.9rem}.info-box li::before{content:'✓';color:var(--earth);margin-right:.5rem}
+
+.booking-cta{text-align:center;padding:3rem;background:var(--sand);border-radius:8px;margin-top:3rem}
+.booking-cta h2{font-size:1.5rem;color:var(--earth-dark);margin-bottom:1rem}
+.booking-cta p{color:var(--muted);margin-bottom:1.5rem}
+.btn{display:inline-block;padding:.9rem 2.2rem;border-radius:8px;font-weight:400;transition:all .3s}.btn-primary{background:var(--earth);color:var(--white)}.btn-primary:hover{background:var(--earth-dark)}
+
+.footer{background:var(--earth-dark);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}.footer h4{color:var(--white);font-family:'Playfair Display',serif;margin-bottom:1rem}.footer a{color:rgba(255,255,255,.7);display:block;margin-bottom:.5rem;font-size:.9rem}.footer a:hover{color:var(--white)}.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
+@media(max-width:768px){.nav-desktop{display:none}.hamburger{display:flex}.detail-hero{height:280px}.detail-header h1{font-size:1.7rem}.info-boxes{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header"><div class="logo">Terra <span>有機農場</span></div><nav class="nav-desktop"><a href="index.html">首頁</a><a href="about.html">農場故事</a><a href="philosophy.html">有機理念</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a><a href="products.html">線上訂購</a><a href="contact.html">聯絡我們</a></nav><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="mobile-nav"><div class="close" onclick="toggleMenu()">&times;</div><a href="index.html">首頁</a><a href="about.html">農場故事</a><a href="philosophy.html">有機理念</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a><a href="products.html">線上訂購</a><a href="contact.html">聯絡我們</a></nav>
+
+<div class="breadcrumb"><a href="index.html">首頁</a> / <a href="experiences.html">農場體驗</a> / 插秧體驗</div>
+<img class="detail-hero" src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=1400&q=80" alt="插秧體驗">
+
+<section class="section">
+<div class="container">
+<div class="detail-header">
+<h1>插秧體驗 — 與土地的第一次親密接觸</h1>
+<div class="meta"><span>⏱ 約 3 小時</span><span>👥 4-20 人成團</span><span>📅 每年 2月及 7月</span><span>🌾 適合所有年齡</span></div>
+<p class="price">NT$800 / 人（6歲以下免費）</p>
+</div>
+
+<p>赤腳踏入水田的那一刻，你會感受到一種前所未有的連結感。溫潤的泥土包裹腳踝，涼爽的水流過腳背，空氣中瀰漫著泥土和青草的氣息。這就是農夫每天的日常，也是我們想與你分享的體驗。</p>
+<p style="margin-top:1rem">插秧看似簡單，其實是一門學問。秧苗之間的距離、插入的深度、排列的方式，都會影響稻米的生長。在這三個小時裡，你不只是體驗農事，更是在學習一種與自然共處的智慧。</p>
+
+<div class="itinerary">
+<h2>活動流程</h2>
+<div class="itinerary-item"><div class="time">09:00</div><div class="desc"><h4>集合報到</h4><p>農場集合、更衣、領取裝備（斗笠、手套）</p></div></div>
+<div class="itinerary-item"><div class="time">09:20</div><div class="desc"><h4>稻作知識分享</h4><p>志偉老師解說稻米的生長週期、有機栽種方式、以及插秧技巧</p></div></div>
+<div class="itinerary-item"><div class="time">09:50</div><div class="desc"><h4>下田插秧</h4><p>赤腳走入水田，實際體驗插秧。工作人員全程協助指導</p></div></div>
+<div class="itinerary-item"><div class="time">11:00</div><div class="desc"><h4>田間生態觀察</h4><p>觀察水田中的蝌蚪、水蠆、紅娘華等生物，認識稻田生態系</p></div></div>
+<div class="itinerary-item"><div class="time">11:30</div><div class="desc"><h4>洗腳、點心時間</h4><p>享用農場自製米苔目湯及當季水果，分享心得</p></div></div>
+<div class="itinerary-item"><div class="time">12:00</div><div class="desc"><h4>活動結束</h4><p>贈送農場米一包（300g），合影留念</p></div></div>
+</div>
+
+<div class="info-boxes">
+<div class="info-box">
+<h3>需要攜帶</h3>
+<ul><li>換洗衣物（會弄髒）</li><li>毛巾</li><li>防曬用品</li><li>飲用水</li><li>愉快的心情</li></ul>
+</div>
+<div class="info-box">
+<h3>注意事項</h3>
+<ul><li>活動需提前 3 天預約</li><li>4 人以上成團，最多 20 人</li><li>如遇大雨將延期或取消（全額退費）</li><li>農場提供斗笠及簡易雨具</li><li>有傷口者建議穿水鞋</li></ul>
+</div>
+</div>
+
+<div class="booking-cta">
+<h2>預約插秧體驗</h2>
+<p>最近一梯次：2026年 7月 13日（六）、7月 20日（六）</p>
+<a href="contact.html" class="btn btn-primary">立即預約</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-grid"><div><h4>Terra 有機農場</h4><p>宜蘭縣三星鄉大隱路 128 號</p><p style="margin-top:.5rem">電話：03-989-5678</p></div><div><h4>導覽</h4><a href="about.html">農場故事</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a></div><div><h4>營業資訊</h4><p>週二至週日 09:00-17:00</p><p style="margin-top:.5rem">週一公休</p></div></div>
+<div class="footer-bottom">© 2026 Terra 有機農場 版權所有</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>品牌故事 — Maison Noir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+section{padding:100px 0}.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+.page-hero{margin-top:70px;padding:120px 0 80px;text-align:center}
+.page-hero .label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.page-hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-style:italic;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:.9rem;max-width:560px;margin:0 auto}
+
+.story-section{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:500px}
+@media(max-width:768px){.story-section{grid-template-columns:1fr}}
+.story-image{overflow:hidden}.story-image img{width:100%;height:100%;object-fit:cover}
+.story-text{display:flex;flex-direction:column;justify-content:center;padding:80px}
+@media(max-width:768px){.story-text{padding:48px 24px}}
+.story-text .label{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.story-text h2{font-size:2rem;margin-bottom:16px;font-style:italic}
+.story-text p{color:var(--muted);font-size:.88rem;margin-bottom:16px}
+
+.philosophy{background:var(--offwhite);padding:100px 0;text-align:center}
+.philosophy h2{font-size:2.4rem;font-style:italic;margin-bottom:24px}
+.philosophy p{color:var(--muted);font-size:.92rem;max-width:640px;margin:0 auto 16px}
+.philosophy blockquote{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;margin:48px auto;max-width:600px;padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+.timeline{padding:100px 0}
+.timeline h2{text-align:center;font-size:2rem;font-style:italic;margin-bottom:60px}
+.timeline-items{max-width:700px;margin:0 auto;position:relative;padding-left:40px;border-left:1px solid var(--border)}
+.timeline-item{margin-bottom:48px;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-45px;top:8px;width:8px;height:8px;background:var(--text);border-radius:50%}
+.timeline-item .year{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--light-muted);margin-bottom:4px}
+.timeline-item h3{font-size:1.2rem;margin-bottom:8px}
+.timeline-item p{color:var(--muted);font-size:.85rem}
+
+.team-section{background:var(--offwhite);padding:100px 0}
+.team-section h2{text-align:center;font-size:2rem;font-style:italic;margin-bottom:60px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:0 auto}
+@media(max-width:768px){.team-grid{grid-template-columns:1fr}}
+.team-member img{width:100%;height:360px;object-fit:cover;margin-bottom:16px}
+.team-member h3{font-size:1.1rem;margin-bottom:4px}
+.team-member p{color:var(--muted);font-size:.82rem}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="page-hero">
+<div class="container">
+<p class="label">Our Story</p>
+<h1>品牌故事</h1>
+<p>從台北到巴黎，再回到這片土地。Maison Noir 是一段關於回歸本質的旅程。</p>
+</div>
+</div>
+
+<div class="story-section">
+<div class="story-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=900&q=80" alt="創辦人"></div>
+<div class="story-text">
+<p class="label">The Beginning</p>
+<h2>從巴黎帶回的信念</h2>
+<p>2016 年，創辦人林靜宜從巴黎高等時裝學院畢業後，帶著在歐洲時裝產業工作五年的經歷回到台灣。在巴黎的日子裡，她看見了高級訂製服的精湛工藝，也目睹了快時尚對環境造成的巨大傷害。</p>
+<p>「我想證明，永續與美感不必是對立的。」帶著這個信念，她在台北的一間小工作室裡，開始了 Maison Noir 的第一個系列。</p>
+</div>
+</div>
+
+<div class="story-section">
+<div class="story-text" style="background:var(--offwhite)">
+<p class="label">The Name</p>
+<h2>為何取名 Maison Noir</h2>
+<p>Maison 在法語中意為「家」，Noir 則是「黑」。黑色是時裝界最經典的顏色，代表著永恆與純粹。而「家」則傳達了品牌希望帶給穿著者的歸屬感與安心。</p>
+<p>每一件 Maison Noir 的作品，都像是為你量身打造的第二層肌膚 — 不張揚、不退流行，安靜地陪伴你走過每一個日常。</p>
+</div>
+<div class="story-image"><img src="https://images.unsplash.com/photo-1558171814-2e52ef955be0?w=900&q=80" alt="工作室"></div>
+</div>
+
+<section class="philosophy">
+<div class="container">
+<h2>品牌哲學</h2>
+<p>在這個過度消費的時代，我們選擇站在對立面。Maison Noir 相信真正的奢華不在於擁有多少，而在於每一件物品是否都承載著意義。</p>
+<blockquote>Less, but better.</blockquote>
+<p>我們的每一件作品都經過反覆推敲，從面料的選擇、版型的修正到車縫的細節，平均每件單品需經歷 47 次修改才會進入量產。我們寧可做少，也不願妥協品質。</p>
+</div>
+</section>
+
+<section class="timeline">
+<div class="container">
+<h2>品牌里程碑</h2>
+<div class="timeline-items">
+<div class="timeline-item">
+<p class="year">2016</p>
+<h3>品牌創立</h3>
+<p>林靜宜在台北大安區的一間 15 坪工作室內，完成了第一個膠囊系列 — 僅有 8 件單品。</p>
+</div>
+<div class="timeline-item">
+<p class="year">2017</p>
+<h3>首間概念店開幕</h3>
+<p>中山北路概念店正式開幕，以極簡空間設計呼應品牌美學，開幕首月即受到 Vogue Taiwan 專題報導。</p>
+</div>
+<div class="timeline-item">
+<p class="year">2018</p>
+<h3>取得 B Corp 認證</h3>
+<p>成為台灣首個取得 B Corp 認證的時裝品牌，正式將永續發展寫入企業章程。</p>
+</div>
+<div class="timeline-item">
+<p class="year">2020</p>
+<h3>全面轉型永續面料</h3>
+<p>完成品牌承諾，所有系列 100% 使用永續認證面料，並公開完整供應鏈資訊。</p>
+</div>
+<div class="timeline-item">
+<p class="year">2022</p>
+<h3>信義旗艦店開幕</h3>
+<p>位於信義區的 80 坪旗艦店開幕，結合展覽空間與裁縫工坊，成為品牌體驗中心。</p>
+</div>
+<div class="timeline-item">
+<p class="year">2026</p>
+<h3>進軍國際市場</h3>
+<p>於東京表參道開設海外首間門市，並受邀參加巴黎時裝週永續時尚展區。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="team-section">
+<div class="container">
+<h2>核心團隊</h2>
+<div class="team-grid">
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="林靜宜">
+<h3>林靜宜</h3>
+<p>創辦人暨設計總監。巴黎高等時裝學院畢業，曾任職於 Celine 與 The Row。</p>
+</div>
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="陳雅婷">
+<h3>陳雅婷</h3>
+<p>永續發展總監。環境工程背景，負責品牌供應鏈透明化與碳中和策略。</p>
+</div>
+<div class="team-member">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="張瑋倫">
+<h3>張瑋倫</h3>
+<p>打版主管。三十年經驗的資深師傅，確保每件作品的版型與車工達到最高標準。</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

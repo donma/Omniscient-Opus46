@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>初學者的第一堂瑜伽課 — Zen 瑜伽會館</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f9f5;--white:#ffffff;--sage:#7c9a72;--sage-dark:#5a7a50;--sand:#e8dfd0;--text:#2a2e28;--muted:#6b7268;--border:#dde5d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cormorant',serif;font-style:italic;font-weight:600;color:var(--sage-dark)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:16px 24px}
+nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Cormorant',serif;font-style:italic;font-size:1.6rem;color:var(--sage-dark)}
+nav .nav-links{display:flex;gap:24px;list-style:none}
+nav .nav-links a{font-size:.9rem;color:var(--muted);transition:color .3s}
+nav .nav-links a:hover{color:var(--sage-dark)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sage-dark)}
+.article-header{text-align:center;padding:80px 24px 40px}
+.article-header .date{color:var(--sage);font-size:.85rem;margin-bottom:16px}
+.article-header h1{font-size:2.4rem;margin-bottom:16px}
+.article-header .author{color:var(--muted)}
+.article-hero img{width:100%;height:400px;object-fit:cover;border-radius:var(--radius);margin-bottom:60px}
+.article-content{padding-bottom:80px}
+.article-content p{color:var(--muted);margin-bottom:20px}
+.article-content h2{font-size:1.5rem;margin:40px 0 16px}
+.article-content ul{list-style:none;padding:0;margin-bottom:20px}
+.article-content ul li{padding:8px 0;color:var(--muted);border-bottom:1px solid var(--border)}
+.article-content ul li::before{content:"• ";color:var(--sage)}
+.article-content blockquote{border-left:3px solid var(--sage);padding:16px 24px;margin:32px 0;background:var(--white);border-radius:0 var(--radius) var(--radius) 0}
+.article-content blockquote p{color:var(--sage-dark);font-style:italic;margin:0}
+.back-link{display:inline-block;color:var(--sage-dark);margin-top:40px;padding:10px 0;border-bottom:1px solid var(--sage)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:60px 24px;margin-top:80px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.footer-col h4{font-size:1.1rem;margin-bottom:16px}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--sage-dark)}
+.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){
+nav .nav-links{display:none;position:fixed;top:0;right:0;width:70%;height:100vh;background:var(--white);flex-direction:column;padding:80px 40px;gap:32px;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+nav .nav-links.active{display:flex}
+.menu-toggle{display:block}
+.article-header h1{font-size:1.8rem}
+.article-hero img{height:250px}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Zen 瑜伽會館</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於會館</a></li>
+<li><a href="classes.html">課程介紹</a></li>
+<li><a href="teachers.html">師資團隊</a></li>
+<li><a href="schedule.html">課表時間</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="blog.html">身心專欄</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="article-header">
+<div class="date">2026.11.15</div>
+<h1>初學者的第一堂瑜伽課：你需要知道的一切</h1>
+<p class="author">文 / 林芷瑜 老師</p>
+</div>
+
+<div class="container">
+<div class="article-hero">
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80" alt="初學者瑜伽">
+</div>
+
+<div class="article-content">
+<p>決定踏入瑜伽教室是一件值得慶祝的事。無論你是為了紓壓、增加柔軟度，還是單純好奇，瑜伽都能為你帶來意想不到的收穫。作為教了十五年瑜伽的老師，我想和即將踏上這段旅程的你分享一些建議。</p>
+
+<h2>選擇適合的課程</h2>
+<p>對於完全沒有經驗的初學者，我建議從「哈達瑜伽」開始。這類課程節奏較慢，老師會花時間講解每個姿勢的正確對位，讓你有充分的時間理解與感受身體。</p>
+<p>避免一開始就選擇高強度的流動瑜伽或進階課程，這可能會讓你感到挫折或增加受傷風險。</p>
+
+<h2>上課前的準備</h2>
+<ul>
+<li>穿著舒適、有彈性的衣服，避免太寬鬆（倒立時可能會滑落）</li>
+<li>課前 2 小時避免進食，空腹或微飽感練習最舒適</li>
+<li>帶一條小毛巾和水壺</li>
+<li>提前 10-15 分鐘到達，讓自己有時間安頓</li>
+<li>告訴老師你是初學者，以及任何身體狀況</li>
+</ul>
+
+<h2>課堂中的心態</h2>
+<blockquote>
+<p>瑜伽不是比賽，你唯一需要超越的人是昨天的自己。</p>
+</blockquote>
+<p>第一堂課最重要的不是做到完美的體式，而是開始建立身體覺察。注意你的呼吸——它是否順暢？你的身體哪裡感到緊繃？哪裡感到舒適？</p>
+<p>如果某個動作讓你感到疼痛（注意是「痛」而非「緊」），請立刻停下來。適度的伸展感是正常的，但尖銳的疼痛是身體在告訴你停止。</p>
+
+<h2>課後的照顧</h2>
+<p>第一次練習後，你可能會在一兩天後感到肌肉酸痛，這是正常的。多喝水、充分休息、做些溫和的伸展就好。</p>
+<p>最重要的是——不要因為一次不完美的體驗就放棄。給自己至少三次課的時間來感受瑜伽的美好。每個人的身體都不同，找到自己的節奏需要一點時間。</p>
+
+<h2>開始你的旅程</h2>
+<p>在 Zen 瑜伽會館，我們非常歡迎初學者。我們的老師會在課前詢問是否有新同學，並在課堂中提供替代動作的選項。你不需要做到和旁邊的人一樣，只需要做到「你的版本」就好。</p>
+<p>如果你還在猶豫，歡迎先來參觀我們的空間，感受一下氛圍。有時候，踏出第一步只需要一個溫暖的邀請。</p>
+
+<a href="blog.html" class="back-link">← 返回專欄列表</a>
+</div>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-col">
+<h4>Zen 瑜伽會館</h4>
+<p>在天母的寧靜角落，為您打造一處回歸自我的空間。</p>
+</div>
+<div class="footer-col">
+<h4>快速連結</h4>
+<a href="classes.html">課程介紹</a>
+<a href="schedule.html">課表時間</a>
+<a href="membership.html">會員方案</a>
+<a href="workshops.html">工作坊</a>
+</div>
+<div class="footer-col">
+<h4>聯絡資訊</h4>
+<p>台北市士林區天母東路68號2樓</p>
+<p>電話：02-2871-6688</p>
+<p>Email：hello@zen-yoga.tw</p>
+</div>
+<div class="footer-col">
+<h4>營業時間</h4>
+<p>週一至週五 07:00 - 21:30</p>
+<p>週六日 08:00 - 18:00</p>
+<p>國定假日公休</p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Zen 瑜伽會館 版權所有</div>
+</footer>
+</body>
+</html>

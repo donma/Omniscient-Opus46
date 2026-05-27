@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>當季系列 — Maison Noir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+section{padding:100px 0}.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+.page-hero{margin-top:70px;padding:120px 0 60px;text-align:center}
+.page-hero .label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.page-hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-style:italic;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:.9rem;max-width:560px;margin:0 auto}
+
+.filter-tabs{display:flex;justify-content:center;gap:32px;margin-bottom:60px;flex-wrap:wrap}
+.filter-tabs button{background:none;border:none;font-family:'Noto Sans TC',sans-serif;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--light-muted);cursor:pointer;padding:8px 0;border-bottom:1px solid transparent;transition:.3s}
+.filter-tabs button.active,.filter-tabs button:hover{color:var(--text);border-bottom-color:var(--text)}
+
+.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:768px){.collection-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.collection-grid{grid-template-columns:1fr}}
+.collection-item{position:relative;overflow:hidden}
+.collection-item img{width:100%;height:480px;object-fit:cover;transition:.6s}
+.collection-item:hover img{transform:scale(1.03)}
+.collection-item .info{padding:16px 0}
+.collection-item .info h3{font-size:1rem;font-family:'Cormorant Garamond',serif;font-weight:400;margin-bottom:4px}
+.collection-item .info .price{color:var(--muted);font-size:.82rem}
+.collection-item .info .category{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--light-muted)}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="page-hero">
+<div class="container">
+<p class="label">Spring / Summer 2026</p>
+<h1>當季系列</h1>
+<p>以大地色調與天然纖維為主軸，本季系列致敬自然的靜謐力量。</p>
+</div>
+</div>
+
+<section style="padding-top:0">
+<div class="container">
+<div class="filter-tabs">
+<button class="active" onclick="filterItems('all',this)">全部</button>
+<button onclick="filterItems('outerwear',this)">外套</button>
+<button onclick="filterItems('tops',this)">上衣</button>
+<button onclick="filterItems('bottoms',this)">下著</button>
+<button onclick="filterItems('dresses',this)">洋裝</button>
+<button onclick="filterItems('accessories',this)">配件</button>
+</div>
+<div class="collection-grid">
+<a href="collection-detail.html" class="collection-item" data-cat="outerwear"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="羊毛大衣"><div class="info"><p class="category">外套</p><h3>雙面羊毛繭型大衣</h3><span class="price">NT$16,800</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="tops"><img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&q=80" alt="絲質上衣"><div class="info"><p class="category">上衣</p><h3>有機絲質垂墜襯衫</h3><span class="price">NT$7,200</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="bottoms"><img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80" alt="寬褲"><div class="info"><p class="category">下著</p><h3>高腰壓褶寬版長褲</h3><span class="price">NT$6,800</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="dresses"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" alt="洋裝"><div class="info"><p class="category">洋裝</p><h3>亞麻無袖連身裙</h3><span class="price">NT$9,400</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="outerwear"><img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=600&q=80" alt="風衣"><div class="info"><p class="category">外套</p><h3>再生尼龍風衣外套</h3><span class="price">NT$14,200</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="tops"><img src="https://images.unsplash.com/photo-1562572159-4efc207f5aff?w=600&q=80" alt="針織衫"><div class="info"><p class="category">上衣</p><h3>美麗諾羊毛圓領針織衫</h3><span class="price">NT$6,400</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="accessories"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80" alt="圍巾"><div class="info"><p class="category">配件</p><h3>喀什米爾大方巾</h3><span class="price">NT$6,000</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="dresses"><img src="https://images.unsplash.com/photo-1502716119720-b23a1e3b3c34?w=600&q=80" alt="襯衫裙"><div class="info"><p class="category">洋裝</p><h3>棉麻落肩襯衫裙</h3><span class="price">NT$8,600</span></div></a>
+<a href="collection-detail.html" class="collection-item" data-cat="bottoms"><img src="https://images.unsplash.com/photo-1551854838-212c50b4c184?w=600&q=80" alt="裙"><div class="info"><p class="category">下著</p><h3>天絲緞面中長裙</h3><span class="price">NT$7,800</span></div></a>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</div></footer>
+<script>
+function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+function filterItems(cat,btn){
+document.querySelectorAll('.filter-tabs button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+document.querySelectorAll('.collection-item').forEach(item=>{
+if(cat==='all'||item.dataset.cat===cat){item.style.display=''}else{item.style.display='none'}
+});
+}
+</script>
+</body>
+</html>

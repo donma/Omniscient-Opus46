@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>部落格 — Nexus SaaS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0b1a;--surface:#12122a;--card:#1a1a3a;--primary:#7c5cff;--primary-light:#a78bfa;--accent:#06d6a0;--text:#e8e8f0;--muted:#8888aa;--border:#2a2a4a;--radius:16px;--btn-radius:99px}
+body{font-family:'Inter','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,11,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}.nav-links a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 32px;transition:right .3s;display:flex;flex-direction:column;gap:24px}.mobile-menu.active{right:0}.mobile-menu a{font-size:1.1rem;color:var(--muted)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}}
+.page-hero{padding:140px 0 40px;text-align:center}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:40px 0 100px}
+.blog-card{background:rgba(26,26,58,.6);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(124,92,255,.15)}
+.blog-card img{width:100%;height:200px;object-fit:cover}
+.blog-card-body{padding:28px}
+.blog-card .tag{display:inline-block;font-size:.75rem;padding:4px 12px;border-radius:99px;background:rgba(124,92,255,.15);color:var(--primary-light);margin-bottom:12px}
+.blog-card h3{font-size:1.15rem;font-weight:600;margin-bottom:8px}
+.blog-card p{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+.blog-card .meta{color:var(--muted);font-size:.8rem}
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--border);padding:60px 0 32px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{color:var(--muted);margin-top:12px;font-size:.9rem}
+.footer-col h4{font-size:.85rem;text-transform:uppercase;color:var(--muted);margin-bottom:16px;letter-spacing:1px}
+.footer-col a{display:block;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.footer-newsletter input{width:100%;padding:10px 16px;border-radius:var(--btn-radius);border:1px solid var(--border);background:var(--card);color:var(--text);margin-bottom:12px;font-size:.9rem}
+.footer-newsletter button{width:100%;padding:10px;border-radius:var(--btn-radius);background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:.9rem}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;padding-top:24px;border-top:1px solid var(--border)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><nav><a href="index.html" class="logo">Nexus</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">產品功能</a></li><li><a href="pricing.html">定價方案</a></li><li><a href="case-studies.html">客戶案例</a></li><li><a href="integrations.html">整合生態系</a></li><li><a href="docs.html">開發者文件</a></li><li><a href="about.html">關於我們</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')">&#9776;</button></nav></header>
+<div class="overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu"><button class="mobile-close" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button><a href="index.html">首頁</a><a href="features.html">產品功能</a><a href="pricing.html">定價方案</a><a href="case-studies.html">客戶案例</a><a href="integrations.html">整合生態系</a><a href="docs.html">開發者文件</a><a href="about.html">關於我們</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero"><div class="container"><h1>部落格</h1><p>產品更新、工程分享與客戶故事。</p></div></section>
+
+<div class="container">
+<div class="blog-grid">
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=300&fit=crop" alt="AI">
+<div class="blog-card-body">
+<span class="tag">產品更新</span>
+<h3>AI 如何改變專案管理：Nexus 智能排程功能深度解析</h3>
+<p>探索我們如何運用大型語言模型與機器學習技術，打造下一代 AI 排程引擎。</p>
+<span class="meta">2026 年 3 月 15 日 · 8 分鐘閱讀</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop" alt="Engineering">
+<div class="blog-card-body">
+<span class="tag">工程分享</span>
+<h3>我們如何將即時協作延遲降至 50ms 以下</h3>
+<p>分享 Nexus 工程團隊在 WebSocket 架構與 CRDT 演算法上的實踐經驗。</p>
+<span class="meta">2026 年 2 月 28 日 · 12 分鐘閱讀</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=300&fit=crop" alt="Team">
+<div class="blog-card-body">
+<span class="tag">客戶故事</span>
+<h3>從混亂到秩序：ShopNest 的數位轉型之旅</h3>
+<p>一家 200 人的跨境電商如何在 30 天內完成專案管理工具的全面遷移。</p>
+<span class="meta">2026 年 2 月 10 日 · 6 分鐘閱讀</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=300&fit=crop" alt="Product">
+<div class="blog-card-body">
+<span class="tag">產品更新</span>
+<h3>Nexus 2.0 發布：全新儀表板與自動化引擎</h3>
+<p>我們最大規模的版本更新，帶來重新設計的數據儀表板與無程式碼自動化工具。</p>
+<span class="meta">2026 年 1 月 20 日 · 5 分鐘閱讀</span>
+</div>
+</a>
+</div>
+</div>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo" style="font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Nexus</div><p>AI 驅動的智能協作平台，助力全球團隊高效運作。</p></div><div class="footer-col"><h4>產品</h4><a href="features.html">功能</a><a href="pricing.html">定價</a><a href="integrations.html">整合</a><a href="docs.html">文件</a></div><div class="footer-col"><h4>公司</h4><a href="about.html">關於我們</a><a href="blog.html">部落格</a><a href="careers.html">加入我們</a><a href="contact.html">聯絡</a></div><div class="footer-col"><h4>訂閱電子報</h4><div class="footer-newsletter"><input type="email" placeholder="輸入您的 Email"><button>訂閱</button></div></div></div><div class="footer-bottom">© 2026 Nexus SaaS. All rights reserved. 台北市信義區信義路五段7號</div></div></footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "id": "template-018-matcha-tea",
+  "name": "Matcha 茶道空間",
+  "category": "restaurant",
+  "subcategory": "tea-house",
+  "description": "A zen-inspired Japanese tea house website with matcha green palette, minimalist design, and traditional Chinese content for a fictional tea space in Taipei.",
+  "theme": "light",
+  "colors": {
+    "background": "#f5f7f2",
+    "white": "#ffffff",
+    "primary": "#5a7a48",
+    "primaryLight": "#d4e5c8",
+    "cream": "#f0ebe0",
+    "text": "#2a2e26",
+    "muted": "#6a7060",
+    "border": "#d8e0d0",
+    "accent": "#8a6a3a"
+  },
+  "fonts": {
+    "heading": "Noto Serif TC",
+    "body": "Noto Sans TC"
+  },
+  "borderRadius": "8px",
+  "mobileMenu": "left",
+  "pages": [
+    "index.html",
+    "about.html",
+    "menu.html",
+    "menu-detail.html",
+    "sweets.html",
+    "experience.html",
+    "experience-detail.html",
+    "space.html",
+    "blog.html",
+    "blog-detail.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "navigation": [
+    {"label": "首頁", "href": "index.html"},
+    {"label": "茶道文化", "href": "about.html"},
+    {"label": "茶品菜單", "href": "menu.html"},
+    {"label": "抹茶甜點", "href": "sweets.html"},
+    {"label": "茶道體驗", "href": "experience.html"},
+    {"label": "空間介紹", "href": "space.html"},
+    {"label": "茶人日記", "href": "blog.html"},
+    {"label": "聯絡我們", "href": "contact.html"}
+  ]
+}

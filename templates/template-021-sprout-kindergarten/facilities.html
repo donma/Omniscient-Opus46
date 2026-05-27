@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校園環境 — Sprout 小芽幼兒園</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:0.95rem;font-weight:500}.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:2px solid var(--border)}
+.page-hero h1{font-size:2.5rem;margin-bottom:12px}.page-hero p{color:var(--muted);font-size:1.1rem}
+.section{padding:60px 0}
+.facilities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.facility-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);transition:transform 0.3s}
+.facility-card:hover{transform:translateY(-4px)}
+.facility-card img{width:100%;height:240px;object-fit:cover}
+.facility-card-body{padding:24px}
+.facility-card-body h3{font-size:1.2rem;margin-bottom:8px}
+.facility-card-body p{color:var(--muted);font-size:0.9rem}
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}footer a{color:rgba(255,255,255,0.8)}footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s}
+.mobile-menu.active{right:0}.mobile-menu ul{list-style:none}.mobile-menu li{margin-bottom:20px}.mobile-menu a{font-size:1.1rem}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:block}.facilities-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-toggle" onclick="openMenu()">☰</button></div></nav>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+<div class="container">
+<h1>校園環境 🏫</h1>
+<p>安全、溫馨、充滿探索機會的學習空間</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="facilities-grid">
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=240&fit=crop" alt="教室">
+<div class="facility-card-body">
+<h3>🎒 主題教室</h3>
+<p>明亮寬敞的教室設有多個學習角落：閱讀角、積木區、扮演角、美術區、自然觀察區，讓孩子自由探索不同領域。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=600&h=240&fit=crop" alt="遊樂場">
+<div class="facility-card-body">
+<h3>🎠 戶外遊樂場</h3>
+<p>安全軟墊鋪設的遊戲區，包含攀爬架、滑梯、鞦韆、沙坑和水遊戲區，滿足孩子的體能發展需求。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=240&fit=crop" alt="花園">
+<div class="facility-card-body">
+<h3>🌻 有機菜園</h3>
+<p>孩子們親手種植蔬果的園藝空間，從播種到收穫，學習生命的奧妙與珍惜食物的態度。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=240&fit=crop" alt="美術教室">
+<div class="facility-card-body">
+<h3>🎨 美術教室</h3>
+<p>專業的創作空間，備有各種畫材、黏土、回收素材，讓孩子盡情發揮創意，不怕弄髒。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=600&h=240&fit=crop" alt="音樂教室">
+<div class="facility-card-body">
+<h3>🎵 音樂教室</h3>
+<p>配備鋼琴、各式節奏樂器和音響設備的音樂空間，讓孩子在旋律中感受節奏與表達情感。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=240&fit=crop" alt="圖書室">
+<div class="facility-card-body">
+<h3>📚 繪本圖書室</h3>
+<p>收藏超過2000本中英文繪本的溫馨閱讀空間，柔軟的坐墊和自然光線，讓孩子沈浸在故事世界中。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=240&fit=crop" alt="廚房">
+<div class="facility-card-body">
+<h3>🍳 烘焙廚房</h3>
+<p>專為孩子設計的低矮流理台，定期進行烘焙和料理課程，培養生活技能與對食物的認識。</p>
+</div>
+</div>
+<div class="facility-card">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=240&fit=crop" alt="午休室">
+<div class="facility-card-body">
+<h3>😴 溫馨午休室</h3>
+<p>柔和燈光、舒適寢具的安靜空間，搭配輕柔音樂，讓孩子在安心的環境中好好休息。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Sprout 小芽幼兒園</h4><p>台北市士林區天母西路50號</p><p>電話：(02) 2871-5678</p><p>信箱：hello@sprout-kindergarten.tw</p></div>
+<div><h4>快速連結</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>入學資訊</h4><ul><li><a href="faq.html">常見問題</a></li><li><a href="parents.html">家長手冊</a></li><li><a href="events.html">活動行事曆</a></li><li><a href="contact.html">預約參觀</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

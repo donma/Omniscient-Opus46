@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 | Circuit 電子維修</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f0a;--surface:#111a11;--card:#1a241a;--neon:#39ff14;--neon-dim:#2acd0f;--text:#e0f0e0;--muted:#6a8a6a;--border:#1e3a1e;--dark-accent:#0d1f0d;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);z-index:9999}
+h1,h2,h3,h4{font-family:'JetBrains Mono',monospace;color:var(--neon)}
+a{color:var(--neon);text-decoration:none}a:hover{color:var(--neon-dim)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:15px 0;position:sticky;top:0;z-index:1000}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--neon);font-weight:700}.logo span{color:var(--muted)}
+.nav-links{display:flex;gap:25px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--neon)}
+.menu-btn{display:none;background:none;border:1px solid var(--neon);color:var(--neon);padding:8px 12px;cursor:pointer;font-family:'JetBrains Mono',monospace;border-radius:var(--radius)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);border-right:1px solid var(--neon);padding:60px 30px;transition:left .3s;z-index:2000;display:flex;flex-direction:column;gap:20px}
+.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.mobile-menu .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;color:var(--neon);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1999;display:none}.overlay.active{display:block}
+.page-header{padding:60px 0;text-align:center;background:var(--dark-accent)}.page-header h1{font-size:2.5rem;margin-bottom:10px}.page-header p{color:var(--muted)}
+.section{padding:60px 0}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:15px;overflow:hidden}
+.faq-q{background:var(--card);padding:20px 25px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500}
+.faq-q:hover{background:var(--surface)}
+.faq-q h3{font-size:.95rem;color:var(--text)}
+.faq-q .toggle{color:var(--neon);font-family:'JetBrains Mono',monospace;font-size:1.2rem}
+.faq-a{padding:0 25px;max-height:0;overflow:hidden;transition:all .3s;background:var(--surface)}
+.faq-a.active{padding:20px 25px;max-height:500px}
+.faq-a p{color:var(--muted);font-size:.9rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:40px 0;margin-top:60px}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.footer-col h4{margin-bottom:15px;font-size:.9rem}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.page-header h1{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo">Circuit<span>_</span>電子維修</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">維修服務</a></li><li><a href="process.html">維修流程</a></li><li><a href="pricing.html">價目表</a></li><li><a href="faq.html">常見問題</a></li><li><a href="cases.html">維修案例</a></li><li><a href="contact.html">聯絡我們</a></li>
+    </ul>
+    <button class="menu-btn" onclick="toggleMenu()">≡ MENU</button>
+  </div>
+</nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="toggleMenu()">✕</button><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="services.html">維修服務</a><a href="process.html">維修流程</a><a href="pricing.html">價目表</a><a href="faq.html">常見問題</a><a href="cases.html">維修案例</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-header">
+  <div class="container">
+    <h1>// 常見問題</h1>
+    <p>關於維修服務的常見疑問，在這裡找到答案</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>維修需要多久時間？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>依維修項目不同，時間有所差異。常見的螢幕更換、電池更換等項目約 20-40 分鐘即可完成。主機板維修或資料救援等複雜項目則需要 1-5 個工作天。我們會在報價時告知預計完成時間。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>維修有保固嗎？保固範圍是什麼？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>所有維修項目均提供 180 天保固。保固期間如出現與維修項目相關的非人為故障，可免費返修。保固不涵蓋：人為摔落、進水、私自拆機、自然災害等造成的損壞。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>維修過程中我的資料安全嗎？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>我們非常重視客戶資料安全。一般螢幕、電池更換等維修不會影響手機內的資料。如維修項目可能涉及資料風險，我們會事先告知並建議備份。所有技師均簽署保密協議，絕不查看或複製客戶資料。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>你們使用的是原廠零件嗎？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>我們提供兩種選擇：原廠等級零件（與原廠相同規格的高品質零件）和副廠零件。兩者的品質差異、價格差異我們都會清楚說明，讓您自行選擇。詳細資訊請參考<a href="parts.html">零件品質頁面</a>。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>需要預約嗎？還是可以直接到店？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>歡迎直接到店！我們採取現場取號制，依序服務。如果想減少等待時間，也可以透過 LINE（@circuit-repair）提前預約，我們會為您預留時段。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>檢測要收費嗎？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>完全免費！無論最終是否進行維修，我們的初步檢測與報價都不收取任何費用。只有在您確認報價並同意維修後，才會產生費用。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>手機泡水還能修嗎？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>泡水機修復率取決於進水程度與處理時效。越早送修，成功率越高。我們建議：立即關機、不要充電、不要甩水或用吹風機吹，盡快送到店裡由專業人員處理。泡水機修復率約 60-80%。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><h3>可以等待取件嗎？還是要隔天再來？</h3><span class="toggle">+</span></div>
+        <div class="faq-a"><p>常見維修項目（螢幕、電池更換等）均可現場等待，約 20-40 分鐘完成。店內提供免費 Wi-Fi 和飲料，讓您等待時也能舒適休息。複雜維修則需預留 1-5 個工作天。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col"><h4>// Circuit 電子維修</h4><p>台北市中正區市民大道三段8號</p><p>（光華商場正對面）</p><p>營業時間：週一至週六 11:00-21:00</p></div>
+      <div class="footer-col"><h4>// 快速連結</h4><a href="services.html">維修服務</a><a href="pricing.html">價目表</a><a href="process.html">維修流程</a><a href="faq.html">常見問題</a></div>
+      <div class="footer-col"><h4>// 聯絡方式</h4><p>電話：(02) 2396-5500</p><p>LINE ID：@circuit-repair</p><p>Email：service@circuit-repair.tw</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Circuit 電子維修. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>
+function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}
+function toggleFaq(el){const a=el.nextElementSibling;const t=el.querySelector('.toggle');if(a.classList.contains('active')){a.classList.remove('active');t.textContent='+'}else{a.classList.add('active');t.textContent='-'}}
+</script>
+</body>
+</html>

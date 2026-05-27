@@ -1,0 +1,25 @@
+{
+  "template": "template-012-forge-gym",
+  "version": "1.0.0",
+  "created": "2026-03-15",
+  "author": "OpenCode",
+  "license": "MIT",
+  "tags": ["fitness", "gym", "crossfit", "dark-theme", "aggressive", "traditional-chinese", "taipei"],
+  "compatibility": {
+    "browsers": ["Chrome 90+", "Firefox 88+", "Safari 14+", "Edge 90+"],
+    "responsive": true,
+    "mobileFirst": false
+  },
+  "assets": {
+    "externalFonts": [
+      "https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@400;700&display=swap"
+    ],
+    "images": "Unsplash (hotlinked)",
+    "icons": "none (text-based)"
+  },
+  "fileCount": {
+    "html": 12,
+    "metadata": 3,
+    "total": 15
+  }
+}

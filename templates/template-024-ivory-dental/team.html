@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>醫療團隊 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}
+.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:400;color:var(--text);transition:color .2s}
+.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.mobile-menu.active{right:0}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}
+.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.2rem;margin-bottom:12px}
+.page-hero p{color:var(--muted);max-width:600px;margin:0 auto}
+.section{padding:80px 0}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px}
+.doctor-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.doctor-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(45,212,191,.1)}
+.doctor-card img{width:100%;height:280px;object-fit:cover}
+.doctor-card-body{padding:28px}
+.doctor-card-body h3{margin-bottom:4px;font-size:1.2rem}
+.doctor-card-body .specialty{color:var(--mint-dark);font-weight:600;font-size:.9rem;margin-bottom:12px}
+.doctor-card-body p{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.doctor-card-body .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.doctor-card-body .tag{background:var(--light);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:.8rem;color:var(--mint-dark)}
+.schedule{margin-top:12px;font-size:.85rem;color:var(--muted)}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6)}
+.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">Ivory <span>牙醫診所</span></a><div class="nav-links"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>醫療團隊</h1><p>專業、用心、值得信賴的牙醫師團隊</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="team-grid">
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop" alt="陳柏翰醫師">
+<div class="doctor-card-body">
+<h3>陳柏翰 醫師</h3>
+<div class="specialty">院長 ／ 美學牙科</div>
+<p>台灣大學牙醫學系<br>美國UCLA美學牙科進修<br>中華民國贋復牙科學會專科醫師</p>
+<div class="tags"><span class="tag">全瓷冠</span><span class="tag">陶瓷貼片</span><span class="tag">微笑設計</span></div>
+<div class="schedule">門診時間：週一、三、五 全天／週六上午</div>
+</div>
+</div>
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop" alt="李雅婷醫師">
+<div class="doctor-card-body">
+<h3>李雅婷 醫師</h3>
+<div class="specialty">副院長 ／ 齒顎矯正</div>
+<p>台北醫學大學牙醫學系<br>隱適美認證醫師（白金級）<br>中華民國齒顎矯正學會會員</p>
+<div class="tags"><span class="tag">隱適美</span><span class="tag">齒顎矯正</span><span class="tag">兒童早期矯正</span></div>
+<div class="schedule">門診時間：週二、四全天／週六下午</div>
+</div>
+</div>
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop" alt="張文豪醫師">
+<div class="doctor-card-body">
+<h3>張文豪 醫師</h3>
+<div class="specialty">主治醫師 ／ 植牙專科</div>
+<p>高雄醫學大學牙醫學系<br>Nobel Biocare植牙認證<br>台灣植牙醫學會專科醫師</p>
+<div class="tags"><span class="tag">微創植牙</span><span class="tag">即拔即種</span><span class="tag">全口重建</span></div>
+<div class="schedule">門診時間：週一至週五下午</div>
+</div>
+</div>
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&h=400&fit=crop" alt="王心怡醫師">
+<div class="doctor-card-body">
+<h3>王心怡 醫師</h3>
+<div class="specialty">主治醫師 ／ 牙周病科</div>
+<p>陽明交通大學牙醫學系<br>台灣牙周病醫學會專科醫師<br>美國牙周病學會會員</p>
+<div class="tags"><span class="tag">牙周治療</span><span class="tag">牙周再生手術</span><span class="tag">牙冠增長術</span></div>
+<div class="schedule">門診時間：週二、四、六全天</div>
+</div>
+</div>
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&h=400&fit=crop" alt="劉育成醫師">
+<div class="doctor-card-body">
+<h3>劉育成 醫師</h3>
+<div class="specialty">主治醫師 ／ 兒童牙科</div>
+<p>中山醫學大學牙醫學系<br>兒童牙科專科醫師<br>舒眠牙科認證</p>
+<div class="tags"><span class="tag">兒童牙科</span><span class="tag">舒眠治療</span><span class="tag">預防保健</span></div>
+<div class="schedule">門診時間：週一、三、五上午／週六全天</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div><div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div><div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div><div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div></div><div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

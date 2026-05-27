@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>活動花絮 — Sprout 小芽幼兒園</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:0.95rem;font-weight:500}.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:2px solid var(--border)}
+.page-hero h1{font-size:2.5rem;margin-bottom:12px}.page-hero p{color:var(--muted);font-size:1.1rem}
+.section{padding:60px 0}
+.section h2{font-size:1.8rem;margin-bottom:24px}
+.events-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.event-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);display:flex;transition:transform 0.3s}
+.event-card:hover{transform:translateY(-3px)}
+.event-date{background:var(--blue);color:var(--white);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:100px}
+.event-date .month{font-size:0.8rem;text-transform:uppercase}
+.event-date .day{font-size:2rem;font-family:'Fredoka One',cursive}
+.event-body{padding:24px;flex:1}
+.event-body h3{font-size:1.1rem;margin-bottom:8px}
+.event-body p{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
+.event-body .tag{display:inline-block;padding:2px 10px;border-radius:50px;font-size:0.75rem;font-weight:700}
+.tag-upcoming{background:var(--yellow);color:var(--text)}
+.tag-past{background:var(--border);color:var(--muted)}
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}footer a{color:rgba(255,255,255,0.8)}footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s}
+.mobile-menu.active{right:0}.mobile-menu ul{list-style:none}.mobile-menu li{margin-bottom:20px}.mobile-menu a{font-size:1.1rem}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:block}.events-grid{grid-template-columns:1fr}.event-card{flex-direction:column}.event-date{flex-direction:row;gap:8px;min-width:auto;padding:12px 20px}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-toggle" onclick="openMenu()">☰</button></div></nav>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+<div class="container">
+<h1>校園活動 🎉</h1>
+<p>豐富多元的活動，讓孩子的每一天都充滿驚喜與學習</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>即將舉辦</h2>
+<div class="events-grid">
+<div class="event-card">
+<div class="event-date"><span class="month">4月</span><span class="day">15</span></div>
+<div class="event-body">
+<h3>春季親子運動會</h3>
+<p>全園親子體能闖關、趣味競賽，增進親子互動與團隊精神。備有野餐午會！</p>
+<span class="tag tag-upcoming">即將舉辦</span>
+</div>
+</div>
+<div class="event-card">
+<div class="event-date"><span class="month">5月</span><span class="day">03</span></div>
+<div class="event-body">
+<h3>小小藝術家展覽</h3>
+<p>展示本學期孩子們的藝術創作，含繪畫、黏土、拼貼作品。歡迎家長蒞臨欣賞！</p>
+<span class="tag tag-upcoming">即將舉辦</span>
+</div>
+</div>
+<div class="event-card">
+<div class="event-date"><span class="month">5月</span><span class="day">10</span></div>
+<div class="event-body">
+<h3>母親節感恩週</h3>
+<p>孩子們準備了表演和手作禮物，邀請媽媽們來園共度溫馨時光。</p>
+<span class="tag tag-upcoming">即將舉辦</span>
+</div>
+</div>
+<div class="event-card">
+<div class="event-date"><span class="month">5月</span><span class="day">24</span></div>
+<div class="event-body">
+<h3>大班校外教學：動物園</h3>
+<p>大班孩子前往台北市立動物園，配合「動物與棲地」主題學習。</p>
+<span class="tag tag-upcoming">即將舉辦</span>
+</div>
+</div>
+</div>
+
+<h2 style="margin-top:48px">精彩回顧</h2>
+<div class="events-grid">
+<div class="event-card">
+<div class="event-date" style="background:var(--muted)"><span class="month">12月</span><span class="day">22</span></div>
+<div class="event-body">
+<h3>聖誕冬至聯歡會</h3>
+<p>中西合璧的年末派對！孩子們一起搓湯圓、交換禮物、唱聖誕歌曲。</p>
+<span class="tag tag-past">已結束</span>
+</div>
+</div>
+<div class="event-card">
+<div class="event-date" style="background:var(--muted)"><span class="month">11月</span><span class="day">18</span></div>
+<div class="event-body">
+<h3>秋季親師座談會</h3>
+<p>學期中個別學習報告分享，親師面對面溝通孩子的成長與學習狀況。</p>
+<span class="tag tag-past">已結束</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Sprout 小芽幼兒園</h4><p>台北市士林區天母西路50號</p><p>電話：(02) 2871-5678</p><p>信箱：hello@sprout-kindergarten.tw</p></div>
+<div><h4>快速連結</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>入學資訊</h4><ul><li><a href="faq.html">常見問題</a></li><li><a href="parents.html">家長手冊</a></li><li><a href="events.html">活動行事曆</a></li><li><a href="contact.html">預約參觀</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

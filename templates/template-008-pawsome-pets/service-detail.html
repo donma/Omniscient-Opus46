@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全套美容服務 — Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s ease;box-shadow:-4px 0 30px rgba(0,0,0,.1)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+.page-hero{padding:60px 0;text-align:center;background:var(--pink-light)}
+.page-hero h1{font-size:2.2rem;margin-bottom:8px}.page-hero p{color:var(--muted)}
+.section{padding:80px 0}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.detail-img{border-radius:var(--radius);overflow:hidden}
+.detail-img img{width:100%;height:400px;object-fit:cover}
+.detail-info h2{font-size:1.6rem;margin-bottom:16px;color:var(--pink)}
+.detail-info p{color:var(--muted);margin-bottom:16px}
+.detail-info .meta{display:flex;gap:20px;margin-bottom:24px}
+.detail-info .meta span{background:var(--pink-light);padding:6px 16px;border-radius:var(--btn-radius);font-size:.85rem}
+.steps{margin-top:40px}
+.steps h3{font-size:1.3rem;margin-bottom:20px}
+.step{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.step-num{width:36px;height:36px;background:var(--pink);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+.step-content h4{font-size:1rem;margin-bottom:4px}
+.step-content p{font-size:.85rem;color:var(--muted)}
+.includes{background:var(--white);border-radius:var(--radius);padding:32px;border:1px solid var(--border);margin-top:40px}
+.includes h3{font-size:1.2rem;margin-bottom:16px}
+.includes ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.includes li{font-size:.9rem;color:var(--muted);padding-left:20px;position:relative}
+.includes li::before{content:'✓';position:absolute;left:0;color:var(--pink)}
+.tips-box{background:var(--pink-light);border-radius:var(--radius);padding:28px;margin-top:32px}
+.tips-box h4{font-size:1rem;margin-bottom:12px;color:var(--purple)}
+.tips-box p{font-size:.85rem;color:var(--muted)}
+.btn{display:inline-block;padding:14px 36px;border-radius:var(--btn-radius);font-weight:500;font-size:.95rem;transition:all .3s}
+.btn-primary{background:var(--pink);color:#fff}.btn-primary:hover{background:#d4627a}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-grid h4{font-size:.95rem;margin-bottom:12px;color:var(--pink)}.footer-grid p,.footer-grid li{font-size:.85rem;color:var(--muted);line-height:2}.footer-grid ul{list-style:none}
+.footer-bottom{text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+@media(max-width:768px){.menu-toggle{display:flex}nav{display:none}.detail-grid{grid-template-columns:1fr}.includes ul{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="container"><a href="index.html" class="logo">Paw<span>some</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>全套美容服務</h1><p>從洗澡到造型，一次完成最完美的變身</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="detail-grid">
+<div class="detail-img">
+<img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&h=450&fit=crop" alt="全套美容服務">
+</div>
+<div class="detail-info">
+<h2>全套美容</h2>
+<div class="meta">
+<span>⏱ 約 2-3 小時</span>
+<span>🐕 適合所有犬貓</span>
+</div>
+<p>我們的全套美容是最受歡迎的服務之一。從基礎清潔到精緻造型，由專業美容師依據毛孩品種特性與您的需求，為毛孩量身打造最適合的漂亮造型。</p>
+<p>服務過程中，我們會隨時觀察毛孩的情緒狀態，確保整個過程舒適無壓力。若毛孩出現緊張反應，美容師會暫停休息，給予安撫後再繼續。</p>
+<a href="booking.html" class="btn btn-primary" style="margin-top:20px">預約此服務</a>
+</div>
+</div>
+
+<div class="steps">
+<h3>服務流程</h3>
+<div class="step"><div class="step-num">1</div><div class="step-content"><h4>健康檢查</h4><p>美容師會先檢查毛孩皮膚、耳朵、眼睛狀況，確認無異常後開始服務。</p></div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><h4>梳毛去結</h4><p>使用適合的梳子將打結毛髮梳開，去除廢毛與灰塵。</p></div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><h4>溫水沐浴</h4><p>以適溫清水搭配天然洗劑，徹底清洗全身毛髮與皮膚。</p></div></div>
+<div class="step"><div class="step-num">4</div><div class="step-content"><h4>護毛潤絲</h4><p>塗抹護毛素，讓毛髮柔順有光澤，方便後續修剪造型。</p></div></div>
+<div class="step"><div class="step-num">5</div><div class="step-content"><h4>吹乾整理</h4><p>使用靜音吹風機吹乾毛髮，邊吹邊梳理確保蓬鬆。</p></div></div>
+<div class="step"><div class="step-num">6</div><div class="step-content"><h4>造型修剪</h4><p>依據品種標準或客製需求，進行全身毛髮修剪造型。</p></div></div>
+<div class="step"><div class="step-num">7</div><div class="step-content"><h4>細節收尾</h4><p>修剪指甲、清潔耳朵、擠肛門腺，噴上淡香水完成。</p></div></div>
+</div>
+
+<div class="includes">
+<h3>服務包含項目</h3>
+<ul>
+<li>全身溫水洗澡</li>
+<li>天然洗劑清潔</li>
+<li>護毛潤絲</li>
+<li>全身造型修剪</li>
+<li>耳朵清潔</li>
+<li>指甲修剪</li>
+<li>肛門腺擠壓</li>
+<li>淡香水噴灑</li>
+<li>蝴蝶結/領巾裝飾</li>
+<li>完成拍照留念</li>
+</ul>
+</div>
+
+<div class="tips-box">
+<h4>小提醒</h4>
+<p>建議美容前 2 小時不要餵食，避免毛孩在美容過程中因緊張而嘔吐。若毛孩有皮膚過敏或特殊健康狀況，請提前告知美容師，我們會選用最適合的產品。第一次來店的毛孩，建議預留多一點時間讓牠們熟悉環境。</p>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div><h4>Pawsome 寵物美容</h4><p>位於台北中山區的專業寵物美容沙龍，以愛心與專業技術，為每一位毛孩帶來最舒適的美容體驗。</p></div><div><h4>服務項目</h4><ul><li><a href="services.html">基礎洗澡</a></li><li><a href="services.html">全套美容</a></li><li><a href="services.html">SPA 護理</a></li><li><a href="services.html">口腔護理</a></li></ul></div><div><h4>快速連結</h4><ul><li><a href="booking.html">線上預約</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="faq.html">常見問題</a></li></ul></div><div><h4>聯絡資訊</h4><p>台北市中山區南京東路二段 88 號 1 樓</p><p>02-2567-8899</p><p>營業時間：10:00 - 19:00</p></div></div><div class="footer-bottom"><p>&copy; 2026 Pawsome 寵物美容. All rights reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

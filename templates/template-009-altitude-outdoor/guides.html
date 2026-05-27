@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>嚮導團隊 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:linear-gradient(to bottom,rgba(13,26,15,.5),var(--bg)),url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1920&q=80') center/cover}
+.page-hero h1{font-size:3.5rem;margin-bottom:16px}.page-hero h1 span{color:var(--green)}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+
+.section{padding:80px 0}
+.guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
+.guide-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);text-align:center;padding:32px}
+.guide-card img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:20px;border:3px solid var(--green)}
+.guide-card h3{font-size:1.3rem;margin-bottom:4px}
+.guide-card .role{color:var(--earth);font-size:.9rem;margin-bottom:16px}
+.guide-card p{color:var(--muted);font-size:.85rem;margin-bottom:16px}
+.certs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.cert{padding:4px 10px;background:rgba(74,222,128,.1);color:var(--green);border-radius:20px;font-size:.75rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}footer .foot-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.guides-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="trips.html">探索行程</a></li><li><a href="gear.html">裝備推薦</a></li><li><a href="gallery.html">活動相簿</a></li><li><a href="guides.html">嚮導團隊</a></li><li><a href="safety.html">安全須知</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="openNav()">&#9776;</button></div></nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeNav()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero">
+<h1>嚮導<span>團隊</span></h1>
+<p>經驗豐富的專業嚮導，是你探索山林最可靠的夥伴</p>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="guides-grid">
+
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80" alt="阿凱">
+<h3>張凱文（阿凱）</h3>
+<div class="role">創辦人 / 首席嚮導</div>
+<p>15 年登山經驗，完攀台灣百岳 92 座。專精高山縱走與冬季雪訓，擅長帶領新手完成第一座百岳。</p>
+<div class="certs"><span class="cert">EMT-1 急救員</span><span class="cert">高山嚮導證</span><span class="cert">LNT 講師</span></div>
+</div>
+
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="小魚">
+<h3>林雨涵（小魚）</h3>
+<div class="role">共同創辦人 / 溯溪教練</div>
+<p>溯溪與激流救生專家，12 年溪谷探險經驗。熱愛水域活動，帶領超過 500 位學員安全完成溯溪挑戰。</p>
+<div class="certs"><span class="cert">IRB 救生員</span><span class="cert">溯溪教練證</span><span class="cert">WFR 野外急救</span></div>
+</div>
+
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="阿德">
+<h3>陳德安（阿德）</h3>
+<div class="role">共同創辦人 / 攀岩教練</div>
+<p>攀岩運動國手出身，擁有豐富的岩壁技術指導經驗。負責所有行程的技術安全評估與裝備管理。</p>
+<div class="certs"><span class="cert">攀岩教練證</span><span class="cert">繩索技術員</span><span class="cert">EMT-2</span></div>
+</div>
+
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&q=80" alt="小安">
+<h3>吳安琪（小安）</h3>
+<div class="role">生態解說嚮導</div>
+<p>生態學碩士，專精高山植物與鳥類觀察。能在行程中帶來深度的自然解說，讓每趟旅程更有知識含量。</p>
+<div class="certs"><span class="cert">生態解說員</span><span class="cert">高山嚮導證</span><span class="cert">急救證照</span></div>
+</div>
+
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="大熊">
+<h3>黃志豪（大熊）</h3>
+<div class="role">露營活動統籌</div>
+<p>10 年戶外露營教學經驗，擅長野炊料理與營地規劃。營火晚會的靈魂人物，旅客最愛的歡樂製造機。</p>
+<div class="certs"><span class="cert">露營指導員</span><span class="cert">食品衛生證</span><span class="cert">急救證照</span></div>
+</div>
+
+<div class="guide-card">
+<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="阿美">
+<h3>伍美玲（阿美）</h3>
+<div class="role">原住民文化嚮導</div>
+<p>太魯閣族人，熟知花蓮山林古道與部落文化。帶領文化深度行程，分享祖先與山林共存的智慧。</p>
+<div class="certs"><span class="cert">部落導覽員</span><span class="cert">高山嚮導證</span><span class="cert">急救證照</span></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><div class="foot-links"><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a></div><p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p></div></footer>
+<script>function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

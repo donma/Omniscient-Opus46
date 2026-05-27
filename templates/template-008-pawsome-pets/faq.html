@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題｜Pawsome 寵物美容</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fef9f6;--white:#ffffff;--pink:#e8758f;--pink-light:#fce4ec;--purple:#9c6aba;--text:#2d2525;--muted:#8a7575;--border:#f0e0e0;--accent:#ff9e40;--radius:20px;--btn-radius:99px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Quicksand','Noto Sans TC',sans-serif;font-weight:700}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+header{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(232,117,143,.1)}
+header .container{max-width:1200px;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Quicksand',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink)}.logo span{color:var(--purple)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{font-size:.9rem;font-weight:400;transition:color .3s}nav a:hover{color:var(--pink)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.menu-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px 32px;transition:right .4s;box-shadow:-4px 0 30px rgba(0,0,0,.1)}
+.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{font-size:1.1rem}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1999;display:none}.overlay.active{display:block}
+@media(max-width:768px){nav{display:none}.menu-toggle{display:flex}}
+.page-header{padding:60px 0;text-align:center;background:var(--pink-light)}.page-header h1{font-size:2.2rem;margin-bottom:8px}.page-header p{color:var(--muted)}
+section{padding:60px 0}
+.faq-group{margin-bottom:48px}
+.faq-group h2{font-size:1.3rem;color:var(--pink);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--pink-light)}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:400}
+.faq-q h3{font-size:.95rem;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.faq-q .icon{font-size:1.2rem;color:var(--pink);transition:.3s}
+.faq-item.open .icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s;padding:0 24px}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 18px}
+.faq-a p{font-size:.9rem;color:var(--muted)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:60px}
+.footer-bottom{text-align:center;font-size:.82rem;color:var(--muted);padding-top:20px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<header><div class="container" style="max-width:1200px">
+<a href="index.html" class="logo">Paw<span>some</span></a>
+<nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<div class="menu-toggle" onclick="openNav()"><span></span><span></span><span></span></div>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav" id="mobileNav"><span class="close-btn" onclick="closeNav()">&times;</span><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="services.html">美容服務</a></li><li><a href="pricing.html">服務價目</a></li><li><a href="portfolio.html">毛孩作品</a></li><li><a href="tips.html">寵物知識</a></li><li><a href="booking.html">線上預約</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<div class="page-header"><h1>常見問題</h1><p>關於預約、服務與收費的常見疑問</p></div>
+
+<section><div class="container">
+<div class="faq-group">
+<h2>預約相關</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>如何預約美容服務？</h3><span class="icon">+</span></div><div class="faq-a"><p>您可以透過線上預約表單、電話（02-2567-8899）或 LINE 官方帳號（@pawsome）預約。建議提前 3-5 天預約，假日請提前一週。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>可以當天預約嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>視當天預約狀況而定，建議先致電確認是否有空檔。若有臨時空位我們會盡量安排。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>如何取消或更改預約？</h3><span class="icon">+</span></div><div class="faq-a"><p>請於預約時間前 24 小時通知我們取消或更改。當天臨時取消可能會影響下次預約優先權。</p></div></div>
+</div>
+
+<div class="faq-group">
+<h2>服務相關</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>美容大約需要多少時間？</h3><span class="icon">+</span></div><div class="faq-a"><p>基礎洗澡約 1-1.5 小時，全套美容約 2-3 小時，視毛孩體型與毛況而定。我們不會為了趕時間而草率處理。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>可以指定美容師嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>可以的！預約時請告知想指定的美容師，我們會盡量安排。若該美容師當日休假會提前通知您。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>可以在旁邊等候看嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>我們有舒適的等候區，您可以在店內等候。不過建議初次來的毛孩，主人先離開會讓牠們比較不焦慮喔！</p></div></div>
+</div>
+
+<div class="faq-group">
+<h2>安全相關</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>需要攜帶疫苗證明嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>是的，為了所有毛孩的健康安全，首次來店請攜帶一年內的疫苗注射證明（狂犬病、多合一疫苗）。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>我家毛孩很緊張怎麼辦？</h3><span class="icon">+</span></div><div class="faq-a"><p>我們的美容師都受過專業訓練，會以溫柔的方式安撫緊張的毛孩。若情況特殊，可能會建議分次完成或採取特殊處理方式。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>老狗或有健康問題的狗狗可以來嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>可以的！但請預約時告知毛孩的健康狀況，我們會特別安排有經驗的美容師照顧，並隨時注意牠的狀態。</p></div></div>
+</div>
+
+<div class="faq-group">
+<h2>收費相關</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>價格是怎麼計算的？</h3><span class="icon">+</span></div><div class="faq-a"><p>價格依毛孩體型（S/M/L/XL）與服務項目而定。詳細價目請參考「服務價目」頁面，或致電詢問報價。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>毛打結會加收費用嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>輕微打結不另收費。若嚴重打結需花費較多時間處理，會酌收 NT$100-300 的打結處理費，美容師會事先告知。</p></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><h3>有會員優惠嗎？</h3><span class="icon">+</span></div><div class="faq-a"><p>有的！加入會員可享 9 折優惠，集點滿 10 次送基礎洗澡一次。另有儲值方案享更多折扣，歡迎詢問。</p></div></div>
+</div>
+</div></section>
+
+<footer><div class="container" style="max-width:1200px"><div class="footer-bottom">© 2026 Pawsome 寵物美容. All rights reserved.</div></div></footer>
+<script>function openNav(){document.getElementById('mobileNav').classList.add('active');document.getElementById('overlay').classList.add('active')}function closeNav(){document.getElementById('mobileNav').classList.remove('active');document.getElementById('overlay').classList.remove('active')}</script>
+</body>
+</html>

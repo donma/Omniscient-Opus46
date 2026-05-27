@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>活動企劃｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="黑潮拉麵的特別活動 — 製麵體驗、拉麵教室與聯名企劃。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{padding:60px 0;text-align:center;border-bottom:1px solid var(--border)}.page-hero .jp{font-size:.75rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}.page-hero h1{font-size:2rem;letter-spacing:2px}
+section{padding:80px 0}
+.event-featured{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:60px}
+@media(max-width:768px){.event-featured{grid-template-columns:1fr}}
+.event-featured img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.event-featured .info{padding:40px}
+.event-featured .info .badge{display:inline-block;background:var(--gold);color:var(--black);padding:4px 12px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:1px;margin-bottom:12px}
+.event-featured .info h2{font-size:1.4rem;margin-bottom:12px}
+.event-featured .info p{color:var(--muted);font-size:.88rem;margin-bottom:12px}
+.event-featured .info .details{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:.82rem;color:var(--muted)}
+.event-featured .info .details li{padding:4px 0;list-style:none}
+.event-list h2{color:var(--gold);font-size:1.2rem;margin-bottom:24px;text-align:center}
+.event-card{display:grid;grid-template-columns:180px 1fr;gap:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;transition:.3s}
+.event-card:hover{border-color:var(--gold)}
+@media(max-width:768px){.event-card{grid-template-columns:1fr}}
+.event-card img{width:100%;height:100%;min-height:140px;object-fit:cover}
+.event-card .body{padding:24px;display:flex;flex-direction:column;justify-content:center}
+.event-card .body .date{color:var(--gold);font-size:.78rem;letter-spacing:1px;margin-bottom:4px}
+.event-card .body h3{font-size:1rem;margin-bottom:6px}
+.event-card .body p{color:var(--muted);font-size:.82rem}
+.event-card .body .status{margin-top:8px;font-size:.75rem;color:#555}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<div class="page-hero"><p class="jp">イベント</p><h1>活動企劃</h1></div>
+
+<section>
+<div class="container">
+  <div class="event-featured">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="製麵體驗">
+    <div class="info">
+      <span class="badge">報名中</span>
+      <h2>職人製麵體驗教室</h2>
+      <p>想親手做出一碗拉麵嗎？由陳師傅親自指導，從粉料調配到切麵成型，完整體驗手工製麵的樂趣。完成後享用自己製作的拉麵！</p>
+      <ul class="details">
+        <li>日期：每月第二個週六 14:00-17:00</li>
+        <li>人數：每場限 6 人</li>
+        <li>費用：NT$1,800 / 人（含材料、用餐）</li>
+        <li>報名方式：IG 私訊或店內登記</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="event-list">
+    <h2>近期活動</h2>
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400&q=80" alt="啤酒之夜">
+      <div class="body"><div class="date">2026.04.12（五）</div><h3>黑潮 × 臺虎精釀 啤酒之夜</h3><p>特別企劃！臺虎精釀調酒師現場搭配，為每款拉麵推薦最佳啤酒組合。當晚限定 3 款聯名啤酒。</p><div class="status">即將舉辦 — 名額剩餘 4 位</div></div>
+    </div>
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=80" alt="深夜限定">
+      <div class="body"><div class="date">2026.03.29（五）</div><h3>深夜限定營業 — 夜貓子拉麵</h3><p>一個月一次的深夜營業！21:00-24:00 限定開放，推出平常吃不到的「店主賄賂麵」。</p><div class="status">即將舉辦 — 無需報名，現場排隊</div></div>
+    </div>
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=400&q=80" alt="周年慶">
+      <div class="body"><div class="date">2026.03.15（五）</div><h3>黑潮五週年感謝祭</h3><p>五週年感謝！當日前 50 名客人可獲得限定紀念碗一只，消費滿額再送季節限定小食。</p><div class="status">已結束</div></div>
+    </div>
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=400&q=80" alt="市集">
+      <div class="body"><div class="date">2026.02.18（日）</div><h3>大安巷弄美食市集出攤</h3><p>黑潮首次出攤！在大安森林公園旁的市集提供限定版「黑潮迷你豚骨」，一碗 NT$120。</p><div class="status">已結束</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

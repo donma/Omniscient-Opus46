@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>聯絡我們 — Haven 山居民宿</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf7f2;--white:#ffffff;--wood:#8b5e3c;--wood-dark:#6b3f1f;--cream:#f5ece0;--text:#2c231c;--muted:#7a6b5a;--border:#e8ddd0;--green:#7a9a6a;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.4}
+a{color:var(--wood);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--wood-dark);font-weight:700}
+nav .logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--text);font-size:.9rem;transition:color .3s}
+nav ul a:hover{color:var(--wood)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+@media(max-width:768px){nav ul{display:none;position:absolute;top:100%;right:0;background:var(--white);flex-direction:column;padding:24px;gap:16px;border:1px solid var(--border);border-radius:0 0 0 var(--radius);min-width:200px}nav ul.open{display:flex}.menu-btn{display:block}}
+section{padding:80px 0}
+section.alt{background:var(--cream)}
+.page-header{background:var(--cream);padding:60px 0;text-align:center}
+.page-header h1{font-size:2.2rem;color:var(--wood-dark);margin-bottom:8px}
+.page-header p{color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.info-block{margin-bottom:32px}
+.info-block h3{color:var(--wood-dark);margin-bottom:12px;font-size:1.1rem}
+.info-block p{font-size:.9rem;color:var(--muted)}
+form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+form label{display:block;margin-bottom:4px;font-size:.85rem;color:var(--muted)}
+form input,form textarea,form select{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:'Noto Sans TC',sans-serif;margin-bottom:16px;background:var(--bg)}
+form input:focus,form textarea:focus{outline:none;border-color:var(--wood)}
+form textarea{height:120px;resize:vertical}
+.btn{display:inline-block;padding:14px 32px;background:var(--wood);color:var(--white);border-radius:var(--radius);font-size:.95rem;border:none;cursor:pointer;transition:background .3s}
+.btn:hover{background:var(--wood-dark)}
+.directions{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-top:48px}
+.directions h3{color:var(--wood-dark);margin-bottom:16px}
+.directions ol{padding-left:20px}
+.directions ol li{margin-bottom:8px;font-size:.9rem;color:var(--muted)}
+footer{background:var(--wood-dark);color:var(--cream);padding:48px 0 24px}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+footer h4{font-family:'Libre Baskerville',serif;margin-bottom:16px;font-size:1rem}
+footer p,footer a{color:rgba(245,236,224,.8);font-size:.85rem}
+footer .copy{text-align:center;padding-top:24px;border-top:1px solid rgba(245,236,224,.2);font-size:.8rem;color:rgba(245,236,224,.5)}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="index.html" class="logo">Haven<span>山居民宿</span></a>
+<button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於民宿</a></li>
+<li><a href="rooms.html">客房介紹</a></li>
+<li><a href="dining.html">餐飲服務</a></li>
+<li><a href="attractions.html">周邊景點</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="booking.html">訂房資訊</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="page-header">
+<h1>聯絡我們</h1>
+<p>有任何問題歡迎隨時與我們聯繫</p>
+</div>
+
+<section>
+<div class="container">
+<div class="contact-grid">
+<div>
+<div class="info-block">
+<h3>地址</h3>
+<p>546 南投縣仁愛鄉大同村信義巷32號</p>
+<p>海拔約 1,750 公尺</p>
+</div>
+<div class="info-block">
+<h3>聯絡方式</h3>
+<p>電話：049-280-1234（09:00–21:00）</p>
+<p>信箱：stay@haven-bnb.tw</p>
+<p>LINE：@haven-mountain</p>
+<p>Instagram：@haven.mountain.bnb</p>
+</div>
+<div class="info-block">
+<h3>入住 / 退房時間</h3>
+<p>入住：15:00 以後</p>
+<p>退房：11:00 以前</p>
+<p>提早入住或延遲退房請提前告知，視當日房況安排。</p>
+</div>
+<div class="info-block">
+<h3>停車資訊</h3>
+<p>民宿備有免費停車場，約可容納8輛車。若遇滿位，附近200公尺處有公共停車場。</p>
+</div>
+</div>
+
+<form onsubmit="event.preventDefault();alert('感謝您的來信，我們會盡快回覆！')">
+<h3 style="color:var(--wood-dark);margin-bottom:20px;font-size:1.2rem">線上詢問</h3>
+<label>姓名</label>
+<input type="text" placeholder="您的姓名" required>
+<label>電子信箱</label>
+<input type="email" placeholder="your@email.com" required>
+<label>聯絡電話</label>
+<input type="tel" placeholder="0912-345-678">
+<label>詢問類型</label>
+<select>
+<option>訂房詢問</option>
+<option>房型問題</option>
+<option>交通諮詢</option>
+<option>活動安排</option>
+<option>其他</option>
+</select>
+<label>訊息內容</label>
+<textarea placeholder="請輸入您的問題或需求..." required></textarea>
+<button type="submit" class="btn">送出訊息</button>
+</form>
+</div>
+
+<div class="directions">
+<h3>交通方式（從台北出發）</h3>
+<ol>
+<li><strong>自行開車（約3.5小時）：</strong>國道3號 → 霧峰系統接國道6號 → 埔里端下交流道 → 接台14線往霧社方向 → 續行台14甲線至清境 → 依指標轉入信義巷即達</li>
+<li><strong>客運＋接駁：</strong>台北轉運站搭乘國光客運至埔里站（約3小時），再轉南投客運往清境方向（約1小時）。下車後可預約民宿免費接駁。</li>
+<li><strong>高鐵＋客運：</strong>搭高鐵至台中站，轉南投客運「台中—埔里—清境」路線（約2小時直達清境）。</li>
+</ol>
+<p style="margin-top:16px;font-size:.85rem;color:var(--muted)">💡 小提醒：山路彎道多，建議白天上山。冬季偶有路面結冰，請攜帶防滑鏈或確認路況再出發。需要接駁服務請於入住前一天告知。</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Haven 山居民宿</h4><p>南投縣仁愛鄉大同村信義巷32號</p></div>
+<div><h4>聯絡方式</h4><p>電話：049-280-1234</p><p>信箱：stay@haven-bnb.tw</p></div>
+<div><h4>入住資訊</h4><p>入住：15:00 後 ｜ 退房：11:00 前</p></div>
+</div>
+<div class="copy">© 2026 Haven 山居民宿 — All Rights Reserved</div>
+</div>
+</footer>
+</body>
+</html>

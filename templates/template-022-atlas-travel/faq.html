@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>常見問題 — Atlas 旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fbff;--white:#ffffff;--sky:#0ea5e9;--sky-dark:#0369a1;--sand:#f5e6d3;--text:#1a2a3a;--muted:#5a6a7a;--border:#d8e8f8;--sunset:#f97316;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Montserrat','Noto Sans TC',sans-serif;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);box-shadow:0 2px 20px rgba(14,165,233,.08);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.4rem;color:var(--sky-dark);display:flex;align-items:center;gap:8px}
+.logo span{font-size:1.6rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:400;font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--sky)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.page-hero{height:40vh;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(3,105,161,.5)}
+.page-hero h1{position:relative;z-index:2;font-size:2.5rem}
+section{padding:80px 0}
+.faq-section{max-width:800px;margin:0 auto}
+.faq-category{margin-bottom:48px}
+.faq-category h2{font-size:1.3rem;color:var(--sky-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.faq-item{background:var(--white);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+.faq-item summary{padding:20px 24px;cursor:pointer;font-weight:400;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:'+';font-size:1.3rem;color:var(--sky);font-weight:600}
+.faq-item[open] summary::after{content:'−'}
+.faq-item .answer{padding:0 24px 20px;font-size:.9rem;color:var(--muted)}
+footer{background:var(--sky-dark);color:white;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+footer h4{margin-bottom:16px;font-size:.95rem}
+footer p,footer a{font-size:.85rem;color:rgba(255,255,255,.8);line-height:2}
+footer a:hover{color:var(--sunset)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.nav-links{position:fixed;top:72px;right:-100%;width:260px;height:calc(100vh - 72px);background:var(--white);flex-direction:column;padding:32px;gap:20px;transition:right .3s;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.nav-links.active{right:0}
+.menu-btn{display:block}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo"><span>✈</span> Atlas 旅行社</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="tours.html">熱門行程</a></li>
+<li><a href="themes.html">主題旅遊</a></li>
+<li><a href="custom.html">自由行規劃</a></li>
+<li><a href="guides.html">旅遊攻略</a></li>
+<li><a href="reviews.html">旅客評價</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+</div>
+</nav>
+
+<div class="page-hero">
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&q=80" alt="FAQ">
+<h1>常見問題</h1>
+</div>
+
+<section>
+<div class="container">
+<div class="faq-section">
+
+<div class="faq-category">
+<h2>預訂相關</h2>
+<details class="faq-item"><summary>如何報名參加行程？</summary><div class="answer">您可以透過網站聯絡表單、LINE官方帳號或電話 02-2345-6789 與我們聯繫。確認行程後，我們會寄送報名表與付款資訊。</div></details>
+<details class="faq-item"><summary>需要提前多久報名？</summary><div class="answer">建議至少出發前60天報名，熱門行程（如極光團、紅葉季）建議提前90天以上預訂，以確保名額。</div></details>
+<details class="faq-item"><summary>可以幫朋友代報名嗎？</summary><div class="answer">可以，但需提供所有參加者的完整資料（護照影本、緊急聯絡人等）。最終出團前需經所有團員本人簽署同意書。</div></details>
+</div>
+
+<div class="faq-category">
+<h2>付款方式</h2>
+<details class="faq-item"><summary>接受哪些付款方式？</summary><div class="answer">我們接受銀行轉帳、信用卡（可分3/6/12期）、LINE Pay。報名時需付訂金（團費30%），尾款於出發前30天付清。</div></details>
+<details class="faq-item"><summary>可以分期付款嗎？</summary><div class="answer">可以！與國泰、中信、玉山等銀行合作，提供3期、6期、12期零利率分期（依各銀行活動為準）。</div></details>
+</div>
+
+<div class="faq-category">
+<h2>取消與退費</h2>
+<details class="faq-item"><summary>報名後可以取消嗎？</summary><div class="answer">可以，依據觀光局國外旅遊定型化契約：出發前41天以上取消扣團費5%；31-40天扣10%；21-30天扣20%；2-20天扣30%；前1天扣50%；當天未到扣全額。</div></details>
+<details class="faq-item"><summary>因疫情或天災無法出團怎麼辦？</summary><div class="answer">因不可抗力因素取消行程，可選擇全額退費或轉換為同等價值行程（一年內有效）。機票退改費依航空公司規定辦理。</div></details>
+<details class="faq-item"><summary>退費需要多久？</summary><div class="answer">確認取消後，退費作業約需14-21個工作天。信用卡退刷會依各銀行結帳日不同，可能需1-2個帳單週期。</div></details>
+</div>
+
+<div class="faq-category">
+<h2>保險相關</h2>
+<details class="faq-item"><summary>團費包含保險嗎？</summary><div class="answer">是的，所有行程均包含旅行業責任保險（200萬意外身故/3萬醫療）及旅遊不便險。建議另行加保個人海外旅平險以獲得更完整保障。</div></details>
+<details class="faq-item"><summary>有推薦的旅平險嗎？</summary><div class="answer">我們與國泰產險、富邦產險合作，可協助團員以優惠價格加保。包含海外急難救助、行李遺失、班機延誤等保障。</div></details>
+</div>
+
+<div class="faq-category">
+<h2>團體規模</h2>
+<details class="faq-item"><summary>每團最多幾人？</summary><div class="answer">我們堅持小團制，一般行程每團最多12人，特殊路線（如健行團）最多8人，確保每位旅客都能獲得最佳體驗。</div></details>
+<details class="faq-item"><summary>最少幾人才能成團？</summary><div class="answer">一般行程最低成團人數為6人。若未達成團人數，我們會於出發前30天通知，您可選擇轉團、延期或全額退費。</div></details>
+<details class="faq-item"><summary>可以包團嗎？</summary><div class="answer">當然可以！4人以上即可洽詢包團服務，我們會依您的需求量身規劃行程、調整出發日期與住宿等級。</div></details>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Atlas 旅行社</h4><p>成立於2015年，專注於小團深度旅遊，帶您體驗最道地的文化與風景。</p></div>
+<div><h4>行程類型</h4><a href="themes.html">極光之旅</a><br><a href="themes.html">海島度假</a><br><a href="themes.html">文化巡禮</a><br><a href="themes.html">健行冒險</a></div>
+<div><h4>旅客服務</h4><a href="faq.html">常見問題</a><br><a href="guides.html">旅遊攻略</a><br><a href="custom.html">客製行程</a><br><a href="reviews.html">旅客評價</a></div>
+<div><h4>聯絡資訊</h4><p>台北市大安區旅行路88號5樓</p><p>02-2345-6789</p><p>hello@atlas-travel.tw</p></div>
+</div>
+<div class="footer-bottom">© 2026 Atlas 旅行社 版權所有｜交觀甲 7890｜品保北 1234</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 — Sprout 小芽幼兒園</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fffef8;--white:#ffffff;--yellow:#ffd43b;--pink:#ff6b9d;--blue:#4ecdc4;--purple:#a78bfa;--orange:#ff8c42;--text:#2d2d2d;--muted:#666666;--border:#f0e8d8;--radius:24px}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Fredoka One',cursive;font-weight:normal}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);padding:16px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue)}.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:0.95rem;font-weight:500}.nav-links a:hover{color:var(--pink)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:2px solid var(--border)}
+.page-hero h1{font-size:2.5rem;margin-bottom:12px}.page-hero p{color:var(--muted);font-size:1.1rem}
+.section{padding:60px 0}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{background:var(--white);border-radius:var(--radius);margin-bottom:16px;border:2px solid var(--border);overflow:hidden}
+.faq-question{padding:20px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:1rem}
+.faq-question::after{content:'+';font-size:1.5rem;color:var(--pink);transition:transform 0.3s}
+.faq-item.active .faq-question::after{transform:rotate(45deg)}
+.faq-answer{padding:0 28px;max-height:0;overflow:hidden;transition:max-height 0.3s,padding 0.3s}
+.faq-item.active .faq-answer{max-height:300px;padding:0 28px 20px}
+.faq-answer p{color:var(--muted);font-size:0.9rem}
+footer{background:var(--text);color:var(--white);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:32px}
+footer h4{font-size:1.1rem;margin-bottom:16px;color:var(--yellow)}
+footer p,footer li{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:2}
+footer ul{list-style:none}footer a{color:rgba(255,255,255,0.8)}footer a:hover{color:var(--yellow)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.mobile-menu{position:fixed;top:0;right:-300px;width:300px;height:100vh;background:var(--white);z-index:2000;padding:80px 32px;transition:right 0.3s}
+.mobile-menu.active{right:0}.mobile-menu ul{list-style:none}.mobile-menu li{margin-bottom:20px}.mobile-menu a{font-size:1.1rem}
+.mobile-menu .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:block}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">🌱 Sprout <span>小芽</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-toggle" onclick="openMenu()">☰</button></div></nav>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">關於我們</a></li><li><a href="philosophy.html">教學理念</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="teachers.html">師資團隊</a></li><li><a href="parents.html">家長專區</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+<div class="container">
+<h1>常見問題 ❓</h1>
+<p>關於入學、費用、作息等家長最常詢問的問題</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-question">如何報名入學？需要什麼條件？</div>
+<div class="faq-answer"><p>歡迎來電或填寫線上表單預約參觀。參觀後若決定報名，需繳交報名表、戶口名簿影本及健康檢查表。我們全年接受報名，但名額有限，建議提早預約。目前無入學考試，但會安排親子面談了解孩子的需求。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">學費大約是多少？包含哪些項目？</div>
+<div class="faq-answer"><p>學費依班別不同，每學期約60,000–80,000元（含註冊費、月費）。費用包含：教材、點心午餐、課程活動材料。不另收才藝班費用。延托費另計。詳細費用請來電洽詢或參觀時說明。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">上課時間是幾點到幾點？</div>
+<div class="faq-answer"><p>正常上課時間為週一至週五 08:30–16:00。早上 07:50 開始可入園。延長照顧服務至 18:00（需事先申請）。幼幼班另有上午班選項（08:30–12:00）。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">午餐和點心如何安排？</div>
+<div class="faq-answer"><p>每日提供營養均衡的午餐、上午點心和下午水果。使用有機蔬菜與非基改食材，由專業營養師設計菜單。可配合過敏兒童調整餐點，請入學時告知食物過敏資訊。每週菜單會透過APP提前公告。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">孩子生病了怎麼辦？有什麼健康政策？</div>
+<div class="faq-answer"><p>若孩子體溫達37.5°C以上、嘔吐、腹瀉或疑似傳染病，請在家休息至症狀消失後24小時再入園。園內有護理師駐園，每日入園量體溫。如在園期間不適，會立即通知家長。需委託餵藥請填寫委託用藥單並附醫師處方。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">師生比例是多少？</div>
+<div class="faq-answer"><p>我們的師生比優於法規標準：幼幼班(2-3歲) 1:4、小班(3-4歲) 1:6、中班(4-5歲) 1:8、大班(5-6歲) 1:8。每班配有2位中籍教師加1位外籍教師。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">雙語教學是怎麼進行的？</div>
+<div class="faq-answer"><p>我們採用沉浸式雙語教學，外籍教師全天候在班級中與孩子互動，從晨圈、點心時間到戶外遊戲都自然使用英文。不是傳統的「英文課」，而是在真實生活情境中自然習得語言。中文由本國籍教師負責，確保母語健全發展。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">可以先來參觀嗎？</div>
+<div class="faq-answer"><p>非常歡迎！我們每週二、四上午10:00提供團體導覽，也可預約個別參觀。參觀時間約40–60分鐘，包含校園導覽、教學說明和Q&A。請提前來電或透過官網預約。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">寒暑假有上課嗎？</div>
+<div class="faq-answer"><p>寒假期間休園約兩週（配合農曆新年）。暑假提供選修的夏令營課程（7-8月），主題豐富包含水遊戲、自然探險、藝術創作等。夏令營費用另計，非強制參加。</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Sprout 小芽幼兒園</h4><p>台北市士林區天母西路50號</p><p>電話：(02) 2871-5678</p><p>信箱：hello@sprout-kindergarten.tw</p></div>
+<div><h4>快速連結</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="programs.html">課程介紹</a></li><li><a href="facilities.html">校園環境</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>入學資訊</h4><ul><li><a href="faq.html">常見問題</a></li><li><a href="parents.html">家長手冊</a></li><li><a href="events.html">活動行事曆</a></li><li><a href="contact.html">預約參觀</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Sprout 小芽幼兒園. All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>
+function openMenu(){document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')}
+function closeMenu(){document.querySelector('.mobile-menu').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}
+document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;item.classList.toggle('active')})})
+</script>
+</body>
+</html>

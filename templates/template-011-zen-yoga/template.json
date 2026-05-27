@@ -1,0 +1,37 @@
+{
+  "templateId": "template-011",
+  "name": "Zen 瑜伽會館",
+  "description": "台北天母瑜伽教室網站，鼠尾草綠配色，寧靜極簡風格",
+  "theme": "light",
+  "industry": "健身/瑜伽/身心靈",
+  "locale": "zh-Hant-TW",
+  "colors": {
+    "background": "#f7f9f5",
+    "white": "#ffffff",
+    "primary": "#7c9a72",
+    "primaryDark": "#5a7a50",
+    "accent": "#e8dfd0",
+    "text": "#2a2e28",
+    "muted": "#6b7268",
+    "border": "#dde5d8"
+  },
+  "fonts": {
+    "heading": "Cormorant (italic)",
+    "body": "Noto Sans TC (weight 300)"
+  },
+  "pages": [
+    "index.html",
+    "about.html",
+    "classes.html",
+    "class-detail.html",
+    "teachers.html",
+    "schedule.html",
+    "membership.html",
+    "blog.html",
+    "blog-detail.html",
+    "workshops.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "features": ["sticky-nav", "mobile-menu-right", "responsive", "inline-css", "unsplash-images"]
+}

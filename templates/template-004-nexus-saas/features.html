@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>產品功能 — Nexus SaaS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0b1a;--surface:#12122a;--card:#1a1a3a;--primary:#7c5cff;--primary-light:#a78bfa;--accent:#06d6a0;--text:#e8e8f0;--muted:#8888aa;--border:#2a2a4a;--radius:16px;--btn-radius:99px}
+body{font-family:'Inter','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,11,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}.nav-links a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 32px;transition:right .3s;display:flex;flex-direction:column;gap:24px}
+.mobile-menu.active{right:0}
+.mobile-menu a{font-size:1.1rem;color:var(--muted)}
+.mobile-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}}
+.page-hero{padding:140px 0 60px;text-align:center}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:40px 0 100px}
+.feature-card{background:rgba(26,26,58,.6);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--radius);padding:36px;transition:transform .2s,box-shadow .2s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(124,92,255,.15)}
+.feature-card .icon{font-size:2.5rem;margin-bottom:16px}
+.feature-card h3{font-size:1.15rem;font-weight:600;margin-bottom:10px}
+.feature-card p{color:var(--muted);font-size:.9rem;line-height:1.7}
+@media(max-width:768px){.features-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--border);padding:60px 0 32px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{color:var(--muted);margin-top:12px;font-size:.9rem}
+.footer-col h4{font-size:.85rem;text-transform:uppercase;color:var(--muted);margin-bottom:16px;letter-spacing:1px}
+.footer-col a{display:block;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.footer-newsletter input{width:100%;padding:10px 16px;border-radius:var(--btn-radius);border:1px solid var(--border);background:var(--card);color:var(--text);margin-bottom:12px;font-size:.9rem}
+.footer-newsletter button{width:100%;padding:10px;border-radius:var(--btn-radius);background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:.9rem}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;padding-top:24px;border-top:1px solid var(--border)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a href="index.html" class="logo">Nexus</a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="features.html">產品功能</a></li>
+<li><a href="pricing.html">定價方案</a></li>
+<li><a href="case-studies.html">客戶案例</a></li>
+<li><a href="integrations.html">整合生態系</a></li>
+<li><a href="docs.html">開發者文件</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-btn" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.overlay').classList.add('active')">&#9776;</button>
+</nav>
+</header>
+<div class="overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<button class="mobile-close" onclick="this.parentElement.classList.remove('active');document.querySelector('.overlay').classList.remove('active')">&times;</button>
+<a href="index.html">首頁</a><a href="features.html">產品功能</a><a href="pricing.html">定價方案</a><a href="case-studies.html">客戶案例</a><a href="integrations.html">整合生態系</a><a href="docs.html">開發者文件</a><a href="about.html">關於我們</a><a href="contact.html">聯絡我們</a>
+</div>
+
+<section class="page-hero">
+<div class="container">
+<h1>產品功能</h1>
+<p>九大核心模組，涵蓋專案管理全流程，從規劃到交付一應俱全。</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="features-grid">
+<div class="feature-card">
+<div class="icon">🤖</div>
+<h3>AI 智能排程</h3>
+<p>透過機器學習演算法分析團隊歷史表現數據，自動生成最佳任務時程安排。系統會持續學習並優化預測準確度，提前識別潛在延遲風險並主動建議調整方案。</p>
+</div>
+<div class="feature-card">
+<div class="icon">👥</div>
+<h3>即時協作編輯</h3>
+<p>支援多人同步編輯文件、白板與看板。搭配即時游標顯示與評論功能，無論團隊成員身處何地都能如同面對面般高效協作。支援離線編輯與自動同步。</p>
+</div>
+<div class="feature-card">
+<div class="icon">📋</div>
+<h3>看板管理</h3>
+<p>靈活的看板介面支援自定義欄位、標籤與篩選器。拖放操作直觀簡單，搭配 WIP 限制功能有效控制工作流量，確保團隊專注於最重要的任務。</p>
+</div>
+<div class="feature-card">
+<div class="icon">📅</div>
+<h3>時間軸檢視</h3>
+<p>以甘特圖形式展示專案時程，清楚呈現任務相依性與里程碑。支援拖放調整時程、自動計算關鍵路徑，幫助專案經理快速掌握全局。</p>
+</div>
+<div class="feature-card">
+<div class="icon">⚙️</div>
+<h3>自動化引擎</h3>
+<p>視覺化規則編輯器讓你無需寫程式即可建立自動化流程。支援條件觸發、定時執行與 Webhook 回呼，將重複性工作自動化處理，節省超過 70% 的手動操作時間。</p>
+</div>
+<div class="feature-card">
+<div class="icon">📊</div>
+<h3>報表與分析</h3>
+<p>內建 30+ 種報表模板，涵蓋燃盡圖、速率圖、工時分析等。支援自訂儀表板與排程報告，數據驅動決策讓管理更精準。可匯出 PDF 與 CSV 格式。</p>
+</div>
+<div class="feature-card">
+<div class="icon">📁</div>
+<h3>檔案共享</h3>
+<p>整合式檔案管理支援版本控制與預覽功能。直接在任務中附加檔案，支援 100+ 種格式預覽。搭配權限管理確保敏感文件安全存取。</p>
+</div>
+<div class="feature-card">
+<div class="icon">💬</div>
+<h3>團隊通訊</h3>
+<p>內建即時訊息與頻道功能，將溝通與工作整合在同一平台。支援 @提及、執行緒討論與訊息搜尋，重要資訊不再散落各處。</p>
+</div>
+<div class="feature-card">
+<div class="icon">🔌</div>
+<h3>API 存取</h3>
+<p>完整的 RESTful API 與 GraphQL 端點，搭配詳盡文件與 SDK 支援。開發者可輕鬆將 Nexus 整合至現有工具鏈，打造客製化工作流程。</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="logo" style="font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Nexus</div>
+<p>AI 驅動的智能協作平台，助力全球團隊高效運作。</p>
+</div>
+<div class="footer-col"><h4>產品</h4><a href="features.html">功能</a><a href="pricing.html">定價</a><a href="integrations.html">整合</a><a href="docs.html">文件</a></div>
+<div class="footer-col"><h4>公司</h4><a href="about.html">關於我們</a><a href="blog.html">部落格</a><a href="careers.html">加入我們</a><a href="contact.html">聯絡</a></div>
+<div class="footer-col"><h4>訂閱電子報</h4><div class="footer-newsletter"><input type="email" placeholder="輸入您的 Email"><button>訂閱</button></div></div>
+</div>
+<div class="footer-bottom">© 2026 Nexus SaaS. All rights reserved. 台北市信義區信義路五段7號</div>
+</div>
+</footer>
+</body>
+</html>

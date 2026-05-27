@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於診所 — Ivory 牙醫診所</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}
+.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:400;color:var(--text);transition:color .2s}
+.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--navy);transition:.3s}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.mobile-menu.active{right:0}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}
+.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+.page-hero{padding:60px 0;text-align:center;background:var(--white);border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.2rem;margin-bottom:12px}
+.page-hero p{color:var(--muted);max-width:600px;margin:0 auto}
+.section{padding:80px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:60px}
+.about-grid img{width:100%;border-radius:var(--radius);object-fit:cover;height:360px}
+.about-grid h2{margin-bottom:16px;font-size:1.6rem}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:48px}
+.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.feature-card .icon{font-size:2.5rem;margin-bottom:16px}
+.feature-card h4{margin-bottom:8px}
+.feature-card p{font-size:.9rem;color:var(--muted)}
+.cert-list{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}
+.cert-item{background:var(--light);border:1px solid var(--border);border-radius:var(--radius);padding:12px 20px;font-size:.9rem;color:var(--mint-dark);font-weight:400}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6);transition:color .2s}
+.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Ivory <span>牙醫診所</span></a>
+<div class="nav-links">
+<a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><a href="index.html">首頁</a><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="services.html">診療項目</a><a href="cases.html">案例分享</a><a href="info.html">就診資訊</a><a href="blog.html">衛教專欄</a><a href="appointment.html">線上預約</a></div>
+
+<section class="page-hero"><div class="container"><h1>關於 Ivory 牙醫診所</h1><p>以專業、用心、創新的理念，為您提供最優質的牙科醫療服務</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="about-grid">
+<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&h=500&fit=crop" alt="診所環境">
+<div>
+<h2>我們的故事</h2>
+<p>Ivory 牙醫診所成立於 2018 年，由陳柏翰院長帶領一群對牙醫充滿熱忱的專業團隊所創立。我們相信，每個人都值得擁有健康美麗的笑容。</p>
+<p>座落於台北市中山區的精華地段，Ivory 診所以「溫暖如象牙」為核心理念，打造有別於傳統牙科的舒適就診體驗。從空間設計到醫療服務，每個細節都以患者感受為優先考量。</p>
+<p>開業至今，我們已服務超過 8,000 位患者，完成超過 2,000 例美學修復案例，是台北地區備受信賴的牙醫診所。</p>
+</div>
+</div>
+<div class="about-grid">
+<div>
+<h2>先進設備與環境</h2>
+<p>我們持續投資最新的牙科設備，包括 3D 電腦斷層掃描（CBCT）、數位口掃機、顯微鏡輔助治療系統等，確保診斷精確、治療效率高。</p>
+<p>每間診療室皆配備獨立空調與空氣清淨系統，營造安心舒適的治療環境。等候區提供免費 WiFi、咖啡與雜誌，讓您的等待時光更加愜意。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&h=500&fit=crop" alt="先進設備">
+</div>
+
+<div class="section-title" style="text-align:center;margin-top:60px"><h2>感染控制與滅菌標準</h2><p>嚴格遵循衛福部規範，守護您的安全</p></div>
+<div class="features-grid">
+<div class="feature-card"><div class="icon">🔬</div><h4>B 級高溫高壓滅菌</h4><p>所有器械均經過 134°C 高溫高壓滅菌處理，確保零感染風險</p></div>
+<div class="feature-card"><div class="icon">💧</div><h4>管路水質淨化</h4><p>定期清洗管路並使用過濾系統，確保治療用水品質</p></div>
+<div class="feature-card"><div class="icon">🧤</div><h4>一人一套器械包</h4><p>每位患者使用獨立滅菌器械包，絕不重複使用</p></div>
+<div class="feature-card"><div class="icon">🌬️</div><h4>空氣清淨系統</h4><p>每間診間配備醫療級空氣清淨機，全面過濾有害微粒</p></div>
+</div>
+
+<div style="margin-top:60px;text-align:center">
+<h2 style="margin-bottom:16px">認證與榮譽</h2>
+<div class="cert-list" style="justify-content:center">
+<div class="cert-item">衛福部合格牙醫診所</div>
+<div class="cert-item">ISO 9001 品質管理認證</div>
+<div class="cert-item">隱適美白金級認證診所</div>
+<div class="cert-item">台北市牙醫師公會會員</div>
+<div class="cert-item">Nobel Biocare 植牙認證中心</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900</p></div>
+<div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div>
+<div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div>
+<div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div>
+</div>
+<div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div>
+</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

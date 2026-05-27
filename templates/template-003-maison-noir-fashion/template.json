@@ -1,0 +1,27 @@
+{
+  "id": "template-003-maison-noir-fashion",
+  "name": "Maison Noir 當代時裝",
+  "description": "極簡編輯風格時裝品牌網站，大量留白搭配襯線字體營造高端雜誌感。適合時裝品牌、設計師品牌、精品選物店、生活風格品牌。",
+  "industry": "時尚 / 精品",
+  "theme": "light",
+  "colorScheme": ["#ffffff", "#f8f7f5", "#1a1a1a", "#6b6b6b", "#e0ddd8"],
+  "fonts": ["Cormorant Garamond", "Noto Sans TC"],
+  "layout": "editorial-magazine",
+  "mobileMenu": "right",
+  "pages": [
+    {"file": "index.html", "name": "首頁"},
+    {"file": "about.html", "name": "品牌故事"},
+    {"file": "collection.html", "name": "當季系列"},
+    {"file": "collection-detail.html", "name": "商品細節"},
+    {"file": "lookbook.html", "name": "Lookbook"},
+    {"file": "sustainability.html", "name": "永續理念"},
+    {"file": "stores.html", "name": "門市據點"},
+    {"file": "faq.html", "name": "常見問題"},
+    {"file": "blog.html", "name": "風格誌"},
+    {"file": "blog-detail.html", "name": "文章內頁"},
+    {"file": "process.html", "name": "設計工序"},
+    {"file": "contact.html", "name": "聯絡我們"}
+  ],
+  "features": ["editorial-layout", "product-grid", "lookbook", "filter-tabs", "accordion-faq", "newsletter", "responsive"],
+  "preview": "preview.jpg"
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>空間介紹 — Matcha 茶道空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f7f2;--white:#ffffff;--matcha:#5a7a48;--matcha-light:#d4e5c8;--cream:#f0ebe0;--text:#2a2e26;--muted:#6a7060;--border:#d8e0d0;--brown:#8a6a3a;--radius:8px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:600;line-height:1.4}
+a{color:var(--matcha);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:var(--matcha);font-weight:600}
+.logo span{font-size:.85rem;color:var(--muted);margin-left:8px;font-weight:300}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem;transition:color .3s}
+.nav-links a:hover{color:var(--matcha)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:200;padding:60px 32px;transition:left .3s}
+.mobile-menu.active{left:0}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150}
+.mobile-overlay.active{display:block}
+
+.page-header{padding:60px 0;text-align:center;background:var(--cream);border-bottom:1px solid var(--border)}
+.page-header h1{font-size:2.2rem;margin-bottom:8px}
+.page-header p{color:var(--muted)}
+
+section{padding:80px 0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:60px}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:var(--radius);transition:transform .3s}
+.gallery img:hover{transform:scale(1.02)}
+.gallery .wide{grid-column:span 2}
+
+.space-section{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:60px}
+.space-section img{width:100%;height:350px;object-fit:cover;border-radius:var(--radius)}
+.space-section h2{font-size:1.5rem;margin-bottom:16px}
+.space-section p{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+.space-section:nth-child(even){direction:rtl}
+.space-section:nth-child(even) > *{direction:ltr}
+
+footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 24px}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+footer p,footer li{font-size:.85rem;line-height:2}
+footer ul{list-style:none}
+footer a{color:rgba(255,255,255,.7)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+
+@media(max-width:768px){
+.nav-links{display:none}.menu-toggle{display:block}.mobile-menu{display:block}
+.gallery{grid-template-columns:1fr}
+.gallery .wide{grid-column:auto}
+.space-section{grid-template-columns:1fr}
+.space-section:nth-child(even){direction:ltr}
+footer .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">茶道空間<span>Matcha</span></a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.add('active');document.querySelector('.mobile-overlay').classList.add('active')">☰</button>
+</div>
+</nav>
+<div class="mobile-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('active');this.classList.remove('active')"></div>
+<div class="mobile-menu">
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">茶道文化</a></li>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+<li><a href="blog.html">茶人日記</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div>
+
+<header class="page-header">
+<div class="container">
+<h1>空間介紹</h1>
+<p>以京都町家為靈感，在台北打造一處可以靜心的茶空間</p>
+</div>
+</header>
+
+<section>
+<div class="container">
+<div class="gallery">
+<img class="wide" src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=800&q=80" alt="茶室全景">
+<img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500&q=80" alt="榻榻米">
+<img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&q=80" alt="庭園">
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500&q=80" alt="吧台">
+<img class="wide" src="https://images.unsplash.com/photo-1490750967868-88aa4f44d831?w=800&q=80" alt="枯山水">
+</div>
+
+<div class="space-section">
+<img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=600&q=80" alt="正式茶室">
+<div>
+<h2>正式茶室「清風庵」</h2>
+<p>四疊半的傳統茶室，設有躙口、床之間、爐與風爐。使用京都職人手工製作的聚樂壁土牆，搭配杉木天花板與障子紙窗。</p>
+<p>此空間專為茶道體驗與正式茶席使用，每次僅接待一組客人，確保最純粹的茶道體驗。</p>
+</div>
+</div>
+
+<div class="space-section">
+<div>
+<h2>吧台席「一服」</h2>
+<p>六席吧台座位，面向庭園景致。在這裡您可以輕鬆地品嚐抹茶與甜點，近距離觀賞茶人的點茶過程。</p>
+<p>使用台灣檜木製作的一枚板吧台，溫潤的木質觸感與抹茶的翠綠相映成趣。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="吧台席">
+</div>
+
+<div class="space-section">
+<img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="榻榻米席">
+<div>
+<h2>榻榻米席「和室」</h2>
+<p>八疊大小的和室空間，可容納 8-12 人。適合小型聚會、團體茶道體驗或私人包場使用。</p>
+<p>地面鋪設熊本產天然藺草榻榻米，牆面以和紙裝飾，營造溫暖而寧靜的氛圍。</p>
+</div>
+</div>
+
+<div class="space-section">
+<div>
+<h2>枯山水庭園</h2>
+<p>入口處的小型枯山水庭園，由京都庭園設計師遠藤先生設計。白砂代表水流，青苔象徵島嶼，一株百年黑松為視覺焦點。</p>
+<p>四季各有不同風景：春有櫻、夏有綠、秋有楓、冬有雪景，是等待入席時沉澱心情的最佳場所。</p>
+</div>
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4f44d831?w=600&q=80" alt="庭園">
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div>
+<h4>茶道空間 Matcha</h4>
+<p>台北市大安區永康街 42 巷 7 號<br>捷運東門站步行 5 分鐘</p>
+<p style="margin-top:12px">營業時間：11:00 – 20:00（週一公休）</p>
+</div>
+<div>
+<h4>導覽</h4>
+<ul>
+<li><a href="menu.html">茶品菜單</a></li>
+<li><a href="sweets.html">抹茶甜點</a></li>
+<li><a href="experience.html">茶道體驗</a></li>
+<li><a href="space.html">空間介紹</a></li>
+</ul>
+</div>
+<div>
+<h4>聯絡</h4>
+<ul>
+<li>02-2358-7742</li>
+<li>info@matcha-space.tw</li>
+<li>Instagram @matcha.space</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">© 2026 茶道空間 Matcha. All rights reserved.</div>
+</footer>
+</body>
+</html>

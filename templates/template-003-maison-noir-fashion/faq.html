@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 — Maison Noir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--offwhite:#f8f7f5;--gray:#e8e6e2;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a1a;--light-muted:#999;--border:#e0ddd8;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:300}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.2}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 40px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:6px;text-transform:uppercase}
+.main-nav ul{display:flex;gap:36px;list-style:none}.main-nav a{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}.main-nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--text);cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:320px;height:100vh;background:var(--white);z-index:200;padding:100px 48px;box-shadow:-8px 0 40px rgba(0,0,0,.05);transform:translateX(100%);transition:.5s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:28px}.mobile-nav a{font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--text)}
+.mobile-nav .close-btn{position:absolute;top:32px;right:40px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.1);z-index:150}.overlay.open{display:block}
+@media(max-width:900px){.main-nav{display:none}.burger{display:block}}
+
+section{padding:100px 0}.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 24px}}
+
+.page-hero{margin-top:70px;padding:120px 0 80px;text-align:center}
+.page-hero .label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--light-muted);margin-bottom:12px}
+.page-hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-style:italic;margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:.9rem;max-width:560px;margin:0 auto}
+
+.faq-content{max-width:760px;margin:0 auto}
+.faq-group{margin-bottom:48px}
+.faq-group h2{font-size:1.4rem;font-style:italic;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border);padding:0}
+.faq-item summary{padding:20px 0;cursor:pointer;font-size:.9rem;font-weight:400;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:'+';font-size:1.2rem;color:var(--light-muted);transition:.3s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item .answer{padding:0 0 20px;color:var(--muted);font-size:.85rem}
+
+.site-footer{background:var(--text);color:var(--offwhite);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-grid h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:var(--gray)}
+.footer-grid p,.footer-grid li{font-size:.82rem;color:#999}
+.footer-grid ul{list-style:none}.footer-grid li{margin-bottom:8px}
+.footer-grid a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;font-size:.72rem;color:#666}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">Maison Noir</a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collection.html">當季系列</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="stores.html">門市據點</a></li><li><a href="blog.html">風格誌</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav>
+
+<div class="page-hero">
+<div class="container">
+<p class="label">FAQ</p>
+<h1>常見問題</h1>
+<p>我們整理了顧客最常詢問的問題。若仍有疑問，歡迎透過聯絡頁面與我們聯繫。</p>
+</div>
+</div>
+
+<section style="padding-top:0">
+<div class="container">
+<div class="faq-content">
+
+<div class="faq-group">
+<h2>尺寸相關</h2>
+<details class="faq-item">
+<summary>如何選擇適合的尺寸？</summary>
+<div class="answer">每件商品頁面皆附有詳細的尺寸對照表，包含胸圍、腰圍、臀圍與衣長等數據。我們建議您參考自身實際測量數據選擇，若介於兩個尺寸之間，寬鬆版型建議選小一號，合身版型建議選大一號。您也可以在門市免費試穿或聯繫線上客服獲得一對一建議。</div>
+</details>
+<details class="faq-item">
+<summary>模特兒穿著的尺寸是什麼？</summary>
+<div class="answer">我們的模特兒身高約 170-175cm，體重約 50-54kg，通常穿著 S 號。每件商品頁面下方皆標示模特兒實穿尺寸供您參考。</div>
+</details>
+<details class="faq-item">
+<summary>是否提供修改服務？</summary>
+<div class="answer">是的，凡購買 Maison Noir 正價商品，皆可享有一次免費修改服務，包含褲長修改、袖長調整等基本改動。請攜帶商品至任一門市，由專業裁縫師為您服務，修改工時約 5-7 個工作天。</div>
+</details>
+</div>
+
+<div class="faq-group">
+<h2>訂購相關</h2>
+<details class="faq-item">
+<summary>可使用哪些付款方式？</summary>
+<div class="answer">線上商店接受信用卡（VISA、Mastercard、JCB）、LINE Pay、Apple Pay 及銀行轉帳。門市另可使用現金及悠遊付。所有線上交易皆經 SSL 加密保護。</div>
+</details>
+<details class="faq-item">
+<summary>下單後多久可以收到商品？</summary>
+<div class="answer">台灣本島一般訂單約 2-3 個工作天送達，外島地區約 5-7 個工作天。預購商品將於商品頁面標示的預計出貨日後開始安排寄送。出貨後您將收到包含物流追蹤編號的通知信。</div>
+</details>
+<details class="faq-item">
+<summary>是否有國際配送服務？</summary>
+<div class="answer">目前提供日本、香港、新加坡及馬來西亞的國際配送服務，運費依地區及重量計算，結帳時會自動顯示。國際訂單約 7-14 個工作天送達，關稅由收件人自行負擔。</div>
+</details>
+</div>
+
+<div class="faq-group">
+<h2>退換貨相關</h2>
+<details class="faq-item">
+<summary>退換貨政策為何？</summary>
+<div class="answer">收到商品後 14 天內，商品未經穿著、洗滌且保留完整吊牌者，可申請退換貨。請透過官網會員中心提出申請，經審核通過後我們將安排物流取件。退款將於收到退貨後 5-7 個工作天內退回原付款方式。</div>
+</details>
+<details class="faq-item">
+<summary>換貨是否需要運費？</summary>
+<div class="answer">首次換貨免運費，由品牌全額負擔來回運費。第二次以上換貨則需自行負擔寄回運費 NT$80。建議您先參考尺寸表或諮詢客服以減少換貨需求。</div>
+</details>
+<details class="faq-item">
+<summary>折扣商品可以退換嗎？</summary>
+<div class="answer">季末折扣商品僅接受換貨（同款式換尺寸），不接受退貨退款。樣品特賣會購入之商品為最終銷售，不接受退換貨。</div>
+</details>
+</div>
+
+<div class="faq-group">
+<h2>保養相關</h2>
+<details class="faq-item">
+<summary>羊毛類單品如何保養？</summary>
+<div class="answer">羊毛與喀什米爾類單品建議乾洗處理。日常穿著後請以天然木質衣架懸掛通風，避免連續穿著同一件以讓纖維恢復彈性。換季收納時建議摺疊平放於密封袋中，放入天然樟木片防蛀。</div>
+</details>
+<details class="faq-item">
+<summary>絲質單品如何清洗？</summary>
+<div class="answer">真絲製品建議使用中性洗劑以冷水手洗，切勿擰乾或使用烘乾機。洗後平放於乾毛巾上自然陰乾，如需熨燙請以低溫反面燙，或使用蒸氣掛燙機。避免噴灑香水直接接觸絲面。</div>
+</details>
+<details class="faq-item">
+<summary>衣物出現起毛球怎麼辦？</summary>
+<div class="answer">天然纖維在穿著初期可能出現輕微起毛球現象，這是正常的。建議使用專業毛球刮除器（非黏毛滾筒）順著纖維方向輕柔處理。穿著時避免粗糙表面摩擦可有效減少起球。隨著穿著次數增加，起球現象會逐漸減少。</div>
+</details>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><h4>Maison Noir</h4><p>以極簡主義與永續理念，為都會女性打造不退流行的基本衣櫥。</p></div>
+<div><h4>品牌</h4><ul><li><a href="about.html">品牌故事</a></li><li><a href="sustainability.html">永續理念</a></li><li><a href="collection.html">當季系列</a></li></ul></div>
+<div><h4>服務</h4><ul><li><a href="stores.html">門市據點</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+<div><h4>追蹤我們</h4><ul><li>Instagram</li><li>Facebook</li><li>Pinterest</li></ul></div>
+</div>
+<div class="footer-bottom">© 2026 Maison Noir. All rights reserved.</div>
+</div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

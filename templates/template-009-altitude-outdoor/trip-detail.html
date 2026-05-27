@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>合歡山日出團 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.detail-hero{padding:160px 0 80px;background:linear-gradient(to bottom,rgba(13,26,15,.3),var(--bg)),url('https://images.unsplash.com/photo-1551632811-561732d1e306?w=1920&q=80') center/cover}
+.detail-hero h1{font-size:3rem;margin-bottom:8px}
+.detail-hero .tags{margin-top:16px}
+.tag{display:inline-block;padding:4px 12px;background:rgba(74,222,128,.1);color:var(--green);border-radius:20px;font-size:.8rem;margin-right:8px}
+
+.section{padding:80px 0}
+.detail-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px}
+.detail-content h2{font-size:1.8rem;margin-bottom:20px;color:var(--green)}
+.detail-content h3{font-size:1.2rem;margin:24px 0 12px;color:var(--earth)}
+.detail-content p,.detail-content li{color:var(--muted);margin-bottom:8px}
+.detail-content ul{padding-left:20px}
+
+.sidebar{position:sticky;top:100px}
+.info-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.info-box h3{margin-bottom:20px;color:var(--green)}
+.info-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
+.info-item:last-child{border:none}
+.info-item .label{color:var(--muted)}
+.info-item .value{font-weight:700}
+.price-big{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--earth);margin:20px 0}
+.btn{display:inline-block;padding:14px 36px;background:var(--green-dark);color:#fff;border-radius:var(--radius);font-weight:700;font-family:'Oswald',sans-serif;width:100%;text-align:center;font-size:1rem}
+.btn:hover{background:var(--green)}
+
+.itinerary{margin-top:32px}
+.day{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+.day h4{color:var(--green);margin-bottom:8px}
+.day p{color:var(--muted);font-size:.9rem}
+
+.calendar{margin-top:32px}
+.cal-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.cal-date{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px;text-align:center;font-size:.9rem}
+.cal-date.available{border-color:var(--green);cursor:pointer}
+.cal-date.available:hover{background:rgba(74,222,128,.1)}
+.cal-date .status{font-size:.75rem;color:var(--muted);margin-top:4px}
+.cal-date.available .status{color:var(--green)}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}footer .foot-links a{color:var(--muted);font-size:.85rem}
+
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.detail-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="trips.html">探索行程</a></li><li><a href="gear.html">裝備推薦</a></li><li><a href="gallery.html">活動相簿</a></li><li><a href="guides.html">嚮導團隊</a></li><li><a href="safety.html">安全須知</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="openNav()">&#9776;</button></div></nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeNav()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="detail-hero">
+<div class="container">
+<a href="trips.html" style="color:var(--muted);font-size:.9rem">← 返回行程列表</a>
+<h1>合歡山日出團</h1>
+<div class="tags"><span class="tag">登山</span><span class="tag">2天1夜</span><span class="tag">中等難度</span></div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="detail-grid">
+<div class="detail-content">
+<h2>行程介紹</h2>
+<p>合歡山是台灣最容易親近的百岳之一，海拔 3,421 公尺的主峰擁有 360 度無遮蔽的壯闊視野。清晨時分，當第一道曙光穿透雲海灑落山巔，那是許多登山者心中最難忘的畫面。</p>
+<p>本行程由經驗豐富的嚮導帶領，從清境出發，夜宿松雪樓或滑雪山莊，凌晨攻頂迎接日出。沿途將解說高山生態、地質環境與登山安全知識。</p>
+
+<h3>行程亮點</h3>
+<ul>
+<li>合歡山主峰 360 度日出雲海</li>
+<li>專業高山嚮導全程陪同</li>
+<li>高山生態與星空解說</li>
+<li>含住宿、交通與餐食安排</li>
+<li>贈送專業登山攝影紀錄</li>
+</ul>
+
+<div class="itinerary">
+<h2>詳細行程</h2>
+<div class="day"><h4>Day 1 — 出發與適應</h4><p>13:00 花蓮集合出發 → 16:00 抵達清境農場休息 → 17:30 前往松雪樓辦理入住 → 18:30 晚餐與行前說明會 → 20:00 星空觀賞（天氣允許）→ 21:00 就寢</p></div>
+<div class="day"><h4>Day 2 — 攻頂與歸程</h4><p>03:30 起床準備 → 04:00 出發攻頂合歡主峰 → 05:30 山頂等待日出 → 06:30 下山返回松雪樓 → 08:00 早餐 → 09:30 參觀石門山步道（選配）→ 12:00 午餐 → 14:00 返回花蓮 → 16:00 解散</p></div>
+</div>
+
+<h3>建議裝備清單</h3>
+<ul>
+<li>防風保暖外套（山頂體感溫度可達 -5°C）</li>
+<li>頭燈（凌晨登頂必備）</li>
+<li>登山杖</li>
+<li>保暖手套與毛帽</li>
+<li>個人藥品與健保卡</li>
+<li>水壺（至少 1 公升）</li>
+<li>防曬乳與太陽眼鏡</li>
+</ul>
+</div>
+
+<div class="sidebar">
+<div class="info-box">
+<h3>行程資訊</h3>
+<div class="info-item"><span class="label">天數</span><span class="value">2天1夜</span></div>
+<div class="info-item"><span class="label">難度</span><span class="value">★★☆ 中等</span></div>
+<div class="info-item"><span class="label">海拔</span><span class="value">3,421m</span></div>
+<div class="info-item"><span class="label">人數</span><span class="value">6-12 人</span></div>
+<div class="info-item"><span class="label">嚮導比</span><span class="value">1:6</span></div>
+<div class="price-big">NT$ 4,800 /人</div>
+<a href="contact.html" class="btn">立即報名</a>
+</div>
+
+<div class="calendar" style="margin-top:24px">
+<h3 style="font-family:'Oswald';font-size:1.2rem">近期梯次</h3>
+<div class="cal-dates">
+<div class="cal-date available">1/13-14<div class="status">可報名</div></div>
+<div class="cal-date available">1/20-21<div class="status">可報名</div></div>
+<div class="cal-date">1/27-28<div class="status">已額滿</div></div>
+<div class="cal-date available">2/3-4<div class="status">可報名</div></div>
+<div class="cal-date available">2/10-11<div class="status">可報名</div></div>
+<div class="cal-date">2/17-18<div class="status">已額滿</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><div class="foot-links"><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a></div><p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p></div></footer>
+<script>function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

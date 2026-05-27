@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>農場日誌 — Terra 有機農場</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--white:#ffffff;--earth:#5c7a3a;--earth-dark:#3d5a22;--earth-light:#8fb065;--brown:#8b6914;--sand:#f0e8d8;--text:#2d2a26;--muted:#7a7264;--border:#e4ddd0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}h1,h2,h3{font-family:'Playfair Display','Noto Sans TC',serif;font-weight:700;line-height:1.3}a{color:var(--earth);text-decoration:none}img{max-width:100%;height:auto;display:block}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,244,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--earth-dark);font-weight:700}.logo span{color:var(--brown)}.nav-desktop{display:flex;gap:1.5rem}.nav-desktop a{color:var(--text);font-size:.9rem;font-weight:400}.nav-desktop a:hover{color:var(--earth)}.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--white);z-index:2000;padding:3rem 2rem;transition:left .4s}.mobile-nav.active{left:0}.mobile-nav .close{position:absolute;top:1rem;right:1rem;font-size:1.5rem;cursor:pointer;color:var(--muted)}.mobile-nav a{display:block;padding:.8rem 0;color:var(--text);border-bottom:1px solid var(--border)}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1500;display:none}.overlay.active{display:block}
+
+.page-hero{position:relative;height:50vh;min-height:350px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1501004318776-cd6e5ac79cfd?w=1920&q=80') center/cover no-repeat;z-index:-2}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.4);z-index:-1}
+.page-hero h1{font-size:3rem}.page-hero p{opacity:.9;margin-top:.5rem}
+
+.section{padding:5rem 2rem}.container{max-width:900px;margin:0 auto}
+.blog-list{display:flex;flex-direction:column;gap:3rem}
+.blog-card{display:grid;grid-template-columns:300px 1fr;gap:2rem;background:var(--white);border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.blog-card img{width:100%;height:100%;min-height:220px;object-fit:cover}
+.blog-card .info{padding:1.5rem;display:flex;flex-direction:column;justify-content:center}
+.blog-card .date{font-size:.85rem;color:var(--muted);margin-bottom:.5rem}
+.blog-card h3{font-family:'Noto Sans TC',sans-serif;font-weight:500;font-size:1.2rem;margin-bottom:.5rem}
+.blog-card p{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+.blog-card .read-more{color:var(--earth);font-size:.9rem;font-weight:400}
+
+.footer{background:var(--earth-dark);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}.footer h4{color:var(--white);font-family:'Playfair Display',serif;margin-bottom:1rem}.footer a{color:rgba(255,255,255,.7);display:block;margin-bottom:.5rem;font-size:.9rem}.footer a:hover{color:var(--white)}.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
+@media(max-width:768px){.nav-desktop{display:none}.hamburger{display:flex}.page-hero h1{font-size:2rem}.blog-card{grid-template-columns:1fr}.blog-card img{height:200px}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header"><div class="logo">Terra <span>有機農場</span></div><nav class="nav-desktop"><a href="index.html">首頁</a><a href="about.html">農場故事</a><a href="philosophy.html">有機理念</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a><a href="products.html">線上訂購</a><a href="contact.html">聯絡我們</a></nav><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="mobile-nav"><div class="close" onclick="toggleMenu()">&times;</div><a href="index.html">首頁</a><a href="about.html">農場故事</a><a href="philosophy.html">有機理念</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a><a href="products.html">線上訂購</a><a href="contact.html">聯絡我們</a></nav>
+
+<section class="page-hero"><div><h1>農場日誌</h1><p>記錄田間的四季流轉與生活點滴</p></div></section>
+
+<section class="section">
+<div class="container">
+<div class="blog-list">
+<a href="blog-detail.html" class="blog-card" style="text-decoration:none;color:var(--text)">
+<img src="https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?w=600&q=80" alt="春耕">
+<div class="info">
+<p class="date">2026 年 3 月 12 日</p>
+<h3>春分已過，秧苗入田</h3>
+<p>今年的一期稻比往年晚了一週才插秧，因為二月底的一場寒流讓水溫遲遲上不來。但等待是值得的，今天終於看到綠油油的秧苗整齊地站在水田裡，心裡踏實了不少。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card" style="text-decoration:none;color:var(--text)">
+<img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80" alt="夏收">
+<div class="info">
+<p class="date">2026 年 1 月 28 日</p>
+<h3>冬季的堆肥場——看不見的勞動</h3>
+<p>農閒的冬天其實一點也不閒。這個月我們翻了三次堆肥，將去年秋天收集的稻桿、落葉、雞糞混合翻堆。堆肥的溫度已經升到 65 度，表示微生物正在努力工作。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card" style="text-decoration:none;color:var(--text)">
+<img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=600&q=80" alt="秋天">
+<div class="info">
+<p class="date">2023 年 11 月 5 日</p>
+<h3>二期稻收割紀實——金黃色的感動</h3>
+<p>今天是收割日。凌晨四點就起床，趁著露水未乾前把最後的準備工作做完。當收割機駛過田間，金黃色的稻穗一片片倒下，那個畫面每年看都還是會感動。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+<a href="blog-detail.html" class="blog-card" style="text-decoration:none;color:var(--text)">
+<img src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=600&q=80" alt="生態">
+<div class="info">
+<p class="date">2023 年 8 月 18 日</p>
+<h3>農場的訪客——記一隻住下來的貓頭鷹</h3>
+<p>上個月開始，每天傍晚都會聽到農場後方竹林傳來「咕——咕——」的叫聲。昨天終於看到了，是一隻領角鴞！牠選擇住在我們的竹林裡，大概是因為田裡的老鼠夠多吧。</p>
+<span class="read-more">閱讀全文 →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-grid"><div><h4>Terra 有機農場</h4><p>宜蘭縣三星鄉大隱路 128 號</p><p style="margin-top:.5rem">電話：03-989-5678</p></div><div><h4>導覽</h4><a href="about.html">農場故事</a><a href="products.html">當季農產</a><a href="experiences.html">農場體驗</a><a href="recipes.html">食譜分享</a></div><div><h4>營業資訊</h4><p>週二至週日 09:00-17:00</p><p style="margin-top:.5rem">週一公休</p></div></div>
+<div class="footer-bottom">© 2026 Terra 有機農場 版權所有</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

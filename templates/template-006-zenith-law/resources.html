@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法律資源 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text)}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:8px}.page-hero p{color:var(--muted)}
+section{padding:60px 0}
+.gold-line{width:40px;height:2px;background:var(--gold);margin-bottom:20px}
+.resource-section{margin-bottom:48px}
+.resource-section h2{font-size:1.5rem;color:var(--white);margin-bottom:20px}
+.resource-list{list-style:none}
+.resource-list li{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.resource-list li .info h4{color:var(--white);font-size:1rem;margin-bottom:4px}
+.resource-list li .info p{color:var(--muted);font-size:.85rem}
+.resource-list li .dl{color:var(--gold);font-size:.85rem;border:1px solid var(--gold);border-radius:var(--radius);padding:6px 16px;white-space:nowrap}
+.resource-list li .dl:hover{background:var(--gold);color:var(--bg)}
+.links-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.link-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.link-card h4{color:var(--white);font-size:.95rem;margin-bottom:6px}
+.link-card p{color:var(--muted);font-size:.85rem;margin-bottom:8px}
+.link-card a{font-size:.85rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.links-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>法律資源</h1><p>實用法律指南與政府機關連結</p></div></section>
+
+<section><div class="container">
+
+<div class="resource-section">
+  <div class="gold-line"></div>
+  <h2>法律指南下載</h2>
+  <ul class="resource-list">
+    <li><div class="info"><h4>企業設立法律須知</h4><p>涵蓋公司設立流程、組織型態選擇、資本額規劃等實務指引。PDF，共28頁。</p></div><a href="#" class="dl">下載 PDF</a></li>
+    <li><div class="info"><h4>商標註冊實務手冊</h4><p>從商標檢索到註冊完成的完整流程說明，含申請表填寫範例。PDF，共35頁。</p></div><a href="#" class="dl">下載 PDF</a></li>
+    <li><div class="info"><h4>勞動契約範本與解說</h4><p>符合現行勞動基準法之勞動契約範本，附逐條法律解說。PDF，共20頁。</p></div><a href="#" class="dl">下載 PDF</a></li>
+    <li><div class="info"><h4>企業併購流程概覽</h4><p>企業併購交易各階段流程圖解，含時程規劃與查核要點提示。PDF，共15頁。</p></div><a href="#" class="dl">下載 PDF</a></li>
+    <li><div class="info"><h4>保密協議（NDA）範本</h4><p>適用於商業洽談場景之中英文保密協議範本，含使用說明。Word，共8頁。</p></div><a href="#" class="dl">下載 DOC</a></li>
+  </ul>
+</div>
+
+<div class="resource-section">
+  <div class="gold-line"></div>
+  <h2>政府機關與法律資源連結</h2>
+  <div class="links-grid">
+    <div class="link-card"><h4>司法院</h4><p>法院判決書查詢、訴訟程序說明、司法統計資料。</p><a href="#">www.judicial.gov.tw →</a></div>
+    <div class="link-card"><h4>經濟部智慧財產局</h4><p>專利、商標、著作權相關法規、申請系統及公報查詢。</p><a href="#">www.tipo.gov.tw →</a></div>
+    <div class="link-card"><h4>公平交易委員會</h4><p>結合申報、聯合行為、不公平競爭等案件查詢與法規。</p><a href="#">www.ftc.gov.tw →</a></div>
+    <div class="link-card"><h4>勞動部</h4><p>勞動法令查詢、勞資爭議調解申請、勞工保險相關資訊。</p><a href="#">www.mol.gov.tw →</a></div>
+    <div class="link-card"><h4>全國法規資料庫</h4><p>中華民國現行法規全文檢索系統，含法規沿革及相關函釋。</p><a href="#">law.moj.gov.tw →</a></div>
+    <div class="link-card"><h4>台北律師公會</h4><p>律師查詢、法律扶助資訊、律師倫理規範。</p><a href="#">www.tba.org.tw →</a></div>
+  </div>
+</div>
+
+<div class="resource-section">
+  <div class="gold-line"></div>
+  <h2>免責聲明</h2>
+  <p style="color:var(--muted);font-size:.9rem">本頁所提供之法律指南與範本僅供參考之用，不構成具體的法律建議。每個案件之事實與法律適用均有不同，建議您在使用前諮詢專業律師，以確保符合您的具體需求。本所對於因使用本頁資源所產生之任何損害，不負法律責任。</p>
+</div>
+
+</div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "id": "template-007",
+  "name": "Canvas 當代藝廊",
+  "description": "Ultra-minimal contemporary art gallery website template with masonry grid layout, monochrome design, and gallery-like white space. Designed for contemporary art galleries showcasing exhibitions, artists, and collections.",
+  "theme": "light",
+  "style": "minimal",
+  "industry": "art-gallery",
+  "language": "zh-TW",
+  "pages": 12,
+  "features": ["masonry-grid", "mobile-nav-left", "newsletter", "art-shop", "exhibition-management"],
+  "fonts": ["Space Grotesk", "Noto Sans TC"],
+  "colorScheme": {
+    "bg": "#ffffff",
+    "offwhite": "#f9f9f7",
+    "text": "#111111",
+    "muted": "#777777",
+    "accent": "#111111",
+    "border": "#e5e5e5",
+    "hover": "#333333"
+  }
+}

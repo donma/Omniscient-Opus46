@@ -1,0 +1,35 @@
+{
+  "id": "template-008",
+  "name": "Pawsome 寵物美容",
+  "description": "A playful, warm pet grooming salon website template with pink/purple color scheme, rounded organic shapes, and friendly design suitable for pet care businesses.",
+  "category": "pets",
+  "theme": "light",
+  "version": "1.0.0",
+  "author": "Omniscient",
+  "pages": [
+    "index.html",
+    "about.html",
+    "services.html",
+    "service-detail.html",
+    "pricing.html",
+    "portfolio.html",
+    "tips.html",
+    "tip-detail.html",
+    "booking.html",
+    "reviews.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "fonts": ["Quicksand:wght@500;700", "Noto Sans TC:wght@300;400"],
+  "colors": {
+    "bg": "#fef9f6",
+    "white": "#ffffff",
+    "pink": "#e8758f",
+    "pink-light": "#fce4ec",
+    "purple": "#9c6aba",
+    "text": "#2d2525",
+    "muted": "#8a7575",
+    "border": "#f0e0e0",
+    "accent": "#ff9e40"
+  }
+}

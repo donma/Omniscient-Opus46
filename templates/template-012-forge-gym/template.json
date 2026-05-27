@@ -1,0 +1,51 @@
+{
+  "templateId": "template-012-forge-gym",
+  "name": "Forge 健身工廠",
+  "description": "Dark aggressive fitness gym website template with red/black theme, bold typography, and diagonal design elements. Designed for CrossFit and functional training gyms.",
+  "category": "fitness",
+  "subcategory": "gym",
+  "language": "zh-Hant",
+  "locale": "zh-TW",
+  "theme": "dark",
+  "colors": {
+    "primary": "#e63946",
+    "primaryDark": "#c1121f",
+    "background": "#0a0a0a",
+    "surface": "#141414",
+    "card": "#1c1c1c",
+    "text": "#f0f0f0",
+    "muted": "#888888",
+    "border": "#2a2a2a"
+  },
+  "fonts": {
+    "heading": "Anton",
+    "body": "Noto Sans TC"
+  },
+  "style": {
+    "borderRadius": "4px",
+    "mobileMenu": "left",
+    "designStyle": "aggressive, bold, high contrast, diagonal angles"
+  },
+  "pages": [
+    {"file": "index.html", "title": "首頁", "type": "home"},
+    {"file": "about.html", "title": "關於我們", "type": "about"},
+    {"file": "programs.html", "title": "訓練課程", "type": "services"},
+    {"file": "program-detail.html", "title": "CrossFit 課程詳情", "type": "service-detail"},
+    {"file": "coaches.html", "title": "教練團隊", "type": "team"},
+    {"file": "facilities.html", "title": "設備環境", "type": "gallery"},
+    {"file": "membership.html", "title": "會員方案", "type": "pricing"},
+    {"file": "transformations.html", "title": "成果見證", "type": "testimonials"},
+    {"file": "blog.html", "title": "健身知識", "type": "blog"},
+    {"file": "blog-detail.html", "title": "新手重訓完整指南", "type": "blog-detail"},
+    {"file": "schedule.html", "title": "課表查詢", "type": "schedule"},
+    {"file": "contact.html", "title": "聯絡我們", "type": "contact"}
+  ],
+  "navigation": ["首頁", "關於我們", "訓練課程", "教練團隊", "設備環境", "會員方案", "成果見證", "聯絡我們"],
+  "business": {
+    "name": "Forge 健身工廠",
+    "type": "CrossFit/Functional Training Gym",
+    "location": "台北市信義區松仁路100號B1",
+    "phone": "02-2765-1234",
+    "email": "info@forge-gym.tw"
+  }
+}

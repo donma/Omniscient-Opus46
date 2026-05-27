@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vertex 建築事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f4f4f2;--white:#ffffff;--concrete:#888888;--dark:#1a1a1a;--accent:#1a1a1a;--text:#1a1a1a;--muted:#666666;--border:#d0d0d0;--light:#ebebeb}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;background:var(--bg);border-bottom:1px solid var(--border);z-index:1000;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:-.5px}
+nav .logo span{font-family:'Noto Sans TC',sans-serif;font-weight:400;font-size:.85rem;margin-left:8px;color:var(--muted)}
+nav ul{list-style:none;display:flex;gap:24px}
+nav ul a{font-size:.85rem;font-weight:400;transition:color .2s}
+nav ul a:hover{color:var(--concrete)}
+.menu-btn{display:none;flex-direction:column;gap:4px;cursor:pointer;z-index:1001}
+.menu-btn span{width:24px;height:2px;background:var(--dark)}
+.mobile-menu{position:fixed;top:0;right:-100%;width:70%;height:100vh;background:var(--white);padding:80px 32px;transition:right .3s;z-index:999;display:flex;flex-direction:column;gap:24px}
+.mobile-menu.active{right:0}
+.mobile-menu a{font-size:1.1rem;font-weight:400;border-bottom:1px solid var(--border);padding-bottom:12px}
+
+@media(max-width:768px){
+nav ul{display:none}
+.menu-btn{display:flex}
+}
+
+/* HERO */
+.hero{margin-top:80px;padding:60px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:end;min-height:80vh}
+.hero-text{padding-bottom:60px}
+.hero-text h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:24px;letter-spacing:-1px}
+.hero-text p{color:var(--muted);font-size:1rem;max-width:360px;margin-bottom:32px}
+.hero-img{position:relative}
+.hero-img img{width:100%;height:70vh;object-fit:cover}
+.hero-img .overlay-label{position:absolute;bottom:24px;left:24px;background:var(--dark);color:var(--white);padding:8px 16px;font-size:.75rem;font-family:'Space Grotesk',sans-serif}
+
+@media(max-width:768px){
+.hero{grid-template-columns:1fr;min-height:auto}
+.hero-img img{height:50vh}
+.hero-text{padding-bottom:0}
+}
+
+/* FEATURED */
+.featured{padding:80px 0}
+.featured h2{font-size:1.5rem;margin-bottom:48px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.feat-item{position:relative;overflow:hidden}
+.feat-item img{width:100%;height:320px;object-fit:cover;transition:transform .4s}
+.feat-item:hover img{transform:scale(1.03)}
+.feat-item .label{position:absolute;bottom:16px;left:16px;background:var(--white);padding:6px 12px;font-size:.75rem;font-family:'Space Grotesk',sans-serif}
+
+@media(max-width:768px){
+.feat-grid{grid-template-columns:1fr}
+}
+
+/* AWARDS */
+.awards{padding:40px 0 80px;border-top:1px solid var(--border)}
+.awards-inner{display:flex;gap:48px;overflow-x:auto;padding:24px 0}
+.award-item{flex-shrink:0;text-align:center}
+.award-item .year{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700}
+.award-item .name{font-size:.8rem;color:var(--muted);margin-top:4px;white-space:nowrap}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--white);padding:60px 24px}
+footer .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+footer h4{font-size:.85rem;margin-bottom:16px;opacity:.6}
+footer p,footer a{font-size:.85rem;line-height:2;opacity:.8}
+footer .copy{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;opacity:.5}
+
+@media(max-width:768px){
+footer .footer-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">VERTEX<span>建築事務所</span></div>
+<ul>
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">事務所簡介</a></li>
+<li><a href="projects.html">建築作品</a></li>
+<li><a href="philosophy.html">設計理念</a></li>
+<li><a href="services.html">服務項目</a></li>
+<li><a href="team.html">團隊成員</a></li>
+<li><a href="press.html">媒體報導</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+<div class="menu-btn" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+<span></span><span></span><span></span>
+</div>
+</nav>
+<div class="mobile-menu">
+<a href="index.html">首頁</a>
+<a href="about.html">事務所簡介</a>
+<a href="projects.html">建築作品</a>
+<a href="philosophy.html">設計理念</a>
+<a href="services.html">服務項目</a>
+<a href="team.html">團隊成員</a>
+<a href="press.html">媒體報導</a>
+<a href="contact.html">聯絡我們</a>
+</div>
+
+<div class="container">
+<section class="hero">
+<div class="hero-text">
+<h1>以建築<br>回應土地</h1>
+<p>Vertex 建築事務所成立於2010年，專注永續住宅設計，以幾何語彙與在地材料創造當代建築。</p>
+<a href="projects.html" style="font-size:.85rem;border-bottom:1px solid var(--dark);padding-bottom:2px">探索作品 →</a>
+</div>
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=900&h=1200&fit=crop" alt="建築作品">
+<div class="overlay-label">雲居住宅 — 2023</div>
+</div>
+</section>
+
+<section class="featured">
+<h2>精選作品</h2>
+<div class="feat-grid">
+<div class="feat-item">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="光合之家">
+<div class="label">光合之家 / 住宅</div>
+</div>
+<div class="feat-item">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="方圓商辦">
+<div class="label">方圓商辦 / 商業</div>
+</div>
+<div class="feat-item">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="雲居">
+<div class="label">雲居 / 住宅</div>
+</div>
+</div>
+</section>
+
+<section class="awards">
+<h2 style="font-size:1rem;margin-bottom:24px;color:var(--muted)">獲獎紀錄</h2>
+<div class="awards-inner">
+<div class="award-item"><div class="year">2023</div><div class="name">台灣建築獎 首獎</div></div>
+<div class="award-item"><div class="year">2022</div><div class="name">ADA 新銳建築獎</div></div>
+<div class="award-item"><div class="year">2021</div><div class="name">日本 Good Design Award</div></div>
+<div class="award-item"><div class="year">2020</div><div class="name">遠東建築獎</div></div>
+<div class="award-item"><div class="year">2019</div><div class="name">綠建築標章 鑽石級</div></div>
+</div>
+</section>
+</div>
+
+<footer>
+<div class="footer-inner">
+<div>
+<h4>VERTEX 建築事務所</h4>
+<p>台北市大安區仁愛路三段152號8樓<br>TEL: 02-2755-0019<br>EMAIL: info@vertex-arch.tw</p>
+</div>
+<div>
+<h4>快速連結</h4>
+<p><a href="projects.html">建築作品</a><br><a href="services.html">服務項目</a><br><a href="careers.html">加入我們</a></p>
+</div>
+<div>
+<h4>社群</h4>
+<p>Instagram<br>Facebook<br>LinkedIn</p>
+</div>
+</div>
+<div class="copy">© 2026 Vertex Architects. All rights reserved.</div>
+</footer>
+</body>
+</html>

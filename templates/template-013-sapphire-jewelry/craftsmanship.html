@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工藝傳承 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+.page-hero{height:50vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1920&q=80') center/cover;opacity:0.3}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,26,0.4),rgba(10,13,26,0.95))}
+.page-hero-content{position:relative;z-index:1;text-align:center}.page-hero-content h1{font-size:2.5rem;margin-bottom:12px}.page-hero-content p{color:var(--muted);letter-spacing:0.2em;font-size:0.9rem}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+
+.craft-steps{max-width:900px;margin:0 auto}
+.craft-step{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 0;border-bottom:1px solid var(--border)}
+.craft-step:nth-child(even){direction:rtl}.craft-step:nth-child(even) > *{direction:ltr}
+.craft-step:last-child{border-bottom:none}
+.craft-step img{width:100%;height:300px;object-fit:cover;border:1px solid var(--border)}
+.craft-step-text .step-label{font-family:'Cinzel',serif;font-size:0.8rem;color:var(--gold);letter-spacing:0.2em;margin-bottom:12px}
+.craft-step-text h3{font-size:1.3rem;margin-bottom:16px;font-family:'Noto Sans TC',sans-serif;font-weight:400}
+.craft-step-text p{color:var(--muted);font-size:0.9rem}
+
+.master-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.master{display:grid;grid-template-columns:350px 1fr;gap:60px;align-items:center}
+.master img{width:100%;height:450px;object-fit:cover;border:1px solid var(--border)}
+.master-text h2{font-size:1.8rem;margin-bottom:8px}
+.master-text .title{color:var(--gold);font-size:0.85rem;margin-bottom:24px}
+.master-text p{color:var(--muted);margin-bottom:16px;font-size:0.9rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.craft-step{grid-template-columns:1fr}.craft-step:nth-child(even){direction:ltr}.master{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<section class="page-hero">
+  <div class="page-hero-content"><h1>工藝傳承</h1><div class="divider"></div><p>CRAFTSMANSHIP</p></div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 60px">
+      <h2 style="font-size:1.8rem;margin-bottom:24px">從原石到永恆</h2>
+      <p style="color:var(--muted)">每一件 Sapphire 珠寶作品都經歷五道嚴謹工序，由資深匠師以數十年經驗與精湛手藝，將大自然的瑰寶轉化為永恆的藝術。</p>
+    </div>
+    <div class="craft-steps">
+      <div class="craft-step">
+        <img src="https://images.unsplash.com/photo-1551405780-03882d5a2ba7?w=600&q=80" alt="選材">
+        <div class="craft-step-text">
+          <div class="step-label">STEP 01</div>
+          <h3>嚴選原石</h3>
+          <p>我們的寶石學家親赴全球各大礦區，以專業眼光嚴選最頂級的原石。每一顆寶石都必須通過色澤、淨度、火彩等多重標準的嚴格篩選。</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="切割">
+        <div class="craft-step-text">
+          <div class="step-label">STEP 02</div>
+          <h3>精密切割</h3>
+          <p>運用最先進的3D掃描技術分析原石結構，計算最佳切割方案。資深切割師以精密儀器搭配手工微調，確保每一個刻面都能完美折射光芒。</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80" alt="設計">
+        <div class="craft-step-text">
+          <div class="step-label">STEP 03</div>
+          <h3>藝術設計</h3>
+          <p>設計師以手繪草圖結合3D建模，反覆推敲每一個細節。從整體造型到微小的爪鑲角度，都經過精密計算，確保美學與結構的完美平衡。</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80" alt="鑲嵌">
+        <div class="craft-step-text">
+          <div class="step-label">STEP 04</div>
+          <h3>手工鑲嵌</h3>
+          <p>鑲嵌是珠寶製作中最考驗功力的環節。我們的匠師在40倍顯微鏡下，以純手工將每一顆寶石精準安置，確保牢固的同時展現最大面積的光彩。</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" alt="拋光">
+        <div class="craft-step-text">
+          <div class="step-label">STEP 05</div>
+          <h3>精磨拋光</h3>
+          <p>最後一道工序賦予作品如鏡面般的光澤。多道不同細緻度的拋光程序，讓貴金屬表面達到完美無瑕的質感，為作品畫下完美句點。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="master-section">
+  <div class="container" style="padding-top:100px;padding-bottom:100px">
+    <div class="master">
+      <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80" alt="首席匠師">
+      <div class="master-text">
+        <h2>首席匠師</h2>
+        <div class="title">林正雄 師傅 · 45年資歷</div>
+        <p>林正雄師傅自18歲起跟隨創辦人林振華先生學藝，至今已有超過45年的珠寶製作經驗。他精通各式鑲嵌技法，尤其擅長高難度的密鑲與隱密式鑲嵌。</p>
+        <p>「每一顆寶石都有它最美的角度，我的工作就是找到那個角度，讓它永遠閃耀。」林師傅如此形容他的工作哲學。</p>
+        <p>在他的帶領下，Sapphire 珠寶的工坊維持著最嚴格的品質標準，每一件作品都必須通過他的最終檢驗才能出廠。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}</script>
+</body>
+</html>

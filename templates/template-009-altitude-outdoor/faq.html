@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>常見問題 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:linear-gradient(to bottom,rgba(13,26,15,.6),var(--bg)),url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1920&q=80') center/cover}
+.page-hero h1{font-size:3.5rem;margin-bottom:16px}.page-hero h1 span{color:var(--green)}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+
+.section{padding:60px 0}
+.faq-category{margin-bottom:48px}
+.faq-category h2{color:var(--green);font-size:1.5rem;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.faq-q:hover{color:var(--green)}
+.faq-q .icon{color:var(--green);font-size:1.2rem;transition:transform .3s}
+.faq-item.active .faq-q .icon{transform:rotate(45deg)}
+.faq-a{padding:0 24px 20px;color:var(--muted);display:none}
+.faq-item.active .faq-a{display:block}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}footer .foot-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}}
+</style>
+</head>
+<body>
+<nav><div class="nav-container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="trips.html">探索行程</a></li><li><a href="gear.html">裝備推薦</a></li><li><a href="gallery.html">活動相簿</a></li><li><a href="guides.html">嚮導團隊</a></li><li><a href="safety.html">安全須知</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="openNav()">&#9776;</button></div></nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeNav()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero">
+<h1>常見<span>問題</span></h1>
+<p>關於行程、裝備、安全與報名的常見疑問</p>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="faq-category">
+<h2>行程相關</h2>
+<div class="faq-item active"><div class="faq-q">行程會因為天氣取消嗎？<span class="icon">+</span></div><div class="faq-a">是的，安全是我們的最高原則。若中央氣象署發布颱風警報或豪雨特報，或嚮導判斷現場條件不安全，我們會取消或延期行程。因天候取消可全額退費或免費改期。</div></div>
+<div class="faq-item"><div class="faq-q">我沒有登山經驗可以參加嗎？<span class="icon">+</span></div><div class="faq-a">當然可以！我們有專為新手設計的入門行程，如合歡山日出團、親子森林露營等。嚮導會根據隊伍狀況調整速度，確保每個人都能安全完成。</div></div>
+<div class="faq-item"><div class="faq-q">行程包含哪些費用？<span class="icon">+</span></div><div class="faq-a">行程費用通常包含：專業嚮導費、保險、公共裝備（帳篷、炊具等）、交通接駁與餐食。個人裝備與飲品需自行準備，詳細內容請參考各行程說明頁面。</div></div>
+<div class="faq-item"><div class="faq-q">一團最多幾個人？<span class="icon">+</span></div><div class="faq-a">為確保品質與安全，登山行程每團上限 12 人，溯溪行程每團上限 10 人，嚮導比維持在 1:6 以內。</div></div>
+</div>
+
+<div class="faq-category">
+<h2>裝備相關</h2>
+<div class="faq-item"><div class="faq-q">我需要自己準備所有裝備嗎？<span class="icon">+</span></div><div class="faq-a">公共裝備（帳篷、炊具、繩索等）由我們提供。個人裝備（登山鞋、背包、保暖衣物等）需自行準備。若缺少部分裝備，我們有提供租借服務，報名時可一併預訂。</div></div>
+<div class="faq-item"><div class="faq-q">溯溪裝備會提供嗎？<span class="icon">+</span></div><div class="faq-a">是的，溯溪行程包含全套專業裝備：防寒衣、溯溪鞋、安全頭盔、救生衣與確保繩索。您只需穿著泳衣前來即可。</div></div>
+<div class="faq-item"><div class="faq-q">冬季行程需要哪些特殊裝備？<span class="icon">+</span></div><div class="faq-a">冬季高山行程額外需要冰爪、雪地綁腿與更高規格的保暖衣物。冰爪與技術裝備可向我們租借，詳細清單會在行前說明會提供。</div></div>
+</div>
+
+<div class="faq-category">
+<h2>安全相關</h2>
+<div class="faq-item"><div class="faq-q">行程有投保嗎？<span class="icon">+</span></div><div class="faq-a">所有行程皆投保旅行業責任保險（500 萬意外身故 / 20 萬醫療）及登山綜合保險。我們另建議旅客自行加保個人旅遊平安險。</div></div>
+<div class="faq-item"><div class="faq-q">如果在山上身體不舒服怎麼辦？<span class="icon">+</span></div><div class="faq-a">嚮導皆持有 EMT 急救證照，能進行初步評估與處理。若判斷需要撤退，將立即啟動緊急撤退程序。每團配備衛星電話，可隨時與外界聯繫。</div></div>
+<div class="faq-item"><div class="faq-q">有年齡限制嗎？<span class="icon">+</span></div><div class="faq-a">親子行程適合 6 歲以上兒童。一般登山行程建議 16 歲以上（未成年需家長同行或簽署同意書）。65 歲以上長者建議提供近期健康檢查報告。</div></div>
+</div>
+
+<div class="faq-category">
+<h2>報名相關</h2>
+<div class="faq-item"><div class="faq-q">如何報名？<span class="icon">+</span></div><div class="faq-a">您可以透過官網聯絡表單、LINE 官方帳號或電話報名。確認報名後需於 3 天內完成訂金匯款（行程費用的 30%），餘款於出發前 7 天付清。</div></div>
+<div class="faq-item"><div class="faq-q">可以取消或改期嗎？<span class="icon">+</span></div><div class="faq-a">出發前 14 天取消退費 90%，前 7 天取消退費 50%，前 3 天內恕不退費。改期不收手續費（限改期一次），需視梯次名額而定。</div></div>
+<div class="faq-item"><div class="faq-q">可以包團嗎？<span class="icon">+</span></div><div class="faq-a">可以！6 人以上即可申請包團，我們會根據團員需求客製化行程內容與日期。企業團建、家族旅遊、社團活動皆歡迎洽詢。</div></div>
+</div>
+
+</div>
+</section>
+
+<footer><div class="container" style="max-width:1200px"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><div class="foot-links"><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a></div><p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p></div></footer>
+<script>
+function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}
+function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{q.parentElement.classList.toggle('active')})});
+</script>
+</body>
+</html>

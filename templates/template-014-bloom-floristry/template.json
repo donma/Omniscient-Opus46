@@ -1,0 +1,33 @@
+{
+  "id": "template-014-bloom-floristry",
+  "name": "Bloom 花藝工作室",
+  "category": "floristry",
+  "theme": "light",
+  "description": "Romantic pastel floristry studio template with organic blob shapes, soft gradients, and feminine aesthetic. Designed for flower shops, wedding florists, and floral art studios.",
+  "pages": [
+    "index.html",
+    "about.html",
+    "portfolio.html",
+    "order.html",
+    "order-detail.html",
+    "weddings.html",
+    "courses.html",
+    "course-detail.html",
+    "blog.html",
+    "blog-detail.html",
+    "faq.html",
+    "contact.html"
+  ],
+  "fonts": ["Playfair Display", "Noto Sans TC"],
+  "colors": {
+    "background": "#fdf8f5",
+    "white": "#ffffff",
+    "rose": "#e89bae",
+    "roseLight": "#fce8ee",
+    "sage": "#a8c5a0",
+    "text": "#3a2d2d",
+    "muted": "#8a7070",
+    "border": "#f0dede",
+    "lavender": "#d4c5e8"
+  }
+}

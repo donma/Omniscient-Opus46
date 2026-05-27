@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>製麵工序｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="從原料到成品 — 黑潮拉麵手工製麵的完整工序。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.8}
+h1,h2,h3{font-family:'Noto Serif TC',serif;line-height:1.3}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+.page-hero{position:relative;height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=1400&q=80') center/cover;filter:brightness(.25)}
+.page-hero .content{position:relative;z-index:2}.page-hero .jp{font-size:.8rem;letter-spacing:6px;color:var(--gold);margin-bottom:8px}
+.page-hero h1{font-size:2rem;letter-spacing:3px}
+section{padding:80px 0}
+.process-intro{text-align:center;max-width:600px;margin:0 auto 60px;color:var(--muted);font-size:.92rem}
+.process-step{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:80px}
+.process-step:nth-child(even){direction:rtl}.process-step:nth-child(even) > *{direction:ltr}
+@media(max-width:768px){.process-step,.process-step:nth-child(even){grid-template-columns:1fr;direction:ltr}}
+.process-step img{width:100%;height:280px;object-fit:cover;border-radius:var(--radius)}
+.process-step .text .num{display:inline-block;background:var(--gold);color:var(--black);width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;font-weight:700;font-size:.85rem;margin-bottom:12px}
+.process-step .text h3{font-size:1.3rem;margin-bottom:8px}
+.process-step .text p{color:var(--muted);font-size:.88rem;margin-bottom:8px}
+.process-step .text .detail{font-size:.82rem;color:#666;border-left:2px solid var(--border);padding-left:12px;margin-top:12px}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<section class="page-hero"><div class="content"><p class="jp">工程</p><h1>製麵工序</h1></div></section>
+
+<section>
+<div class="container">
+<p class="process-intro">每日清晨六點，師傅開始當天的製麵作業。從粉料調配到切麵完成，全程手工操作，確保每一根麵條都有最理想的彈性與口感。</p>
+
+<div class="process-step">
+  <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="粉料調配">
+  <div class="text"><div class="num">1</div><h3>粉料調配</h3><p>使用日本進口高筋麵粉為主體，搭配少量澱粉調整質地。精準秤量是一切的起點。</p><div class="detail">麵粉：日清製粉 特級高筋<br>蛋白質含量：12.5%<br>灰分：0.38%</div></div>
+</div>
+
+<div class="process-step">
+  <img src="https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=600&q=80" alt="鹼水混合">
+  <div class="text"><div class="num">2</div><h3>鹼水混合</h3><p>將鹼水（かん水）與食鹽溶於水中，緩慢加入粉料中攪拌。鹼水賦予麵條獨特的彈性與淡黃色澤。</p><div class="detail">含水率目標：28%<br>鹼水比例：1.2%<br>攪拌時間：15 分鐘</div></div>
+</div>
+
+<div class="process-step">
+  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="揉製壓延">
+  <div class="text"><div class="num">3</div><h3>揉製壓延</h3><p>麵糰經過反覆摺疊壓延，發展出麩質網路。每次壓延都讓麵糰更加細緻均勻。</p><div class="detail">壓延次數：8 次<br>最終厚度：1.2mm（細麵）<br>靜置時間：30 分鐘熟成</div></div>
+</div>
+
+<div class="process-step">
+  <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&q=80" alt="切麵">
+  <div class="text"><div class="num">4</div><h3>切麵成型</h3><p>依據麵款切出不同寬度：細捲麵用於豚骨拉麵（1.2mm），粗直麵用於沾麵（2.0mm）。</p><div class="detail">細捲麵：#22 刀（1.2mm）<br>粗直麵：#12 刀（2.0mm）<br>每份重量：130g（拉麵）/ 300g（沾麵）</div></div>
+</div>
+
+<div class="process-step">
+  <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80" alt="煮麵出餐">
+  <div class="text"><div class="num">5</div><h3>煮麵出餐</h3><p>點餐後現煮，以大火滾水快速煮熟。計時精確到秒，確保每一碗的口感一致。</p><div class="detail">煮麵水溫：100°C 持續沸騰<br>細麵煮時：50 秒（硬）/ 70 秒（普通）<br>粗麵煮時：3 分 30 秒</div></div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

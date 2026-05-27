@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>嚴選食材 — Ember 炭火燒肉</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0505;--surface:#1a0a0a;--card:#241010;--fire:#e63946;--ember:#ff6b35;--gold:#c8a430;--text:#f5ece8;--muted:#8a6a6a;--border:#3a1a1a;--gradient:linear-gradient(135deg,#e63946,#ff6b35);--radius:4px;--font-title:'Oswald',sans-serif;--font-body:'Noto Sans TC',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7}
+a{color:var(--fire);text-decoration:none}a:hover{color:var(--ember)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-title);font-size:1.6rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--fire)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;display:flex;flex-direction:column;gap:20px}.mobile-menu.active{left:0}.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.active{display:block}
+.close-menu{position:absolute;top:20px;right:20px;font-size:1.5rem;color:var(--text);cursor:pointer;background:none;border:none}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:var(--surface)}
+.page-hero h1{font-family:var(--font-title);font-size:3rem;font-weight:700}
+.page-hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.page-hero p{color:var(--muted);margin-top:12px}
+
+section{padding:80px 0}
+.source-block{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid var(--border)}
+.source-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.source-block:nth-child(even){direction:rtl}.source-block:nth-child(even)>*{direction:ltr}
+.source-block img{width:100%;height:350px;object-fit:cover;border-radius:var(--radius)}
+.source-text h2{font-family:var(--font-title);font-size:1.8rem;color:var(--fire);margin-bottom:12px}
+.source-text h3{color:var(--gold);font-size:1rem;margin-bottom:16px}
+.source-text p{color:var(--muted);margin-bottom:12px;font-size:.95rem}
+.source-tag{display:inline-block;background:var(--card);border:1px solid var(--border);padding:4px 12px;border-radius:var(--radius);font-size:.8rem;color:var(--ember);margin-right:8px;margin-top:8px}
+@media(max-width:768px){.source-block{grid-template-columns:1fr}.source-block:nth-child(even){direction:ltr}}
+
+.transparency{background:var(--surface);padding:80px 0;text-align:center}
+.transparency h2{font-family:var(--font-title);font-size:2rem;margin-bottom:16px}
+.transparency p{color:var(--muted);max-width:700px;margin:0 auto 30px}
+.chain-steps{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.chain-step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;width:160px}
+.chain-step .num{font-family:var(--font-title);font-size:2rem;color:var(--ember)}
+.chain-step p{color:var(--muted);font-size:.85rem;margin-top:8px}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{font-family:var(--font-title);font-size:1.1rem;margin-bottom:16px;color:var(--fire)}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">EMBER 炭火燒肉</a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="menu.html">菜單介紹</a></li><li><a href="ingredients.html">嚴選食材</a></li><li><a href="dining.html">用餐方式</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="reservation.html">線上訂位</a></li></ul><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><button class="close-menu" onclick="toggleMenu()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="menu.html">菜單介紹</a><a href="ingredients.html">嚴選食材</a><a href="dining.html">用餐方式</a><a href="stores.html">門市資訊</a><a href="news.html">最新消息</a><a href="reservation.html">線上訂位</a></div>
+
+<section class="page-hero">
+<h1>嚴選 <span>食材</span></h1>
+<p>從產地到餐桌，每一個環節都是品質的保證</p>
+</section>
+
+<section>
+<div class="container">
+<div class="source-block">
+<img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=800&q=80" alt="日本和牛">
+<div class="source-text">
+<h2>日本和牛</h2>
+<h3>宮崎縣 / 鹿兒島縣 / 近江</h3>
+<p>Ember 與日本三大和牛產地建立長期合作關係，每週空運直送。我們只選用 A4 以上等級的黑毛和牛，確保每一片肉品都擁有頂級的油花分布與風味。</p>
+<p>所有和牛皆附有日本食肉格付協會的品質認證書，從個體識別番號可追溯至飼育牧場。</p>
+<span class="source-tag">A5 等級</span><span class="source-tag">每週空運</span><span class="source-tag">產地認證</span>
+</div>
+</div>
+
+<div class="source-block">
+<img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=800&q=80" alt="屏東黑毛豬">
+<div class="source-text">
+<h2>屏東黑毛豬</h2>
+<h3>屏東縣內埔鄉 契約牧場</h3>
+<p>我們選用屏東在地飼育的黑毛豬，以天然穀物與地瓜混合飼料餵養，不使用瘦肉精與生長激素。黑毛豬肉色澤紅潤、脂肪香甜，炭烤後散發迷人的焦糖香氣。</p>
+<p>每週三次從牧場直送，保證 48 小時內從屠宰到餐桌的極致新鮮度。</p>
+<span class="source-tag">人道飼育</span><span class="source-tag">無瘦肉精</span><span class="source-tag">48小時直送</span>
+</div>
+</div>
+
+<div class="source-block">
+<img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800&q=80" alt="宜蘭有機蔬菜">
+<div class="source-text">
+<h2>宜蘭有機蔬菜</h2>
+<h3>宜蘭縣三星鄉 有機農場</h3>
+<p>與宜蘭三星鄉的有機農場合作，每日清晨採收、當日配送。所有蔬菜皆通過有機認證，不使用農藥與化學肥料，以自然農法栽培。</p>
+<p>隨季節更替菜單，確保顧客品嚐到最當令、最鮮甜的蔬菜風味。</p>
+<span class="source-tag">有機認證</span><span class="source-tag">當日採收</span><span class="source-tag">季節限定</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="transparency">
+<div class="container">
+<h2>供應鏈透明化</h2>
+<p>我們相信食材的安全與品質源於完整的供應鏈管理。從源頭到餐桌，每一個環節皆可追溯。</p>
+<div class="chain-steps">
+<div class="chain-step"><div class="num">01</div><p>產地嚴選</p></div>
+<div class="chain-step"><div class="num">02</div><p>品質檢驗</p></div>
+<div class="chain-step"><div class="num">03</div><p>冷鏈運送</p></div>
+<div class="chain-step"><div class="num">04</div><p>到店分切</p></div>
+<div class="chain-step"><div class="num">05</div><p>新鮮上桌</p></div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-col"><h4>EMBER 炭火燒肉</h4><p>傳承日本備長炭燒肉技藝</p></div><div class="footer-col"><h4>營業時間</h4><p>午餐 11:30 - 14:30</p><p>晚餐 17:30 - 23:00</p></div><div class="footer-col"><h4>聯絡我們</h4><a href="tel:0227001234">02-2700-1234</a><p>台北市大安區仁愛路四段 88 號</p></div><div class="footer-col"><h4>快速連結</h4><a href="menu.html">菜單介紹</a><a href="reservation.html">線上訂位</a></div></div><div class="footer-bottom"><p>&copy; 2026 Ember 炭火燒肉 All Rights Reserved.</p></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

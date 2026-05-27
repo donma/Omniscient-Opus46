@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>律師團隊 — Zenith 法律事務所</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1b2a;--surface:#142338;--card:#1a2d45;--gold:#c8a45c;--gold-light:#e0c882;--text:#e8e4dc;--muted:#8a9aae;--border:#243548;--white:#ffffff;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:600;line-height:1.3}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--gold-light)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:600}.logo span{color:var(--muted);font-size:.85rem;margin-left:8px;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--text);font-size:.9rem}nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100%;background:var(--surface);z-index:200;transition:right .3s;padding:60px 30px;border-left:1px solid var(--border)}.mobile-nav.active{right:0}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:20px}.mobile-nav a{color:var(--text)}.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.active{display:block}
+.page-hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}.page-hero h1{font-size:2.2rem;color:var(--white);margin-bottom:8px}.page-hero p{color:var(--muted)}
+section{padding:60px 0}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.lawyer-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.lawyer-card h3{color:var(--white);font-size:1.3rem;margin-bottom:4px}
+.lawyer-card .title{color:var(--gold);font-size:.9rem;margin-bottom:16px}
+.lawyer-card .info{margin-bottom:12px}
+.lawyer-card .info dt{color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.lawyer-card .info dd{color:var(--text);font-size:.9rem;margin-bottom:10px}
+.lawyer-card .specialties span{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:3px 10px;margin:3px 3px 3px 0;font-size:.8rem;color:var(--muted)}
+.lawyer-card a.profile-link{display:inline-block;margin-top:16px;color:var(--gold);font-size:.85rem;border-bottom:1px solid var(--gold)}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}.footer-col h4{color:var(--gold);font-size:1rem;margin-bottom:12px}.footer-col p,.footer-col a{color:var(--muted);font-size:.85rem;display:block;margin-bottom:6px}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.8rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.team-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">Zenith<span>法律事務所</span></div><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></nav><button class="menu-btn" onclick="openMenu()">☰</button></div></header>
+<div class="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeMenu()">✕</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">事務所簡介</a></li><li><a href="services.html">服務領域</a></li><li><a href="team.html">律師團隊</a></li><li><a href="cases.html">成功案例</a></li><li><a href="blog.html">法律專欄</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡諮詢</a></li></ul></div>
+
+<section class="page-hero"><div class="container"><h1>律師團隊</h1><p>專業、經驗與熱忱兼具的法律專家</p></div></section>
+
+<section><div class="container">
+<div class="team-grid">
+
+<div class="lawyer-card">
+  <h3>陳明哲</h3>
+  <div class="title">創辦合夥人 / 所長</div>
+  <dl class="info">
+    <dt>學歷</dt><dd>台灣大學法律學系學士、哈佛大學法學碩士（LL.M.）</dd>
+    <dt>執業年資</dt><dd>32年</dd>
+    <dt>律師公會</dt><dd>台北律師公會、紐約州律師公會</dd>
+  </dl>
+  <div class="specialties"><span>企業併購</span><span>公司法</span><span>國際貿易</span></div>
+  <a href="team-detail.html" class="profile-link">完整簡歷 →</a>
+</div>
+
+<div class="lawyer-card">
+  <h3>林雅文</h3>
+  <div class="title">創辦合夥人</div>
+  <dl class="info">
+    <dt>學歷</dt><dd>政治大學法律學系學士、東京大學法學研究科碩士</dd>
+    <dt>執業年資</dt><dd>30年</dd>
+    <dt>律師公會</dt><dd>台北律師公會</dd>
+  </dl>
+  <div class="specialties"><span>智慧財產權</span><span>技術移轉</span><span>著作權</span></div>
+  <a href="team-detail.html" class="profile-link">完整簡歷 →</a>
+</div>
+
+<div class="lawyer-card">
+  <h3>張家豪</h3>
+  <div class="title">資深合夥人</div>
+  <dl class="info">
+    <dt>學歷</dt><dd>台灣大學法律學系學士、倫敦大學學院法學碩士</dd>
+    <dt>執業年資</dt><dd>22年</dd>
+    <dt>律師公會</dt><dd>台北律師公會、英格蘭及威爾斯律師公會</dd>
+  </dl>
+  <div class="specialties"><span>國際貿易</span><span>國際仲裁</span><span>反傾銷</span></div>
+  <a href="team-detail.html" class="profile-link">完整簡歷 →</a>
+</div>
+
+<div class="lawyer-card">
+  <h3>王思婷</h3>
+  <div class="title">合夥人</div>
+  <dl class="info">
+    <dt>學歷</dt><dd>清華大學電機工程學系學士、交通大學科技法律研究所碩士</dd>
+    <dt>執業年資</dt><dd>16年</dd>
+    <dt>律師公會</dt><dd>台北律師公會</dd>
+  </dl>
+  <div class="specialties"><span>專利訴訟</span><span>營業秘密</span><span>科技法律</span></div>
+  <a href="team-detail.html" class="profile-link">完整簡歷 →</a>
+</div>
+
+<div class="lawyer-card">
+  <h3>李建廷</h3>
+  <div class="title">合夥人</div>
+  <dl class="info">
+    <dt>學歷</dt><dd>台北大學法律學系學士、台灣大學法律學研究所碩士</dd>
+    <dt>執業年資</dt><dd>14年</dd>
+    <dt>律師公會</dt><dd>台北律師公會</dd>
+  </dl>
+  <div class="specialties"><span>勞資爭議</span><span>公司治理</span><span>商業訴訟</span></div>
+  <a href="team-detail.html" class="profile-link">完整簡歷 →</a>
+</div>
+
+<div class="lawyer-card">
+  <h3>許芳瑜</h3>
+  <div class="title">資深律師</div>
+  <dl class="info">
+    <dt>學歷</dt><dd>政治大學法律學系學士、美國喬治城大學稅法碩士</dd>
+    <dt>執業年資</dt><dd>10年</dd>
+    <dt>律師公會</dt><dd>台北律師公會</dd>
+  </dl>
+  <div class="specialties"><span>稅務規劃</span><span>移轉定價</span><span>國際稅務</span></div>
+  <a href="team-detail.html" class="profile-link">完整簡歷 →</a>
+</div>
+
+</div>
+</div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Zenith 法律事務所</h4><p>台北市信義區松仁路100號18樓</p><p>電話：(02) 2720-8888</p></div><div class="footer-col"><h4>服務領域</h4><a href="services.html">公司法與商業法</a><a href="services.html">智慧財產權</a><a href="services.html">國際貿易法</a></div><div class="footer-col"><h4>聯絡資訊</h4><p>info@zenith-law.com.tw</p><a href="contact.html">預約免費諮詢</a></div></div><div class="footer-bottom">© 2026 Zenith 法律事務所 版權所有</div></div></footer>
+<script>function openMenu(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeMenu(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>

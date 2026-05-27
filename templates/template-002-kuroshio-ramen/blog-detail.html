@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>為什麼我們堅持熬 18 小時？｜黑潮拉麵 KUROSHIO</title>
+<meta name="description" content="從食品科學角度解釋為什麼時間是豚骨湯底的關鍵因素。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--dark:#141414;--card:#1a1a1a;--gold:#d4a853;--gold-light:#f0d48a;--white:#f5f5f0;--muted:#8a8a7a;--border:#2a2a2a;--radius:8px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans TC',sans-serif;background:var(--black);color:var(--white);line-height:1.9}
+h1,h2,h3{font-family:'Noto Serif TC',serif;line-height:1.4}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.logo{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px}
+.logo span{display:block;font-size:.65rem;font-weight:400;letter-spacing:4px;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.main-nav ul{display:flex;gap:32px;list-style:none}.main-nav a{font-size:.88rem;color:var(--white);opacity:.8;transition:.3s}.main-nav a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;padding:8px}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--dark);z-index:200;padding:80px 32px;box-shadow:4px 0 30px rgba(0,0,0,.5);transform:translateX(-100%);transition:.4s}
+.mobile-nav.open{transform:translateX(0)}.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-nav a{font-size:1.1rem;color:var(--white)}
+.mobile-nav .close-btn{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gold)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150}.overlay.open{display:block}
+@media(max-width:768px){.main-nav{display:none}.burger{display:block}}
+article{padding:48px 0 80px}
+article .cover{width:100%;height:380px;object-fit:cover;border-radius:var(--radius);margin-bottom:32px}
+article .meta{color:var(--muted);font-size:.82rem;margin-bottom:24px;display:flex;gap:16px}
+article .meta .cat{color:var(--gold)}
+article h1{font-size:1.7rem;margin-bottom:24px;letter-spacing:1px}
+article h2{font-size:1.2rem;margin:32px 0 12px;color:var(--gold)}
+article p{margin-bottom:16px;font-size:.93rem;color:rgba(245,245,240,.85)}
+article ul{margin:12px 0 24px 20px;color:var(--muted)}
+article li{margin-bottom:8px;font-size:.9rem}
+article blockquote{border-left:3px solid var(--gold);padding:16px 24px;background:var(--card);margin:24px 0;color:var(--muted);border-radius:0 var(--radius) var(--radius) 0}
+.back-link{display:inline-block;margin-top:32px;color:var(--gold);font-size:.88rem}
+.site-footer{background:var(--dark);padding:40px 0 20px;border-top:1px solid var(--border)}
+.footer-bottom{text-align:center;font-size:.78rem;color:#555}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a href="index.html" class="logo">黑潮<span>KUROSHIO RAMEN</span></a>
+<nav class="main-nav"><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+<button class="burger" onclick="openMenu()">&#9776;</button>
+</div></header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="mobile-nav" id="mobileNav"><button class="close-btn" onclick="closeMenu()">&times;</button><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">職人精神</a></li><li><a href="menu.html">菜單</a></li><li><a href="menu-detail.html">招牌推薦</a></li><li><a href="atmosphere.html">店內風景</a></li><li><a href="reviews.html">食客評價</a></li><li><a href="blog.html">拉麵誌</a></li><li><a href="contact.html">店舖資訊</a></li></ul></nav>
+
+<main>
+<div class="container">
+<article>
+  <img class="cover" src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&q=80" alt="豚骨湯底">
+  <div class="meta"><span class="cat">職人知識</span><span>2026.03.08</span><span>閱讀時間 6 分鐘</span></div>
+  <h1>為什麼我們堅持熬 18 小時？— 豚骨湯底的科學</h1>
+
+  <p>「湯底真的需要熬這麼久嗎？」這大概是我被問過最多次的問題。簡短的答案是：是的，如果你要的是那種乳白色、濃郁到筷子幾乎可以立起來的正統博多豚骨湯，時間是不可跳過的步驟。</p>
+
+  <h2>乳化反應需要時間</h2>
+  <p>豚骨湯之所以呈現乳白色，是因為骨髓中的脂肪在長時間高溫熬煮下，與水產生了「乳化反應」。脂肪被分解成微小的顆粒，均勻懸浮在湯中，形成不透明的乳白色液體。</p>
+  <p>這個過程無法被加速 — 你可以把火開大，但那只會讓水蒸發得更快，而不會讓乳化進行得更快。唯一的方法就是給它足夠的時間。</p>
+
+  <h2>膠原蛋白的轉化</h2>
+  <p>骨頭中的膠原蛋白在 80°C 以上開始分解為明膠（gelatin），這是湯底黏稠口感的來源。完整的膠原蛋白轉化需要 12-16 小時，而我們選擇 18 小時是為了確保即使是骨頭最深處的膠原蛋白也被充分萃取。</p>
+
+  <blockquote>「在東京修行時師傅說過：『少一個小時，客人的嘴巴會知道。』當時覺得誇張，自己開店後才真的體會到。」— 陳師傅</blockquote>
+
+  <h2>我們的熬湯時程</h2>
+  <ul>
+    <li>00:00 — 大骨汆燙去血水，冷水下鍋</li>
+    <li>01:00 — 大火猛煮，讓骨髓釋出</li>
+    <li>02:00 — 湯色開始轉白，加入洋蔥、蒜頭</li>
+    <li>06:00 — 轉中火，湯底已明顯乳白</li>
+    <li>12:00 — 加入第二批新骨，補充膠原蛋白</li>
+    <li>16:00 — 撈出殘渣，保留純湯</li>
+    <li>18:00 — 調味、過濾，完成</li>
+  </ul>
+
+  <h2>為什麼不用壓力鍋？</h2>
+  <p>壓力鍋確實可以在更短時間內萃取出類似的膠原蛋白量，很多連鎖店也這麼做。但壓力鍋的問題在於：它無法產生同樣品質的乳化效果。</p>
+  <p>乳化需要的是「沸騰時的翻滾」— 氣泡不斷打破湯面，讓脂肪與水反覆混合。壓力鍋內部雖然溫度高，但因為壓力抑制了沸騰，反而缺少了這個關鍵的物理作用。</p>
+
+  <h2>結語</h2>
+  <p>18 小時聽起來很久，但對我們來說，這就是最低標準。有些事情無法被效率取代，而一碗好的豚骨拉麵，值得這份等待。</p>
+
+  <a href="blog.html" class="back-link">← 返回拉麵誌</a>
+</article>
+</div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 黑潮拉麵 KUROSHIO. All rights reserved.</div></div></footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

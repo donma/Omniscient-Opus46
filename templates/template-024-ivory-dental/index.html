@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivory 牙醫診所 — 您的微笑專家</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f8fffe;--white:#ffffff;--mint:#2dd4bf;--mint-dark:#0d9488;--navy:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e0f2f1;--light:#f0fdfb;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7}
+h1,h2,h3,h4{font-family:'Inter','Noto Sans TC',sans-serif;font-weight:700;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+/* NAV */
+nav{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Inter',sans-serif;font-weight:700;font-size:1.5rem;color:var(--mint-dark)}
+.logo span{color:var(--navy)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:400;color:var(--text);transition:color .2s}
+.nav-links a:hover{color:var(--mint-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--navy);transition:.3s}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);padding:80px 32px;flex-direction:column;gap:24px;transition:right .3s;z-index:999;box-shadow:-4px 0 20px rgba(0,0,0,.1)}
+.mobile-menu.active{right:0}
+.mobile-menu a{font-size:1.1rem;color:var(--text)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:998}
+.overlay.active{display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}}
+/* HERO */
+.hero{padding:80px 0;display:flex;align-items:center;gap:60px;min-height:80vh}
+.hero-text{flex:1}
+.hero-text h1{font-size:3rem;line-height:1.2;margin-bottom:20px}
+.hero-text h1 span{color:var(--mint-dark)}
+.hero-text p{font-size:1.1rem;color:var(--muted);margin-bottom:32px;max-width:480px}
+.btn{display:inline-block;padding:14px 36px;background:var(--mint-dark);color:var(--white);border-radius:var(--radius);font-weight:600;font-family:'Inter',sans-serif;transition:background .2s}
+.btn:hover{background:var(--navy)}
+.btn-outline{background:transparent;border:2px solid var(--mint-dark);color:var(--mint-dark)}
+.btn-outline:hover{background:var(--mint-dark);color:var(--white)}
+.hero-img{flex:1}
+.hero-img img{width:100%;border-radius:var(--radius);object-fit:cover;max-height:500px}
+@media(max-width:768px){.hero{flex-direction:column;padding:40px 0;text-align:center}.hero-text h1{font-size:2rem}}
+/* SERVICES */
+.section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:2rem;margin-bottom:12px}
+.section-title p{color:var(--muted)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:transform .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(45,212,191,.1)}
+.service-icon{font-size:2.5rem;margin-bottom:16px}
+.service-card h4{margin-bottom:8px;font-size:1rem}
+.service-card p{font-size:.85rem;color:var(--muted)}
+/* DOCTOR HIGHLIGHT */
+.doctor-section{background:var(--white);border-radius:var(--radius);padding:48px;display:flex;gap:40px;align-items:center;border:1px solid var(--border)}
+.doctor-section img{width:200px;height:200px;border-radius:50%;object-fit:cover}
+.doctor-info h3{margin-bottom:8px;font-size:1.4rem}
+.doctor-info .title{color:var(--mint-dark);font-weight:600;margin-bottom:12px}
+.doctor-info p{color:var(--muted);margin-bottom:16px}
+@media(max-width:768px){.doctor-section{flex-direction:column;text-align:center;padding:32px 24px}}
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.review-card .stars{color:#fbbf24;margin-bottom:12px;font-size:1.2rem}
+.review-card p{color:var(--muted);font-style:italic;margin-bottom:16px}
+.review-card .name{font-weight:600;color:var(--navy);font-size:.9rem}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--mint-dark),var(--mint));border-radius:var(--radius);padding:60px;text-align:center;color:var(--white)}
+.cta-section h2{color:var(--white);margin-bottom:16px;font-size:2rem}
+.cta-section p{opacity:.9;margin-bottom:32px}
+.cta-section .btn{background:var(--white);color:var(--mint-dark)}
+.cta-section .btn:hover{background:var(--navy);color:var(--white)}
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-grid h4{color:var(--white);margin-bottom:16px;font-size:1rem}
+.footer-grid a{display:block;margin-bottom:8px;font-size:.9rem;color:rgba(255,255,255,.6);transition:color .2s}
+.footer-grid a:hover{color:var(--mint)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">Ivory <span>牙醫診所</span></a>
+<div class="nav-links">
+<a href="index.html">首頁</a>
+<a href="about.html">關於診所</a>
+<a href="team.html">醫療團隊</a>
+<a href="services.html">診療項目</a>
+<a href="cases.html">案例分享</a>
+<a href="info.html">就診資訊</a>
+<a href="blog.html">衛教專欄</a>
+<a href="appointment.html">線上預約</a>
+</div>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu">
+<a href="index.html">首頁</a>
+<a href="about.html">關於診所</a>
+<a href="team.html">醫療團隊</a>
+<a href="services.html">診療項目</a>
+<a href="cases.html">案例分享</a>
+<a href="info.html">就診資訊</a>
+<a href="blog.html">衛教專欄</a>
+<a href="appointment.html">線上預約</a>
+</div>
+
+<section class="hero">
+<div class="container" style="display:flex;align-items:center;gap:60px;flex-wrap:wrap">
+<div class="hero-text">
+<h1>打造您的<span>完美微笑</span></h1>
+<p>Ivory 牙醫診所以最先進的設備與專業團隊，為您提供舒適、安心的牙科醫療體驗。從預防保健到美學牙科，守護您每一個微笑。</p>
+<a href="appointment.html" class="btn">立即預約</a>
+<a href="services.html" class="btn btn-outline" style="margin-left:12px">瞭解服務</a>
+</div>
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop" alt="微笑患者">
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-title">
+<h2>診療服務項目</h2>
+<p>提供全方位牙科照護，滿足您的所有需求</p>
+</div>
+<div class="services-grid">
+<div class="service-card"><div class="service-icon">🦷</div><h4>一般牙科</h4><p>蛀牙填補、洗牙、拔牙</p></div>
+<div class="service-card"><div class="service-icon">✨</div><h4>牙齒美白</h4><p>冷光美白、居家美白</p></div>
+<div class="service-card"><div class="service-icon">😁</div><h4>隱形矯正</h4><p>隱適美、透明牙套</p></div>
+<div class="service-card"><div class="service-icon">🔩</div><h4>人工植牙</h4><p>微創植牙、即拔即種</p></div>
+<div class="service-card"><div class="service-icon">🛡️</div><h4>根管治療</h4><p>顯微根管、活髓保存</p></div>
+<div class="service-card"><div class="service-icon">👶</div><h4>兒童牙科</h4><p>塗氟、溝隙封填</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--white)">
+<div class="container">
+<div class="section-title"><h2>院長推薦</h2><p>由專業醫師為您量身打造治療計畫</p></div>
+<div class="doctor-section">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop" alt="陳醫師">
+<div class="doctor-info">
+<h3>陳柏翰 醫師</h3>
+<div class="title">院長 ／ 美學牙科專科</div>
+<p>台大牙醫學系畢業，美國UCLA美學牙科進修。擁有超過15年臨床經驗，擅長全瓷冠、陶瓷貼片及微笑設計，致力於為每位患者打造自然美麗的笑容。</p>
+<a href="team.html" class="btn">認識團隊</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-title"><h2>患者好評</h2><p>來自真實患者的回饋</p></div>
+<div class="reviews-grid">
+<div class="review-card"><div class="stars">★★★★★</div><p>「陳醫師非常細心，做完貼片後笑起來超自然！環境也很舒適，完全不像一般牙科診所。」</p><div class="name">— 林小姐，美學貼片</div></div>
+<div class="review-card"><div class="stars">★★★★★</div><p>「從小就怕看牙，但這裡的醫師和護理師都很溫柔，讓我終於克服了看牙的恐懼。」</p><div class="name">— 王先生，根管治療</div></div>
+<div class="review-card"><div class="stars">★★★★★</div><p>「隱適美矯正效果超好！而且每次回診都很準時，不會浪費等待時間。推薦！」</p><div class="name">— 張小姐，隱形矯正</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta-section">
+<h2>準備好展現自信微笑了嗎？</h2>
+<p>立即線上預約，享受專業、舒適的牙科體驗</p>
+<a href="appointment.html" class="btn">線上預約</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h4>Ivory 牙醫診所</h4><p style="font-size:.9rem">台北市中山區南京東路二段138號3樓<br>電話：(02) 2567-8900<br>營業時間：週一至週六 9:00-21:00</p></div>
+<div><h4>診療服務</h4><a href="services.html">一般牙科</a><a href="services.html">牙齒美白</a><a href="services.html">隱形矯正</a><a href="services.html">人工植牙</a></div>
+<div><h4>快速連結</h4><a href="about.html">關於診所</a><a href="team.html">醫療團隊</a><a href="info.html">就診資訊</a><a href="faq.html">常見問題</a></div>
+<div><h4>關注我們</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LINE 官方帳號</a></div>
+</div>
+<div class="footer-bottom">© 2026 Ivory 牙醫診所 版權所有</div>
+</div>
+</footer>
+<script>
+function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}
+</script>
+</body>
+</html>

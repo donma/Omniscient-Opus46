@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026春季新品發表 | Sapphire 珠寶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0d1a;--surface:#101530;--card:#151a3a;--silver:#c0c8d8;--gold:#d4af37;--blue:#1e3a8a;--text:#e8ecf4;--muted:#7888aa;--border:#1e2550}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.05em}
+a{color:var(--silver);text-decoration:none;transition:color 0.3s}a:hover{color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,13,26,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.logo{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.1em}.logo span{font-size:0.8rem;color:var(--muted);display:block;font-family:'Noto Sans TC',sans-serif;font-weight:300}
+nav ul{display:flex;gap:32px;list-style:none}nav ul li a{font-size:0.85rem;color:var(--muted);letter-spacing:0.05em}nav ul li a:hover{color:var(--gold)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}.mobile-toggle span{width:24px;height:1px;background:var(--silver)}
+.mobile-menu{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;transition:right 0.4s;padding:80px 40px}.mobile-menu.active{right:0}.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:24px}.mobile-menu ul li a{font-size:1rem;color:var(--text)}.mobile-menu .close-btn{position:absolute;top:24px;right:24px;font-size:1.5rem;color:var(--silver);cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1500}.overlay.active{display:block}
+section{padding:100px 0}
+.divider{width:60px;height:1px;background:var(--gold);margin:20px auto}
+
+.article-header{padding-top:160px;padding-bottom:60px;text-align:center;border-bottom:1px solid var(--border)}
+.article-header .date{color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;margin-bottom:16px}
+.article-header h1{font-size:2rem;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto}
+.article-header .category{color:var(--muted);font-size:0.85rem}
+
+.article-body{max-width:750px;margin:0 auto;padding:80px 24px}
+.article-body img{width:100%;height:auto;margin:40px 0;border:1px solid var(--border)}
+.article-body p{color:var(--muted);margin-bottom:24px;font-size:0.95rem;line-height:2.2}
+.article-body h2{font-size:1.4rem;margin:48px 0 20px;color:var(--text)}
+.article-body blockquote{border-left:2px solid var(--gold);padding-left:24px;margin:32px 0;font-style:italic;color:var(--silver)}
+
+.back-link{display:inline-block;color:var(--gold);font-size:0.85rem;letter-spacing:0.1em;margin-top:40px;border-bottom:1px solid var(--gold);padding-bottom:4px}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:16px;display:block}.footer-brand p{color:var(--muted);font-size:0.85rem;line-height:2}
+.footer-col h4{font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:12px}.footer-col ul li a{color:var(--muted);font-size:0.85rem}
+.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){nav ul{display:none}.mobile-toggle{display:flex}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:16px 20px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo">SAPPHIRE<span>珠寶 · Since 1965</span></a><nav><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></nav><div class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div></div></header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu"><div class="close-btn" onclick="toggleMenu()">&times;</div><ul><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="collections.html">珠寶系列</a></li><li><a href="bespoke.html">訂製服務</a></li><li><a href="craftsmanship.html">工藝傳承</a></li><li><a href="stores.html">門市資訊</a></li><li><a href="news.html">最新消息</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div>
+
+<div class="article-header">
+  <div class="container">
+    <div class="date">2026.03.15</div>
+    <h1>2026 春季新品發表會「花語」系列璀璨登場</h1>
+    <div class="category">新品發表 · 活動</div>
+  </div>
+</div>
+
+<div class="article-body">
+  <img src="https://images.unsplash.com/photo-1515562141589-67f0d97f6d5b?w=1200&q=80" alt="花語系列">
+  
+  <p>Sapphire 珠寶於3月15日晚間，在信義旗艦店舉辦2026春季新品發表會，正式推出全新「花語」系列珠寶。當晚超過80位VIP貴賓與媒體受邀出席，共同見證這場融合自然之美與精湛工藝的璀璨盛宴。</p>
+
+  <h2>設計靈感</h2>
+  <p>「花語」系列由第三代創意總監林雅琪親自操刀設計，靈感源自台灣春日山野間盛開的繁花。系列以山茶花、蘭花與梅花三種花卉為主要元素，運用彩色藍寶石、粉紅鑽石與翡翠等珍稀寶石，巧妙詮釋花朵綻放的瞬間之美。</p>
+
+  <blockquote>「每一朵花都有它獨特的語言。我希望透過珠寶，讓佩戴者無需言語就能傳達內心最美的情感。」——林雅琪，創意總監</blockquote>
+
+  <h2>系列亮點</h2>
+  <p>本次發表的「花語」系列共計12件作品，包含項鍊、耳環、戒指與胸針。其中最受矚目的「山茶花」項鍊，主石為一顆極為罕見的3.5克拉粉紅藍寶石，周圍環繞著32顆大小不一的白鑽，宛如晨露點綴在花瓣之上。</p>
+
+  <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80" alt="系列作品">
+
+  <p>系列價格自NT$280,000起，頂級作品「山茶花」項鍊定價NT$8,800,000。全系列即日起於信義旗艦店獨家展出，歡迎預約鑑賞。</p>
+
+  <h2>發表會花絮</h2>
+  <p>當晚的發表會以「春日花園」為主題布置，現場以數千朵鮮花營造浪漫氛圍。品牌特邀知名鋼琴家陳以琳現場演奏，為貴賓帶來一場視覺與聽覺的雙重饗宴。晚宴採用米其林主廚精心設計的花卉主題餐點，每一道料理都與珠寶作品互相呼應。</p>
+
+  <a href="news.html" class="back-link">← 返回最新消息</a>
+</div>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo">SAPPHIRE 珠寶</span><p>傳承三代的頂級珠寶世家<br>以精湛工藝與極致美學<br>為您打造永恆之作</p></div><div class="footer-col"><h4>珠寶系列</h4><ul><li><a href="collection-detail.html">鑽石系列</a></li><li><a href="collections.html">紅寶石系列</a></li><li><a href="collections.html">藍寶石系列</a></li><li><a href="collections.html">珍珠系列</a></li></ul></div><div class="footer-col"><h4>服務</h4><ul><li><a href="bespoke.html">訂製服務</a></li><li><a href="care.html">珠寶保養</a></li><li><a href="faq.html">常見問題</a></li><li><a href="contact.html">聯絡我們</a></li></ul></div><div class="footer-col"><h4>門市</h4><ul><li><a href="stores.html">信義旗艦店</a></li><li><a href="stores.html">中山精品店</a></li></ul></div></div><div class="footer-bottom"><span>&copy; 2026 Sapphire 珠寶. All Rights Reserved.</span><span>台北市信義區松仁路88號</span></div></div></footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active');}</script>
+</body>
+</html>

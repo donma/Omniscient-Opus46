@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常見問題 | Lumière 攝影工作室</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafafa;--white:#ffffff;--text:#111111;--muted:#666666;--accent:#111111;--border:#e0e0e0;--warm:#f5f0eb;--radius:4px}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.8}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.3}
+a{color:var(--text);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,250,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'DM Serif Display',serif;font-size:1.4rem;letter-spacing:1px}
+nav{display:flex;gap:24px;align-items:center}
+nav a{font-size:0.85rem;letter-spacing:0.5px;transition:opacity 0.3s}
+nav a:hover{opacity:0.5}
+.menu-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.menu-btn span{width:24px;height:1.5px;background:var(--text);transition:0.3s}
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:999;padding:80px 40px;display:flex;flex-direction:column;gap:24px;transition:right 0.4s ease;box-shadow:-4px 0 20px rgba(0,0,0,0.1)}
+.mobile-nav.active{right:0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.4s}
+.overlay.active{opacity:1;pointer-events:all}
+.section{padding:120px 0 100px;margin-top:60px}
+.section h1{font-size:2.5rem;text-align:center;margin-bottom:12px}
+.section>p{text-align:center;color:var(--muted);margin-bottom:60px}
+.faq-category{margin-bottom:50px}
+.faq-category h2{font-size:1.4rem;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item summary{cursor:pointer;font-size:0.95rem;font-weight:400;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:'+';font-size:1.2rem;transition:transform 0.3s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{color:var(--muted);margin-top:12px;font-size:0.9rem;line-height:2}
+footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px 24px;text-align:center}
+footer .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1000px;margin:0 auto 40px;text-align:left}
+footer h4{color:#fff;margin-bottom:16px;font-size:1rem}
+footer a{color:rgba(255,255,255,0.7);font-size:0.85rem;display:block;margin-bottom:8px;transition:color 0.3s}
+footer a:hover{color:#fff}
+footer .copyright{font-size:0.8rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:30px}
+@media(max-width:768px){nav{display:none}.menu-btn{display:flex}footer .footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html" class="logo">Lumière</a>
+<nav><a href="index.html">首頁</a><a href="about.html">關於攝影師</a><a href="portfolio.html">作品集</a><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="booking.html">預約拍攝</a><a href="blog.html">攝影日誌</a><a href="contact.html">聯絡我們</a></nav>
+<div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-nav"><a href="index.html">首頁</a><a href="about.html">關於攝影師</a><a href="portfolio.html">作品集</a><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="booking.html">預約拍攝</a><a href="blog.html">攝影日誌</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="section">
+<div class="container">
+<h1>常見問題</h1>
+<p>以下整理了客戶最常詢問的問題</p>
+
+<div class="faq-category">
+<h2>預約相關</h2>
+<details class="faq-item">
+<summary>如何預約拍攝？</summary>
+<p>您可以透過網站的預約表單、電子信箱或電話與我們聯繫。我們會在一個工作天內回覆，並安排免費的線上或面對面諮詢，了解您的需求後提供報價。</p>
+</details>
+<details class="faq-item">
+<summary>需要提前多久預約？</summary>
+<p>婚禮攝影建議提前 3-6 個月預約，熱門檔期（每年 10-12 月）建議提前 8 個月以上。人像寫真及商業攝影通常提前 2-4 週即可。</p>
+</details>
+<details class="faq-item">
+<summary>如何確認預約？需要支付訂金嗎？</summary>
+<p>確認合作後需簽訂合約並支付 30% 訂金，即完成檔期預約。餘款於拍攝當天支付。我們接受銀行轉帳及信用卡付款。</p>
+</details>
+</div>
+
+<div class="faq-category">
+<h2>交件相關</h2>
+<details class="faq-item">
+<summary>拍攝後多久可以收到照片？</summary>
+<p>婚禮攝影：2-4 週（依方案而定）。人像寫真：7-14 個工作天。商業攝影：依專案規模，通常 5-10 個工作天。急件可加購加急服務。</p>
+</details>
+<details class="faq-item">
+<summary>照片以什麼格式交付？</summary>
+<p>精修照片以高解析度 JPEG 格式交付，同時提供網路用壓縮版本。原始檔案（RAW）不另外提供，但所有方案均包含全部拍攝的未修原始 JPEG。</p>
+</details>
+<details class="faq-item">
+<summary>可以選擇要精修的照片嗎？</summary>
+<p>我們會先提供所有拍攝照片供您挑選，再根據您的選擇進行精修。您也可以完全交由攝影師挑選，我們會選出最佳的照片進行後製。</p>
+</details>
+</div>
+
+<div class="faq-category">
+<h2>版權與使用</h2>
+<details class="faq-item">
+<summary>照片的版權歸誰所有？</summary>
+<p>著作權歸攝影師所有，但客戶擁有完整的個人使用權，包括沖印、社群分享、製作相冊等。商業使用需另外授權。</p>
+</details>
+<details class="faq-item">
+<summary>攝影師會將我的照片用於作品集嗎？</summary>
+<p>經過您的同意後，我們可能會精選部分照片用於作品集及社群媒體。如果您不希望照片被公開使用，請在簽約時告知，我們完全尊重您的意願。</p>
+</details>
+</div>
+
+<div class="faq-category">
+<h2>風格與後製</h2>
+<details class="faq-item">
+<summary>你的修圖風格是什麼？</summary>
+<p>我的風格偏向自然、溫暖、乾淨。不會過度修圖或使用誇張的濾鏡。膚色保持自然，光線保持真實，整體色調溫潤統一。您可以參考作品集了解我的風格。</p>
+</details>
+<details class="faq-item">
+<summary>可以要求特定的修圖風格嗎？</summary>
+<p>我們可以在風格上做微調，例如色調偏暖或偏冷、對比度的調整等。但大幅度偏離我的風格的要求（如重度磨皮、過度飽和）可能無法配合，建議先參考作品集確認是否喜歡我的風格再預約。</p>
+</details>
+<details class="faq-item">
+<summary>會修掉痘痘或瑕疵嗎？</summary>
+<p>精修照片會進行基本的皮膚修飾，包括暫時性的瑕疵（如痘痘、傷口）。但我們不會改變您的五官特徵或身材比例，保持最自然真實的你。</p>
+</details>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div><h4>Lumière 攝影工作室</h4><p style="font-size:0.85rem;line-height:1.8">以光影記錄永恆瞬間<br>台北市大安區敦化南路一段 187 號 3F</p></div>
+<div><h4>服務項目</h4><a href="weddings.html">婚禮攝影</a><a href="commercial.html">商業攝影</a><a href="portfolio.html">作品集</a><a href="pricing.html">價格方案</a></div>
+<div><h4>聯絡資訊</h4><a href="mailto:hello@lumiere.tw">hello@lumiere.tw</a><a href="tel:+886227001234">02-2700-1234</a><a href="https://instagram.com">Instagram</a><a href="https://facebook.com">Facebook</a></div>
+</div>
+<div class="copyright">© 2026 Lumière 攝影工作室. All Rights Reserved.</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-nav').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>酒吧故事 — Noir 酒吧</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0808;--surface:#1a1010;--card:#241515;--burgundy:#8b1a2a;--gold:#c8a45c;--text:#f0e8e0;--muted:#8a7a6a;--border:#3a2020;--copper:#b87333}
+body{font-family:'Noto Sans TC',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--gold);text-decoration:none;transition:color .3s}a:hover{color:var(--copper)}
+h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;list-style:none;gap:28px}
+nav ul a{color:var(--text);font-size:.9rem}nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-300px;width:280px;height:100%;background:var(--surface);z-index:2000;padding:60px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.open{left:0}
+.mobile-nav a{display:block;padding:12px 0;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav .close-btn{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.open{display:block}
+section{padding:100px 0}
+.page-hero{height:50vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.3)}
+.page-hero h1{position:relative;z-index:1;font-size:3rem}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;text-align:center}
+footer p{color:var(--muted);font-size:.85rem;margin-top:20px}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+footer .footer-links a{color:var(--muted);font-size:.85rem}
+.story-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+.story-section img{width:100%;height:400px;object-fit:cover;border:1px solid var(--border)}
+.story-section h2{font-size:2rem;margin-bottom:20px}
+.story-section p{color:var(--muted);margin-bottom:16px}
+@media(max-width:768px){nav ul{display:none}.menu-btn{display:block}.page-hero h1{font-size:2rem}.story-section{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="specials.html">本月特調</a><a href="bartenders.html">調酒師</a><a href="events.html">活動之夜</a><a href="private.html">包場資訊</a><a href="contact.html">聯絡我們</a>
+</div>
+<nav>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+  <div class="logo">Noir 酒吧</div>
+  <ul><li><a href="index.html">首頁</a></li><li><a href="about.html">酒吧故事</a></li><li><a href="menu.html">調酒菜單</a></li><li><a href="specials.html">本月特調</a></li><li><a href="bartenders.html">調酒師</a></li><li><a href="events.html">活動之夜</a></li><li><a href="private.html">包場資訊</a></li><li><a href="contact.html">聯絡我們</a></li></ul>
+</nav>
+
+<div class="page-hero">
+  <img src="https://images.unsplash.com/photo-1571950006937-0d0bacc0479b?w=1600" alt="Bar atmosphere">
+  <h1>酒吧故事</h1>
+</div>
+
+<section>
+  <div class="container">
+    <div class="story-section">
+      <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=800" alt="Hidden door">
+      <div>
+        <h2>那扇無名之門</h2>
+        <p>2018年的某個深夜，在東區一條不起眼的巷弄裡，一扇沒有招牌的鐵門悄悄開啟。沒有霓虹燈、沒有排隊人潮，只有懂的人才知道的暗號。</p>
+        <p>Noir 酒吧的誕生源自一個簡單的信念：調酒是一門藝術，而藝術需要適當的舞台。我們相信，真正的品飲體驗始於踏入空間的那一刻——昏暗的燭光、爵士樂的低語、皮革與木質的氣息。</p>
+        <p>推開那扇門，你不只是走進一間酒吧，而是走進一個精心編織的夜晚。</p>
+      </div>
+    </div>
+    <div class="story-section" style="direction:rtl">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800" alt="Bar interior" style="direction:ltr">
+      <div style="direction:ltr">
+        <h2>空間設計</h2>
+        <p>走進 Noir，你會先經過一段狹窄的走廊，兩側牆面是裸露的紅磚，點綴著搖曳的壁燈。轉角處豁然開朗——12公尺長的胡桃木吧台是整個空間的靈魂。</p>
+        <p>後方的酒架陳列超過300瓶來自世界各地的烈酒，琥珀色液體在微光中閃爍。角落的沙發區以深色天鵝絨包覆，是私密對話的最佳場所。</p>
+      </div>
+    </div>
+    <div class="story-section">
+      <img src="https://images.unsplash.com/photo-1574006852726-31d39bfba3f5?w=800" alt="Craft cocktail">
+      <div>
+        <h2>調酒哲學</h2>
+        <p>在 Noir，每一杯調酒都是一個故事的起點。我們不追求花俏的分子料理技巧，而是回歸經典，用最好的材料、最精準的比例，呈現每一種烈酒最真實的面貌。</p>
+        <p>我們的調酒師平均擁有8年以上的資歷，每位都曾在國際比賽中嶄露頭角。他們不只調酒，更是你今夜的嚮導——告訴他們你的心情，讓他們為你量身打造一杯專屬的夜晚。</p>
+        <p>「在最深的黑暗裡，才能看見最純粹的光。」—— Noir 創辦人 林承翰</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><a href="index.html">首頁</a><a href="about.html">酒吧故事</a><a href="menu.html">調酒菜單</a><a href="events.html">活動之夜</a><a href="contact.html">聯絡我們</a></div>
+    <p>© 2026 Noir 酒吧 — 台北市大安區東區某巷弄內</p>
+  </div>
+</footer>
+<script>function openMenu(){document.getElementById('mobileNav').classList.add('open');document.getElementById('overlay').classList.add('open')}function closeMenu(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open')}</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "id": "template-006",
+  "name": "Zenith 法律事務所",
+  "description": "Dark navy/gold law firm template with text-first authoritative design, Traditional Chinese content",
+  "category": "law-firm",
+  "theme": "dark",
+  "colorScheme": "navy-gold",
+  "language": "zh-TW",
+  "pages": 12,
+  "features": ["responsive", "mobile-nav", "text-heavy", "serif-headings", "dark-theme"],
+  "fonts": ["EB Garamond", "Noto Sans TC"],
+  "version": "1.0.0",
+  "author": "Omniscient",
+  "createdAt": "2026-05-26"
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>品牌故事 — Ember 炭火燒肉</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0505;--surface:#1a0a0a;--card:#241010;--fire:#e63946;--ember:#ff6b35;--gold:#c8a430;--text:#f5ece8;--muted:#8a6a6a;--border:#3a1a1a;--gradient:linear-gradient(135deg,#e63946,#ff6b35);--radius:4px;--font-title:'Oswald',sans-serif;--font-body:'Noto Sans TC',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7}
+a{color:var(--fire);text-decoration:none;transition:color .3s}a:hover{color:var(--ember)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-title);font-size:1.6rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--fire)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--text)}
+.mobile-menu{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;display:flex;flex-direction:column;gap:20px}
+.mobile-menu.active{left:0}
+.mobile-menu a{color:var(--text);font-size:1.1rem;display:block;padding:10px 0;border-bottom:1px solid var(--border)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500}.overlay.active{display:block}
+.close-menu{position:absolute;top:20px;right:20px;font-size:1.5rem;color:var(--text);cursor:pointer;background:none;border:none}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:var(--surface)}
+.page-hero h1{font-family:var(--font-title);font-size:3rem;font-weight:700}
+.page-hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.page-hero p{color:var(--muted);margin-top:12px}
+
+section{padding:80px 0}
+.story-block{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+.story-block:nth-child(even){direction:rtl}.story-block:nth-child(even)>*{direction:ltr}
+.story-block img{width:100%;height:400px;object-fit:cover;border-radius:var(--radius)}
+.story-block h2{font-family:var(--font-title);font-size:2rem;margin-bottom:16px;color:var(--fire)}
+.story-block p{color:var(--muted);margin-bottom:12px}
+@media(max-width:768px){.story-block{grid-template-columns:1fr}.story-block:nth-child(even){direction:ltr}}
+
+.values{background:var(--surface);padding:80px 0}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+.value-item{padding:40px 20px;border:1px solid var(--border);border-radius:var(--radius)}
+.value-item h3{font-family:var(--font-title);font-size:1.3rem;color:var(--ember);margin-bottom:12px}
+.value-item p{color:var(--muted);font-size:.9rem}
+@media(max-width:768px){.values-grid{grid-template-columns:1fr}}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{font-family:var(--font-title);font-size:1.1rem;margin-bottom:16px;color:var(--fire)}
+.footer-col p,.footer-col a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:8px}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" class="logo">EMBER 炭火燒肉</a>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">品牌故事</a></li>
+<li><a href="menu.html">菜單介紹</a></li>
+<li><a href="ingredients.html">嚴選食材</a></li>
+<li><a href="dining.html">用餐方式</a></li>
+<li><a href="stores.html">門市資訊</a></li>
+<li><a href="news.html">最新消息</a></li>
+<li><a href="reservation.html">線上訂位</a></li>
+</ul>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu">
+<button class="close-menu" onclick="toggleMenu()">&times;</button>
+<a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="menu.html">菜單介紹</a><a href="ingredients.html">嚴選食材</a><a href="dining.html">用餐方式</a><a href="stores.html">門市資訊</a><a href="news.html">最新消息</a><a href="reservation.html">線上訂位</a>
+</div>
+
+<section class="page-hero">
+<h1>品牌 <span>故事</span></h1>
+<p>從東京到台北，一段關於炭火與堅持的旅程</p>
+</section>
+
+<section>
+<div class="container">
+<div class="story-block">
+<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80" alt="炭火燒肉起源">
+<div>
+<h2>起源 — 東京修業之路</h2>
+<p>2015 年，創辦人陳煒翔赴日本東京，在百年燒肉名店「炭匠」拜師學藝三年。從最基礎的備長炭管理、火候控制，到每一刀切肉的角度與厚度，他以最嚴謹的態度學習日本職人精神。</p>
+<p>三年的修業歲月，讓他深刻體會到：頂級燒肉的靈魂不在於食材的昂貴，而在於對每一個細節的極致追求。</p>
+</div>
+</div>
+<div class="story-block">
+<img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&q=80" alt="備長炭">
+<div>
+<h2>炭火哲學 — 備長炭的堅持</h2>
+<p>Ember 堅持使用日本紀州產備長炭。備長炭燃燒溫度可達 1000°C 以上，且無煙無味，能以遠紅外線均勻加熱，鎖住肉品最純粹的風味。</p>
+<p>每日開店前，職人需花費兩小時準備炭火，確保每一爐的溫度與穩定性都達到最佳狀態。這份對火的敬意，正是 Ember 之名的由來。</p>
+</div>
+</div>
+<div class="story-block">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="品質承諾">
+<div>
+<h2>承諾 — 品質永不妥協</h2>
+<p>從食材產地直送、每日新鮮分切，到用餐環境的每一個細節，Ember 以「不妥協」的精神打造每一次用餐體驗。</p>
+<p>我們相信，真正的頂級燒肉，是讓每位客人都能感受到職人的用心與食材的真誠。這不僅是一頓晚餐，更是一場味覺的藝術饗宴。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="values">
+<div class="container">
+<div class="values-grid">
+<div class="value-item">
+<h3>職人精神</h3>
+<p>每位燒肉師傅皆經過至少一年的嚴格培訓，掌握精準火候與刀工技術</p>
+</div>
+<div class="value-item">
+<h3>產地直送</h3>
+<p>與日本、澳洲牧場建立長期合作關係，確保每一片肉品的新鮮與品質</p>
+</div>
+<div class="value-item">
+<h3>極致體驗</h3>
+<p>從環境設計到服務流程，每一個環節都以客人的感受為最高標準</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>EMBER 炭火燒肉</h4><p>傳承日本備長炭燒肉技藝<br>以火焰淬煉極致美味</p></div>
+<div class="footer-col"><h4>營業時間</h4><p>午餐 11:30 - 14:30</p><p>晚餐 17:30 - 23:00</p></div>
+<div class="footer-col"><h4>聯絡我們</h4><a href="tel:0227001234">02-2700-1234</a><p>台北市大安區仁愛路四段 88 號</p></div>
+<div class="footer-col"><h4>快速連結</h4><a href="menu.html">菜單介紹</a><a href="reservation.html">線上訂位</a></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 Ember 炭火燒肉 All Rights Reserved.</p></div>
+</div>
+</footer>
+<script>function toggleMenu(){document.querySelector('.mobile-menu').classList.toggle('active');document.querySelector('.overlay').classList.toggle('active')}</script>
+</body>
+</html>

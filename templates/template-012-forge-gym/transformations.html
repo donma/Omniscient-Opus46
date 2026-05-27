@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>成果見證 — Forge 健身工廠</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0a0a;--surface:#141414;--card:#1c1c1c;--red:#e63946;--red-dark:#c1121f;--text:#f0f0f0;--muted:#888888;--border:#2a2a2a;--radius:4px;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Anton',sans-serif;letter-spacing:1px;}
+a{color:var(--text);text-decoration:none;transition:.3s;}
+img{max-width:100%;display:block;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,10,.95);border-bottom:1px solid var(--border);padding:15px 0;}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--red);}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links a:hover{color:var(--red);}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.menu-toggle span{width:25px;height:2px;background:var(--text);}
+.page-hero{padding:160px 0 80px;background:var(--surface);position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:var(--bg);clip-path:polygon(0 60%,100% 0,100% 100%,0 100%);}
+.page-hero h1{font-size:4rem;color:var(--red);}
+.page-hero p{color:var(--muted);font-size:1.1rem;margin-top:10px;}
+.section{padding:80px 0;}
+.transformations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;}
+.transform-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.transform-images{display:grid;grid-template-columns:1fr 1fr;position:relative;}
+.transform-images img{height:250px;width:100%;object-fit:cover;}
+.transform-images .label-before,.transform-images .label-after{position:absolute;bottom:10px;padding:4px 12px;background:rgba(0,0,0,.8);color:var(--muted);font-size:.75rem;border-radius:var(--radius);}
+.transform-images .label-before{left:10px;}
+.transform-images .label-after{right:10px;}
+.transform-body{padding:25px;}
+.transform-body h3{font-size:1.3rem;color:var(--red);margin-bottom:10px;}
+.transform-body p{color:var(--muted);font-size:.9rem;margin-bottom:15px;}
+.transform-stats{display:flex;gap:20px;flex-wrap:wrap;}
+.transform-stats .stat{background:var(--surface);padding:8px 15px;border-radius:var(--radius);border:1px solid var(--border);}
+.transform-stats .stat span{display:block;font-size:.75rem;color:var(--muted);}
+.transform-stats .stat strong{color:var(--red);font-size:1.1rem;}
+.footer{background:var(--surface);padding:60px 0 30px;border-top:1px solid var(--border);}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;}
+.footer h4{font-family:'Anton',sans-serif;color:var(--red);margin-bottom:15px;}
+.footer p,.footer a{color:var(--muted);font-size:.9rem;}
+.footer a:hover{color:var(--red);}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+@media(max-width:768px){
+.nav-links{position:fixed;top:0;left:-100%;width:70%;height:100vh;background:var(--surface);flex-direction:column;padding:80px 30px;transition:.3s;border-right:1px solid var(--border);}
+.nav-links.active{left:0;}
+.menu-toggle{display:flex;}
+.page-hero h1{font-size:2.5rem;}
+.transformations-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="index.html" class="logo">FORGE 健身工廠</a>
+<button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')"><span></span><span></span><span></span></button>
+<ul class="nav-links">
+<li><a href="index.html">首頁</a></li>
+<li><a href="about.html">關於我們</a></li>
+<li><a href="programs.html">訓練課程</a></li>
+<li><a href="coaches.html">教練團隊</a></li>
+<li><a href="facilities.html">設備環境</a></li>
+<li><a href="membership.html">會員方案</a></li>
+<li><a href="transformations.html">成果見證</a></li>
+<li><a href="contact.html">聯絡我們</a></li>
+</ul>
+</div></nav>
+
+<section class="page-hero"><div class="container">
+<h1>成果見證</h1>
+<p>真實會員，真實結果。數字不會說謊。</p>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="transformations-grid">
+
+<div class="transform-card">
+<div class="transform-images">
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400" alt="Before">
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400" alt="After">
+<span class="label-before">BEFORE</span><span class="label-after">AFTER</span>
+</div>
+<div class="transform-body">
+<h3>陳建宏（32歲）— 6個月</h3>
+<p>「加入Forge之前我是個標準的久坐上班族，體脂30%以上。教練幫我制定了循序漸進的計畫，現在我能做10個引體向上了。」</p>
+<div class="transform-stats">
+<div class="stat"><span>體重</span><strong>-12kg</strong></div>
+<div class="stat"><span>體脂</span><strong>-14%</strong></div>
+<div class="stat"><span>深蹲</span><strong>+60kg</strong></div>
+</div></div></div>
+
+<div class="transform-card">
+<div class="transform-images">
+<img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400" alt="Before">
+<img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400" alt="After">
+<span class="label-before">BEFORE</span><span class="label-after">AFTER</span>
+</div>
+<div class="transform-body">
+<h3>林雨婷（28歲）— 4個月</h3>
+<p>「原本只想減肥，沒想到愛上了重訓的感覺。現在硬舉能拉自己體重的1.5倍，比以前的自己強太多了！」</p>
+<div class="transform-stats">
+<div class="stat"><span>體重</span><strong>-8kg</strong></div>
+<div class="stat"><span>體脂</span><strong>-10%</strong></div>
+<div class="stat"><span>硬舉</span><strong>80kg</strong></div>
+</div></div></div>
+
+<div class="transform-card">
+<div class="transform-images">
+<img src="https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?w=400" alt="Before">
+<img src="https://images.unsplash.com/photo-1567013127542-490d483f1592?w=400" alt="After">
+<span class="label-before">BEFORE</span><span class="label-after">AFTER</span>
+</div>
+<div class="transform-body">
+<h3>黃志明（45歲）— 8個月</h3>
+<p>「中年發福加上腰傷讓我以為再也不能運動了。教練的專業讓我重新找回健康，腰痛問題也改善了90%。」</p>
+<div class="transform-stats">
+<div class="stat"><span>體重</span><strong>-15kg</strong></div>
+<div class="stat"><span>腰圍</span><strong>-18cm</strong></div>
+<div class="stat"><span>疼痛</span><strong>-90%</strong></div>
+</div></div></div>
+
+<div class="transform-card">
+<div class="transform-images">
+<img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=400" alt="Before">
+<img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400" alt="After">
+<span class="label-before">BEFORE</span><span class="label-after">AFTER</span>
+</div>
+<div class="transform-body">
+<h3>王俊傑（25歲）— 12個月</h3>
+<p>「從瘦竹竿到能參加CrossFit比賽，Forge改變了我的人生。增肌增重的路上，教練的營養建議是關鍵。」</p>
+<div class="transform-stats">
+<div class="stat"><span>體重</span><strong>+10kg</strong></div>
+<div class="stat"><span>肌肉量</span><strong>+8kg</strong></div>
+<div class="stat"><span>臥推</span><strong>100kg</strong></div>
+</div></div></div>
+
+<div class="transform-card">
+<div class="transform-images">
+<img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400" alt="Before">
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400" alt="After">
+<span class="label-before">BEFORE</span><span class="label-after">AFTER</span>
+</div>
+<div class="transform-body">
+<h3>張雅芳（35歲）— 5個月</h3>
+<p>「產後恢復一直是我的困擾，Coach Ya很有耐心地從基礎核心訓練開始，現在我比懷孕前還要強壯。」</p>
+<div class="transform-stats">
+<div class="stat"><span>體脂</span><strong>-12%</strong></div>
+<div class="stat"><span>核心</span><strong>完全恢復</strong></div>
+<div class="stat"><span>引體</span><strong>3下</strong></div>
+</div></div></div>
+
+<div class="transform-card">
+<div class="transform-images">
+<img src="https://images.unsplash.com/photo-1597347316205-36f6c451902a?w=400" alt="Before">
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400" alt="After">
+<span class="label-before">BEFORE</span><span class="label-after">AFTER</span>
+</div>
+<div class="transform-body">
+<h3>劉承翰（38歲）— 10個月</h3>
+<p>「當初被醫生警告有三高風險，加入Forge後徹底改變飲食與運動習慣。最新健檢全部正常，醫生都很驚訝。」</p>
+<div class="transform-stats">
+<div class="stat"><span>體重</span><strong>-20kg</strong></div>
+<div class="stat"><span>血壓</span><strong>正常</strong></div>
+<div class="stat"><span>血糖</span><strong>正常</strong></div>
+</div></div></div>
+
+</div>
+</div></section>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><h4>FORGE 健身工廠</h4><p>台北市信義區松仁路100號B1<br>鍛造你的極限，突破自我</p></div>
+<div><h4>快速連結</h4><p><a href="programs.html">訓練課程</a><br><a href="membership.html">會員方案</a><br><a href="schedule.html">課表查詢</a><br><a href="blog.html">健身知識</a></p></div>
+<div><h4>營業時間</h4><p>週一至週五 06:00 - 23:00<br>週六日 08:00 - 21:00<br>國定假日 09:00 - 18:00</p></div>
+<div><h4>聯絡我們</h4><p>電話：02-2765-1234<br>信箱：info@forge-gym.tw<br>LINE：@forge-gym</p></div>
+</div>
+<div class="footer-bottom">© 2026 Forge 健身工廠. All Rights Reserved.</div>
+</div></footer>
+</body>
+</html>

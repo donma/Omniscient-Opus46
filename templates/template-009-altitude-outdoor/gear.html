@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>裝備推薦 — Altitude 戶外探索</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1a0f;--surface:#142016;--card:#1a2b1c;--green:#4ade80;--green-dark:#22c55e;--earth:#c4a35a;--text:#e4ede5;--muted:#7a9a7e;--border:#2a3d2c;--radius:12px}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700}
+a{color:var(--green);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,26,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:16px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--green)}.logo span{color:var(--earth)}
+.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--text);font-size:.9rem}.nav-links a:hover{color:var(--green)}
+.menu-btn{display:none;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+.mobile-nav{position:fixed;top:0;left:-100%;width:280px;height:100vh;background:var(--surface);z-index:2000;padding:80px 30px;transition:left .3s;border-right:1px solid var(--border)}
+.mobile-nav.active{left:0}.mobile-nav a{display:block;color:var(--text);padding:14px 0;border-bottom:1px solid var(--border)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:none}.overlay.active{display:block}
+.close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--green);font-size:1.5rem;cursor:pointer}
+
+.page-hero{padding:160px 0 80px;text-align:center;background:linear-gradient(to bottom,rgba(13,26,15,.5),var(--bg)),url('https://images.unsplash.com/photo-1445307806294-bff7f67ff225?w=1920&q=80') center/cover}
+.page-hero h1{font-size:3.5rem;margin-bottom:16px}.page-hero h1 span{color:var(--green)}
+.page-hero p{color:var(--muted);font-size:1.1rem}
+
+.section{padding:80px 0}
+.gear-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.gear-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform .3s}
+.gear-card:hover{transform:translateY(-4px)}
+.gear-card img{width:100%;height:200px;object-fit:cover}
+.gear-card-body{padding:24px}
+.gear-card-body h3{font-size:1.1rem;margin-bottom:8px}
+.gear-card-body p{color:var(--muted);font-size:.85rem;margin-bottom:16px}
+.gear-card-body .price{color:var(--earth);font-family:'Oswald',sans-serif;font-size:1.2rem}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;text-align:center}
+footer .logo{margin-bottom:16px;display:inline-block}footer p{color:var(--muted);font-size:.85rem}
+footer .foot-links{margin:16px 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}footer .foot-links a{color:var(--muted);font-size:.85rem}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.gear-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><ul class="nav-links"><li><a href="index.html">首頁</a></li><li><a href="about.html">品牌故事</a></li><li><a href="trips.html">探索行程</a></li><li><a href="gear.html">裝備推薦</a></li><li><a href="gallery.html">活動相簿</a></li><li><a href="guides.html">嚮導團隊</a></li><li><a href="safety.html">安全須知</a></li><li><a href="contact.html">聯絡我們</a></li></ul><button class="menu-btn" onclick="openNav()">&#9776;</button></div></nav>
+<div class="overlay" onclick="closeNav()"></div>
+<div class="mobile-nav"><button class="close-btn" onclick="closeNav()">&times;</button><a href="index.html">首頁</a><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="gear.html">裝備推薦</a><a href="gallery.html">活動相簿</a><a href="guides.html">嚮導團隊</a><a href="safety.html">安全須知</a><a href="contact.html">聯絡我們</a></div>
+
+<section class="page-hero">
+<h1>裝備<span>推薦</span></h1>
+<p>精選戶外裝備，讓你的冒險之旅更安全、更舒適</p>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="gear-grid">
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1622260614153-03223fb72052?w=400&q=80" alt="登山背包">
+<div class="gear-card-body"><h3>40L 登山背包</h3><p>適合 2-3 天行程的輕量化背包，人體工學背負系統，防水面料，多隔層設計方便分類收納。</p><div class="price">NT$ 3,200</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80" alt="登山鞋">
+<div class="gear-card-body"><h3>Gore-Tex 中筒登山鞋</h3><p>全地形防水登山鞋，Vibram 大底提供絕佳抓地力，中筒設計保護腳踝。</p><div class="price">NT$ 4,500</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=80" alt="帳篷">
+<div class="gear-card-body"><h3>雙人輕量帳篷</h3><p>僅 1.8kg 的超輕帳篷，三季適用，搭設快速簡便，防風防雨性能優異。</p><div class="price">NT$ 5,800</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1530541930197-dc22b642ee44?w=400&q=80" alt="頭燈">
+<div class="gear-card-body"><h3>300流明充電頭燈</h3><p>USB-C 充電，IPX6 防水，紅光模式保護夜視能力，續航力達 40 小時。</p><div class="price">NT$ 1,200</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1585544314038-a0d3769d0193?w=400&q=80" alt="睡袋">
+<div class="gear-card-body"><h3>高山羽絨睡袋</h3><p>舒適溫度 -5°C，800FP 鵝絨填充，壓縮後體積小巧，適合高山行程。</p><div class="price">NT$ 6,200</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80" alt="防風外套">
+<div class="gear-card-body"><h3>三層式防風外套</h3><p>防水透氣面料，可收納式設計，適合高山多變天候，四季皆可穿著。</p><div class="price">NT$ 3,800</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1473261422339-a0e6e023fee8?w=400&q=80" alt="登山杖">
+<div class="gear-card-body"><h3>碳纖維登山杖（一對）</h3><p>超輕碳纖維材質，三節可折疊，減輕膝蓋負擔，附雪擋與泥擋。</p><div class="price">NT$ 2,400</div></div>
+</div>
+<div class="gear-card">
+<img src="https://images.unsplash.com/photo-1525811902-f2342640856e?w=400&q=80" alt="濾水器">
+<div class="gear-card-body"><h3>攜帶型濾水器</h3><p>0.1 微米中空纖維膜過濾，可濾除 99.99% 細菌，溪水直接飲用。</p><div class="price">NT$ 1,600</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="container"><a href="index.html" class="logo">ALTITUDE <span>戶外探索</span></a><div class="foot-links"><a href="about.html">品牌故事</a><a href="trips.html">探索行程</a><a href="safety.html">安全須知</a><a href="blog.html">冒險日誌</a><a href="contact.html">聯絡我們</a></div><p>&copy; 2026 Altitude 戶外探索。花蓮縣花蓮市中山路一段 88 號</p></div></footer>
+<script>function openNav(){document.querySelector('.mobile-nav').classList.add('active');document.querySelector('.overlay').classList.add('active')}function closeNav(){document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.overlay').classList.remove('active')}</script>
+</body>
+</html>
