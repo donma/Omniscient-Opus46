@@ -5,7 +5,7 @@
 
 >[線上展示](https://donma.github.io/Omniscient-Opus46/)
 
->感謝 James Tsai 助力提供
+>感謝 [James Tsai](https://github.com/JamestsaiTW) 大力贊助
 ---
 
 ## 專案概覽
