@@ -1,7 +1,7 @@
 # 全職設計視角 — 高品質網站模板庫
 
 > 24 套獨立手工設計的網站模板，涵蓋各行各業，每套 12 頁完整架構，支援 RWD 響應式設計。
-> 本專案由 **Claude Sonnet 4.6** 模型（`github-copilot/claude-sonnet-4.6`）協助開發完成。
+> 本專案由 **Claude Sonnet 4.6** 模型（`github-copilot/claude-opus-4.6`）協助開發完成。
 
 [線上測試 : https://donma.github.io/Omniscient-Opus46/](https://donma.github.io/Omniscient-Opus46/)
 ---
@@ -22,9 +22,6 @@
 
 直接用瀏覽器開啟根目錄的 `index.html` 即可瀏覽所有模板：
 
-```
-D:\AI_PROJECTS\OmniscientTest2\index.html
-```
 
 - **搜尋**：輸入關鍵字篩選模板
 - **篩選**：按主題（Light/Dark）或產業分類
@@ -133,7 +130,7 @@ OmniscientTest2/
 
 | 項目 | 內容 |
 |------|------|
-| AI 模型 | Claude Sonnet 4.6 (`github-copilot/claude-sonnet-4.6`) |
+| AI 模型 | Claude Sonnet 4.6 (`github-copilot/claude-opus-4.6`) |
 | 開發工具 | OpenCode AI 編程助理 |
 | 開發日期 | 2026 年 5 月 |
 | 模板數量 | 24 套（每套 12 頁） |
