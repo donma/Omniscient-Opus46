@@ -4,6 +4,8 @@
 > 本專案由 **Claude Opus 4.6** 模型（`github-copilot/claude-opus-4.6`）協助開發完成。
 
 >[線上展示](https://donma.github.io/Omniscient-Opus46/)
+
+>感謝 James Tsai 助力提供
 ---
 
 ## 專案概覽
