@@ -1,9 +1,9 @@
 # 全職設計視角 — 高品質網站模板庫
 
 > 24 套獨立手工設計的網站模板，涵蓋各行各業，每套 12 頁完整架構，支援 RWD 響應式設計。
-> 本專案由 **Claude Sonnet 4.6** 模型（`github-copilot/claude-opus-4.6`）協助開發完成。
+> 本專案由 **Claude Opus 4.6** 模型（`github-copilot/claude-opus-4.6`）協助開發完成。
 
-[線上測試 : https://donma.github.io/Omniscient-Opus46/](https://donma.github.io/Omniscient-Opus46/)
+>[線上展示](https://donma.github.io/Omniscient-Opus46/)
 ---
 
 ## 專案概覽
