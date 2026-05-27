@@ -130,7 +130,7 @@ OmniscientTest2/
 
 | 項目 | 內容 |
 |------|------|
-| AI 模型 | Claude Sonnet 4.6 (`github-copilot/claude-opus-4.6`) |
+| AI 模型 | Claude Opus 4.6 (`github-copilot/claude-opus-4.6`) |
 | 開發工具 | OpenCode AI 編程助理 |
 | 開發日期 | 2026 年 5 月 |
 | 模板數量 | 24 套（每套 12 頁） |
